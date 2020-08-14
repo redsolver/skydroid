@@ -6,6 +6,14 @@ This is the main part of my submission to the [‘Own The Internet’ Hackathon]
 
 Other parts are the [F-Droid bridge](https://github.com/redsolver/skydroid-fdroid-bridge) and the [Multi-DoH Server](https://github.com/redsolver/multi-doh-server).
 
+## Screenshots
+
+<p>
+  <img src="https://github.com/redsolver/skydroid/raw/master/screenshots/screen1.png" width="250">
+  <img src="https://github.com/redsolver/skydroid/raw/master/screenshots/screen2.png" width="250">
+  <img src="https://github.com/redsolver/skydroid/raw/master/screenshots/screen3.png" width="250">
+</p>
+
 ## Install + First Steps
 
 1. Visit https://get.skydroid.app on your Android device
