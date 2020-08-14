@@ -28,7 +28,7 @@ class _CollectionsPageState extends State<CollectionsPage> {
       description:
           'This collection contains the latest apps bridged from the F-Droid Main Repo.',
     ),
-  ]; 
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -122,7 +122,7 @@ class _CollectionsPageState extends State<CollectionsPage> {
         builder: (context) => AlertDialog(
               title: Text('Remove collection?'),
               content: Text(
-                  'Do you really want to remove the collection "$name"? This action doesn\'t affect any apps added through this collection.'),
+                  'Do you really want to remove the collection "$name"? If you also want to remove apps added through this collection, select "Remove with Apps".'),
               actions: <Widget>[
                 FlatButton(
                   onPressed: () {
@@ -134,12 +134,30 @@ class _CollectionsPageState extends State<CollectionsPage> {
                   onPressed: () {
                     Navigator.of(context).pop(true);
                   },
+                  child: Text('Remove with Apps'),
+                ),
+                FlatButton(
+                  onPressed: () {
+                    Navigator.of(context).pop(false);
+                  },
                   child: Text('Remove'),
                 ),
               ],
             ));
 
     if (res == true) {
+      if (collections.containsKey(name)) {
+        final c = collections.get(name) as Collection;
+        for (var app in c.apps) {
+          final appName = app.name;
+          if (apps.containsKey(appName)) await apps.delete(appName);
+          if (names.containsKey(appName)) await names.delete(appName);
+        }
+        await collections.delete(name);
+      }
+      await collectionNames.delete(name);
+      setState(() {});
+    } else if (res == false) {
       if (collections.containsKey(name)) await collections.delete(name);
       await collectionNames.delete(name);
       setState(() {});
