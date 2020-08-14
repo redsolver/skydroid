@@ -9,9 +9,9 @@ Other parts are the [F-Droid bridge](https://github.com/redsolver/skydroid-fdroi
 ## Screenshots
 
 <p>
-  <img src="https://github.com/redsolver/skydroid/raw/master/screenshots/screen1.png" width="250">
-  <img src="https://github.com/redsolver/skydroid/raw/master/screenshots/screen2.png" width="250">
-  <img src="https://github.com/redsolver/skydroid/raw/master/screenshots/screen3.png" width="250">
+  <img src="https://github.com/redsolver/skydroid/raw/master/screenshots/screen1.jpg" width="250">
+  <img src="https://github.com/redsolver/skydroid/raw/master/screenshots/screen2.jpg" width="250">
+  <img src="https://github.com/redsolver/skydroid/raw/master/screenshots/screen3.jpg" width="250">
 </p>
 
 ## Install + First Steps
