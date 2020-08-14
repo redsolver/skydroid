@@ -1,0 +1,39 @@
+categories:
+  - System
+  - Internet
+license: GPL-3.0-only
+authorName: redsolver
+authorEmail: info@redsolver.net
+sourceCode: https://github.com/redsolver/skydroid
+issueTracker: https://github.com/redsolver/skydroid/issues
+changelog: https://github.com/redsolver/skydroid/blob/HEAD/CHANGELOG.md
+
+name: SkyDroid
+packageName: app.skydroid
+
+icon: sia://GAC-HsF3DNURhBDri-05xh1tth56K2TSTIx6gx-3HRU59Q
+
+localized:
+  en-US:
+    description: |-
+      Android App Store which offers fully decentralized, secure and fast app distribution.
+      Handshake is used as a trusted way to offer apps through a specific name/domain.
+      Sia Skynet is used as hosting infrastructure for App Metadata, APKs, screenshots and other media content.
+    summary: A decentralized domain-based App Store for Android.
+    whatsNew: Fixed some bugs
+
+builds:
+  - versionName: 0.1.1
+    versionCode: 2
+    sha256: ce610a6919af351d2af7e9411a3d858ee22778d06cbbdb222793abfe85671df1
+    apkLink: sia://AADACub5UCU3d6MUDOMS6gnkoz8OVORv54JnOhlQ5TMGAw
+  - versionName: 0.1.2
+    versionCode: 3
+    sha256: 5fc6ec63941e456a7beb0fd4b3b6b09c44c9c6b749e55f480dcb01b5b8bd4894
+    apkLink: sia://AADwnYcRqTKZEzCQyi07o8GxOQkX_eHvgpvsAaFpS6dbXw
+
+currentVersionName: 0.1.2
+currentVersionCode: 3
+
+added: 1597353106000
+lastUpdated: 1597395287000
