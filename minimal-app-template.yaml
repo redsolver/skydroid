@@ -1,0 +1,27 @@
+name: Your app's name
+authorName: Your name
+packageName: Your app's android package name
+
+icon: # The link to your app's icon (https:// or sia://)
+
+localized:
+  en-US:
+    description: |-
+      your
+      app
+      description
+    summary: A short summary of your app
+
+builds:
+  - versionName: 0.1.0
+    versionCode: 1
+    sha256: # The sha256 hash of your APK file
+    apkLink: # The link to your APK File (https:// or sia://)
+
+
+# Change the version name and code to match your app
+currentVersionName: 0.1.0
+currentVersionCode: 1
+
+added: # Timestamp when the app was created (Unix Timestamp in Milliseconds)
+lastUpdated: # Timestamp when this file was last edited (Unix Timestamp in Milliseconds)

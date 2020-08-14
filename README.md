@@ -193,7 +193,20 @@ The screenshots and app icon can also be hosted on the Sia Skynet. (Just use `si
 
 ## How to publish your own app
 
-// Coming soon
+- Copy the contents of `minimal-app-template.yaml` to a new YAML file on your computer
+- Edit all values to match your app
+  - You can upload your APK file and media files to https://siasky.net or just use a normal https link if they are already hosted on GitHub for example
+- Get the hash of the metadata file by running `sha256sum your-app-file.yaml` in your terminal or using a sha256 website like [this one](https://emn178.github.io/online-tools/sha256.html)
+- Upload your YAML file to https://siasky.net
+
+Build a TXT Record like this:
+
+`skydroid-app=1+YOUR_SKYLINK_FROM_SKYNET+YOUR_SHA256_HASH`
+
+Example: `skydroid-app=1+AADbpx41U1UCRcIhSHvzRAgt8LJYaDlxiLyqHnPj8ckXAA+0a2e07bb2666409ceb6f49072e296d6ca4f2050af098da1cf6d17fd09b49e6cc`
+
+- Add this TXT Record to a domain/name of your choice. (You can use a normal or a Handshake domain)
+- Add you domain/name in the SkyDroid app with the "Plus"-button in the bottom right
 
 ## Planned features
 
