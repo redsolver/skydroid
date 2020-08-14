@@ -1,6 +1,6 @@
 # SkyDroid
 
-SkyDroid is a decentralized Android App Store which offers easy and fast app distribution, discoverability and security through collections, multi-language support, multiple Themes, Search and Filter options, nice error handling and of course a good user experience.
+SkyDroid is a decentralized domain-based Android App Store which offers easy and fast app distribution, discoverability and security through collections, multi-language support, multiple Themes, Search and Filter options, nice error handling and of course a good user experience.
 
 This is the main part of my submission to the [‘Own The Internet’ Hackathon](https://gitcoin.co/hackathon/own-the-internet).
 
