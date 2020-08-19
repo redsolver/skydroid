@@ -296,7 +296,7 @@ class _InstallWidgetState extends State<InstallWidget>
                     SizedBox(
                       width: 8,
                     ),
-                    application.versionCode == app.currentVersionCode
+                    application.versionCode >= app.currentVersionCode
                         ? Expanded(
                             child: RaisedButton(
                               color: Theme.of(context).accentColor,

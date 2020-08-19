@@ -22,7 +22,7 @@ Other parts are the [F-Droid bridge](https://github.com/redsolver/skydroid-fdroi
 4. Add some recommended Collections
 5. Navigate back to "Apps" and enjoy!
 
-Note: The F-Droid collection currently uses the temporary domain name `papagei`. It will be changed to `fdroid-app` in a few days.
+Note: The F-Droid collection's domain name was changed to `fdroid-app` lately. Please remove the old `papagei` collection by long-pressing it and choosing "Remove with Apps".
 
 ## Video Demo
 

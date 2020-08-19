@@ -23,7 +23,7 @@ class _CollectionsPageState extends State<CollectionsPage> {
           'This collection contains every app available via SkyDroid that I\'m aware of. Some apps are verified.',
     ),
     CollectionRecommendation(
-      name: 'papagei',
+      name: 'fdroid-app',
       title: 'F-Droid Collection',
       description:
           'This collection contains the latest apps bridged from the F-Droid Main Repo.',

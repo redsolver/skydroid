@@ -20,7 +20,7 @@ localized:
       Handshake is used as a trusted way to offer apps through a specific name/domain.
       Sia Skynet is used as hosting infrastructure for App Metadata, APKs, screenshots and other media content.
     summary: A decentralized domain-based App Store for Android.
-    whatsNew: Added option to remove all apps from a specific collection
+    whatsNew: Changed Domain of F-Droid Collection to "fdroid-app"
 
 builds:
   - versionName: 0.1.1
@@ -35,9 +35,13 @@ builds:
     versionCode: 4
     sha256: 7e44fa762998692150aea1007c3f50b28f4259fe98ce60fa40d39e9c2f46b616
     apkLink: sia://AAB4EJsNJQ3dDjkXKEYpEIX6W5jJ-omj_GM2wQZhGUIgZQ
+  - versionName: 0.1.4
+    versionCode: 5
+    sha256: c62c2d73c0ead2fb1a287eecc6d637c318cb49b8c1543bbd2110d73b78ee7c6a
+    apkLink: sia://AADzaC8YfqVlUAcSf8-1PdT9mLDb9KRLeV9Pi8y3l8G2KA
 
-currentVersionName: 0.1.3
-currentVersionCode: 4
+currentVersionName: 0.1.4
+currentVersionCode: 5
 
 added: 1597353106000
-lastUpdated: 1597415640000
+lastUpdated: 1597860411000
