@@ -21,6 +21,7 @@ import 'package:skydroid/page/app.dart';
 import 'package:skydroid/page/collections.dart';
 import 'package:skydroid/page/settings.dart';
 import 'package:skydroid/theme.dart';
+import 'package:uni_links/uni_links.dart';
 import 'package:yaml/yaml.dart';
 
 void main() async {
@@ -134,6 +135,7 @@ class MyApp extends StatelessWidget {
           title: 'SkyDroid',
           theme: theme,
           home: MyHomePage(),
+          debugShowCheckedModeBanner: false,
         );
       },
     );
@@ -162,8 +164,56 @@ Map<String, int> loadingState = {};
 class _MyHomePageState extends State<MyHomePage> {
   int currentPage = 0;
 
+  StreamSubscription _sub;
+
+  processLink(String link) async {
+    final name =
+        link.split('/').reversed.firstWhere((element) => element.isNotEmpty);
+
+    if (!names.containsKey(name)) {
+      await addName(name);
+    }
+
+    final App app = apps.get(name);
+    await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => AppPage(
+          name,
+          app,
+        ),
+      ),
+    );
+    addToStream(name);
+    setState(() {});
+  }
+
+  Future<Null> initUniLinks() async {
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    try {
+      String initialLink = await getInitialLink();
+
+      if (initialLink != null) processLink(initialLink);
+
+      // Parse the link and warn the user, if it is not correct,
+      // but keep in mind it could be `null`.
+
+      // Attach a listener to the stream
+      _sub = getLinksStream().listen((String link) {
+        // Parse the link and warn the user, if it is not correct
+        processLink(link);
+      }, onError: (err) {
+        // Handle exception by warning the user their action did not succeed
+      });
+    } on PlatformException {
+      // Handle exception by warning the user their action did not succeed
+      // return?
+    }
+  }
+
   @override
   void initState() {
+    initUniLinks();
+
     updateAllCollections();
 
     updateAllNames();
@@ -173,6 +223,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void dispose() {
     globalErrorStream.close();
+    _sub.cancel();
     super.dispose();
   }
 
@@ -865,58 +916,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
 
                 if ((result ?? '').isNotEmpty) {
-                  result = result.toLowerCase();
-                  print(result);
-                  showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                      title: Text('Checking name...'),
-                      content: LinearProgressIndicator(),
-                    ),
-                    barrierDismissible: false,
-                  );
-                  try {
-                    var res = await checkName(result);
-                    print('RES $res');
-                    final type = res['type'];
-                    res.remove('type');
-                    print('RES $res');
-
-                    if (Navigator.of(context).canPop())
-                      Navigator.of(context).pop();
-                    if (type == 'app') {
-                      names.put(result, res);
-                      if (mounted) setState(() {});
-                      await updateMetadata(res, 'app');
-                      loadingState[result] = 0;
-                      addToStream(result);
-                      if (mounted) setState(() {});
-                    } else {
-                      collectionNames.put(result, res);
-
-                      await updateAllCollections();
-                      if (mounted) setState(() {});
-                    }
-                  } catch (e, st) {
-                    if (Navigator.of(context).canPop())
-                      Navigator.of(context).pop();
-
-                    print(e);
-                    print(st);
-                    showDialog(
-                      context: context,
-                      builder: (context) => AlertDialog(
-                        title: Text('Something went wrong'),
-                        content: Text(e.toString()),
-                        actions: <Widget>[
-                          FlatButton(
-                            onPressed: Navigator.of(context).pop,
-                            child: Text('Ok'),
-                          ),
-                        ],
-                      ),
-                    );
-                  }
+                  await addName(result);
                 }
               },
             ),
@@ -944,6 +944,59 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
     );
+  }
+
+  Future<void> addName(String result) async {
+    result = result.toLowerCase();
+    print(result);
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('Checking name...'),
+        content: LinearProgressIndicator(),
+      ),
+      barrierDismissible: false,
+    );
+    try {
+      var res = await checkName(result);
+      print('RES $res');
+      final type = res['type'];
+      res.remove('type');
+      print('RES $res');
+
+      if (Navigator.of(context).canPop()) Navigator.of(context).pop();
+      if (type == 'app') {
+        names.put(result, res);
+        if (mounted) setState(() {});
+        await updateMetadata(res, 'app');
+        loadingState[result] = 0;
+        addToStream(result);
+        if (mounted) setState(() {});
+      } else {
+        collectionNames.put(result, res);
+
+        await updateAllCollections();
+        if (mounted) setState(() {});
+      }
+    } catch (e, st) {
+      if (Navigator.of(context).canPop()) Navigator.of(context).pop();
+
+      print(e);
+      print(st);
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text('Something went wrong'),
+          content: Text(e.toString()),
+          actions: <Widget>[
+            FlatButton(
+              onPressed: Navigator.of(context).pop,
+              child: Text('Ok'),
+            ),
+          ],
+        ),
+      );
+    }
   }
 
   Future<void> updateMetadata(Map name, String type) async {

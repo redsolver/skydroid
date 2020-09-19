@@ -132,7 +132,7 @@ class _AppPageState extends State<AppPage> {
             icon: Icon(Icons.share),
             onPressed: () {
               Share.share(
-                  '${app.localizedName} - ${app.localizedSummary} • Get this app by adding ${name} in SkyDroid');
+                  '${app.localizedName} - ${app.localizedSummary} • Download: https://to.skydroid.app/$name');
             },
           )
         ],
@@ -270,10 +270,11 @@ class _AppPageState extends State<AppPage> {
                     ),
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: Text(app.localizedSummary),
-              ),
+              if (app.localizedSummary != null)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: Text(app.localizedSummary),
+                ),
               if (app.localizedWhatsNew != null) ...[
                 SizedBox(
                   height: 8,

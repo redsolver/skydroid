@@ -74,6 +74,8 @@ class App {
   }
 
   List<String> get localizedPhoneScreenshots {
+    if (localized == null) return [];
+
     if (localizedPhoneScreenshotsCache != null)
       return localizedPhoneScreenshotsCache;
 
