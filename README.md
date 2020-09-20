@@ -24,6 +24,10 @@ Other parts are the [F-Droid bridge](https://github.com/redsolver/skydroid-fdroi
 
 Note: The F-Droid collection's domain name was changed to `fdroid-app` lately. Please remove the old `papagei` collection by long-pressing it and choosing "Remove with Apps".
 
+## How to publish your own app
+
+See https://skydroid.dev
+
 ## Video Demo
 
 Here's a little demo of the app and how it works: https://youtu.be/MTSrz3Jb778?t=2461
@@ -199,7 +203,7 @@ lastUpdated: 1596737665000
 
 The screenshots and app icon can also be hosted on the Sia Skynet. (Just use `sia://` instead of `https://`, it gets automatically replaced with the selected Skynet Portal)
 
-## How to publish your own app
+## How to publish your own app (manual method)
 
 - Copy the contents of `minimal-app-template.yaml` to a new YAML file on your computer
 - Edit all values to match your app
@@ -218,8 +222,6 @@ Example: `skydroid-app=1+AADbpx41U1UCRcIhSHvzRAgt8LJYaDlxiLyqHnPj8ckXAA+0a2e07bb
 
 ## Planned features
 
-- Tools and documentation for app publishers
-- Deep Links with `to.skydroid.app` (https://pub.dev/packages/uni_links)
 - QR-Code Sharing of Apps
 - Some sort of decentralized Rating System (maybe via Mastodon)
 - Maybe use [Shizuku service](https://github.com/RikkaApps/Shizuku) like https://github.com/Aefyr/SAI to enable automatic background updates (if verified).
