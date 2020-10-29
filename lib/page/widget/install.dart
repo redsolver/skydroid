@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:convert/convert.dart';
 import 'package:crypto/crypto.dart';
 import 'package:device_apps/device_apps.dart';
 import 'package:filesize/filesize.dart';
@@ -161,12 +162,25 @@ class _InstallWidgetState extends State<InstallWidget>
     totalFileSize = filesize(contentLength);
     print(contentLength);
 
-    List<int> bytes = [];
+    // List<int> bytes = [];
+
+    final tmpApk = File('${apk.path}.downloading');
+
+    tmpApk.createSync(recursive: true);
+
+    final fileStream = tmpApk.openWrite();
+
+    int downloadedLength = 0;
+
+    var output = new AccumulatorSink<Digest>();
+    var input = sha256.startChunkedConversion(output);
 
     sub = response.stream.listen(
       (List<int> newBytes) {
-        bytes.addAll(newBytes);
-        final downloadedLength = bytes.length;
+        downloadedLength += newBytes.length;
+        fileStream.add(newBytes);
+        input.add(newBytes);
+
         setState(() {
           progress = downloadedLength / contentLength;
         });
@@ -177,7 +191,10 @@ class _InstallWidgetState extends State<InstallWidget>
         /*  setState(() {
                               checkingIntegrity = true;
                             }); */
-        final hash = sha256.convert(bytes);
+
+        input.close();
+        final hash = output.events.single;
+        await fileStream.close();
         /*    setState(() {
                               checkingIntegrity = false;
                             }); */
@@ -201,8 +218,9 @@ class _InstallWidgetState extends State<InstallWidget>
         }
         print(hash.toString()); // Check!
         // notifyListeners();
-        await apk.create(recursive: true);
-        await apk.writeAsBytes(bytes);
+
+        await tmpApk.rename(apk.path);
+
         print('done');
         _install(apk, build.versionCode);
       },
