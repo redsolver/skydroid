@@ -208,7 +208,7 @@ class _AppPageState extends State<AppPage> {
                           height: 8,
                         ),
                         Text(
-                          app.categories.join(' • '),
+                          (app.categories ?? []).join(' • '),
                           style: TextStyle(fontStyle: FontStyle.italic),
                         ),
                         SizedBox(
