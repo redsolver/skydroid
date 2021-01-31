@@ -456,7 +456,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 'SkyDroid' +
                     (currentPage == 0
                         ? (categoryFilter == null ? '' : ' • ${categoryFilter}')
-                        : currentPage == 1 ? ' • Collections' : ' • Settings'),
+                        : currentPage == 1
+                            ? ' • Collections'
+                            : ' • Settings'),
               )
             : TextField(
                 autofocus: true,
@@ -999,7 +1001,17 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  int currentMetadataUpdateInstances = 0;
+
   Future<void> updateMetadata(Map name, String type) async {
+    currentMetadataUpdateInstances++;
+    // print('wait');
+    await Future.delayed(
+        Duration(milliseconds: currentMetadataUpdateInstances * 10));
+    //print('updateMetadata $currentMetadataUpdateInstances');
+
+    currentMetadataUpdateInstances--;
+    // print('do $currentMetadataUpdateInstances');
 /*     metaLog(var s) {
       print('[${name['name']}] $s');
     } */

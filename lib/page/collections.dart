@@ -102,7 +102,24 @@ class _CollectionsPageState extends State<CollectionsPage> {
                                 collectionNames
                                     .put(rec.name, {'name': rec.name});
 
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    title: Text('Loading collection...'),
+                                    content: ListTile(
+                                      leading: CircularProgressIndicator(),
+                                      title: Text(
+                                        'This can take up to 30 seconds, depending on the size of the collection',
+                                      ),
+                                    ),
+                                  ),
+                                  barrierDismissible: false,
+                                );
+
                                 await widget.refreshCallback();
+
+                                Navigator.of(context).pop();
+
                                 if (mounted) setState(() {});
                               }),
                         ),

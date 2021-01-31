@@ -25,6 +25,10 @@ localized:
 
 
 builds:
+  - versionName: 0.2.3
+    versionCode: 23
+    sha256: 02f9cc1053679d234cbccaa53e7b5582162ad418aa0a9a32181465887e0730e6
+    apkLink: sia://AAC9rBIFryCJxokyjfvkLOtCnnfjO2yVjugufyMBeO8ypw
   - versionName: 0.2.2
     versionCode: 22
     sha256: ba0ffc0a1c0a1d483b41170fefd1dbf6f8f0bbeabeb2e6fd6140ae756c07ae36
@@ -54,8 +58,8 @@ builds:
     sha256: c62c2d73c0ead2fb1a287eecc6d637c318cb49b8c1543bbd2110d73b78ee7c6a
     apkLink: sia://AADzaC8YfqVlUAcSf8-1PdT9mLDb9KRLeV9Pi8y3l8G2KA
 
-currentVersionName: 0.2.2
-currentVersionCode: 22
+currentVersionName: 0.2.3
+currentVersionCode: 23
 
 added: 1597353106000
-lastUpdated: 1603993271161
+lastUpdated: 1612094613952
