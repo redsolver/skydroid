@@ -1,0 +1,91 @@
+removeNameDialogTitle: Naam verwijderen?
+removeNameDialogContent: Weet jij zeker dat je de naam "{name}" wilt verwijderen van de app lijst? Deze actie heeft geen invloed op je geïnstalleerde apps en de naam kan weer toegevoegd worden via een collectie.
+removeNameDialogConfirm: Verwijderen
+dialogCancel: Annuleren
+navigationAppsPageTitle: Apps
+navigationCollectionsPageTitle: Verzamelingen
+navigationSettingsPageTitle: Instellingen
+filterDialogTitle: Filter categorie
+categoryConnectivity: Connectiviteit
+categoryDevelopment: Development
+categoryGames: Games
+categoryGraphics: Grafisch
+categoryInternet: Internet
+categoryMoney: Geld
+categoryMultimedia: Multimedia
+categoryNavigation: Navigatie
+categoryPhoneAndSMS: Telefoon & SMS
+categoryReading: Lezen
+categoryScienceAndEducation: Wetenschap & Educatie
+categorySecurity: Beveiliging
+categorySportsAndHealth: Sport & Gezondheid
+categorySystem: Systeem
+categoryTheming: Thema's
+categoryTime: Tijd
+categoryWriting: Schrijven
+appListPageEmptyWarning: Hmm er is hier niks. Probeer een naam toe te voegen via de "Plus"-knop rechts bovenin het scherm.
+appListLoadingMetadata: Metadata laden...
+errorsSheetTitle: Foutmeldingen
+errorsSheetOverflowCount: ...{count} meer
+addDomainNameDialogTitle: Voeg een app of collectie toe
+addDomainNameDialogInputLabel: Naam (domain)
+addDomainNameDialogInputHint: bijvoorbeeld skydroid.app
+addDomainNameDialogConfirm: Toevoegen
+addDomainNameLoadingDialogTitle: Naam controleren...
+errorDialogTitle: Er ging iets mis
+errorDialogCloseButton: Ok
+verifiedAppDialogTitle: Geverifieerde app
+verifiedAppDialogContentTop: "Deze versie van de app was geverifieerd door de volgende collecties:"
+verifiedAppDialogContentBottom: Collecties kunnen updates markeren als geverifieerd om extra vertrouwen te bieden. Het verifiëren van updates kan bestaan ​​uit het controleren van de metadata, het testen van de app of het scannen op malware.
+verifiedAppDialogCloseButton: Ok
+verifiedAppBadgeLabel: Geverifieerd
+appPageWhatsNewTitle: Wat is nieuw
+appPageUpdatedTime: Geüpdatet {time}
+appPageAddedTime: "App toegevoegd: {time}"
+appPageLinkDonate: Doneer
+appPageLinkWebsite: Web Site
+appPageLinkSourceCode: Broncode
+appPageLinkIssueTracker: Issue Tracker
+appPageLinkTranslation: Vertaling
+appPageLinkChangelog: Changelog
+appPageLinkLicense: "Licentie: {license}"
+collectionListItemLoading: Laden...
+collectionListItemTitle: "{title} ({domainName}) • {appCount} Apps"
+collectionRecommendationsCardTitle: Een paar aanbevelingen om je op weg te helpen.
+collectionLoadingDialogTitle: Collectie laden...
+collectionLoadingDialogContent: Dit kan tot 30 seconden duren, afhankelijk van de collectie grootte.
+removeCollectionDialogTitle: Collectie verwijderen?
+removeCollectionDialogContent: Weet je zeker dat je de collectie "{name}" wilt verwijderen? Als je ook de apps wilt verwijderen die toegevoegd zijn aan deze collectie, selecteer dan "Verwijderen met Apps".
+removeCollectionDialogConfirmWithApps: Verwijderen met Apps
+removeCollectionDialogConfirm: Verwijderen
+downloadHashMismatchErrorDialogTitle: Hash Verkeerde combinatie
+downloadHashMismatchErrorDialogContent: "Het gedownloade bestand komt niet overeen met de juiste hash in de metadata.\n\nVerwachte Hash: {expectedHash}\nVerkregen Hash: {hash}\n\nNeem contact op met de app maker"
+appPageInstallButton: Installeren (Versie {version})
+appPageRetryInstallButton: Probeer opnieuw te installeren
+appPageInstallingApkProcess: Intalleren van APK bestand...
+appPageUninstallButton: Deïnstalleren ({version})
+appPageLaunchAppButton: Open
+appPageUpdateButton: Update ({version})
+appPageInstallationDownloadStarting: Download starten...
+appPageInstallationProgress: "{progress} % van {totalFileSize}"
+appShareText: "{localizedName} - {localizedSummary} • Download: {link}"
+errorMetadataHashMismatch: Metadata Hash verkeerde combinatie.
+errorHttpStatusCode: HTTP {statusCode} tijdens het laden van de metadata
+errorDnsRecordNotAvailable: DNS Record niet beschikbaar
+errorDomainNameHasNoRecord: Naam heeft geen skydroid record
+errorHttpStatusCodeMultiDnsQuery: HTTP {statusCode} tijdens het laden van de metadata
+settingsPageAppThemeTitle: App thema
+settingsPageAppThemeOptionLight: Licht
+settingsPageAppThemeOptionSepia: Sepia
+settingsPageAppThemeOptionDark: Donker
+settingsPageAppThemeOptionBlack: Zwart
+settingsPageServicesTitle: Services
+settingsPageServicesMultiDoHServer: Multi-DoH Server
+settingsPageServicesSkynetPortal: Skynet Portal
+settingsPageAboutTitle: Over
+settingsPageAboutShowLicenses: Bekijk licenties
+settingsPageAboutDebug: Debug Info
+settingsPageAboutDebugDialogClose: Ok
+errorAppInvalidCurrentBuild: "Error: Er is geen build gevonden voor de huidige versie" 
+errorAppCompatibilitySdkVersionTooLow: "Deze app is niet compatible met je apparaat (sdkVersion te laag: {sdkVersion} < {minSdkVersion})"
+errorAppCompatibilityNoMatchingABI: "Deze app is niet compatible met je apparaat (ABI is niet ondersteund: {deviceABIs} niet in {supportedABIs})" 

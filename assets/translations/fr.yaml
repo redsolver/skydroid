@@ -1,0 +1,86 @@
+removeNameDialogTitle: Supprimer le nom?
+removeNameDialogContent: Voules-vous vraiment retirer le nom "{name}" de votre liste d'applications? Cette action ne change pas vos applications installées et le nom peut étre rajouter via une collection.
+removeNameDialogConfirm: Supprimer
+dialogCancel: Annuler
+navigationAppsPageTitle: Apps
+navigationCollectionsPageTitle: Collections
+navigationSettingsPageTitle: Paramètres
+filterDialogTitle: Filtrer par catégories
+categoryConnectivity: Connectivité
+categoryDevelopment: Développement
+categoryGames: Jeux
+categoryGraphics: Graphisme
+categoryInternet: Internet
+categoryMoney: Finances
+categoryMultimedia: Multimedia
+categoryNavigation: Navigation
+categoryPhoneAndSMS: Téléphone & SMS
+categoryReading: Lecture
+categoryScienceAndEducation: Science & Education
+categorySecurity: Securité
+categorySportsAndHealth: Sports & Santé
+categorySystem: Système
+categoryTheming: Thème
+categoryTime: Temps
+categoryWriting: Ecriture
+appListPageEmptyWarning: Hmm rien à avoir ici. Essayez d'ajouter un nom via le bouton "Plus" en bas à droite
+appListLoadingMetadata: Chargement des metadonnées...
+errorsSheetTitle: Erreurs
+errorsSheetOverflowCount: ...{count} de trop
+addDomainNameDialogTitle: Ajouter une app ou une collection
+addDomainNameDialogInputLabel: Nom (domain)
+addDomainNameDialogInputHint: ex. skydroid.app
+addDomainNameDialogConfirm: Ajouter
+addDomainNameLoadingDialogTitle: Vérification du nom de domaine...
+errorDialogTitle: Un problème est survenu
+errorDialogCloseButton: Ok
+verifiedAppDialogTitle: App vérifiée
+verifiedAppDialogContentTop: "Cette version de l'application a été vérifiée par la collection suivante:"
+verifiedAppDialogContentBottom: Les collections peuvent marquer les releases comme vérifié pour ajouter une couche de sécurité. Vérifier une release peut comprendre la vérification des métadonnées, le test de l'application ou un scan de malwares. 
+verifiedAppDialogCloseButton: Ok
+verifiedAppBadgeLabel: Verifiée
+appPageWhatsNewTitle: Nouveautées
+appPageUpdatedTime: Mis à jour {time}
+appPageAddedTime: "App ajoutée: {time}"
+appPageLinkDonate: Faire un don
+appPageLinkWebsite: Site Web
+appPageLinkSourceCode: Code Source
+appPageLinkIssueTracker: Problèmes
+appPageLinkTranslation: Traduction
+appPageLinkChangelog: Changelog
+appPageLinkLicense: "License: {license}"
+collectionListItemLoading: Chargement...
+collectionListItemTitle: "{title} ({domainName}) • {appCount} Apps"
+collectionRecommendationsCardTitle: Des recommandations pour démarrer
+collectionLoadingDialogTitle: Chargement de la collection...
+collectionLoadingDialogContent: Ceci peux prendre jusqu'à 30 secondes, en fonction de la taille de la collection
+removeCollectionDialogTitle: Supprimer la collection?
+removeCollectionDialogContent: Voulez vous vraiment supprimer la collection "{name}"? Si vous voulez aussi supprimer les applications ajoutées via cette collection, selectionner "Supprimer toutes les apps".
+removeCollectionDialogConfirmWithApps: Supprimer toutes les apps
+removeCollectionDialogConfirm: Supprimer
+downloadHashMismatchErrorDialogTitle: Hash Mismatch
+downloadHashMismatchErrorDialogContent: "Le fichier téléchargé ne correspond pas au bon hash dans les métadonnées.\n\nExpected Hash: {expectedHash}\nGot Hash: {hash}\n\nMerci de contacter l'auteur de l'application"
+appPageInstallButton: Installer (Version {version})
+appPageRetryInstallButton: Réinstaller
+appPageInstallingApkProcess: Installation du fichier APK...
+appPageUninstallButton: Désinstaller ({version})
+appPageLaunchAppButton: Ouvrir
+appPageUpdateButton: Mettre à jour ({version})
+appPageInstallationDownloadStarting: Démarrage du téléchargement...
+appPageInstallationProgress: "{progress} % of {totalFileSize}"
+appShareText: "{localizedName} - {localizedSummary} • Download: {link}"
+errorMetadataHashMismatch: Metadata Hash mismatch.
+errorHttpStatusCode: HTTP {statusCode} pendant le chargement des métadonnées
+errorDnsRecordNotAvailable: DNS Record non disponible
+errorDomainNameHasNoRecord: Name has no skydroid record
+errorHttpStatusCodeMultiDnsQuery: HTTP {statusCode} pendant le chargement des métadonnées
+settingsPageAppThemeTitle: Thème de l'application
+settingsPageAppThemeOptionLight: Light
+settingsPageAppThemeOptionSepia: Sepia
+settingsPageAppThemeOptionDark: Dark
+settingsPageAppThemeOptionBlack: Black
+settingsPageServicesTitle: Services
+settingsPageServicesMultiDoHServer: Multi-DoH Server
+settingsPageServicesSkynetPortal: Portail Skynet
+settingsPageAboutTitle: À propos
+settingsPageAboutShowLicenses: Monter les licenses

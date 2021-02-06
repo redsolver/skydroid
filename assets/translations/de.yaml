@@ -84,3 +84,8 @@ settingsPageServicesMultiDoHServer: Multi-DoH Server
 settingsPageServicesSkynetPortal: Skynet Portal
 settingsPageAboutTitle: Über
 settingsPageAboutShowLicenses: Lizenzen anzeigen
+settingsPageAboutDebug: Fehlerbehebungsinformationen
+settingsPageAboutDebugDialogClose: Ok
+errorAppInvalidCurrentBuild: "Fehler: Kein passender Build für die aktuelle Version gefunden"
+errorAppCompatibilitySdkVersionTooLow: "Diese App ist nicht mit deinem Gerät kompatibel (sdkVersion zu niedrig: {sdkVersion} < {minSdkVersion})"
+errorAppCompatibilityNoMatchingABI: "Diese App ist nicht mit deinem Gerät kompatibel (ABI nicht unterstützt: {deviceABIs} nicht in {supportedABIs})"

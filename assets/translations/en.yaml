@@ -84,3 +84,8 @@ settingsPageServicesMultiDoHServer: Multi-DoH Server
 settingsPageServicesSkynetPortal: Skynet Portal
 settingsPageAboutTitle: About
 settingsPageAboutShowLicenses: Show licenses
+settingsPageAboutDebug: Debug Info
+settingsPageAboutDebugDialogClose: Ok
+errorAppInvalidCurrentBuild: "Error: No build found for the current version"
+errorAppCompatibilitySdkVersionTooLow: "This app is not compatible with your device (sdkVersion too low: {sdkVersion} < {minSdkVersion})"
+errorAppCompatibilityNoMatchingABI: "This app is not compatible with your device (ABI not supported: {deviceABIs} not in {supportedABIs})"
