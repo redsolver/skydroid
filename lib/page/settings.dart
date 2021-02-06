@@ -1,3 +1,4 @@
+import 'package:device_info/device_info.dart';
 import 'package:flutter/material.dart';
 import 'package:preferences/preference_title.dart';
 import 'package:preferences/preferences.dart';
@@ -5,6 +6,7 @@ import 'package:preferences/radio_preference.dart';
 import 'package:skydroid/app.dart';
 import 'package:skydroid/theme.dart';
 import 'package:package_info/package_info.dart';
+import 'package:system_info/system_info.dart';
 
 class SettingsPage extends StatefulWidget {
   @override
@@ -84,6 +86,47 @@ class _SettingsPageState extends State<SettingsPage> {
                   child: Image.asset('assets/icon/icon.png'),
                 ),
                 context: context,
+              );
+            },
+          ),
+          ListTile(
+            title: Text(
+              tr.settingsPageAboutDebug,
+            ),
+            onTap: () async {
+              final packageInfo = await PackageInfo.fromPlatform();
+              final deviceInfo = DeviceInfoPlugin();
+              AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
+
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: Text(tr.settingsPageAboutDebug),
+                  content: Text(
+                    [
+                      'App Version ${packageInfo.version} (${packageInfo.buildNumber})',
+                      'Supported ABIs: ${androidInfo.supportedAbis}',
+                      'Android version: ${androidInfo.version.release}',
+                      'Android sdkVersion: ${androidInfo.version.sdkInt}',
+                      'Security patch: ${androidInfo.version.securityPatch}',
+                      'Brand: ${androidInfo.brand}',
+                      'Manufacturer: ${androidInfo.manufacturer}',
+                      'Device: ${androidInfo.device}',
+                      'Model: ${androidInfo.model}',
+                      'Product: ${androidInfo.product}',
+                      'isPhysicalDevice: ${androidInfo.isPhysicalDevice}',
+                      'kernelArchitecture: ${SysInfo.kernelArchitecture}',
+                      'kernelBitness: ${SysInfo.kernelBitness}',
+                      'userSpaceBitness: ${SysInfo.userSpaceBitness}',
+                    ].join('\n'),
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: Navigator.of(context).pop,
+                      child: Text(tr.settingsPageAboutDebugDialogClose),
+                    ),
+                  ],
+                ),
               );
             },
           ),
