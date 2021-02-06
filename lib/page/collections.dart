@@ -56,7 +56,7 @@ class _CollectionsPageState extends State<CollectionsPage> {
               if (!collections.containsKey(colName)) {
                 return ListTile(
                   title: Text('$colName'),
-                  subtitle: Text('Loading...'),
+                  subtitle: Text(tr.collectionListItemLoading),
                 );
               }
               final Collection c = collections.get(colName);
@@ -64,7 +64,10 @@ class _CollectionsPageState extends State<CollectionsPage> {
                 onLongPress: () {
                   removeName(colName);
                 },
-                title: Text('${c.title} ($colName) • ${c.apps.length} Apps'),
+                title: Text(
+                  tr.collectionListItemTitle(c.title, colName, c.apps.length),
+                  //  '${c.title} ($colName) • ${c.apps.length} Apps',
+                ),
                 subtitle: Text(c.description),
                 leading: Container(
                   width: 56,
@@ -82,7 +85,7 @@ class _CollectionsPageState extends State<CollectionsPage> {
                   child: Column(
                     children: <Widget>[
                       Text(
-                        'Some recommendations to get you started',
+                        tr.collectionRecommendationsCardTitle,
                         style: TextStyle(fontStyle: FontStyle.italic),
                         textAlign: TextAlign.center,
                       ),
@@ -105,11 +108,12 @@ class _CollectionsPageState extends State<CollectionsPage> {
                                 showDialog(
                                   context: context,
                                   builder: (context) => AlertDialog(
-                                    title: Text('Loading collection...'),
+                                    title:
+                                        Text(tr.collectionLoadingDialogTitle),
                                     content: ListTile(
                                       leading: CircularProgressIndicator(),
                                       title: Text(
-                                        'This can take up to 30 seconds, depending on the size of the collection',
+                                        tr.collectionLoadingDialogContent,
                                       ),
                                     ),
                                   ),
@@ -137,27 +141,26 @@ class _CollectionsPageState extends State<CollectionsPage> {
     var res = await showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              title: Text('Remove collection?'),
-              content: Text(
-                  'Do you really want to remove the collection "$name"? If you also want to remove apps added through this collection, select "Remove with Apps".'),
+              title: Text(tr.removeCollectionDialogTitle),
+              content: Text(tr.removeCollectionDialogContent(name)),
               actions: <Widget>[
                 FlatButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text('Cancel'),
+                  child: Text(tr.dialogCancel),
                 ),
                 FlatButton(
                   onPressed: () {
                     Navigator.of(context).pop(true);
                   },
-                  child: Text('Remove with Apps'),
+                  child: Text(tr.removeCollectionDialogConfirmWithApps),
                 ),
                 FlatButton(
                   onPressed: () {
                     Navigator.of(context).pop(false);
                   },
-                  child: Text('Remove'),
+                  child: Text(tr.removeCollectionDialogConfirm),
                 ),
               ],
             ));

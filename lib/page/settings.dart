@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:preferences/preference_title.dart';
 import 'package:preferences/preferences.dart';
 import 'package:preferences/radio_preference.dart';
+import 'package:skydroid/app.dart';
 import 'package:skydroid/theme.dart';
 import 'package:package_info/package_info.dart';
 
@@ -18,9 +19,11 @@ class _SettingsPageState extends State<SettingsPage> {
           .copyWith(primaryColor: Theme.of(context).accentColor),
       child: ListView(
         children: <Widget>[
-          PreferenceTitle('App Theme'),
+          PreferenceTitle(
+            tr.settingsPageAppThemeTitle,
+          ),
           RadioPreference(
-            'Light',
+            tr.settingsPageAppThemeOptionLight,
             'light',
             'theme',
             onSelect: () {
@@ -30,7 +33,7 @@ class _SettingsPageState extends State<SettingsPage> {
             },
           ),
           RadioPreference(
-            'Sepia',
+            tr.settingsPageAppThemeOptionSepia,
             'sepia',
             'theme',
             onSelect: () {
@@ -40,7 +43,7 @@ class _SettingsPageState extends State<SettingsPage> {
             },
           ),
           RadioPreference(
-            'Dark',
+            tr.settingsPageAppThemeOptionDark,
             'dark',
             'theme',
             onSelect: () {
@@ -50,7 +53,7 @@ class _SettingsPageState extends State<SettingsPage> {
             },
           ),
           RadioPreference(
-            'Black',
+            tr.settingsPageAppThemeOptionBlack,
             'black',
             'theme',
             onSelect: () {
@@ -59,13 +62,14 @@ class _SettingsPageState extends State<SettingsPage> {
               );
             },
           ),
-          PreferenceTitle('Services'),
-          TextFieldPreference('Multi-DoH Server', 'dnsUrl'),
-          TextFieldPreference('Skynet Portal', 'skynetPortal'),
-          PreferenceTitle('About'),
+          PreferenceTitle(tr.settingsPageServicesTitle),
+          TextFieldPreference(tr.settingsPageServicesMultiDoHServer, 'dnsUrl'),
+          TextFieldPreference(
+              tr.settingsPageServicesSkynetPortal, 'skynetPortal'),
+          PreferenceTitle(tr.settingsPageAboutTitle),
           ListTile(
             title: Text(
-              'Show licenses',
+              tr.settingsPageAboutShowLicenses,
             ),
             onTap: () async {
               final packageInfo = await PackageInfo.fromPlatform();

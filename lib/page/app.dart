@@ -132,7 +132,12 @@ class _AppPageState extends State<AppPage> {
             icon: Icon(Icons.share),
             onPressed: () {
               Share.share(
-                  '${app.localizedName} - ${app.localizedSummary} • Download: https://to.skydroid.app/$name');
+                tr.appShareText(
+                  app.localizedName,
+                  app.localizedSummary,
+                  'https://to.skydroid.app/$name',
+                ),
+              );
             },
           )
         ],
@@ -208,7 +213,9 @@ class _AppPageState extends State<AppPage> {
                           height: 8,
                         ),
                         Text(
-                          (app.categories ?? []).join(' • '),
+                          (app.categories ?? [])
+                              .map((s) => translateCategoryName(s))
+                              .join(' • '),
                           style: TextStyle(fontStyle: FontStyle.italic),
                         ),
                         SizedBox(
@@ -232,24 +239,24 @@ class _AppPageState extends State<AppPage> {
                               context: context,
                               builder: (context) => AlertDialog(
                                 title: Text(
-                                  'Verified app',
+                                  tr.verifiedAppDialogTitle,
                                 ),
                                 content: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisSize: MainAxisSize.min,
                                   children: <Widget>[
-                                    Text(
-                                        'This version of the app was verified by the following collections:\n'),
+                                    Text(tr.verifiedAppDialogContentTop + '\n'),
                                     for (var c in verifiedBy)
                                       Text('• ${c.title}'),
-                                    Text(
-                                        '\nCollections can mark releases as verified to offer additional trust. Verifying a release can consist of checking the metadata, testing the app or scanning for malware.'),
+                                    Text('\n' +
+                                        tr.verifiedAppDialogContentBottom),
                                   ],
                                 ),
                                 actions: <Widget>[
                                   FlatButton(
                                     onPressed: Navigator.of(context).pop,
-                                    child: Text('Ok'),
+                                    child:
+                                        Text(tr.verifiedAppDialogCloseButton),
                                   ),
                                 ],
                               ),
@@ -261,7 +268,7 @@ class _AppPageState extends State<AppPage> {
                               SizedBox(
                                 height: 2,
                               ),
-                              Text('Verified'),
+                              Text(tr.verifiedAppBadgeLabel),
                               Text(verifiedBy.length.toString()),
                             ],
                           ),
@@ -289,7 +296,7 @@ class _AppPageState extends State<AppPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
-                            'What\'s new',
+                            tr.appPageWhatsNewTitle,
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                           Text(app.localizedWhatsNew),
@@ -297,7 +304,13 @@ class _AppPageState extends State<AppPage> {
                             Align(
                               alignment: Alignment.centerRight,
                               child: Text(
-                                'Updated ${timeAgo.format(DateTime.fromMillisecondsSinceEpoch(app.lastUpdated))}',
+                                tr.appPageUpdatedTime(
+                                  timeAgo.format(
+                                    DateTime.fromMillisecondsSinceEpoch(
+                                      app.lastUpdated,
+                                    ),
+                                  ),
+                                ),
                                 style: TextStyle(fontStyle: FontStyle.italic),
                               ),
                             ),
@@ -375,12 +388,15 @@ class _AppPageState extends State<AppPage> {
                   child: Padding(
                     padding: const EdgeInsets.only(right: 16),
                     child: Text(
-                      'Updated ${timeAgo.format(DateTime.fromMillisecondsSinceEpoch(app.lastUpdated))}',
+                      tr.appPageUpdatedTime(timeAgo.format(
+                          DateTime.fromMillisecondsSinceEpoch(
+                              app.lastUpdated))),
                       style: TextStyle(fontStyle: FontStyle.italic),
                     ),
                   ),
                 ),
-              if (app.donate != null) LinkWidget('Donate', app.donate),
+              if (app.donate != null)
+                LinkWidget(tr.appPageLinkDonate, app.donate),
               if (app.bitcoin != null)
                 LinkWidget('Bitcoin: ${app.bitcoin}', 'bitcoin:${app.bitcoin}'),
               if (app.litecoin != null)
@@ -392,19 +408,21 @@ class _AppPageState extends State<AppPage> {
               if (app.openCollective != null)
                 LinkWidget('Open Collective',
                     'https://opencollective.com/${app.openCollective}'),
-              if (app.webSite != null) LinkWidget('Web Site', app.webSite),
+              if (app.webSite != null)
+                LinkWidget(tr.appPageLinkWebsite, app.webSite),
               if (app.sourceCode != null)
-                LinkWidget('Source Code', app.sourceCode),
+                LinkWidget(tr.appPageLinkSourceCode, app.sourceCode),
               if (app.issueTracker != null)
-                LinkWidget('Issue Tracker', app.issueTracker),
+                LinkWidget(tr.appPageLinkIssueTracker, app.issueTracker),
               if (app.translation != null)
-                LinkWidget('Translation', app.translation),
-              if (app.changelog != null) LinkWidget('Changelog', app.changelog),
+                LinkWidget(tr.appPageLinkTranslation, app.translation),
+              if (app.changelog != null)
+                LinkWidget(tr.appPageLinkChangelog, app.changelog),
               if (app.license != null)
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    'License: ${app.license}',
+                    tr.appPageLinkLicense(app.license),
                     style: TextStyle(
                       fontSize: 18,
                     ),
@@ -417,7 +435,12 @@ class _AppPageState extends State<AppPage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: Text(
-                      'App added: ${DateTime.fromMillisecondsSinceEpoch(app.added).toIso8601String().split('T')[0]}'),
+                    tr.appPageAddedTime(
+                      DateTime.fromMillisecondsSinceEpoch(app.added)
+                          .toIso8601String()
+                          .split('T')[0],
+                    ),
+                  ),
                 ),
               SizedBox(
                 height: 100,

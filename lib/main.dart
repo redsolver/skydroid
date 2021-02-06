@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:crypto/crypto.dart';
 import 'package:device_apps/device_apps.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_device_locale/flutter_device_locale.dart';
@@ -21,8 +22,11 @@ import 'package:skydroid/page/app.dart';
 import 'package:skydroid/page/collections.dart';
 import 'package:skydroid/page/settings.dart';
 import 'package:skydroid/theme.dart';
+// import 'package:system_info/system_info.dart';
 import 'package:uni_links/uni_links.dart';
 import 'package:yaml/yaml.dart';
+
+import 'package:flutter_gen/gen_l10n/translations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -68,7 +72,9 @@ void main() async {
 
   workTroughReqs();
 
-  runApp(MyApp());
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -127,7 +133,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final str = PrefService.getString('theme');
+    //final str = PrefService.getString('theme');
+
     return AppTheme(
       data: (theme) => _buildThemeData(theme),
       themedWidgetBuilder: (context, theme) {
@@ -136,6 +143,8 @@ class MyApp extends StatelessWidget {
           theme: theme,
           home: MyHomePage(),
           debugShowCheckedModeBanner: false,
+          localizationsDelegates: Translations.localizationsDelegates,
+          supportedLocales: Translations.supportedLocales,
         );
       },
     );
@@ -315,8 +324,12 @@ class _MyHomePageState extends State<MyHomePage> {
     } catch (e, st) {
       //print('');
       addError(e, 'app:$name');
-      //print(e);
-      //print(st);
+
+      if (kDebugMode) {
+        print('app:$name');
+        print(e);
+        print(st);
+      }
       //print('');
       loadingState[name] = 3;
       addToStream(name);
@@ -343,21 +356,21 @@ class _MyHomePageState extends State<MyHomePage> {
     var res = await showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              title: Text('Remove name?'),
-              content: Text(
-                  'Do you really want to remove the name "$name" from your app list? This action doesn\'t touch your installed apps and the name could be added again via a collection.'),
+              title: Text(Translations.of(context).removeNameDialogTitle),
+              content:
+                  Text(Translations.of(context).removeNameDialogContent(name)),
               actions: <Widget>[
                 FlatButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text('Cancel'),
+                  child: Text(Translations.of(context).dialogCancel),
                 ),
                 FlatButton(
                   onPressed: () {
                     Navigator.of(context).pop(true);
                   },
-                  child: Text('Remove'),
+                  child: Text(Translations.of(context).removeNameDialogConfirm),
                 ),
               ],
             ));
@@ -396,7 +409,7 @@ class _MyHomePageState extends State<MyHomePage> {
       final App a = apps.get(key);
 
       if (categoryFilter != null) {
-        if (!a.categories.contains(categoryFilter)) {
+        if (!(a.categories ?? []).contains(categoryFilter)) {
           continue;
         }
       }
@@ -445,6 +458,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    tr = Translations.of(context);
+
     if (currentPage == 0) {
       print('|||| setState');
       namesOrder = updateNamesOrder();
@@ -455,10 +470,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ? Text(
                 'SkyDroid' +
                     (currentPage == 0
-                        ? (categoryFilter == null ? '' : ' • ${categoryFilter}')
+                        ? (categoryFilter == null
+                            ? ''
+                            : ' • ${translateCategoryName(categoryFilter)}')
                         : currentPage == 1
-                            ? ' • Collections'
-                            : ' • Settings'),
+                            ? ' • ${Translations.of(context).navigationCollectionsPageTitle}'
+                            : ' • ${Translations.of(context).navigationSettingsPageTitle}'),
               )
             : TextField(
                 autofocus: true,
@@ -503,7 +520,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           var res = await showDialog(
                               context: context,
                               builder: (context) => AlertDialog(
-                                    title: Text('Filter by category'),
+                                    title: Text(
+                                      Translations.of(context)
+                                          .filterDialogTitle,
+                                    ),
                                     content: SizedBox(
                                       height:
                                           MediaQuery.of(context).size.height -
@@ -517,7 +537,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 child: Padding(
                                                   padding: const EdgeInsets.all(
                                                       12.0),
-                                                  child: Text(cat),
+                                                  child: Text(
+                                                      translateCategoryName(
+                                                          cat)),
                                                 ),
                                                 onTap: () {
                                                   Navigator.of(context)
@@ -531,7 +553,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                     actions: [
                                       FlatButton(
                                         onPressed: Navigator.of(context).pop,
-                                        child: Text('Cancel'),
+                                        child: Text(
+                                          Translations.of(context).dialogCancel,
+                                        ),
                                       ),
                                     ],
                                   ));
@@ -585,7 +609,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text(
-                                    'Hmm nothing here. Try adding a name via the "Plus"-Button in the bottom right corner.',
+                                    tr.appListPageEmptyWarning,
                                     textAlign: TextAlign.center,
                                   ),
                                 ),
@@ -616,7 +640,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                                             bool error = false;
                                             if (app == null) {
-                                              state = 'Loading metadata...';
+                                              state = tr.appListLoadingMetadata;
                                               loading = true;
                                             } else {
                                               final lSt =
@@ -830,7 +854,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     size: 28,
                                   ),
                                   Text(
-                                    'Errors',
+                                    tr.errorsSheetTitle,
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20,
@@ -860,7 +884,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             if (globalErrors[e].length > 3)
                               Text(
-                                '...${globalErrors[e].length - 3} more',
+                                tr.errorsSheetOverflowCount(
+                                    globalErrors[e].length - 3),
                                 style: TextStyle(
                                   fontSize: 16,
                                   color: Colors.black,
@@ -887,15 +912,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 String result = await showDialog(
                   context: context,
                   builder: (context) => AlertDialog(
-                    title: Text('Add app or collection'),
+                    title: Text(tr.addDomainNameDialogTitle),
                     content: Theme(
                       data: Theme.of(context).copyWith(
                           primaryColor: Theme.of(context).accentColor),
                       child: TextField(
                         controller: ctrl,
                         decoration: InputDecoration(
-                          labelText: 'Name (domain)',
-                          hintText: 'e.g. skydroid.redsolver',
+                          labelText: tr.addDomainNameDialogInputLabel,
+                          hintText: tr.addDomainNameDialogInputHint,
                           border: OutlineInputBorder(),
                         ),
                         onSubmitted: (str) => Navigator.of(context).pop(str),
@@ -907,11 +932,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     actions: <Widget>[
                       FlatButton(
                         onPressed: Navigator.of(context).pop,
-                        child: Text('Cancel'),
+                        child: Text(tr.dialogCancel),
                       ),
                       FlatButton(
                         onPressed: () => Navigator.of(context).pop(ctrl.text),
-                        child: Text('Add'),
+                        child: Text(tr.addDomainNameDialogConfirm),
                       ),
                     ],
                   ),
@@ -932,15 +957,15 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         items: [
           BottomNavigationBarItem(
-            title: Text('Apps'),
+            title: Text(tr.navigationAppsPageTitle),
             icon: Icon(Icons.apps),
           ),
           BottomNavigationBarItem(
-            title: Text('Collections'),
+            title: Text(tr.navigationCollectionsPageTitle),
             icon: Icon(Icons.featured_play_list),
           ),
           BottomNavigationBarItem(
-            title: Text('Settings'),
+            title: Text(tr.navigationSettingsPageTitle),
             icon: Icon(Icons.settings),
           ),
         ],
@@ -954,7 +979,7 @@ class _MyHomePageState extends State<MyHomePage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Checking name...'),
+        title: Text(tr.addDomainNameLoadingDialogTitle),
         content: LinearProgressIndicator(),
       ),
       barrierDismissible: false,
@@ -988,12 +1013,12 @@ class _MyHomePageState extends State<MyHomePage> {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text('Something went wrong'),
+          title: Text(tr.errorDialogTitle),
           content: Text(e.toString()),
           actions: <Widget>[
             FlatButton(
               onPressed: Navigator.of(context).pop,
-              child: Text('Ok'),
+              child: Text(tr.errorDialogCloseButton),
             ),
           ],
         ),
@@ -1060,7 +1085,7 @@ class _MyHomePageState extends State<MyHomePage> {
             collections.put(name['name'], collection);
           }
         } else {
-          throw Exception('Metadata Hash mismatch.');
+          throw tr.errorMetadataHashMismatch;
         }
       } else if (res.statusCode == 429) {
 /*         metaLog('Too many requests'); */
@@ -1069,7 +1094,7 @@ class _MyHomePageState extends State<MyHomePage> {
         await Future.delayed(Duration(seconds: 1));
         retry = true;
       } else {
-        throw Exception('HTTP ${res.statusCode} while loading metadata');
+        throw tr.errorHttpStatusCode(res.statusCode);
       }
       // addToStream(name['name']);
     }
@@ -1115,7 +1140,7 @@ Future<Map> checkName(String name, {String type}) async {
 
   final list = await completer.future;
   if (list == null) {
-    throw Exception('DNS Record not available');
+    throw tr.errorDnsRecordNotAvailable;
   }
 
   for (var answer in list) {
@@ -1143,7 +1168,7 @@ Future<Map> checkName(String name, {String type}) async {
       return m;
     }
   }
-  throw Exception('Name has no skydroid record');
+  throw tr.errorDomainNameHasNoRecord;
 }
 
 Future<void> checkNameBatch(Map<String, Completer<List<String>>> batch) async {
@@ -1167,7 +1192,7 @@ Future<void> checkNameBatch(Map<String, Completer<List<String>>> batch) async {
             .complete(names[name] == null ? null : names[name].cast<String>());
       }
     } else {
-      throw Exception('Multi-DNS-Query HTTP ${res.statusCode}');
+      throw Exception(tr.errorHttpStatusCodeMultiDnsQuery(res.statusCode));
     }
   } catch (e, st) {
     // print(e);

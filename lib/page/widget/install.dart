@@ -203,13 +203,13 @@ class _InstallWidgetState extends State<InstallWidget>
           showDialog(
             context: context,
             builder: (context) => AlertDialog(
-              title: Text('Hash Mismatch'),
-              content: Text(
-                  'The downloaded file doesn\'t correspond to the correct hash in the metadata.\n\nExpected Hash: ${build.sha256}\nGot Hash: $hash\n\nPlease contact the app author'),
+              title: Text(tr.downloadHashMismatchErrorDialogTitle),
+              content: Text(tr.downloadHashMismatchErrorDialogContent(
+                  build.sha256, hash)),
               actions: [
                 FlatButton(
                   onPressed: Navigator.of(context).pop,
-                  child: Text('Ok'),
+                  child: Text(tr.errorDialogCloseButton),
                 ),
               ],
             ),
@@ -270,8 +270,11 @@ class _InstallWidgetState extends State<InstallWidget>
                         onPressed: () async {
                           _downloadAndStartInstall();
                         },
-                        child:
-                            Text('Install (Version ${app.currentVersionName})'),
+                        child: Text(
+                          tr.appPageInstallButton(
+                            app.currentVersionName,
+                          ),
+                        ),
                       ),
                     ),
                   if (expectedVersionCode != application?.versionCode &&
@@ -282,14 +285,14 @@ class _InstallWidgetState extends State<InstallWidget>
                         onPressed: () async {
                           _downloadAndStartInstall();
                         },
-                        child: Text('Retry install'),
+                        child: Text(tr.appPageRetryInstallButton),
                       ),
                     ),
                     Expanded(
                         child: Align(
                       alignment: Alignment.center,
                       child: Text(
-                        'Installing APK file...',
+                        tr.appPageInstallingApkProcess,
                       ),
                     ))
                   ],
@@ -308,7 +311,8 @@ class _InstallWidgetState extends State<InstallWidget>
                             },
                           );
                         },
-                        child: Text('Uninstall (${application.versionName})'),
+                        child: Text(
+                            tr.appPageUninstallButton(application.versionName)),
                       ),
                     ),
                     SizedBox(
@@ -326,7 +330,7 @@ class _InstallWidgetState extends State<InstallWidget>
                                   },
                                 );
                               },
-                              child: Text('Open'),
+                              child: Text(tr.appPageLaunchAppButton),
                             ),
                           )
                         : Expanded(
@@ -335,7 +339,8 @@ class _InstallWidgetState extends State<InstallWidget>
                               onPressed: () async {
                                 _downloadAndStartInstall();
                               },
-                              child: Text('Update (${app.currentVersionName})'),
+                              child: Text(tr
+                                  .appPageUpdateButton(app.currentVersionName)),
                             ),
                           ),
                   ],
@@ -351,7 +356,7 @@ class _InstallWidgetState extends State<InstallWidget>
                           state = InstallState.none;
                         });
                       },
-                      child: Text('Cancel'),
+                      child: Text(tr.dialogCancel),
                     ),
                   ),
                   Expanded(
@@ -359,8 +364,9 @@ class _InstallWidgetState extends State<InstallWidget>
                     alignment: Alignment.center,
                     child: Text(
                       totalFileSize == null
-                          ? 'Starting download...'
-                          : '${(progress * 100).round().toString()} % of $totalFileSize',
+                          ? tr.appPageInstallationDownloadStarting
+                          : tr.appPageInstallationProgress(
+                              (progress * 100).round(), totalFileSize),
                       textAlign: TextAlign.center,
                     ),
                   ))

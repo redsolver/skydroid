@@ -1,0 +1,86 @@
+removeNameDialogTitle: Domain entfernen?
+removeNameDialogContent: Möchtest du wirklich die Domain "{name}" von deiner App-Liste entfernen? Diese Aktion beinflusst keine installierten Apps und die Domain könnte durch eine Sammlung wieder hinzugefügt werden.
+removeNameDialogConfirm: Entfernen
+dialogCancel: Abbrechen
+navigationAppsPageTitle: Apps
+navigationCollectionsPageTitle: Sammlungen
+navigationSettingsPageTitle: Optionen
+filterDialogTitle: Filtern nach Kategorie
+categoryConnectivity: Verbindung
+categoryDevelopment: Entwicklung
+categoryGames: Spiele
+categoryGraphics: Grafik
+categoryInternet: Internet
+categoryMoney: Geld
+categoryMultimedia: Multimedia
+categoryNavigation: Navigation
+categoryPhoneAndSMS: Telefon / SMS
+categoryReading: Lesen
+categoryScienceAndEducation: Wissenschaft / Bildung
+categorySecurity: Sicherheit
+categorySportsAndHealth: Sport / Gesundheit
+categorySystem: System
+categoryTheming: Aussehen
+categoryTime: Zeit
+categoryWriting: Schreiben
+appListPageEmptyWarning: Ziemlich leer hier. Versuche eine Domain mit dem "Plus"-Knopf unten rechts hinzuzufügen.
+appListLoadingMetadata: Lädt metadaten...
+errorsSheetTitle: Fehler
+errorsSheetOverflowCount: ...{count} mehr
+addDomainNameDialogTitle: App oder Sammlung hinzufügen
+addDomainNameDialogInputLabel: Name (Domain)
+addDomainNameDialogInputHint: z. B. skydroid.app
+addDomainNameDialogConfirm: Hinzufügen
+addDomainNameLoadingDialogTitle: Domain wird geprüft...
+errorDialogTitle: Etwas ist schiefgelaufen
+errorDialogCloseButton: Ok
+verifiedAppDialogTitle: Verifizierte app
+verifiedAppDialogContentTop: "Diese Version der App wurde von den folgenden Sammlungen verifiziert:"
+verifiedAppDialogContentBottom: Sammlungen können Freigaben als verifiziert markieren, um zusätzliches Vertrauen zu schaffen. Die Verifizierung einer Freigabe kann aus der Überprüfung der Metadaten, dem Testen der App oder dem Scannen auf Malware bestehen.
+verifiedAppDialogCloseButton: Ok
+verifiedAppBadgeLabel: Verifiziert
+appPageWhatsNewTitle: Neuigkeiten
+appPageUpdatedTime: Aktualisiert {time}
+appPageAddedTime: "App hinzugefügt: {time}"
+appPageLinkDonate: Spenden
+appPageLinkWebsite: Website
+appPageLinkSourceCode: Quelltext
+appPageLinkIssueTracker: Probleme melden
+appPageLinkTranslation: Übersetzung
+appPageLinkChangelog: Änderungsprotokoll
+appPageLinkLicense: "Lizenz: {license}"
+collectionListItemLoading: Lädt...
+collectionListItemTitle: "{title} ({domainName}) • {appCount} Apps"
+collectionRecommendationsCardTitle: Ein paar Empfehlungen für den Einstieg
+collectionLoadingDialogTitle: Sammlung wird geladen...
+collectionLoadingDialogContent: Dies kann bis zu 30 Sekunden dauern, abhängig von der Größe der Sammlung
+removeCollectionDialogTitle: Sammlung entfernen?
+removeCollectionDialogContent: Möchtest du wirklich die Sammlung "{name}" entfernen? Wenn du auch über diese Sammlung hinzugefügte Apps entfernen möchten, wähle "Mit Apps entfernen".
+removeCollectionDialogConfirmWithApps: Mit Apps entfernen
+removeCollectionDialogConfirm: Entfernen
+downloadHashMismatchErrorDialogTitle: Hash-Unstimmigkeit
+downloadHashMismatchErrorDialogContent: "Die heruntergeladene Datei entspricht nicht dem korrekten Hash in den Metadaten.\n\nErwarteter Hash: {expectedHash}\nErhaltener Hash: {hash}\n\nBitte wenden Sie sich an den App-Autor"
+appPageInstallButton: Installieren (Version {version})
+appPageRetryInstallButton: Installation erneut versuchen
+appPageInstallingApkProcess: APK-Datei wird installiert...
+appPageUninstallButton: Deinstallieren ({version})
+appPageLaunchAppButton: Öffnen
+appPageUpdateButton: Aktualisieren ({version})
+appPageInstallationDownloadStarting: Download wird gestartet...
+appPageInstallationProgress: "{progress} % von {totalFileSize}"
+appShareText: "{localizedName} - {localizedSummary} • Download: {link}"
+errorMetadataHashMismatch: Hash-Unstimmigkeit bei Metadaten
+errorHttpStatusCode: HTTP {statusCode} beim Laden von Metadaten
+errorDnsRecordNotAvailable: DNS-Eintrag nicht verfügbar
+errorDomainNameHasNoRecord: Domain hat keinen Skydroid-Eintrag
+errorHttpStatusCodeMultiDnsQuery: HTTP {statusCode} bei Multi-DoH-Abfrage
+settingsPageAppThemeTitle: App Thema
+settingsPageAppThemeOptionLight: Hell
+settingsPageAppThemeOptionSepia: Sepia
+settingsPageAppThemeOptionDark: Dunkel
+settingsPageAppThemeOptionBlack: Schwarz
+settingsPageServicesTitle: Dienste
+settingsPageServicesMultiDoHServer: Multi-DoH Server
+settingsPageServicesSkynetPortal: Skynet Portal
+settingsPageAboutTitle: Über
+settingsPageAboutShowLicenses: Lizenzen anzeigen

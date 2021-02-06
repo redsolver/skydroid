@@ -11,6 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # Internationalization support.
+  flutter_localizations:
+    sdk: flutter
   http: ^0.12.2
   path_provider: ^1.6.11
   permission_handler: ^5.0.1+1
@@ -19,7 +22,7 @@ dependencies:
   yaml: ^2.2.1
   crypto: ^2.1.4
   cached_network_image: ^2.2.0+1
-  flutter_html: ^1.0.0
+  flutter_html: ^1.2.0
   markdown: ^2.1.5
   flutter_animation_progress_bar: ^1.0.0
   filesize: ^1.0.4
@@ -36,11 +39,10 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.3
+  cupertino_icons: ^1.0.0
   convert: ^2.1.1
+  system_info: ^0.1.3
 
-dependency_overrides:
-  flutter_svg: 0.18.0 # Breaking changes with Flutter 1.20
 
 dev_dependencies:
   flutter_test:
@@ -61,6 +63,7 @@ flutter_icons:
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter.
 flutter:
+  generate: true
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

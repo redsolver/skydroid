@@ -1,0 +1,86 @@
+removeNameDialogTitle: Remove name?
+removeNameDialogContent: Do you really want to remove the name "{name}" from your app list? This action doesn't touch your installed apps and the name could be added again via a collection.
+removeNameDialogConfirm: Remove
+dialogCancel: Cancel
+navigationAppsPageTitle: Apps
+navigationCollectionsPageTitle: Collections
+navigationSettingsPageTitle: Settings
+filterDialogTitle: Filter by category
+categoryConnectivity: Connectivity
+categoryDevelopment: Development
+categoryGames: Games
+categoryGraphics: Graphics
+categoryInternet: Internet
+categoryMoney: Money
+categoryMultimedia: Multimedia
+categoryNavigation: Navigation
+categoryPhoneAndSMS: Phone & SMS
+categoryReading: Reading
+categoryScienceAndEducation: Science & Education
+categorySecurity: Security
+categorySportsAndHealth: Sports & Health
+categorySystem: System
+categoryTheming: Theming
+categoryTime: Time
+categoryWriting: Writing
+appListPageEmptyWarning: Hmm nothing here. Try adding a name via the "Plus"-Button in the bottom right corner.
+appListLoadingMetadata: Loading metadata...
+errorsSheetTitle: Errors
+errorsSheetOverflowCount: ...{count} more
+addDomainNameDialogTitle: Add app or collection
+addDomainNameDialogInputLabel: Name (domain)
+addDomainNameDialogInputHint: e.g. skydroid.app
+addDomainNameDialogConfirm: Add
+addDomainNameLoadingDialogTitle: Checking name...
+errorDialogTitle: Something went wrong
+errorDialogCloseButton: Ok
+verifiedAppDialogTitle: Verified app
+verifiedAppDialogContentTop: "This version of the app was verified by the following collections:"
+verifiedAppDialogContentBottom: Collections can mark releases as verified to offer additional trust. Verifying a release can consist of checking the metadata, testing the app or scanning for malware.
+verifiedAppDialogCloseButton: Ok
+verifiedAppBadgeLabel: Verified
+appPageWhatsNewTitle: What's new
+appPageUpdatedTime: Updated {time}
+appPageAddedTime: "App added: {time}"
+appPageLinkDonate: Donate
+appPageLinkWebsite: Web Site
+appPageLinkSourceCode: Source Code
+appPageLinkIssueTracker: Issue Tracker
+appPageLinkTranslation: Translation
+appPageLinkChangelog: Changelog
+appPageLinkLicense: "License: {license}"
+collectionListItemLoading: Loading...
+collectionListItemTitle: "{title} ({domainName}) • {appCount} Apps"
+collectionRecommendationsCardTitle: Some recommendations to get you started
+collectionLoadingDialogTitle: Loading collection...
+collectionLoadingDialogContent: This can take up to 30 seconds, depending on the size of the collection
+removeCollectionDialogTitle: Remove collection?
+removeCollectionDialogContent: Do you really want to remove the collection "{name}"? If you also want to remove apps added through this collection, select "Remove with Apps".
+removeCollectionDialogConfirmWithApps: Remove with Apps
+removeCollectionDialogConfirm: Remove
+downloadHashMismatchErrorDialogTitle: Hash Mismatch
+downloadHashMismatchErrorDialogContent: "The downloaded file doesn't correspond to the correct hash in the metadata.\n\nExpected Hash: {expectedHash}\nGot Hash: {hash}\n\nPlease contact the app author"
+appPageInstallButton: Install (Version {version})
+appPageRetryInstallButton: Retry install
+appPageInstallingApkProcess: Installing APK file...
+appPageUninstallButton: Uninstall ({version})
+appPageLaunchAppButton: Open
+appPageUpdateButton: Update ({version})
+appPageInstallationDownloadStarting: Starting download...
+appPageInstallationProgress: "{progress} % of {totalFileSize}"
+appShareText: "{localizedName} - {localizedSummary} • Download: {link}"
+errorMetadataHashMismatch: Metadata Hash mismatch.
+errorHttpStatusCode: HTTP {statusCode} while loading metadata
+errorDnsRecordNotAvailable: DNS Record not available
+errorDomainNameHasNoRecord: Name has no skydroid record
+errorHttpStatusCodeMultiDnsQuery: HTTP {statusCode} on Multi-DoH query
+settingsPageAppThemeTitle: App Theme
+settingsPageAppThemeOptionLight: Light
+settingsPageAppThemeOptionSepia: Sepia
+settingsPageAppThemeOptionDark: Dark
+settingsPageAppThemeOptionBlack: Black
+settingsPageServicesTitle: Services
+settingsPageServicesMultiDoHServer: Multi-DoH Server
+settingsPageServicesSkynetPortal: Skynet Portal
+settingsPageAboutTitle: About
+settingsPageAboutShowLicenses: Show licenses
