@@ -2,9 +2,7 @@
 
 SkyDroid is a decentralized domain-based Android App Store which offers easy and fast app distribution, discoverability and security through collections, multi-language support, multiple Themes, Search and Filter options, nice error handling and of course a good user experience.
 
-This is the main part of my submission to the [‘Own The Internet’ Hackathon](https://gitcoin.co/hackathon/own-the-internet).
-
-Other parts are the [F-Droid bridge](https://github.com/redsolver/skydroid-fdroid-bridge) and the [Multi-DoH Server](https://github.com/redsolver/multi-doh-server).
+Related repos are the [F-Droid bridge](https://github.com/redsolver/skydroid-fdroid-bridge) and the [Multi-DoH Server](https://github.com/redsolver/multi-doh-server).
 
 ## Screenshots
 
@@ -21,8 +19,6 @@ Other parts are the [F-Droid bridge](https://github.com/redsolver/skydroid-fdroi
 3. Open SkyDroid and go to "Collections"
 4. Add some recommended Collections
 5. Navigate back to "Apps" and enjoy!
-
-Note: The F-Droid collection's domain name was changed to `fdroid-app` lately. Please remove the old `papagei` collection by long-pressing it and choosing "Remove with Apps".
 
 ## How to publish your own app
 
@@ -219,6 +215,10 @@ Example: `skydroid-app=1+AADbpx41U1UCRcIhSHvzRAgt8LJYaDlxiLyqHnPj8ckXAA+0a2e07bb
 
 - Add this TXT Record to a domain/name of your choice. (You can use a normal or a Handshake domain)
 - Add you domain/name in the SkyDroid app with the "Plus"-button in the bottom right
+
+## About
+
+This app was initially developed as a submission to the [‘Own The Internet’ Hackathon](https://gitcoin.co/hackathon/own-the-internet).
 
 ## Planned features
 
