@@ -22,7 +22,6 @@ import 'package:skydroid/page/app.dart';
 import 'package:skydroid/page/collections.dart';
 import 'package:skydroid/page/settings.dart';
 import 'package:skydroid/theme.dart';
-// import 'package:system_info/system_info.dart';
 import 'package:uni_links/uni_links.dart';
 import 'package:yaml/yaml.dart';
 
@@ -30,6 +29,7 @@ import 'package:flutter_gen/gen_l10n/translations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await PrefService.init();
   PrefService.setDefaultValues({
     'theme': 'light',
@@ -56,6 +56,7 @@ void main() async {
   Hive.registerAdapter(BuildAdapter());
   Hive.registerAdapter(CollectionAdapter());
   Hive.registerAdapter(AppReferenceAdapter());
+  Hive.registerAdapter(ABISpecificBuildAdapter());
 
   names = await Hive.openBox('names'); // name -> {name ...}
 

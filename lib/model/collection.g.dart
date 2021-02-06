@@ -97,11 +97,7 @@ Collection _$CollectionFromJson(Map json) {
     ..description = json['description'] as String
     ..icon = json['icon'] as String
     ..apps = (json['apps'] as List)
-        ?.map((e) => e == null
-            ? null
-            : AppReference.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
+        ?.map((e) => e == null ? null : AppReference.fromJson(e as Map))
         ?.toList()
     ..srcHash = json['srcHash'] as String;
 }

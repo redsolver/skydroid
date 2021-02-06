@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:convert/convert.dart';
 import 'package:crypto/crypto.dart';
 import 'package:device_apps/device_apps.dart';
+import 'package:device_info/device_info.dart';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -55,9 +56,58 @@ class _InstallWidgetState extends State<InstallWidget>
 
   int expectedVersionCode;
 
+  String usedABI;
+
   Application application;
 
   _getStatus() async {
+    final deviceInfo = DeviceInfoPlugin();
+    final androidInfo = await deviceInfo.androidInfo;
+
+    final build = app.builds.firstWhere(
+      (element) => element.versionCode == app.currentVersionCode,
+      orElse: () => null,
+    );
+
+    if (build == null) {
+      setState(() {
+        _appCompatibilityError = tr.errorAppInvalidCurrentBuild;
+      });
+      return;
+    }
+
+    if (androidInfo.version.sdkInt < (build.minSdkVersion ?? 0)) {
+      setState(() {
+        _appCompatibilityError = tr.errorAppCompatibilitySdkVersionTooLow(
+          androidInfo.version.sdkInt,
+          build.minSdkVersion,
+        );
+      });
+      return;
+    }
+    if (build.abis != null) {
+      for (final abi in androidInfo.supportedAbis) {
+        if (build.abis.containsKey(abi)) {
+          usedABI = abi;
+
+          break;
+        }
+      }
+    }
+
+    if (usedABI == null) {
+      if (build.apkLink == null) {
+        setState(() {
+          _appCompatibilityError = tr.errorAppCompatibilityNoMatchingABI(
+            androidInfo.supportedAbis,
+            build.abis?.keys?.toList(),
+          );
+        });
+        return;
+      }
+    }
+    //print('usedABI $usedABI');
+
     while (true) {
       final a = await DeviceApps.getApp(app.packageName);
       if (!mounted) break;
@@ -95,6 +145,8 @@ class _InstallWidgetState extends State<InstallWidget>
     }
   }
 
+  String _appCompatibilityError;
+
   File lastApk;
 
   bool ignoreLifecycle = true;
@@ -119,16 +171,27 @@ class _InstallWidgetState extends State<InstallWidget>
   }
 
   _downloadAndStartInstall() async {
-    final build = app.builds
+    final currentBuild = app.builds
         .firstWhere((element) => element.versionCode == app.currentVersionCode);
+
+    String apkLink;
+    String apkSha256;
+
+    if (usedABI != null) {
+      apkLink = currentBuild.abis[usedABI].apkLink;
+      apkSha256 = currentBuild.abis[usedABI].sha256;
+    } else {
+      apkLink = currentBuild.apkLink;
+      apkSha256 = currentBuild.sha256;
+    }
 
     var appDir = await getTemporaryDirectory();
     print(appDir);
 
-    var apk = File('${appDir.path}/apk/${build.sha256}.apk');
+    var apk = File('${appDir.path}/apk/${apkSha256}.apk');
 
     if (apk.existsSync()) {
-      _install(apk, build.versionCode);
+      _install(apk, currentBuild.versionCode);
       return;
     }
 
@@ -141,7 +204,7 @@ class _InstallWidgetState extends State<InstallWidget>
       'GET',
       Uri.parse(
         resolveLink(
-          build.apkLink,
+          apkLink,
         ),
       ),
     );
@@ -199,13 +262,13 @@ class _InstallWidgetState extends State<InstallWidget>
                               checkingIntegrity = false;
                             }); */
 
-        if (hash.toString() != build.sha256) {
+        if (hash.toString() != apkSha256) {
           showDialog(
             context: context,
             builder: (context) => AlertDialog(
               title: Text(tr.downloadHashMismatchErrorDialogTitle),
-              content: Text(tr.downloadHashMismatchErrorDialogContent(
-                  build.sha256, hash)),
+              content: Text(
+                  tr.downloadHashMismatchErrorDialogContent(apkSha256, hash)),
               actions: [
                 FlatButton(
                   onPressed: Navigator.of(context).pop,
@@ -222,7 +285,7 @@ class _InstallWidgetState extends State<InstallWidget>
         await tmpApk.rename(apk.path);
 
         print('done');
-        _install(apk, build.versionCode);
+        _install(apk, currentBuild.versionCode);
       },
       onError: (e) {
         print(e);
@@ -260,119 +323,136 @@ class _InstallWidgetState extends State<InstallWidget>
                 right: 8.0,
                 top: 8.0,
                 bottom: state == InstallState.downloading ? 0 : 8),
-            child: Row(
-              children: <Widget>[
-                if (state == InstallState.none) ...[
-                  if (application == null && expectedVersionCode == null)
-                    Expanded(
-                      child: RaisedButton(
-                        color: Theme.of(context).accentColor,
-                        onPressed: () async {
-                          _downloadAndStartInstall();
-                        },
+            child: _appCompatibilityError != null
+                ? Row(
+                    children: [
+                      Expanded(
                         child: Text(
-                          tr.appPageInstallButton(
-                            app.currentVersionName,
+                          _appCompatibilityError,
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.red,
+                            fontWeight: FontWeight.bold,
                           ),
+                          textAlign: TextAlign.center,
                         ),
                       ),
-                    ),
-                  if (expectedVersionCode != application?.versionCode &&
-                      expectedVersionCode != null) ...[
-                    Expanded(
-                      child: RaisedButton(
-                        color: Theme.of(context).accentColor,
-                        onPressed: () async {
-                          _downloadAndStartInstall();
-                        },
-                        child: Text(tr.appPageRetryInstallButton),
-                      ),
-                    ),
-                    Expanded(
-                        child: Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        tr.appPageInstallingApkProcess,
-                      ),
-                    ))
-                  ],
-                  if ((expectedVersionCode == null ||
-                          expectedVersionCode == application?.versionCode) &&
-                      application != null) ...[
-                    Expanded(
-                      child: RaisedButton(
-                        color: Theme.of(context).errorColor,
-                        onPressed: () async {
-                          expectedVersionCode = null;
-                          await platform.invokeMethod(
-                            'uninstall',
-                            {
-                              'packageName': '${app.packageName}',
-                            },
-                          );
-                        },
-                        child: Text(
-                            tr.appPageUninstallButton(application.versionName)),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 8,
-                    ),
-                    application.versionCode >= app.currentVersionCode
-                        ? Expanded(
-                            child: RaisedButton(
-                              color: Theme.of(context).accentColor,
-                              onPressed: () async {
-                                await platform.invokeMethod(
-                                  'launch',
-                                  {
-                                    'packageName': '${app.packageName}',
-                                  },
-                                );
-                              },
-                              child: Text(tr.appPageLaunchAppButton),
-                            ),
-                          )
-                        : Expanded(
+                    ],
+                  )
+                : Row(
+                    children: <Widget>[
+                      if (state == InstallState.none) ...[
+                        if (application == null && expectedVersionCode == null)
+                          Expanded(
                             child: RaisedButton(
                               color: Theme.of(context).accentColor,
                               onPressed: () async {
                                 _downloadAndStartInstall();
                               },
-                              child: Text(tr
-                                  .appPageUpdateButton(app.currentVersionName)),
+                              child: Text(
+                                tr.appPageInstallButton(
+                                  app.currentVersionName,
+                                ),
+                              ),
                             ),
                           ),
-                  ],
-                ],
-                if (state == InstallState.downloading) ...[
-                  Expanded(
-                    child: RaisedButton(
-                      color: Theme.of(context).errorColor,
-                      onPressed: () async {
-                        cancelDownload = true;
-                        await sub?.cancel();
-                        setState(() {
-                          state = InstallState.none;
-                        });
-                      },
-                      child: Text(tr.dialogCancel),
-                    ),
+                        if (expectedVersionCode != application?.versionCode &&
+                            expectedVersionCode != null) ...[
+                          Expanded(
+                            child: RaisedButton(
+                              color: Theme.of(context).accentColor,
+                              onPressed: () async {
+                                _downloadAndStartInstall();
+                              },
+                              child: Text(tr.appPageRetryInstallButton),
+                            ),
+                          ),
+                          Expanded(
+                              child: Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              tr.appPageInstallingApkProcess,
+                            ),
+                          ))
+                        ],
+                        if ((expectedVersionCode == null ||
+                                expectedVersionCode ==
+                                    application?.versionCode) &&
+                            application != null) ...[
+                          Expanded(
+                            child: RaisedButton(
+                              color: Theme.of(context).errorColor,
+                              onPressed: () async {
+                                expectedVersionCode = null;
+                                await platform.invokeMethod(
+                                  'uninstall',
+                                  {
+                                    'packageName': '${app.packageName}',
+                                  },
+                                );
+                              },
+                              child: Text(tr.appPageUninstallButton(
+                                  application.versionName)),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          application.versionCode >= app.currentVersionCode
+                              ? Expanded(
+                                  child: RaisedButton(
+                                    color: Theme.of(context).accentColor,
+                                    onPressed: () async {
+                                      await platform.invokeMethod(
+                                        'launch',
+                                        {
+                                          'packageName': '${app.packageName}',
+                                        },
+                                      );
+                                    },
+                                    child: Text(tr.appPageLaunchAppButton),
+                                  ),
+                                )
+                              : Expanded(
+                                  child: RaisedButton(
+                                    color: Theme.of(context).accentColor,
+                                    onPressed: () async {
+                                      _downloadAndStartInstall();
+                                    },
+                                    child: Text(tr.appPageUpdateButton(
+                                        app.currentVersionName)),
+                                  ),
+                                ),
+                        ],
+                      ],
+                      if (state == InstallState.downloading) ...[
+                        Expanded(
+                          child: RaisedButton(
+                            color: Theme.of(context).errorColor,
+                            onPressed: () async {
+                              cancelDownload = true;
+                              await sub?.cancel();
+                              setState(() {
+                                state = InstallState.none;
+                              });
+                            },
+                            child: Text(tr.dialogCancel),
+                          ),
+                        ),
+                        Expanded(
+                            child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            totalFileSize == null
+                                ? tr.appPageInstallationDownloadStarting
+                                : tr.appPageInstallationProgress(
+                                    (progress * 100).round(), totalFileSize),
+                            textAlign: TextAlign.center,
+                          ),
+                        ))
+                      ]
+                    ],
                   ),
-                  Expanded(
-                      child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      totalFileSize == null
-                          ? tr.appPageInstallationDownloadStarting
-                          : tr.appPageInstallationProgress(
-                              (progress * 100).round(), totalFileSize),
-                      textAlign: TextAlign.center,
-                    ),
-                  ))
-                ]
-              ],
-            ),
           ),
           if (state == InstallState.downloading)
             SizedBox(

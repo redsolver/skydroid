@@ -139,6 +139,7 @@ class BuildAdapter extends TypeAdapter<Build> {
       ..versionCode = fields[2] as int
       ..sha256 = fields[3] as String
       ..apkLink = fields[4] as String
+      ..abis = (fields[11] as Map)?.cast<String, ABISpecificBuild>()
       ..size = fields[5] as int
       ..minSdkVersion = fields[7] as int
       ..targetSdkVersion = fields[8] as int
@@ -149,7 +150,7 @@ class BuildAdapter extends TypeAdapter<Build> {
   @override
   void write(BinaryWriter writer, Build obj) {
     writer
-      ..writeByte(9)
+      ..writeByte(10)
       ..writeByte(1)
       ..write(obj.versionName)
       ..writeByte(2)
@@ -158,6 +159,8 @@ class BuildAdapter extends TypeAdapter<Build> {
       ..write(obj.sha256)
       ..writeByte(4)
       ..write(obj.apkLink)
+      ..writeByte(11)
+      ..write(obj.abis)
       ..writeByte(5)
       ..write(obj.size)
       ..writeByte(7)
@@ -181,6 +184,42 @@ class BuildAdapter extends TypeAdapter<Build> {
           typeId == other.typeId;
 }
 
+class ABISpecificBuildAdapter extends TypeAdapter<ABISpecificBuild> {
+  @override
+  final int typeId = 6;
+
+  @override
+  ABISpecificBuild read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return ABISpecificBuild()
+      ..apkLink = fields[1] as String
+      ..sha256 = fields[2] as String;
+  }
+
+  @override
+  void write(BinaryWriter writer, ABISpecificBuild obj) {
+    writer
+      ..writeByte(2)
+      ..writeByte(1)
+      ..write(obj.apkLink)
+      ..writeByte(2)
+      ..write(obj.sha256);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ABISpecificBuildAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
@@ -200,16 +239,16 @@ App _$AppFromJson(Map json) {
     ..localized = (json['localized'] as Map)?.map(
       (k, e) => MapEntry(k as String, e as Map),
     )
+    ..localizedPhoneScreenshotsCache =
+        (json['localizedPhoneScreenshotsCache'] as List)
+            ?.map((e) => e as String)
+            ?.toList()
     ..summary = json['summary'] as String
     ..description = json['description'] as String
     ..whatsNew = json['whatsNew'] as String
     ..icon = json['icon'] as String
     ..builds = (json['builds'] as List)
-        ?.map((e) => e == null
-            ? null
-            : Build.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
+        ?.map((e) => e == null ? null : Build.fromJson(e as Map))
         ?.toList()
     ..currentVersionName = json['currentVersionName'] as String
     ..currentVersionCode = json['currentVersionCode'] as int
@@ -239,6 +278,7 @@ Map<String, dynamic> _$AppToJson(App instance) => <String, dynamic>{
       'name': instance.name,
       'packageName': instance.packageName,
       'localized': instance.localized,
+      'localizedPhoneScreenshotsCache': instance.localizedPhoneScreenshotsCache,
       'summary': instance.summary,
       'description': instance.description,
       'whatsNew': instance.whatsNew,
@@ -266,6 +306,10 @@ Build _$BuildFromJson(Map json) {
     ..versionCode = json['versionCode'] as int
     ..sha256 = json['sha256'] as String
     ..apkLink = json['apkLink'] as String
+    ..abis = (json['abis'] as Map)?.map(
+      (k, e) => MapEntry(
+          k as String, e == null ? null : ABISpecificBuild.fromJson(e as Map)),
+    )
     ..size = json['size'] as int
     ..minSdkVersion = json['minSdkVersion'] as int
     ..targetSdkVersion = json['targetSdkVersion'] as int
@@ -279,9 +323,22 @@ Map<String, dynamic> _$BuildToJson(Build instance) => <String, dynamic>{
       'versionCode': instance.versionCode,
       'sha256': instance.sha256,
       'apkLink': instance.apkLink,
+      'abis': instance.abis,
       'size': instance.size,
       'minSdkVersion': instance.minSdkVersion,
       'targetSdkVersion': instance.targetSdkVersion,
       'added': instance.added,
       'permissions': instance.permissions,
+    };
+
+ABISpecificBuild _$ABISpecificBuildFromJson(Map json) {
+  return ABISpecificBuild()
+    ..apkLink = json['apkLink'] as String
+    ..sha256 = json['sha256'] as String;
+}
+
+Map<String, dynamic> _$ABISpecificBuildToJson(ABISpecificBuild instance) =>
+    <String, dynamic>{
+      'apkLink': instance.apkLink,
+      'sha256': instance.sha256,
     };

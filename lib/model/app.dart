@@ -185,6 +185,9 @@ class Build {
   @HiveField(4)
   String apkLink;
 
+  @HiveField(11)
+  Map<String, ABISpecificBuild> abis;
+
   // TODO Show some more of this info on the app page
 
   @HiveField(5)
@@ -211,4 +214,20 @@ class Build {
   factory Build.fromJson(Map<dynamic, dynamic> json) => _$BuildFromJson(json);
 
   Map<String, dynamic> toJson() => _$BuildToJson(this);
+}
+
+@HiveType(typeId: 6)
+@JsonSerializable(anyMap: true)
+class ABISpecificBuild {
+  @HiveField(1)
+  String apkLink;
+  @HiveField(2)
+  String sha256;
+
+  ABISpecificBuild();
+
+  factory ABISpecificBuild.fromJson(Map<dynamic, dynamic> json) =>
+      _$ABISpecificBuildFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ABISpecificBuildToJson(this);
 }
