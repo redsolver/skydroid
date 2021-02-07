@@ -87,7 +87,7 @@ final httpClient = http.Client();
 
 class MyApp extends StatelessWidget {
   ThemeData _buildThemeData(String theme) {
-    var _accentColor = Color(0xff57b560);
+    var _accentColor = Color(0xff1ed660); //Color(0xff57b560);
 
     var brightness =
         ['light', 'sepia'].contains(theme) ? Brightness.light : Brightness.dark;

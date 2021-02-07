@@ -30,6 +30,8 @@ Map<String, List<String>> globalErrors = {};
 Translations tr;
 AndroidDeviceInfo androidInfo;
 
+final shizukuPackageName = 'moe.shizuku.privileged.api';
+
 final categoryKeys = {
   'Connectivity': () => tr.categoryConnectivity,
   'Development': () => tr.categoryDevelopment,

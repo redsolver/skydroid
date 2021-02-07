@@ -29,7 +29,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
   bool _isShizukuInstalled;
 
-  final shizukuPackageName = 'moe.shizuku.privileged.api';
+  
 
   _startShizukuCheckLoop() async {
     // if (androidInfo.version.sdkInt < 24) return;

@@ -95,3 +95,6 @@ settingsPageShizukuTitle: Shizuku Service
 settingsPageShizukuDescription: Shizuku is an app which can give SkyDroid access to System APIs WITHOUT ROOT. This enables installing and updating apps without user interaction.
 settingsPageShizukuToggleSwitch: Enable Shizuku
 settingsPageShizukuInstallButton: Install Shizuku
+appPageInstallingShizukuErrorNotRunning: Shizuku Service is not running
+appPageInstallingShizukuErrorNotRunningButton: Open Shizuku
+appPageInstallingShizukuErrorPermissionNotGranted: Permission not granted (Go to the SkyDroid settings and re-enable Shizuku support)

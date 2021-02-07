@@ -155,15 +155,40 @@ class _InstallWidgetState extends State<InstallWidget>
 
   _install(File apk, int versionCode) async {
     if (PrefService.getBool('use_shizuku') ?? false) {
+      void showShizukuErrorDialog(Widget content) {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(tr.errorAppInstallationShizuku),
+            content: content,
+            actions: [
+              FlatButton(
+                onPressed: Navigator.of(context).pop,
+                child: Text(tr.errorDialogCloseButton),
+              ),
+            ],
+          ),
+        );
+      }
+
       final bool permissionGranted =
           await platform.invokeMethod('checkShizukuPermission');
       if (!permissionGranted) {
-        // TODO Show error
         platform.invokeMethod('requestShizukuPermission');
 
-        print('Shizuku No permission');
+        showShizukuErrorDialog(
+          Text(tr.appPageInstallingShizukuErrorPermissionNotGranted),
+        );
+
         return;
       }
+
+      await platform.invokeMethod(
+        'launch',
+        {
+          'packageName': '${app.packageName}',
+        },
+      );
 
 /*       setState(() {
         progress = 1;
@@ -204,23 +229,43 @@ class _InstallWidgetState extends State<InstallWidget>
             });
           break;
         } else if (status == 'installer_state_failed') {
-          showDialog(
-            context: context,
-            builder: (context) => AlertDialog(
-              title: Text(tr.errorAppInstallationShizuku),
-              content: Text((shizukuInstallationStatus[1] ?? '')
-                  .split('|||')
-                  .first
-                  .split('|')
-                  .join('\n')),
-              actions: [
-                FlatButton(
-                  onPressed: Navigator.of(context).pop,
-                  child: Text(tr.errorDialogCloseButton),
-                ),
-              ],
-            ),
-          );
+          final shortForm =
+              (shizukuInstallationStatus[1] ?? '').split('|||').first;
+
+          final parts = shortForm.split('|');
+
+          final error = parts.last;
+
+          if (error == 'installer_error_shizuku_unavailable') {
+            showShizukuErrorDialog(
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(tr.appPageInstallingShizukuErrorNotRunning),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  RaisedButton(
+                    onPressed: () {
+                      platform.invokeMethod(
+                        'launch',
+                        {
+                          'packageName': shizukuPackageName,
+                        },
+                      );
+                    },
+                    child:
+                        Text(tr.appPageInstallingShizukuErrorNotRunningButton),
+                  ),
+                ],
+              ),
+            );
+          } else {
+            showShizukuErrorDialog(
+              Text(parts.join('\n')),
+            );
+          }
+
           if (mounted)
             setState(() {
               progress = 1;
