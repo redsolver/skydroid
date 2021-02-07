@@ -89,3 +89,9 @@ settingsPageAboutDebugDialogClose: Ok
 errorAppInvalidCurrentBuild: "Error: No build found for the current version"
 errorAppCompatibilitySdkVersionTooLow: "This app is not compatible with your device (sdkVersion too low: {sdkVersion} < {minSdkVersion})"
 errorAppCompatibilityNoMatchingABI: "This app is not compatible with your device (ABI not supported: {deviceABIs} not in {supportedABIs})"
+errorAppInstallationShizuku: Shizuku App Installation failed
+appPageInstallingShizukuProcess: Installing app... (Shizuku)
+settingsPageShizukuTitle: Shizuku Service
+settingsPageShizukuDescription: Shizuku is an app which can give SkyDroid access to System APIs WITHOUT ROOT. This enables installing and updating apps without user interaction.
+settingsPageShizukuToggleSwitch: Enable Shizuku
+settingsPageShizukuInstallButton: Install Shizuku

@@ -4,6 +4,8 @@ SkyDroid is a decentralized domain-based Android App Store which offers easy and
 
 Related repos are the [F-Droid bridge](https://github.com/redsolver/skydroid-fdroid-bridge) and the [Multi-DoH Server](https://github.com/redsolver/multi-doh-server).
 
+SkyDroid uses native code from https://github.com/Aefyr/SAI (GPL-3.0).
+
 ## Screenshots
 
 <p>

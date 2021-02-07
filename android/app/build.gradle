@@ -72,4 +72,13 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+
+    implementation 'androidx.documentfile:documentfile:1.0.1'
+    implementation 'androidx.preference:preference:1.1.1'
+
+    //Shizuku/Sui
+    def shizuku_version = '11.0.1'
+    implementation "rikka.shizuku:api:$shizuku_version"
+    implementation "rikka.shizuku:provider:$shizuku_version"
 }

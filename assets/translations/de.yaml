@@ -36,7 +36,7 @@ errorDialogTitle: Etwas ist schiefgelaufen
 errorDialogCloseButton: Ok
 verifiedAppDialogTitle: Verifizierte app
 verifiedAppDialogContentTop: "Diese Version der App wurde von den folgenden Sammlungen verifiziert:"
-verifiedAppDialogContentBottom: Sammlungen können Freigaben als verifiziert markieren, um zusätzliches Vertrauen zu schaffen. Die Verifizierung einer Freigabe kann aus der Überprüfung der Metadaten, dem Testen der App oder dem Scannen auf Malware bestehen.
+verifiedAppDialogContentBottom: Sammlungen können Versionen als verifiziert markieren, um zusätzliches Vertrauen zu schaffen. Die Verifizierung einer Version kann aus der Überprüfung der Metadaten, dem Testen der App oder dem Scannen auf Malware bestehen.
 verifiedAppDialogCloseButton: Ok
 verifiedAppBadgeLabel: Verifiziert
 appPageWhatsNewTitle: Neuigkeiten
@@ -89,3 +89,9 @@ settingsPageAboutDebugDialogClose: Ok
 errorAppInvalidCurrentBuild: "Fehler: Kein passender Build für die aktuelle Version gefunden"
 errorAppCompatibilitySdkVersionTooLow: "Diese App ist nicht mit deinem Gerät kompatibel (sdkVersion zu niedrig: {sdkVersion} < {minSdkVersion})"
 errorAppCompatibilityNoMatchingABI: "Diese App ist nicht mit deinem Gerät kompatibel (ABI nicht unterstützt: {deviceABIs} nicht in {supportedABIs})"
+errorAppInstallationShizuku: App Installation fehlgeschlagen
+appPageInstallingShizukuProcess: App wird installiert... (Shizuku)
+settingsPageShizukuTitle: Shizuku Service
+settingsPageShizukuDescription: Shizuku ist eine App, die SkyDroid Zugriff auf System-APIs geben kann, auch wenn das Gerät NICHT gerootet ist. Dies ermöglicht SkyDroid Apps ohne Bestätigung zu installieren und aktualisieren.
+settingsPageShizukuToggleSwitch: Shizuku aktivieren
+settingsPageShizukuInstallButton: Shizuku installieren

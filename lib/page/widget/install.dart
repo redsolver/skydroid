@@ -11,6 +11,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
+import 'package:preferences/preferences.dart';
 import 'package:skydroid/app.dart';
 
 class InstallWidget extends StatefulWidget {
@@ -24,7 +25,7 @@ class InstallWidget extends StatefulWidget {
 enum InstallState {
   none,
   downloading,
-  // installing,
+  installing,
 }
 
 class _InstallWidgetState extends State<InstallWidget>
@@ -127,7 +128,8 @@ class _InstallWidgetState extends State<InstallWidget>
           localVersionCodes.put(a.packageName, a.versionCode);
         }
       }
-      await Future.delayed(Duration(seconds: 1));
+
+      await Future.delayed(Duration(milliseconds: 500));
     }
   }
 
@@ -152,21 +154,104 @@ class _InstallWidgetState extends State<InstallWidget>
   bool ignoreLifecycle = true;
 
   _install(File apk, int versionCode) async {
-    setState(() {
-      progress = 1;
-      state = InstallState.none;
-      expectedVersionCode = versionCode;
-    });
-    lastApk = apk;
-    final result = await platform.invokeMethod(
-      'install',
-      {
-        'path': '${apk.path}',
-      },
-    );
+    if (PrefService.getBool('use_shizuku') ?? false) {
+      final bool permissionGranted =
+          await platform.invokeMethod('checkShizukuPermission');
+      if (!permissionGranted) {
+        // TODO Show error
+        platform.invokeMethod('requestShizukuPermission');
 
-    if (result == 'show') {
-      ignoreLifecycle = false;
+        print('Shizuku No permission');
+        return;
+      }
+
+/*       setState(() {
+        progress = 1;
+        state = InstallState.none;
+        expectedVersionCode = versionCode;
+      }); */
+      lastApk = apk;
+      final result = await platform.invokeMethod(
+        'installWithShizuku',
+        {
+          'path': '${apk.path}',
+        },
+      );
+
+      print('INSTALLATION ID $result');
+
+      setState(() {
+        progress = null;
+        state = InstallState.installing;
+        expectedVersionCode = versionCode;
+      });
+
+      while (true) {
+        final shizukuInstallationStatus =
+            await platform.invokeMethod('fetchShizukuInstallationStatus');
+
+        // print('lol');
+        // print(shizukuInstallationStatus);
+
+        final status = shizukuInstallationStatus[0];
+
+        if (status == 'installer_state_installed') {
+          if (mounted)
+            setState(() {
+              progress = 1;
+              state = InstallState.none;
+              expectedVersionCode = versionCode;
+            });
+          break;
+        } else if (status == 'installer_state_failed') {
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: Text(tr.errorAppInstallationShizuku),
+              content: Text((shizukuInstallationStatus[1] ?? '')
+                  .split('|||')
+                  .first
+                  .split('|')
+                  .join('\n')),
+              actions: [
+                FlatButton(
+                  onPressed: Navigator.of(context).pop,
+                  child: Text(tr.errorDialogCloseButton),
+                ),
+              ],
+            ),
+          );
+          if (mounted)
+            setState(() {
+              progress = 1;
+              state = InstallState.none;
+              expectedVersionCode = versionCode;
+            });
+
+          break;
+        } else if (status == 'installer_state_installing') {}
+
+        // installer_state_installing, installer_state_installed, installer_state_failed
+
+        await Future.delayed(Duration(milliseconds: 50));
+      }
+    } else {
+      setState(() {
+        progress = 1;
+        state = InstallState.none;
+        expectedVersionCode = versionCode;
+      });
+      lastApk = apk;
+      final result = await platform.invokeMethod(
+        'install',
+        {
+          'path': '${apk.path}',
+        },
+      );
+
+      if (result == 'show') {
+        ignoreLifecycle = false;
+      }
     }
   }
 
@@ -341,6 +426,20 @@ class _InstallWidgetState extends State<InstallWidget>
                   )
                 : Row(
                     children: <Widget>[
+                      if (state == InstallState.installing) ...[
+                        Expanded(
+                            child: Align(
+                          alignment: Alignment.center,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              tr.appPageInstallingShizukuProcess,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ),
+                        ))
+                      ],
                       if (state == InstallState.none) ...[
                         if (application == null && expectedVersionCode == null)
                           Expanded(
@@ -454,7 +553,8 @@ class _InstallWidgetState extends State<InstallWidget>
                     ],
                   ),
           ),
-          if (state == InstallState.downloading)
+          if (state == InstallState.downloading ||
+              state == InstallState.installing)
             SizedBox(
               height: 8,
               child: LinearProgressIndicator(
