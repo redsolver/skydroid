@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:crypto/crypto.dart';
 import 'package:device_apps/device_apps.dart';
+import 'package:device_info/device_info.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -14,6 +15,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:pool/pool.dart';
 import 'package:preferences/preferences.dart';
 import 'package:skydroid/app.dart';
 import 'package:skydroid/data/categories.dart';
@@ -72,11 +74,16 @@ void main() async {
   collections = await Hive.openBox('collections');
 
   workTroughReqs();
+  final deviceInfo = DeviceInfoPlugin();
+
+  deviceInfo.androidInfo.then((value) => androidInfo = value);
 
   runApp(
     MyApp(),
   );
 }
+
+final httpClient = http.Client();
 
 class MyApp extends StatelessWidget {
   ThemeData _buildThemeData(String theme) {
@@ -249,7 +256,7 @@ class _MyHomePageState extends State<MyHomePage> {
       collectionFutures.add(() async {
         try {
           final n = name['name'];
-          print('Update $n');
+          //print('Update $n');
 
           var res = await checkName(n, type: 'collection');
 
@@ -258,7 +265,7 @@ class _MyHomePageState extends State<MyHomePage> {
           final Collection collection = collections.get(name['name']);
 
           if (res['hash'] != collection?.srcHash) {
-            print('New collection Hash!!!');
+            //print('New collection Hash!!!');
             collectionNames.put(n, res);
             await updateMetadata(res, 'collection');
             final Collection collection = collections.get(name['name']);
@@ -286,11 +293,11 @@ class _MyHomePageState extends State<MyHomePage> {
       }());
     }
 
-    print('Awaiting collectionFutures $collectionFutures');
+    //print('Awaiting collectionFutures $collectionFutures');
 
     await Future.wait(collectionFutures);
 
-    print('Awaiting futures $futures');
+    //print('Awaiting futures $futures');
 
     await Future.wait(futures);
     if (mounted) setState(() {});
@@ -309,14 +316,14 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future updateName(String name) async {
-    print('update name $name');
+    // print('update name $name');
     try {
       loadingState[name] = 1;
       addToStream(name);
       var res = await checkName(name, type: 'app');
       final App app = apps.get(name);
       if (res['hash'] != app?.metadataSrcHash) {
-        print('New Hash!!!');
+        //print('New Hash!!!');
         names.put(name, res);
         await updateMetadata(res, 'app');
       }
@@ -1027,27 +1034,20 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  int currentMetadataUpdateInstances = 0;
+  // int currentMetadataUpdateInstances = 0;
+
+  final pool = new Pool(15, timeout: new Duration(seconds: 30));
 
   Future<void> updateMetadata(Map name, String type) async {
-    currentMetadataUpdateInstances++;
-    // print('wait');
-    await Future.delayed(
-        Duration(milliseconds: currentMetadataUpdateInstances * 10));
-    //print('updateMetadata $currentMetadataUpdateInstances');
+    return pool.withResource(() => updateMetadataInternal(name, type));
+  }
 
-    currentMetadataUpdateInstances--;
-    // print('do $currentMetadataUpdateInstances');
-/*     metaLog(var s) {
-      print('[${name['name']}] $s');
-    } */
-/* 
-    metaLog('Getting metadata for skydroid-${type} $name'); */
-
+  Future<void> updateMetadataInternal(Map name, String type) async {
     bool retry = true;
+
     while (retry) {
       retry = false;
-      var res = await http.get('$skynetPortal/${name['skylink']}');
+      var res = await httpClient.get('$skynetPortal/${name['skylink']}');
 
       if (res.statusCode == 200) {
         //print(res.body);
@@ -1099,6 +1099,11 @@ class _MyHomePageState extends State<MyHomePage> {
       }
       // addToStream(name['name']);
     }
+/*     } catch (e, st) {
+      currentMetadataUpdateInstances--;
+      rethrow;
+    }
+    currentMetadataUpdateInstances--; */
   }
 }
 
@@ -1173,10 +1178,10 @@ Future<Map> checkName(String name, {String type}) async {
 }
 
 Future<void> checkNameBatch(Map<String, Completer<List<String>>> batch) async {
-  print('batch ${batch.length}');
+  // print('batch ${batch.length}');
 
   try {
-    var res = await http.post(
+    var res = await httpClient.post(
       '$dnsUrl/multi-dns-query',
       body: json.encode({
         'type': 16,

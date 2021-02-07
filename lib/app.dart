@@ -4,6 +4,7 @@ export 'package:skydroid/util.dart';
 import 'dart:async';
 import 'dart:ui';
 
+import 'package:device_info/device_info.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
@@ -27,6 +28,7 @@ final globalErrorStream = StreamController<Null>();
 Map<String, List<String>> globalErrors = {};
 
 Translations tr;
+AndroidDeviceInfo androidInfo;
 
 final categoryKeys = {
   'Connectivity': () => tr.categoryConnectivity,
