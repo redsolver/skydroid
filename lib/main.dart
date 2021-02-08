@@ -87,7 +87,8 @@ final httpClient = http.Client();
 
 class MyApp extends StatelessWidget {
   ThemeData _buildThemeData(String theme) {
-    var _accentColor = Color(0xff1ed660); //Color(0xff57b560);
+    var _accentColor = Color(0xff1ed660);
+    //Color(0xff57b560);
 
     var brightness =
         ['light', 'sepia'].contains(theme) ? Brightness.light : Brightness.dark;
@@ -372,13 +373,19 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text(Translations.of(context).dialogCancel),
+                  child: Text(
+                    Translations.of(context).dialogCancel,
+                    style: dialogActionTextStyle(context),
+                  ),
                 ),
                 FlatButton(
                   onPressed: () {
                     Navigator.of(context).pop(true);
                   },
-                  child: Text(Translations.of(context).removeNameDialogConfirm),
+                  child: Text(
+                    Translations.of(context).removeNameDialogConfirm,
+                    style: dialogActionTextStyle(context),
+                  ),
                 ),
               ],
             ));
@@ -563,6 +570,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         onPressed: Navigator.of(context).pop,
                                         child: Text(
                                           Translations.of(context).dialogCancel,
+                                          style: dialogActionTextStyle(context),
                                         ),
                                       ),
                                     ],
@@ -940,11 +948,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     actions: <Widget>[
                       FlatButton(
                         onPressed: Navigator.of(context).pop,
-                        child: Text(tr.dialogCancel),
+                        child: Text(
+                          tr.dialogCancel,
+                          style: dialogActionTextStyle(context),
+                        ),
                       ),
                       FlatButton(
                         onPressed: () => Navigator.of(context).pop(ctrl.text),
-                        child: Text(tr.addDomainNameDialogConfirm),
+                        child: Text(
+                          tr.addDomainNameDialogConfirm,
+                          style: dialogActionTextStyle(context),
+                        ),
                       ),
                     ],
                   ),
@@ -1026,7 +1040,10 @@ class _MyHomePageState extends State<MyHomePage> {
           actions: <Widget>[
             FlatButton(
               onPressed: Navigator.of(context).pop,
-              child: Text(tr.errorDialogCloseButton),
+              child: Text(
+                tr.errorDialogCloseButton,
+                style: dialogActionTextStyle(context),
+              ),
             ),
           ],
         ),

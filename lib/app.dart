@@ -30,6 +30,10 @@ Map<String, List<String>> globalErrors = {};
 Translations tr;
 AndroidDeviceInfo androidInfo;
 
+TextStyle dialogActionTextStyle(BuildContext context) => TextStyle(
+      color: Theme.of(context).accentColor,
+    );
+
 final shizukuPackageName = 'moe.shizuku.privileged.api';
 
 final categoryKeys = {

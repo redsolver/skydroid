@@ -148,19 +148,28 @@ class _CollectionsPageState extends State<CollectionsPage> {
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text(tr.dialogCancel),
+                  child: Text(
+                    tr.dialogCancel,
+                    style: dialogActionTextStyle(context),
+                  ),
                 ),
                 FlatButton(
                   onPressed: () {
                     Navigator.of(context).pop(true);
                   },
-                  child: Text(tr.removeCollectionDialogConfirmWithApps),
+                  child: Text(
+                    tr.removeCollectionDialogConfirmWithApps,
+                    style: dialogActionTextStyle(context),
+                  ),
                 ),
                 FlatButton(
                   onPressed: () {
                     Navigator.of(context).pop(false);
                   },
-                  child: Text(tr.removeCollectionDialogConfirm),
+                  child: Text(
+                    tr.removeCollectionDialogConfirm,
+                    style: dialogActionTextStyle(context),
+                  ),
                 ),
               ],
             ));

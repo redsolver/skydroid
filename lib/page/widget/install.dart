@@ -159,12 +159,17 @@ class _InstallWidgetState extends State<InstallWidget>
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text(tr.errorAppInstallationShizuku),
+            title: Text(
+              tr.errorAppInstallationShizuku,
+            ),
             content: content,
             actions: [
               FlatButton(
                 onPressed: Navigator.of(context).pop,
-                child: Text(tr.errorDialogCloseButton),
+                child: Text(
+                  tr.errorDialogCloseButton,
+                  style: dialogActionTextStyle(context),
+                ),
               ),
             ],
           ),
@@ -402,7 +407,10 @@ class _InstallWidgetState extends State<InstallWidget>
               actions: [
                 FlatButton(
                   onPressed: Navigator.of(context).pop,
-                  child: Text(tr.errorDialogCloseButton),
+                  child: Text(
+                    tr.errorDialogCloseButton,
+                    style: dialogActionTextStyle(context),
+                  ),
                 ),
               ],
             ),

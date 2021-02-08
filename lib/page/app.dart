@@ -255,8 +255,10 @@ class _AppPageState extends State<AppPage> {
                                 actions: <Widget>[
                                   FlatButton(
                                     onPressed: Navigator.of(context).pop,
-                                    child:
-                                        Text(tr.verifiedAppDialogCloseButton),
+                                    child: Text(
+                                      tr.verifiedAppDialogCloseButton,
+                                      style: dialogActionTextStyle(context),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -309,6 +311,7 @@ class _AppPageState extends State<AppPage> {
                                     DateTime.fromMillisecondsSinceEpoch(
                                       app.lastUpdated,
                                     ),
+                                    locale: tr.localeName,
                                   ),
                                 ),
                                 style: TextStyle(fontStyle: FontStyle.italic),
@@ -379,8 +382,12 @@ class _AppPageState extends State<AppPage> {
               if (app.localizedDescription != null)
                 Padding(
                   padding: const EdgeInsets.all(12.0),
-                  child:
-                      Html(data: md.markdownToHtml(app.localizedDescription)),
+                  child: Html(
+                    data: md.markdownToHtml(app.localizedDescription),
+                    onLinkTap: (str) {
+                      launch(str);
+                    },
+                  ),
                 ),
               if (app.lastUpdated != null)
                 Align(
@@ -388,9 +395,12 @@ class _AppPageState extends State<AppPage> {
                   child: Padding(
                     padding: const EdgeInsets.only(right: 16),
                     child: Text(
-                      tr.appPageUpdatedTime(timeAgo.format(
-                          DateTime.fromMillisecondsSinceEpoch(
-                              app.lastUpdated))),
+                      tr.appPageUpdatedTime(
+                        timeAgo.format(
+                          DateTime.fromMillisecondsSinceEpoch(app.lastUpdated),
+                          locale: tr.localeName,
+                        ),
+                      ),
                       style: TextStyle(fontStyle: FontStyle.italic),
                     ),
                   ),

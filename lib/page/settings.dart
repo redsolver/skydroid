@@ -29,8 +29,6 @@ class _SettingsPageState extends State<SettingsPage> {
 
   bool _isShizukuInstalled;
 
-  
-
   _startShizukuCheckLoop() async {
     // if (androidInfo.version.sdkInt < 24) return;
 
@@ -221,7 +219,10 @@ class _SettingsPageState extends State<SettingsPage> {
                   actions: [
                     TextButton(
                       onPressed: Navigator.of(context).pop,
-                      child: Text(tr.settingsPageAboutDebugDialogClose),
+                      child: Text(
+                        tr.settingsPageAboutDebugDialogClose,
+                        style: dialogActionTextStyle(context),
+                      ),
                     ),
                   ],
                 ),
