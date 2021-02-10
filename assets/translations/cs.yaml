@@ -1,0 +1,100 @@
+removeNameDialogTitle: Odstranit název
+removeNameDialogContent: Skutečně chcete odstranit název "{name}" z Vaší kolekce aplikací? Tato akce neovlivní již nainstalované aplikace a název je možné znovu přidat pomocí kolekce.
+removeNameDialogConfirm: Odstranit
+dialogCancel: Zrušit akci
+navigationAppsPageTitle: Apps
+navigationCollectionsPageTitle: Kolekce
+navigationSettingsPageTitle: Nastavení
+filterDialogTitle: Řadit podle kategorie
+categoryConnectivity: Připojení
+categoryDevelopment: Vývoj
+categoryGames: Hry
+categoryGraphics: Grafika
+categoryInternet: Internet
+categoryMoney: Peníze
+categoryMultimedia: Multimédia
+categoryNavigation: Navigace
+categoryPhoneAndSMS: Telefon & SMS
+categoryReading: Četba
+categoryScienceAndEducation: Věda & Vzdělání
+categorySecurity: Bezpečnost
+categorySportsAndHealth: Sport & Zdraví
+categorySystem: Systém
+categoryTheming: Motivy
+categoryTime: Čas
+categoryWriting: Psaní
+appListPageEmptyWarning: Hmm, tady zatím nic není. Zkuste přidat název pomocí tlačítka "Plus" v pravém spodním rohu.
+appListLoadingMetadata: Načítám metadata...
+errorsSheetTitle: Chyby
+errorsSheetOverflowCount: ...{count} dalších
+addDomainNameDialogTitle: Přidat aplikaci, nebo kolekci
+addDomainNameDialogInputLabel: Název (domain)
+addDomainNameDialogInputHint: např. skydroid.app
+addDomainNameDialogConfirm: Přidat
+addDomainNameLoadingDialogTitle: Ověřuji název...
+errorDialogTitle: Někde se stala chyba
+errorDialogCloseButton: Ok
+verifiedAppDialogTitle: Ověřená aplikace
+verifiedAppDialogContentTop: "Tato verze aplikace byla ověřena v následujících kolekcích:"
+verifiedAppDialogContentBottom: Kolekce lze použíz i ke značení verzí, které byly někým ověřené. To je důležitý faktor, který mohou uživatelé použít při rozhodování, jak moc lze dané verzi důvěřovat. Takové ověření může sestávat z kontroly metadat, testování, či scanování antivirovým programem.
+verifiedAppDialogCloseButton: Ok
+verifiedAppBadgeLabel: Ověřeno
+appPageWhatsNewTitle: Co je nového?
+appPageUpdatedTime: Aktualizováno {time}
+appPageAddedTime: "Aplikace přidána: {time}"
+appPageLinkDonate: Přispět
+appPageLinkWebsite: Webová stránka
+appPageLinkSourceCode: Zdrojový kód
+appPageLinkIssueTracker: Problémy
+appPageLinkTranslation: Překlad
+appPageLinkChangelog: Changelog
+appPageLinkLicense: "Licence: {license}"
+collectionListItemLoading: Načítám...
+collectionListItemTitle: "{title} ({domainName}) • {appCount} aplikací"
+collectionRecommendationsCardTitle: Nějaká doporučení do začátku
+collectionLoadingDialogTitle: Načítám kolekci...
+collectionLoadingDialogContent: Tento proces může trvat až 30 vteřin, v závislosti na velikosti kolekce
+removeCollectionDialogTitle: Odebrat kolekci?
+removeCollectionDialogContent: Skutečně chcete odebrat kolekci "{name}"? Pokud chcete odebrat i aplikace přidané skrze tuto kolekci, vyberte "Odebrat včetně aplikací".
+removeCollectionDialogConfirmWithApps: Odebrat včetně aplikací
+removeCollectionDialogConfirm: Odebrat
+downloadHashMismatchErrorDialogTitle: Nesprávný hash
+downloadHashMismatchErrorDialogContent: "Stažený soubor neodpovídá hashi uvedenému v metadatech.\n\nOčekávaný hash: {expectedHash}\nObdržený hash: {hash}\n\nKontaktujte prosím autora aplikace"
+appPageInstallButton: Instalovat (Verze {version})
+appPageRetryInstallButton: Opakovat instalaci
+appPageInstallingApkProcess: Instaluji APK file...
+appPageUninstallButton: Odinstalovat ({version})
+appPageLaunchAppButton: Spustit
+appPageUpdateButton: Update ({version})
+appPageInstallationDownloadStarting: Zahajuji stahování...
+appPageInstallationProgress: "{progress} % of {totalFileSize}"
+appShareText: "{localizedName} - {localizedSummary} • Odkaz ke stažení: {link}"
+errorMetadataHashMismatch: Nesprávný hash v metadatech.
+errorHttpStatusCode: HTTP {statusCode} během stahování metadat
+errorDnsRecordNotAvailable: DNS záznam není dostupný
+errorDomainNameHasNoRecord: Tato doména nema na SkyDroidu žádný záznam
+errorHttpStatusCodeMultiDnsQuery: HTTP {statusCode} on Multi-DoH query
+settingsPageAppThemeTitle: Motiv aplikace
+settingsPageAppThemeOptionLight: Světlý
+settingsPageAppThemeOptionSepia: Sépie
+settingsPageAppThemeOptionDark: Tmavý
+settingsPageAppThemeOptionBlack: Černý
+settingsPageServicesTitle: Služby
+settingsPageServicesMultiDoHServer: Multi-DoH Server
+settingsPageServicesSkynetPortal: Skynet Portal
+settingsPageAboutTitle: O aplikaci
+settingsPageAboutShowLicenses: Ukázat licence
+settingsPageAboutDebug: Debug Info
+settingsPageAboutDebugDialogClose: Ok
+errorAppInvalidCurrentBuild: "Chybaa: Pro aktuální verzi není dostupný žádný build"
+errorAppCompatibilitySdkVersionTooLow: "Tato aplikace není kompatibilní s Vaším zařízením (verze SDK je příliš nízká: {sdkVersion} < {minSdkVersion})"
+errorAppCompatibilityNoMatchingABI: "Tato aplikace není kompatibilní s Vaším zařízením (ABI neni podporováno: {deviceABIs} nelze nalézt v {supportedABIs})"
+errorAppInstallationShizuku: Instalace aplikace Shizuku se nezdařila
+appPageInstallingShizukuProcess: Instaluji aplikaci... (Shizuku)
+settingsPageShizukuTitle: Služba Shizuku
+settingsPageShizukuDescription: Shizuku je aplikace, která SkyDroidu umožňuje přístup k systémovým API bez nutnosti ROOT práv. To umožňuje jednoduchou instalaci a aktualizaci aplikací bez nutnosti uživatele neustále zasahovat.
+settingsPageShizukuToggleSwitch: Povolit Shizuku
+settingsPageShizukuInstallButton: Instalovat Shizuku
+appPageInstallingShizukuErrorNotRunning: Služba Shizuku není nyní spuštěna
+appPageInstallingShizukuErrorNotRunningButton: Otevřít Shizuku
+appPageInstallingShizukuErrorPermissionNotGranted: Povolení nebyla udělena (Jděte do nastavení SkyDroidu a znovu aktivujte Shizuku)
