@@ -8,6 +8,7 @@ import 'package:skydroid/app.dart';
 import 'package:skydroid/page/widget/install.dart';
 import 'package:skydroid/theme.dart';
 import 'package:package_info/package_info.dart';
+import 'package:skydroid/util/install_task.dart';
 import 'package:system_info/system_info.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -86,6 +87,7 @@ class _SettingsPageState extends State<SettingsPage> {
       data: Theme.of(context)
           .copyWith(primaryColor: Theme.of(context).accentColor),
       child: ListView(
+        padding: const EdgeInsets.only(bottom: 56),
         children: <Widget>[
           PreferenceTitle(
             tr.settingsPageAppThemeTitle,

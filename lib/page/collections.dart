@@ -46,7 +46,7 @@ class _CollectionsPageState extends State<CollectionsPage> {
       child: ListView(
         padding: const EdgeInsets.only(
           top: 8,
-          bottom: 8,
+          bottom: 200,
         ),
         children: <Widget>[
           /*          PreferenceTitle('Your Collections'),

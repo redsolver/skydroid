@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
 import 'package:flutter_gen/gen_l10n/translations.dart';
+import 'package:preferences/preference_service.dart';
 
 Box names;
 Box apps;
@@ -17,6 +18,8 @@ Box collectionNames;
 Box collections;
 
 Box localVersionCodes;
+
+Box<int> apkCacheTimes;
 
 Locale locale;
 
@@ -30,11 +33,29 @@ Map<String, List<String>> globalErrors = {};
 Translations tr;
 AndroidDeviceInfo androidInfo;
 
+final selectedNames = <String>{};
+
 TextStyle dialogActionTextStyle(BuildContext context) => TextStyle(
       color: Theme.of(context).accentColor,
     );
 
+bool get isShizukuEnabled => PrefService.getBool('use_shizuku') ?? false;
+
 final shizukuPackageName = 'moe.shizuku.privileged.api';
+
+addError(
+  dynamic exception,
+  dynamic ctx,
+) {
+  final e = exception.toString();
+
+  if (!globalErrors.containsKey(e)) {
+    globalErrors[e] = [];
+  }
+  globalErrors[e].add(ctx.toString());
+
+  globalErrorStream.add(null);
+}
 
 final categoryKeys = {
   'Connectivity': () => tr.categoryConnectivity,

@@ -1,18 +1,8 @@
-import 'dart:async';
 import 'dart:io';
 
-import 'package:convert/convert.dart';
-import 'package:crypto/crypto.dart';
-import 'package:device_apps/device_apps.dart';
-import 'package:device_info/device_info.dart';
-import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
-import 'package:http/http.dart' as http;
-import 'package:path_provider/path_provider.dart';
-import 'package:preferences/preferences.dart';
 import 'package:skydroid/app.dart';
+import 'package:skydroid/util/install_task.dart';
 
 class InstallWidget extends StatefulWidget {
   final App app;
@@ -22,416 +12,56 @@ class InstallWidget extends StatefulWidget {
   _InstallWidgetState createState() => _InstallWidgetState();
 }
 
-enum InstallState {
-  none,
-  downloading,
-  installing,
-}
-
 class _InstallWidgetState extends State<InstallWidget>
     with WidgetsBindingObserver {
   App get app => widget.app;
 
-  InstallState state = InstallState.none;
-  StreamSubscription sub;
-  bool cancelDownload = false;
-
-  double progress;
-
-  String totalFileSize;
+  InstallTask task;
 
   @override
   void initState() {
     WidgetsBinding.instance.addObserver(this);
-    _getStatus();
+    task = InstallTask(widget.app);
+
+    task.onSetState.stream.listen((event) {
+      if (mounted) setState(() {});
+    });
+    task.onError.stream.listen((builder) {
+      showDialog(
+        context: context,
+        builder: builder,
+      );
+    });
+
+    task.init();
+
     super.initState();
   }
 
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
-    cancelDownload = true;
-    sub?.cancel();
+
+    task.dispose();
     super.dispose();
-  }
-
-  int expectedVersionCode;
-
-  String usedABI;
-
-  Application application;
-
-  _getStatus() async {
-    final deviceInfo = DeviceInfoPlugin();
-    final androidInfo = await deviceInfo.androidInfo;
-
-    final build = app.builds.firstWhere(
-      (element) => element.versionCode == app.currentVersionCode,
-      orElse: () => null,
-    );
-
-    if (build == null) {
-      setState(() {
-        _appCompatibilityError = tr.errorAppInvalidCurrentBuild;
-      });
-      return;
-    }
-
-    if (androidInfo.version.sdkInt < (build.minSdkVersion ?? 0)) {
-      setState(() {
-        _appCompatibilityError = tr.errorAppCompatibilitySdkVersionTooLow(
-          androidInfo.version.sdkInt,
-          build.minSdkVersion,
-        );
-      });
-      return;
-    }
-    if (build.abis != null) {
-      for (final abi in androidInfo.supportedAbis) {
-        if (build.abis.containsKey(abi)) {
-          usedABI = abi;
-
-          break;
-        }
-      }
-    }
-
-    if (usedABI == null) {
-      if (build.apkLink == null) {
-        setState(() {
-          _appCompatibilityError = tr.errorAppCompatibilityNoMatchingABI(
-            androidInfo.supportedAbis,
-            build.abis?.keys?.toList(),
-          );
-        });
-        return;
-      }
-    }
-    //print('usedABI $usedABI');
-
-    while (true) {
-      final a = await DeviceApps.getApp(app.packageName);
-      if (!mounted) break;
-      if (a?.versionCode != application?.versionCode) {
-        //print(a);
-        if (mounted)
-          setState(() {
-            application = a;
-          });
-      }
-      if (a == null) {
-        if (localVersionCodes.containsKey(app.packageName)) {
-          localVersionCodes.delete(app.packageName);
-        }
-      } else {
-        if (localVersionCodes.get(a.packageName) != a.versionCode) {
-          localVersionCodes.put(a.packageName, a.versionCode);
-        }
-      }
-
-      await Future.delayed(Duration(milliseconds: 500));
-    }
   }
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    // print('state == $state');
-    if (state == AppLifecycleState.resumed && !ignoreLifecycle) {
-      ignoreLifecycle = true;
+    if (state == AppLifecycleState.resumed && !task.ignoreLifecycle) {
+      task.ignoreLifecycle = true;
       platform.invokeMethod(
         'install',
         {
-          'path': '${lastApk.path}',
+          'path': '${task.downloadedApk.path}',
         },
       );
     }
   }
 
-  String _appCompatibilityError;
-
-  File lastApk;
-
-  bool ignoreLifecycle = true;
-
-  _install(File apk, int versionCode) async {
-    if (PrefService.getBool('use_shizuku') ?? false) {
-      void showShizukuErrorDialog(Widget content) {
-        showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: Text(
-              tr.errorAppInstallationShizuku,
-            ),
-            content: content,
-            actions: [
-              FlatButton(
-                onPressed: Navigator.of(context).pop,
-                child: Text(
-                  tr.errorDialogCloseButton,
-                  style: dialogActionTextStyle(context),
-                ),
-              ),
-            ],
-          ),
-        );
-      }
-
-      final bool permissionGranted =
-          await platform.invokeMethod('checkShizukuPermission');
-      if (!permissionGranted) {
-        platform.invokeMethod('requestShizukuPermission');
-
-        showShizukuErrorDialog(
-          Text(tr.appPageInstallingShizukuErrorPermissionNotGranted),
-        );
-
-        return;
-      }
-
-      await platform.invokeMethod(
-        'launch',
-        {
-          'packageName': '${app.packageName}',
-        },
-      );
-
-/*       setState(() {
-        progress = 1;
-        state = InstallState.none;
-        expectedVersionCode = versionCode;
-      }); */
-      lastApk = apk;
-      final result = await platform.invokeMethod(
-        'installWithShizuku',
-        {
-          'path': '${apk.path}',
-        },
-      );
-
-      print('INSTALLATION ID $result');
-
-      setState(() {
-        progress = null;
-        state = InstallState.installing;
-        expectedVersionCode = versionCode;
-      });
-
-      while (true) {
-        final shizukuInstallationStatus =
-            await platform.invokeMethod('fetchShizukuInstallationStatus');
-
-        // print('lol');
-        // print(shizukuInstallationStatus);
-
-        final status = shizukuInstallationStatus[0];
-
-        if (status == 'installer_state_installed') {
-          if (mounted)
-            setState(() {
-              progress = 1;
-              state = InstallState.none;
-              expectedVersionCode = versionCode;
-            });
-          break;
-        } else if (status == 'installer_state_failed') {
-          final shortForm =
-              (shizukuInstallationStatus[1] ?? '').split('|||').first;
-
-          final parts = shortForm.split('|');
-
-          final error = parts.last;
-
-          if (error == 'installer_error_shizuku_unavailable') {
-            showShizukuErrorDialog(
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(tr.appPageInstallingShizukuErrorNotRunning),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  RaisedButton(
-                    onPressed: () {
-                      platform.invokeMethod(
-                        'launch',
-                        {
-                          'packageName': shizukuPackageName,
-                        },
-                      );
-                    },
-                    child:
-                        Text(tr.appPageInstallingShizukuErrorNotRunningButton),
-                  ),
-                ],
-              ),
-            );
-          } else {
-            showShizukuErrorDialog(
-              Text(parts.join('\n')),
-            );
-          }
-
-          if (mounted)
-            setState(() {
-              progress = 1;
-              state = InstallState.none;
-              expectedVersionCode = versionCode;
-            });
-
-          break;
-        } else if (status == 'installer_state_installing') {}
-
-        // installer_state_installing, installer_state_installed, installer_state_failed
-
-        await Future.delayed(Duration(milliseconds: 50));
-      }
-    } else {
-      setState(() {
-        progress = 1;
-        state = InstallState.none;
-        expectedVersionCode = versionCode;
-      });
-      lastApk = apk;
-      final result = await platform.invokeMethod(
-        'install',
-        {
-          'path': '${apk.path}',
-        },
-      );
-
-      if (result == 'show') {
-        ignoreLifecycle = false;
-      }
-    }
-  }
-
-  _downloadAndStartInstall() async {
-    final currentBuild = app.builds
-        .firstWhere((element) => element.versionCode == app.currentVersionCode);
-
-    String apkLink;
-    String apkSha256;
-
-    if (usedABI != null) {
-      apkLink = currentBuild.abis[usedABI].apkLink;
-      apkSha256 = currentBuild.abis[usedABI].sha256;
-    } else {
-      apkLink = currentBuild.apkLink;
-      apkSha256 = currentBuild.sha256;
-    }
-
-    var appDir = await getTemporaryDirectory();
-    print(appDir);
-
-    var apk = File('${appDir.path}/apk/${apkSha256}.apk');
-
-    if (apk.existsSync()) {
-      _install(apk, currentBuild.versionCode);
-      return;
-    }
-
-    setState(() {
-      state = InstallState.downloading;
-      progress = null;
-    });
-
-    final request = http.Request(
-      'GET',
-      Uri.parse(
-        resolveLink(
-          apkLink,
-        ),
-      ),
-    );
-    setState(() {
-      state = InstallState.downloading;
-      progress = 0;
-    });
-    cancelDownload = false;
-
-    print(request.url);
-
-    final http.StreamedResponse response = await http.Client().send(request);
-
-    if (cancelDownload) return;
-
-    final contentLength = response.contentLength;
-
-    totalFileSize = filesize(contentLength);
-    print(contentLength);
-
-    // List<int> bytes = [];
-
-    final tmpApk = File('${apk.path}.downloading');
-
-    tmpApk.createSync(recursive: true);
-
-    final fileStream = tmpApk.openWrite();
-
-    int downloadedLength = 0;
-
-    var output = new AccumulatorSink<Digest>();
-    var input = sha256.startChunkedConversion(output);
-
-    sub = response.stream.listen(
-      (List<int> newBytes) {
-        downloadedLength += newBytes.length;
-        fileStream.add(newBytes);
-        input.add(newBytes);
-
-        setState(() {
-          progress = downloadedLength / contentLength;
-        });
-
-        //   notifyListeners();
-      },
-      onDone: () async {
-        /*  setState(() {
-                              checkingIntegrity = true;
-                            }); */
-
-        input.close();
-        final hash = output.events.single;
-        await fileStream.close();
-        /*    setState(() {
-                              checkingIntegrity = false;
-                            }); */
-
-        if (hash.toString() != apkSha256) {
-          showDialog(
-            context: context,
-            builder: (context) => AlertDialog(
-              title: Text(tr.downloadHashMismatchErrorDialogTitle),
-              content: Text(
-                  tr.downloadHashMismatchErrorDialogContent(apkSha256, hash)),
-              actions: [
-                FlatButton(
-                  onPressed: Navigator.of(context).pop,
-                  child: Text(
-                    tr.errorDialogCloseButton,
-                    style: dialogActionTextStyle(context),
-                  ),
-                ),
-              ],
-            ),
-          );
-          return;
-        }
-        print(hash.toString()); // Check!
-        // notifyListeners();
-
-        await tmpApk.rename(apk.path);
-
-        print('done');
-        _install(apk, currentBuild.versionCode);
-      },
-      onError: (e) {
-        print(e);
-      },
-      cancelOnError: true,
-    );
-
-    /*  */
+  void _downloadAndStartInstall() async {
+    await task.download();
+    await task.install();
   }
 
   @override
@@ -460,13 +90,13 @@ class _InstallWidgetState extends State<InstallWidget>
                 left: 8.0,
                 right: 8.0,
                 top: 8.0,
-                bottom: state == InstallState.downloading ? 0 : 8),
-            child: _appCompatibilityError != null
+                bottom: task.state == InstallState.downloading ? 0 : 8),
+            child: task.appCompatibilityError != null
                 ? Row(
                     children: [
                       Expanded(
                         child: Text(
-                          _appCompatibilityError,
+                          task.appCompatibilityError,
                           style: TextStyle(
                             fontSize: 16,
                             color: Colors.red,
@@ -479,7 +109,7 @@ class _InstallWidgetState extends State<InstallWidget>
                   )
                 : Row(
                     children: <Widget>[
-                      if (state == InstallState.installing) ...[
+                      if (task.state == InstallState.installing) ...[
                         Expanded(
                             child: Align(
                           alignment: Alignment.center,
@@ -493,8 +123,9 @@ class _InstallWidgetState extends State<InstallWidget>
                           ),
                         ))
                       ],
-                      if (state == InstallState.none) ...[
-                        if (application == null && expectedVersionCode == null)
+                      if (task.state == InstallState.none) ...[
+                        if (task.installedApplication == null &&
+                            task.expectedVersionCode == null)
                           Expanded(
                             child: RaisedButton(
                               color: Theme.of(context).accentColor,
@@ -508,8 +139,9 @@ class _InstallWidgetState extends State<InstallWidget>
                               ),
                             ),
                           ),
-                        if (expectedVersionCode != application?.versionCode &&
-                            expectedVersionCode != null) ...[
+                        if (task.expectedVersionCode !=
+                                task.installedApplication?.versionCode &&
+                            task.expectedVersionCode != null) ...[
                           Expanded(
                             child: RaisedButton(
                               color: Theme.of(context).accentColor,
@@ -527,15 +159,15 @@ class _InstallWidgetState extends State<InstallWidget>
                             ),
                           ))
                         ],
-                        if ((expectedVersionCode == null ||
-                                expectedVersionCode ==
-                                    application?.versionCode) &&
-                            application != null) ...[
+                        if ((task.expectedVersionCode == null ||
+                                task.expectedVersionCode ==
+                                    task.installedApplication?.versionCode) &&
+                            task.installedApplication != null) ...[
                           Expanded(
                             child: RaisedButton(
                               color: Theme.of(context).errorColor,
                               onPressed: () async {
-                                expectedVersionCode = null;
+                                task.expectedVersionCode = null;
                                 await platform.invokeMethod(
                                   'uninstall',
                                   {
@@ -544,13 +176,14 @@ class _InstallWidgetState extends State<InstallWidget>
                                 );
                               },
                               child: Text(tr.appPageUninstallButton(
-                                  application.versionName)),
+                                  task.installedApplication.versionName)),
                             ),
                           ),
                           SizedBox(
                             width: 8,
                           ),
-                          application.versionCode >= app.currentVersionCode
+                          task.installedApplication.versionCode >=
+                                  app.currentVersionCode
                               ? Expanded(
                                   child: RaisedButton(
                                     color: Theme.of(context).accentColor,
@@ -577,16 +210,12 @@ class _InstallWidgetState extends State<InstallWidget>
                                 ),
                         ],
                       ],
-                      if (state == InstallState.downloading) ...[
+                      if (task.state == InstallState.downloading) ...[
                         Expanded(
                           child: RaisedButton(
                             color: Theme.of(context).errorColor,
                             onPressed: () async {
-                              cancelDownload = true;
-                              await sub?.cancel();
-                              setState(() {
-                                state = InstallState.none;
-                              });
+                              task.cancelDownload();
                             },
                             child: Text(tr.dialogCancel),
                           ),
@@ -595,10 +224,11 @@ class _InstallWidgetState extends State<InstallWidget>
                             child: Align(
                           alignment: Alignment.center,
                           child: Text(
-                            totalFileSize == null
+                            task.totalFileSize == null
                                 ? tr.appPageInstallationDownloadStarting
                                 : tr.appPageInstallationProgress(
-                                    (progress * 100).round(), totalFileSize),
+                                    ((task.progress ?? 0) * 100).round(),
+                                    task.totalFileSize),
                             textAlign: TextAlign.center,
                           ),
                         ))
@@ -606,13 +236,13 @@ class _InstallWidgetState extends State<InstallWidget>
                     ],
                   ),
           ),
-          if (state == InstallState.downloading ||
-              state == InstallState.installing)
+          if (task.state == InstallState.downloading ||
+              task.state == InstallState.installing)
             SizedBox(
               height: 8,
               child: LinearProgressIndicator(
                 backgroundColor: Theme.of(context).dividerColor,
-                value: progress,
+                value: task.progress,
               ),
             ),
         ],
@@ -620,5 +250,3 @@ class _InstallWidgetState extends State<InstallWidget>
     );
   }
 }
-
-const platform = const MethodChannel('app.skydroid/native');

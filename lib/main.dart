@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:crypto/crypto.dart';
@@ -15,6 +16,8 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:path/path.dart' as path;
+import 'package:path_provider/path_provider.dart';
 import 'package:pool/pool.dart';
 import 'package:preferences/preferences.dart';
 import 'package:skydroid/app.dart';
@@ -24,6 +27,7 @@ import 'package:skydroid/page/app.dart';
 import 'package:skydroid/page/collections.dart';
 import 'package:skydroid/page/settings.dart';
 import 'package:skydroid/theme.dart';
+import 'package:skydroid/util/install_task.dart';
 import 'package:uni_links/uni_links.dart';
 import 'package:yaml/yaml.dart';
 
@@ -73,6 +77,10 @@ void main() async {
   collectionNames = await Hive.openBox('collectionNames');
   collections = await Hive.openBox('collections');
 
+  apkCacheTimes = await Hive.openBox('apkCacheTimes');
+
+  cleanCache();
+
   workTroughReqs();
   final deviceInfo = DeviceInfoPlugin();
 
@@ -81,6 +89,37 @@ void main() async {
   runApp(
     MyApp(),
   );
+}
+
+Future<void> cleanCache() async {
+  var appDir = await getTemporaryDirectory();
+
+  final apkCacheDir = Directory('${appDir.path}/apk/');
+
+  // var apk = File('${appDir.path}/apk/$apkSha256.apk');
+
+  if (!apkCacheDir.existsSync()) return;
+  // print('Cleaning cache...');
+
+  final now = DateTime.now();
+
+  for (final file in apkCacheDir.listSync()) {
+    final hash = path.basename(file.path).split('.').first;
+    // print(hash);
+
+    final lastAccessed = DateTime.fromMillisecondsSinceEpoch(
+      apkCacheTimes.get(hash) ?? 0,
+    );
+
+    if (now.difference(lastAccessed) > Duration(days: 7)) {
+      // print('[cache] delete $hash');
+      final apkFile = File('${apkCacheDir.path}/$hash.apk');
+
+      apkFile.delete();
+
+      apkCacheTimes.delete(hash);
+    }
+  }
 }
 
 final httpClient = http.Client();
@@ -178,6 +217,7 @@ addToStream(String name) {
 }
 
 Map<String, int> loadingState = {};
+Map<String, double> batchDownloadingProgress = {};
 
 class _MyHomePageState extends State<MyHomePage> {
   int currentPage = 0;
@@ -230,6 +270,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
+    searchFieldFocusNode = FocusNode();
+
     initUniLinks();
 
     updateAllCollections();
@@ -240,8 +282,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void dispose() {
+    searchFieldFocusNode.dispose();
+
     globalErrorStream.close();
     _sub.cancel();
+
     super.dispose();
   }
 
@@ -347,21 +392,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  addError(
-    dynamic exception,
-    dynamic ctx,
-  ) {
-    final e = exception.toString();
-
-    if (!globalErrors.containsKey(e)) {
-      globalErrors[e] = [];
-    }
-    globalErrors[e].add(ctx.toString());
-
-    globalErrorStream.add(null);
-  }
-
-  removeName(String name) async {
+  removeNameDialog(String name) async {
     var res = await showDialog(
         context: context,
         builder: (context) => AlertDialog(
@@ -397,12 +428,55 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  Future<bool> removeMultipleNamesDialog(List<String> namesToDelete) async {
+    var res = await showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              title: Text(Translations.of(context).removeNamesDialogTitle),
+              content: Text(Translations.of(context)
+                  .removeNamesDialogContent(namesToDelete.length)),
+              actions: <Widget>[
+                FlatButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text(
+                    Translations.of(context).dialogCancel,
+                    style: dialogActionTextStyle(context),
+                  ),
+                ),
+                FlatButton(
+                  onPressed: () {
+                    Navigator.of(context).pop(true);
+                  },
+                  child: Text(
+                    Translations.of(context).removeNamesDialogConfirm,
+                    style: dialogActionTextStyle(context),
+                  ),
+                ),
+              ],
+            ));
+
+    if (res == true) {
+      for (final name in namesToDelete) {
+        if (apps.containsKey(name)) await apps.delete(name);
+        await names.delete(name);
+      }
+      setState(() {});
+      return true;
+    }
+    return false;
+  }
+
   int hiddenCount = 0;
 
   String searchTerm;
   String categoryFilter;
 
   List<String> namesOrder;
+
+  List<String> namesWithUpdates;
+
   List<String> updateNamesOrder() {
     List<String> preparedKeys = apps.keys.toList().cast<String>();
 
@@ -464,6 +538,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (hiddenCounter != hiddenCount) {
       hiddenCount = hiddenCounter;
     }
+    namesWithUpdates = updateKeys;
     return [...updateKeys, ...keys];
 /*     setState(() {
     }); */
@@ -471,12 +546,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final textCtrl = TextEditingController();
 
+  FocusNode searchFieldFocusNode;
+
+  bool _isRunningBatchOperation = false;
+
   @override
   Widget build(BuildContext context) {
     tr = Translations.of(context);
 
     if (currentPage == 0) {
-      print('|||| setState');
+      // print('|||| setState');
       namesOrder = updateNamesOrder();
     }
     return Scaffold(
@@ -492,14 +571,23 @@ class _MyHomePageState extends State<MyHomePage> {
                             ? ' • ${Translations.of(context).navigationCollectionsPageTitle}'
                             : ' • ${Translations.of(context).navigationSettingsPageTitle}'),
               )
-            : TextField(
-                autofocus: true,
-                controller: textCtrl,
-                onChanged: (value) {
-                  setState(() {
-                    searchTerm = value.toLowerCase();
-                  });
-                },
+            : Theme(
+                data: Theme.of(context)
+                    .copyWith(primaryColor: Theme.of(context).accentColor),
+                child: TextField(
+                  focusNode: searchFieldFocusNode,
+                  controller: textCtrl,
+                  decoration: InputDecoration(
+                    hintText: tr.appListPageSearchHint,
+                    border: OutlineInputBorder(),
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 10),
+                  ),
+                  onChanged: (value) {
+                    setState(() {
+                      searchTerm = value.toLowerCase();
+                    });
+                  },
+                ),
               ),
         actions: currentPage == 0
             ? <Widget>[
@@ -524,6 +612,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       setState(() {
                         searchTerm = '';
                       });
+                      searchFieldFocusNode.requestFocus();
                     },
                   ),
                 categoryFilter == null
@@ -632,35 +721,74 @@ class _MyHomePageState extends State<MyHomePage> {
                               )
                             : Scrollbar(
                                 child: ListView.builder(
-                                  itemCount: namesOrder.length,
+                                  itemCount: namesOrder.length +
+                                      ((namesWithUpdates.isNotEmpty &&
+                                              isShizukuEnabled)
+                                          ? 1
+                                          : 0),
                                   padding: EdgeInsets.only(
                                     top: _loading ? 4 : 8,
-                                    bottom: 80,
+                                    bottom: 200,
                                   ),
                                   itemBuilder: (context, index) {
+                                    if (namesWithUpdates.isNotEmpty &&
+                                        isShizukuEnabled) {
+                                      if (index == 0) {
+                                        if (_isRunningBatchOperation)
+                                          return SizedBox();
+                                        return Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                            horizontal: 16.0,
+                                          ),
+                                          child: RaisedButton(
+                                            onPressed: () async {
+                                              selectedNames.clear();
+                                              selectedNames
+                                                  .addAll(namesWithUpdates);
+
+                                              await _updateOrInstallAllSelectedApps();
+
+                                              setState(() {
+                                                selectedNames.clear();
+                                              });
+                                            },
+                                            child: Text(tr
+                                                .appListPageUpdateAllAppsButton),
+                                            color: Colors.orange,
+                                          ),
+                                        );
+                                      }
+                                      index--;
+                                    }
+
                                     final name = names.get(namesOrder[index]);
+
+                                    final domainName = name['name'];
 
                                     return ConstrainedBox(
                                       constraints:
                                           BoxConstraints(maxHeight: 200),
                                       child: StreamBuilder<bool>(
-                                          stream: getStream(name['name']),
+                                          stream: getStream(domainName),
                                           initialData: false,
                                           builder: (context, snap) {
                                             final App app =
-                                                apps.get(name['name']);
+                                                apps.get(domainName);
 
                                             String state;
 
                                             bool loading;
 
+                                            double progress;
+
                                             bool error = false;
+                                            bool installing = false;
                                             if (app == null) {
                                               state = tr.appListLoadingMetadata;
                                               loading = true;
                                             } else {
                                               final lSt =
-                                                  loadingState[name['name']];
+                                                  loadingState[domainName];
                                               state = app.localizedSummary;
                                               if (lSt == 0) {
                                                 loading = false;
@@ -671,6 +799,16 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 //   state = 'Checking name...';
                                                 loading = false;
                                                 error = true;
+                                              } else if (lSt == 5) {
+                                                // Downloading
+                                                loading = false;
+                                                progress =
+                                                    batchDownloadingProgress[
+                                                        domainName];
+                                              } else if (lSt == 6) {
+                                                // Installing
+                                                installing = true;
+                                                loading = true;
                                               } else {
                                                 //state = 'Updating metadata...';
                                                 loading = true;
@@ -681,25 +819,62 @@ class _MyHomePageState extends State<MyHomePage> {
                                             if (app != null) {
                                               return ListTile(
                                                   onLongPress: () {
-                                                    removeName(name['name']);
+                                                    if (_isRunningBatchOperation)
+                                                      return;
+                                                    // removeName(name['name']);
+                                                    setState(() {
+                                                      if (selectedNames
+                                                          .contains(
+                                                              domainName)) {
+                                                        selectedNames
+                                                            .remove(domainName);
+                                                      } else {
+                                                        selectedNames
+                                                            .add(domainName);
+                                                      }
+                                                    });
                                                   },
                                                   onTap: () async {
+                                                    if (_isRunningBatchOperation)
+                                                      return;
+                                                    if (selectedNames
+                                                        .isNotEmpty) {
+                                                      setState(() {
+                                                        if (selectedNames
+                                                            .contains(
+                                                                domainName)) {
+                                                          selectedNames.remove(
+                                                              domainName);
+                                                        } else {
+                                                          selectedNames
+                                                              .add(domainName);
+                                                        }
+                                                      });
+                                                      return;
+                                                    }
                                                     await Navigator.of(context)
                                                         .push(
                                                       MaterialPageRoute(
                                                         builder: (context) =>
                                                             AppPage(
-                                                          name['name'],
+                                                          domainName,
                                                           app,
                                                         ),
                                                       ),
                                                     );
-                                                    addToStream(name['name']);
+                                                    addToStream(domainName);
                                                     setState(() {});
                                                   },
+                                                  selected: selectedNames
+                                                      .contains(domainName),
+                                                  selectedTileColor:
+                                                      Theme.of(context)
+                                                          .accentColor
+                                                          .withOpacity(
+                                                            0.2,
+                                                          ),
                                                   leading: Hero(
-                                                    tag:
-                                                        'app-icon-${name['name']}',
+                                                    tag: 'app-icon-$domainName',
                                                     child: (app.icon == null ||
                                                             app.icon.endsWith(
                                                                 '.xml'))
@@ -717,7 +892,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                                           ),
                                                   ),
                                                   title: Text(
-                                                      '${app.localizedName}'), // optional (${name['name']})
+                                                    '${app.localizedName}',
+                                                    style:
+                                                        selectedNames.contains(
+                                                                domainName)
+                                                            ? TextStyle(
+                                                                color: Theme.of(
+                                                                        context)
+                                                                    .colorScheme
+                                                                    .onSurface,
+                                                              )
+                                                            : null,
+                                                  ), // optional (${name['name']})
                                                   subtitle: state == null
                                                       ? null
                                                       : Text(
@@ -725,90 +911,125 @@ class _MyHomePageState extends State<MyHomePage> {
                                                           maxLines: 3,
                                                           overflow: TextOverflow
                                                               .ellipsis,
+                                                          style: selectedNames
+                                                                  .contains(
+                                                                      domainName)
+                                                              ? TextStyle(
+                                                                  color: Theme.of(
+                                                                          context)
+                                                                      .colorScheme
+                                                                      .onSurface
+                                                                      .withOpacity(
+                                                                          0.5),
+                                                                )
+                                                              : null,
                                                         ),
                                                   trailing: SizedBox(
                                                     width: 4,
                                                     height: 42,
-                                                    child: loading
-                                                        ? LinearProgressIndicator(
-                                                            valueColor:
-                                                                AlwaysStoppedAnimation(
-                                                              Theme.of(context)
-                                                                  .colorScheme
-                                                                  .onSurface,
+                                                    child: progress != null
+                                                        ? Material(
+                                                            color: Theme.of(
+                                                                    context)
+                                                                .dividerColor,
+                                                            child: Column(
+                                                              children: [
+                                                                Container(
+                                                                  height: 42 *
+                                                                      progress,
+                                                                  width: 4,
+                                                                  color: Colors
+                                                                      .blue,
+                                                                ),
+                                                              ],
                                                             ),
-                                                            backgroundColor:
-                                                                Theme.of(
-                                                                        context)
-                                                                    .dividerColor,
                                                           )
-                                                        : FutureBuilder<
-                                                                Application>(
-                                                            future: DeviceApps
-                                                                .getApp(app
-                                                                    .packageName),
-                                                            builder: (context,
-                                                                snap) {
-                                                              /*  try { */
-                                                              if (error) {
-                                                                return Container(
-                                                                  color: Colors
-                                                                      .red,
-                                                                );
-                                                              }
-                                                              if (snap
-                                                                  .hasData) {
-                                                                final a =
-                                                                    snap.data;
-                                                                if (a == null) {
-                                                                  if (localVersionCodes
-                                                                      .containsKey(
-                                                                          a.packageName)) {
-                                                                    localVersionCodes
-                                                                        .delete(
-                                                                            a.packageName);
+                                                        : (loading ||
+                                                                installing)
+                                                            ? LinearProgressIndicator(
+                                                                valueColor:
+                                                                    AlwaysStoppedAnimation(
+                                                                  installing
+                                                                      ? Colors
+                                                                          .blue
+                                                                      : Theme.of(
+                                                                              context)
+                                                                          .colorScheme
+                                                                          .onSurface,
+                                                                ),
+                                                                backgroundColor:
+                                                                    Theme.of(
+                                                                            context)
+                                                                        .dividerColor,
+                                                              )
+                                                            : FutureBuilder<
+                                                                    Application>(
+                                                                future: DeviceApps
+                                                                    .getApp(app
+                                                                        .packageName),
+                                                                builder:
+                                                                    (context,
+                                                                        snap) {
+                                                                  /*  try { */
+                                                                  if (error) {
+                                                                    return Container(
+                                                                      color: Colors
+                                                                          .red,
+                                                                    );
                                                                   }
-                                                                } else {
-                                                                  if (localVersionCodes
-                                                                          .get(a
-                                                                              .packageName) !=
-                                                                      a.versionCode) {
-                                                                    localVersionCodes.put(
-                                                                        a.packageName,
-                                                                        a.versionCode);
+                                                                  if (snap
+                                                                      .hasData) {
+                                                                    final a =
+                                                                        snap.data;
+                                                                    if (a ==
+                                                                        null) {
+                                                                      if (localVersionCodes
+                                                                          .containsKey(
+                                                                              a.packageName)) {
+                                                                        localVersionCodes
+                                                                            .delete(a.packageName);
+                                                                      }
+                                                                    } else {
+                                                                      if (localVersionCodes
+                                                                              .get(a.packageName) !=
+                                                                          a.versionCode) {
+                                                                        localVersionCodes.put(
+                                                                            a.packageName,
+                                                                            a.versionCode);
+                                                                      }
+                                                                    }
                                                                   }
-                                                                }
-                                                              }
-                                                              if (!snap
-                                                                      .hasData ||
-                                                                  snap.data ==
-                                                                      null)
-                                                                return SizedBox();
+                                                                  if (!snap
+                                                                          .hasData ||
+                                                                      snap.data ==
+                                                                          null)
+                                                                    return SizedBox();
 
-                                                              if (snap.data
-                                                                      .versionCode <
-                                                                  app.currentVersionCode) {
-                                                                return Container(
-                                                                  color: Colors
-                                                                      .orange,
-                                                                );
-                                                              } else {
-                                                                return Container(
-                                                                  color: Theme.of(
-                                                                          context)
-                                                                      .accentColor,
-                                                                );
-                                                              }
-                                                              /*  } catch (e, st) {
+                                                                  if (snap.data
+                                                                          .versionCode <
+                                                                      app.currentVersionCode) {
+                                                                    return Container(
+                                                                      color: Colors
+                                                                          .orange,
+                                                                    );
+                                                                  } else {
+                                                                    return Container(
+                                                                      color: Theme.of(
+                                                                              context)
+                                                                          .accentColor,
+                                                                    );
+                                                                  }
+                                                                  /*  } catch (e, st) {
                                                                 print(e);
                                                                 print(st);
                                                               } */
-                                                            }),
+                                                                }),
                                                   ));
                                             } else {
                                               return ListTile(
                                                 onLongPress: () {
-                                                  removeName(name['name']);
+                                                  removeNameDialog(
+                                                      name['name']);
                                                 },
                                                 title: Text(name['name']),
                                                 subtitle: Text(state),
@@ -829,94 +1050,275 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ],
                 ),
-          StreamBuilder(
-              stream: globalErrorStream.stream,
-              builder: (context, snapshot) {
-                if (globalErrors.isEmpty) {
-                  return SizedBox();
-                }
-
-                return Align(
-                  alignment: Alignment.bottomCenter,
-                  child: SizedBox(
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (selectedNames.isNotEmpty) ...[
+                  Divider(
+                    height: 2,
+                    thickness: 2,
+                    // color: Colors.red,
+                  ),
+                  SizedBox(
                     width: double.infinity,
                     child: Container(
-                      color: Colors.yellow,
+                      color: Theme.of(context).cardColor,
                       padding: const EdgeInsets.only(
                         left: 8,
-                        right: 76,
-                        top: 0,
+                        //right: 8,
+                        top: 8,
                         bottom: 4,
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          InkWell(
-                            onTap: () {
-                              globalErrors = {};
-                              globalErrorStream.add(null);
-                            },
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                top: 8.0,
-                                bottom: 4.0,
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 4,
                               ),
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    Icons.close,
-                                    color: Colors.black,
-                                    size: 28,
-                                  ),
-                                  Text(
-                                    tr.errorsSheetTitle,
+                              Text(
+                                _isRunningBatchOperation
+                                    ? (selectedNames.length == 1
+                                        ? tr.batchProcessingSheetProgressOne
+                                        : tr.batchProcessingSheetProgressMore(
+                                            selectedNames.length,
+                                          ))
+                                    : (selectedNames.length == 1
+                                        ? tr.batchProcessingSheetSelectedOne
+                                        : tr.batchProcessingSheetSelectedMore(
+                                            selectedNames.length,
+                                          )),
+                                style: TextStyle(fontSize: 18),
+                              ),
+                              if (!_isRunningBatchOperation) ...[
+                                SizedBox(
+                                  width: 12,
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    selectedNames.clear();
+                                    setState(() {});
+                                  },
+                                  child: Text(
+                                    tr.batchProcessingSheetUnselectAllButton,
                                     style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                      color: Colors.black,
+                                      color: Theme.of(context).accentColor,
                                     ),
                                   ),
-                                ],
-                              ),
-                            ),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    for (final name in namesOrder) {
+                                      selectedNames.add(name);
+                                    }
+                                    setState(() {});
+                                  },
+                                  child: Text(
+                                    tr.batchProcessingSheetSelectAllButton,
+                                    style: TextStyle(
+                                      color: Theme.of(context).accentColor,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ],
                           ),
-                          for (var e in globalErrors.keys) ...[
-                            Text(
-                              '$e',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
+                          if (_isRunningBatchOperation)
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(bottom: 8.0, top: 8.0),
+                              child: LinearProgressIndicator(
+                                minHeight: 6,
                               ),
                             ),
-                            for (var c in globalErrors[e].take(3))
-                              Text(
-                                '$c',
+                          if (!isShizukuEnabled) ...[
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                tr.batchProcessingSheetShizukuWarning,
                                 style: TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.black,
+                                  fontSize: 18,
                                 ),
                               ),
-                            if (globalErrors[e].length > 3)
-                              Text(
-                                tr.errorsSheetOverflowCount(
-                                    globalErrors[e].length - 3),
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.black,
+                            )
+                          ],
+                          if (!_isRunningBatchOperation && isShizukuEnabled)
+                            Row(
+                              children: [
+                                RaisedButton(
+                                  onPressed: () async {
+                                    await _updateOrInstallAllSelectedApps();
+                                  },
+                                  child: Text(tr
+                                      .batchProcessingSheetInstallOrUpdateAllButton),
                                 ),
-                              ),
-                            SizedBox(
-                              height: 4,
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                RaisedButton(
+                                  onPressed: () async {
+                                    setState(() {
+                                      _isRunningBatchOperation = true;
+                                    });
+                                    for (final name in selectedNames) {
+                                      final App app = apps.get(name);
+
+                                      final a = await DeviceApps.getApp(
+                                          app.packageName);
+                                      if (a == null) continue;
+
+                                      if (a.packageName == 'app.skydroid')
+                                        continue;
+
+                                      await platform.invokeMethod(
+                                        'uninstall',
+                                        {
+                                          'packageName': '${app.packageName}',
+                                        },
+                                      );
+
+                                      for (int i = 0; i < 1000; i++) {
+                                        await Future.delayed(
+                                            Duration(milliseconds: 50));
+                                        final a = await DeviceApps.getApp(
+                                            app.packageName);
+                                        if (a == null) break;
+                                      }
+
+                                      setState(() {});
+
+                                      await Future.delayed(
+                                          Duration(milliseconds: 200));
+                                    }
+                                    setState(() {
+                                      _isRunningBatchOperation = false;
+                                    });
+                                  },
+                                  child: Text(tr
+                                      .batchProcessingSheetUninstallAllButton),
+                                  color: Theme.of(context).errorColor,
+                                ),
+                              ],
                             ),
-                          ]
+                          if (!_isRunningBatchOperation)
+                            Row(
+                              children: [
+                                TextButton(
+                                  onPressed: () async {
+                                    final res = await removeMultipleNamesDialog(
+                                        selectedNames.toList());
+
+                                    if (res) {
+                                      selectedNames.clear();
+                                      setState(() {});
+                                    }
+                                  },
+                                  child: Text(
+                                    tr.batchProcessingSheetRemoveAllNamesButton,
+                                    style: TextStyle(
+                                      color: Theme.of(context).accentColor,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                         ],
                       ),
                     ),
                   ),
-                );
-              })
+                ],
+                StreamBuilder(
+                    stream: globalErrorStream.stream,
+                    builder: (context, snapshot) {
+                      if (globalErrors.isEmpty) {
+                        return SizedBox();
+                      }
+
+                      return SizedBox(
+                        width: double.infinity,
+                        child: Container(
+                          color: Colors.yellow,
+                          padding: const EdgeInsets.only(
+                            left: 8,
+                            right: 76,
+                            top: 0,
+                            bottom: 4,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  globalErrors = {};
+                                  globalErrorStream.add(null);
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                    top: 8.0,
+                                    bottom: 4.0,
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Icon(
+                                        Icons.close,
+                                        color: Colors.black,
+                                        size: 28,
+                                      ),
+                                      Text(
+                                        tr.errorsSheetTitle,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              for (var e in globalErrors.keys) ...[
+                                Text(
+                                  '$e',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                for (var c in globalErrors[e].take(3))
+                                  Text(
+                                    '$c',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                if (globalErrors[e].length > 3)
+                                  Text(
+                                    tr.errorsSheetOverflowCount(
+                                        globalErrors[e].length - 3),
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                SizedBox(
+                                  height: 4,
+                                ),
+                              ]
+                            ],
+                          ),
+                        ),
+                      );
+                    }),
+              ],
+            ),
+          ),
         ],
       ),
       floatingActionButton: currentPage == 2
@@ -993,6 +1395,68 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
     );
+  }
+
+  Future _updateOrInstallAllSelectedApps() async {
+    setState(() {
+      _isRunningBatchOperation = true;
+    });
+    final downloadPool = new Pool(
+      4,
+      timeout: new Duration(minutes: 10),
+    );
+    final installPool = new Pool(
+      1,
+      timeout: new Duration(minutes: 10),
+    );
+
+    for (final name in selectedNames) {
+      final App app = apps.get(name);
+      final task = InstallTask(app);
+
+      task.onErrorMessage.stream.listen((error) {
+        addError(error, 'app:$name');
+      });
+
+      task.onSetState.stream.listen((event) {
+        if (task.state == InstallState.downloading) {
+          batchDownloadingProgress[name] = task.progress;
+
+          loadingState[name] = 5;
+        } else if (task.state == InstallState.installing) {
+          loadingState[name] = 6;
+        } else {
+          loadingState[name] = 0;
+        }
+
+        addToStream(name);
+      });
+      print('init $name');
+      await task.init();
+
+      if ((task?.installedApplication?.versionCode ?? 0) >=
+          app.currentVersionCode) {
+        print('skip $name');
+        task.dispose();
+        continue;
+      }
+
+      downloadPool.withResource(() async {
+        print('download $name');
+        await task.download();
+        installPool.withResource(() async {
+          print('install $name');
+          await task.install();
+          task.dispose();
+        });
+      });
+    }
+
+    await downloadPool.close();
+    await installPool.close();
+    setState(() {
+      _isRunningBatchOperation = false;
+    });
   }
 
   Future<void> addName(String result) async {

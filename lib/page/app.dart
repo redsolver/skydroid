@@ -98,7 +98,8 @@ class _AppPageState extends State<AppPage> {
       final ar =
           coll.apps.firstWhere((ar) => ar.name == name, orElse: () => null);
       if (ar != null) {
-        if (ar.verifiedMetadataHashes.contains(app.metadataSrcHash)) {
+        if (ar?.verifiedMetadataHashes?.contains(app.metadataSrcHash) ??
+            false) {
           verifiedBy.add(coll);
         }
       }
