@@ -84,6 +84,35 @@ settingsPageServicesMultiDoHServer: Multi-DoH Server
 settingsPageServicesSkynetPortal: Portail Skynet
 settingsPageAboutTitle: À propos
 settingsPageAboutShowLicenses: Monter les licenses
+settingsPageAboutDebug: Debug Info
+settingsPageAboutDebugDialogClose: Ok
+errorAppInvalidCurrentBuild: "Erreur: Pas de build trouvée pour la version actuelle"
+errorAppCompatibilitySdkVersionTooLow: "Cette application n'est pas compatible avec votre appareil (sdkVersion trop basse: {sdkVersion} < {minSdkVersion})"
+errorAppCompatibilityNoMatchingABI: "Cette application n'est pas compatible avec votre appareil (ABI not supported: {deviceABIs} n'est pas dans {supportedABIs})"
+errorAppInstallationShizuku: L'installation de Shizuku a échouée
+appPageInstallingShizukuProcess: Installallation de l'app... (Shizuku)
+settingsPageShizukuTitle: Service Shizuku 
+settingsPageShizukuDescription: Shizuku est une application qui peut donner à skydroid l'accès aux APIs systèmes sans root. Ceci permet l'installation et la mise à jour d'application sans interaction nécessaire de la part de l'utilisateur. 
+settingsPageShizukuToggleSwitch: Activer Shizuku
+settingsPageShizukuInstallButton: Installer Shizuku
+appPageInstallingShizukuErrorNotRunning: Shizuku Service ne fonctionne pas
+appPageInstallingShizukuErrorNotRunningButton: Ouvrir Shizuku
+appPageInstallingShizukuErrorPermissionNotGranted: Permission non accordée (Aller dans les réglages de skydroid et réactiver le support Shizuku)
+removeNamesDialogTitle: Supprimer les noms sélectionnés ? 
+removeNamesDialogContent: Voulez vous vraiment supprimer {count} noms de votre liste d'applciations? Cette action ne touche pas a vos application installées et les noms peuvent être rajoutés à la collection par après.
+removeNamesDialogConfirm: Tout supprimer
+appListPageSearchHint: Rechercher une app...
+appListPageUpdateAllAppsButton: Mettre à jour toutes les apps
+batchProcessingSheetProgressOne: Traitement de 1 app...
+batchProcessingSheetProgressMore: Traitement de {count} apps...
+batchProcessingSheetSelectedOne: 1 app sélectionné
+batchProcessingSheetSelectedMore: "{count} apps sélectionnés"
+batchProcessingSheetSelectAllButton: Tout sélectionner
+batchProcessingSheetUnselectAllButton: Tout déselectionner
+batchProcessingSheetShizukuWarning: Activer le service Shizuku dans les réglages pour utilisé les actions groupées
+batchProcessingSheetInstallOrUpdateAllButton: Installer/Mettre à jour
+batchProcessingSheetUninstallAllButton: Désinstaller
+batchProcessingSheetRemoveAllNamesButton: Supprimer tout les noms sélectionnés
 
 # Taken from SAI (Split APKs Installer)
 saiStr_installer_rootless_error2_unknown: Erreur inconnue
