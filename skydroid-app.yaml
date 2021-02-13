@@ -21,13 +21,25 @@ localized:
       Sia Skynet is used as hosting infrastructure for App Metadata, APKs, screenshots and other media content.
     summary: A decentralized domain-based App Store for Android.
     whatsNew: |-
-      - Translated in English, German, French and Dutch
-      - Shizuku Service Support for easier app installation
-      - Split-APK support for up to 3x smaller download sizes
-      - Changed accent color
-      - Fixed some bugs and added some optimizations
+      • Translated in English, German, French, Dutch and Czech
+      • Shizuku Service Support for easier app installation
+      • Added batch selection and processing actions
+      • Added deeplink support for collections
+      • Added automatic cache cleanup
+      • Improved error messages
+      • Split-APK support for up to 3x smaller download sizes
+      • Changed accent color
+      • Fixed some bugs and added some optimizations
 
 builds:
+  - versionName: 0.4.1
+    versionCode: 41
+    sha256: aeddeb4d28e84f19f84fbef05cedc4cdc760bdaf8df22247bb8a6610c0134309
+    apkLink: sia://AAC5d6VZljrYFKEKO1bELlZhP0aK7VpnBweSwfok2r2omw
+  - versionName: 0.4.0
+    versionCode: 40
+    sha256: 4ee2259733f79f2dafc6aac8a6aea7b0ad3a00c045272c93edc8d1f825f669d6
+    apkLink: sia://AAANGZVGJM2dqEk1Au4qJJuoKf8opjNqfEZIOPlfpmHSkw
   - versionName: 0.3.0
     versionCode: 30
     sha256: 85fda8ce9a8ce6f61636049efacfc630b9b248fb95ab330f3cca11ebfc0f80be
@@ -69,8 +81,8 @@ builds:
     sha256: c62c2d73c0ead2fb1a287eecc6d637c318cb49b8c1543bbd2110d73b78ee7c6a
     apkLink: sia://AADzaC8YfqVlUAcSf8-1PdT9mLDb9KRLeV9Pi8y3l8G2KA
 
-currentVersionName: 0.3.0
-currentVersionCode: 30
+currentVersionName: 0.4.1
+currentVersionCode: 41
 
 added: 1597353106000
-lastUpdated: 1612785318632
+lastUpdated: 1613215138562
