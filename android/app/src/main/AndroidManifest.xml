@@ -64,6 +64,9 @@
                 <data
                 android:scheme="https"
                 android:host="to.skydroid.app" />
+                <data
+                android:scheme="https"
+                android:host="collection.skydroid.app" />
             </intent-filter>
 
         </activity>

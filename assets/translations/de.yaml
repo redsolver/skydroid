@@ -101,7 +101,7 @@ appPageInstallingShizukuErrorPermissionNotGranted: Shizuku Berechtigung nicht er
 removeNamesDialogTitle: Ausgewählte Domains entfernen?
 removeNamesDialogContent: Möchtest du wirklich {count} Domains von deiner App-Liste entfernen? Diese Aktion beinflusst keine installierten Apps und die Domains könnten durch eine Sammlung wieder hinzugefügt werden.
 removeNamesDialogConfirm: Alle entfernen
-appListPageSearchHint: Sucher nach Apps...
+appListPageSearchHint: Suche nach Apps...
 appListPageUpdateAllAppsButton: Alle Apps aktualisieren
 batchProcessingSheetProgressOne: 1 App wird verarbeitet...
 batchProcessingSheetProgressMore: "{count} Apps werden verarbeitet..."
@@ -113,6 +113,7 @@ batchProcessingSheetShizukuWarning: Aktiviere Shizuku Service in den Optionen um
 batchProcessingSheetInstallOrUpdateAllButton: Installieren
 batchProcessingSheetUninstallAllButton: Deinstallieren
 batchProcessingSheetRemoveAllNamesButton: Ausgewählte Namen entfernen
+filterByCollectionCardTitle: Nach Sammlung filtern
 
 # Taken from SAI (Split APKs Installer)
 saiStr_installer_rootless_error2_unknown: Unbekannter Fehler

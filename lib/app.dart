@@ -10,12 +10,14 @@ import 'package:hive/hive.dart';
 
 import 'package:flutter_gen/gen_l10n/translations.dart';
 import 'package:preferences/preference_service.dart';
+import 'package:skydroid/model/app.dart';
+import 'package:skydroid/model/collection.dart';
 
 Box names;
-Box apps;
+Box<App> apps;
 
 Box collectionNames;
-Box collections;
+Box<Collection> collections;
 
 Box localVersionCodes;
 

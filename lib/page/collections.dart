@@ -7,8 +7,9 @@ import 'package:skydroid/model/collection.dart';
 
 class CollectionsPage extends StatefulWidget {
   final Function refreshCallback;
+  final Function selectCollection;
 
-  CollectionsPage({this.refreshCallback});
+  CollectionsPage({this.refreshCallback, this.selectCollection});
 
   @override
   _CollectionsPageState createState() => _CollectionsPageState();
@@ -63,6 +64,9 @@ class _CollectionsPageState extends State<CollectionsPage> {
               return ListTile(
                 onLongPress: () {
                   removeName(colName);
+                },
+                onTap: () {
+                  widget.selectCollection(colName);
                 },
                 title: Text(
                   tr.collectionListItemTitle(c.title, colName, c.apps.length),

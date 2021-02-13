@@ -92,33 +92,43 @@ void main() async {
 }
 
 Future<void> cleanCache() async {
-  var appDir = await getTemporaryDirectory();
+  try {
+    var appDir = await getTemporaryDirectory();
 
-  final apkCacheDir = Directory('${appDir.path}/apk/');
+    final apkCacheDir = Directory('${appDir.path}/apk/');
 
-  // var apk = File('${appDir.path}/apk/$apkSha256.apk');
+    // var apk = File('${appDir.path}/apk/$apkSha256.apk');
 
-  if (!apkCacheDir.existsSync()) return;
-  // print('Cleaning cache...');
+    if (!apkCacheDir.existsSync()) return;
+    // print('Cleaning cache...');
 
-  final now = DateTime.now();
+    final now = DateTime.now();
 
-  for (final file in apkCacheDir.listSync()) {
-    final hash = path.basename(file.path).split('.').first;
-    // print(hash);
+    for (final file in apkCacheDir.listSync()) {
+      if (file.path.endsWith('.apk.downloading')) {
+        file.delete();
+        continue;
+      }
 
-    final lastAccessed = DateTime.fromMillisecondsSinceEpoch(
-      apkCacheTimes.get(hash) ?? 0,
-    );
+      final hash = path.basename(file.path).split('.').first;
+      // print(hash);
 
-    if (now.difference(lastAccessed) > Duration(days: 7)) {
-      // print('[cache] delete $hash');
-      final apkFile = File('${apkCacheDir.path}/$hash.apk');
+      final lastAccessed = DateTime.fromMillisecondsSinceEpoch(
+        apkCacheTimes.get(hash) ?? 0,
+      );
 
-      apkFile.delete();
+      if (now.difference(lastAccessed) > Duration(days: 7)) {
+        // print('[cache] delete $hash');
+        final apkFile = File('${apkCacheDir.path}$hash.apk');
 
-      apkCacheTimes.delete(hash);
+        apkFile.delete();
+
+        apkCacheTimes.delete(hash);
+      }
     }
+  } catch (e, st) {
+    print(e);
+    print(st);
   }
 }
 
@@ -225,24 +235,56 @@ class _MyHomePageState extends State<MyHomePage> {
   StreamSubscription _sub;
 
   processLink(String link) async {
-    final name =
-        link.split('/').reversed.firstWhere((element) => element.isNotEmpty);
+    final uri = Uri.parse(link);
 
-    if (!names.containsKey(name)) {
-      await addName(name);
+    if (uri.pathSegments.isEmpty) return;
+
+    final name = uri.pathSegments.first;
+
+    if (uri.host == 'to.skydroid.app') {
+      if (!names.containsKey(name)) {
+        await addName(name);
+      }
+
+      final App app = apps.get(name);
+      if (app != null) {
+        await Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => AppPage(
+              name,
+              app,
+            ),
+          ),
+        );
+      }
+
+      addToStream(name);
+      setState(() {});
+    } else if (uri.host == 'collection.skydroid.app') {
+      while (Navigator.of(context).canPop()) Navigator.of(context).pop();
+      setState(() {
+        currentPage = 1;
+      });
+
+      if (!collectionNames.containsKey(name)) {
+        await addName(name);
+      }
+
+      /*  final Collection collection = collections.get(name);
+      if (app != null) {
+        await Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => AppPage(
+              name,
+              app,
+            ),
+          ),
+        );
+      } */
+
+      // addToStream(name);
+      //setState(() {});
     }
-
-    final App app = apps.get(name);
-    await Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => AppPage(
-          name,
-          app,
-        ),
-      ),
-    );
-    addToStream(name);
-    setState(() {});
   }
 
   Future<Null> initUniLinks() async {
@@ -472,13 +514,30 @@ class _MyHomePageState extends State<MyHomePage> {
 
   String searchTerm;
   String categoryFilter;
+  String collectionFilter;
 
   List<String> namesOrder;
 
   List<String> namesWithUpdates;
 
   List<String> updateNamesOrder() {
-    List<String> preparedKeys = apps.keys.toList().cast<String>();
+    if (collectionFilter != null) {
+      if (!collections.containsKey(collectionFilter)) {
+        setState(() {
+          collectionFilter = null;
+        });
+      }
+    }
+
+    List<String> preparedKeys = collectionFilter == null
+        ? apps.keys.toList().cast<String>()
+        : collections
+            .get(collectionFilter)
+            .apps
+            .map<String>((r) => r.name)
+            .toList();
+
+    // print(preparedKeys);
 
     preparedKeys.sort(
         (a, b) => -apps.get(a).lastUpdated.compareTo(apps.get(b).lastUpdated));
@@ -532,7 +591,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     for (var key in names.keys) {
-      if (!preparedKeys.contains(key)) keys.add(key);
+      if (!apps.containsKey(key)) keys.add(key);
     }
 
     if (hiddenCounter != hiddenCount) {
@@ -692,6 +751,12 @@ class _MyHomePageState extends State<MyHomePage> {
               ? (currentPage == 1
                   ? CollectionsPage(
                       refreshCallback: updateAllCollections,
+                      selectCollection: (colName) {
+                        setState(() {
+                          collectionFilter = colName;
+                          currentPage = 0;
+                        });
+                      },
                     )
                   : SettingsPage())
               : Column(
@@ -721,16 +786,90 @@ class _MyHomePageState extends State<MyHomePage> {
                               )
                             : Scrollbar(
                                 child: ListView.builder(
-                                  itemCount: namesOrder.length +
-                                      ((namesWithUpdates.isNotEmpty &&
-                                              isShizukuEnabled)
-                                          ? 1
-                                          : 0),
+                                  itemCount: () {
+                                    int itemCount = namesOrder.length +
+                                        ((namesWithUpdates.isNotEmpty &&
+                                                isShizukuEnabled)
+                                            ? 1
+                                            : 0);
+
+                                    if (collectionFilter != null) itemCount++;
+
+                                    return itemCount;
+                                  }(),
                                   padding: EdgeInsets.only(
                                     top: _loading ? 4 : 8,
                                     bottom: 200,
                                   ),
                                   itemBuilder: (context, index) {
+                                    if (collectionFilter != null) {
+                                      if (index == 0) {
+                                        final collection =
+                                            collections.get(collectionFilter);
+                                        return Padding(
+                                          padding: const EdgeInsets.only(
+                                            top: 8,
+                                            left: 13.0,
+                                            right: 13,
+                                          ),
+                                          child: Card(
+                                              child: Column(
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                      top: 8.0,
+                                                      left: 8.0,
+                                                    ),
+                                                    child: Text(
+                                                      tr.filterByCollectionCardTitle,
+                                                      style: TextStyle(
+                                                        fontSize: 18,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Spacer(),
+                                                  InkWell(
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8),
+                                                      child: Icon(
+                                                        Icons.close,
+                                                        color: Colors.red,
+                                                      ),
+                                                    ),
+                                                    onTap: () {
+                                                      setState(() {
+                                                        collectionFilter = null;
+                                                      });
+                                                    },
+                                                  )
+                                                ],
+                                              ),
+                                              ListTile(
+                                                title: Text(
+                                                  collection.title,
+                                                ),
+                                                subtitle:
+                                                    Text(collectionFilter),
+                                                leading: Container(
+                                                  width: 56,
+                                                  alignment:
+                                                      Alignment.topCenter,
+                                                  child: CachedNetworkImage(
+                                                      imageUrl: resolveLink(
+                                                          collection.icon)),
+                                                ),
+                                              ),
+                                            ],
+                                          )),
+                                        );
+                                      }
+                                      index--;
+                                    }
                                     if (namesWithUpdates.isNotEmpty &&
                                         isShizukuEnabled) {
                                       if (index == 0) {
@@ -907,7 +1046,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   subtitle: state == null
                                                       ? null
                                                       : Text(
-                                                          state,
+                                                          state.trim(),
                                                           maxLines: 3,
                                                           overflow: TextOverflow
                                                               .ellipsis,

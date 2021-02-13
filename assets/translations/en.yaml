@@ -113,6 +113,7 @@ batchProcessingSheetShizukuWarning: Enable Shizuku Service in the Settings to us
 batchProcessingSheetInstallOrUpdateAllButton: Install/Update
 batchProcessingSheetUninstallAllButton: Uninstall
 batchProcessingSheetRemoveAllNamesButton: Remove all selected names
+filterByCollectionCardTitle: Filter by collection
 
 # Taken from SAI (Split APKs Installer)
 saiStr_installer_rootless_error2_unknown: Unknown error
