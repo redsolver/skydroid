@@ -1,18 +1,15 @@
-import 'dart:io';
-
 import 'package:flutter_html/flutter_html.dart';
 import 'package:markdown/markdown.dart' as md;
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:share/share.dart';
-import 'package:skydroid/app.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:time_ago_provider/time_ago_provider.dart' as time_ago;
+import 'package:skydroid/app.dart';
 import 'package:skydroid/model/app.dart';
 import 'package:skydroid/model/collection.dart';
 import 'package:skydroid/page/widget/install.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:time_ago_provider/time_ago_provider.dart' as timeAgo;
 
 class FullScreenPage extends StatefulWidget {
   final List<String> images;
@@ -94,7 +91,7 @@ class _AppPageState extends State<AppPage> {
   List<Collection> verifiedBy = [];
 
   Future loadVerifications() async {
-    for (Collection coll in collections.values) {
+    for (final coll in collections.values) {
       final ar =
           coll.apps.firstWhere((ar) => ar.name == name, orElse: () => null);
       if (ar != null) {
@@ -215,7 +212,7 @@ class _AppPageState extends State<AppPage> {
                         ),
                         Text(
                           (app.categories ?? [])
-                              .map((s) => translateCategoryName(s))
+                              .map(translateCategoryName)
                               .join(' • '),
                           style: TextStyle(fontStyle: FontStyle.italic),
                         ),
@@ -308,7 +305,7 @@ class _AppPageState extends State<AppPage> {
                               alignment: Alignment.centerRight,
                               child: Text(
                                 tr.appPageUpdatedTime(
-                                  timeAgo.format(
+                                  time_ago.format(
                                     DateTime.fromMillisecondsSinceEpoch(
                                       app.lastUpdated,
                                     ),
@@ -397,7 +394,7 @@ class _AppPageState extends State<AppPage> {
                     padding: const EdgeInsets.only(right: 16),
                     child: Text(
                       tr.appPageUpdatedTime(
-                        timeAgo.format(
+                        time_ago.format(
                           DateTime.fromMillisecondsSinceEpoch(app.lastUpdated),
                           locale: tr.localeName,
                         ),

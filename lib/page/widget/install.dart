@@ -179,7 +179,7 @@ class _InstallWidgetState extends State<InstallWidget>
                                   task.installedApplication.versionName)),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 8,
                           ),
                           task.installedApplication.versionCode >=

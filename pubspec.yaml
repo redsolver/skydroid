@@ -3,7 +3,7 @@ description: A decentralized domain-based App Store for Android.
 
 publish_to: "none"
 
-version: 0.4.1+41
+version: 0.5.0+50
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -45,6 +45,7 @@ dependencies:
   device_info: ^1.0.0
   pool: ^1.4.0
   path: ^1.7.0
+  logger: ^0.9.4
 
 dev_dependencies:
   flutter_test:

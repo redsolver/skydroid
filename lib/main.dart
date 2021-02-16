@@ -18,6 +18,7 @@ import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
+import 'package:pedantic/pedantic.dart';
 import 'package:pool/pool.dart';
 import 'package:preferences/preferences.dart';
 import 'package:skydroid/app.dart';
@@ -33,7 +34,7 @@ import 'package:yaml/yaml.dart';
 
 import 'package:flutter_gen/gen_l10n/translations.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await PrefService.init();
@@ -55,19 +56,20 @@ void main() async {
     ],
   ]; // 1,34 MB pro 255 Apps
 
-  print('Language preferences: $languagePreferences');
+  logger.i('Language preferences: $languagePreferences');
 
   await Hive.initFlutter();
-  Hive.registerAdapter(AppAdapter());
-  Hive.registerAdapter(BuildAdapter());
-  Hive.registerAdapter(CollectionAdapter());
-  Hive.registerAdapter(AppReferenceAdapter());
-  Hive.registerAdapter(ABISpecificBuildAdapter());
+  Hive
+    ..registerAdapter(AppAdapter())
+    ..registerAdapter(BuildAdapter())
+    ..registerAdapter(CollectionAdapter())
+    ..registerAdapter(AppReferenceAdapter())
+    ..registerAdapter(ABISpecificBuildAdapter());
 
   names = await Hive.openBox('names'); // name -> {name ...}
 
   if (names.isEmpty) {
-    names.put('skydroid.app', {
+    await names.put('skydroid.app', {
       'name': 'skydroid.app',
     });
   }
@@ -79,34 +81,36 @@ void main() async {
 
   apkCacheTimes = await Hive.openBox('apkCacheTimes');
 
-  cleanCache();
+  unawaited(cleanCache());
 
   workTroughReqs();
   final deviceInfo = DeviceInfoPlugin();
 
-  deviceInfo.androidInfo.then((value) => androidInfo = value);
+  unawaited(deviceInfo.androidInfo.then((value) => androidInfo = value));
 
   runApp(
-    MyApp(),
+    const MyApp(),
   );
 }
 
 Future<void> cleanCache() async {
   try {
-    var appDir = await getTemporaryDirectory();
+    final appDir = await getTemporaryDirectory();
 
     final apkCacheDir = Directory('${appDir.path}/apk/');
 
     // var apk = File('${appDir.path}/apk/$apkSha256.apk');
 
-    if (!apkCacheDir.existsSync()) return;
+    if (!apkCacheDir.existsSync()) {
+      return;
+    }
     // print('Cleaning cache...');
 
     final now = DateTime.now();
 
     for (final file in apkCacheDir.listSync()) {
       if (file.path.endsWith('.apk.downloading')) {
-        file.delete();
+        await file.delete();
         continue;
       }
 
@@ -117,29 +121,32 @@ Future<void> cleanCache() async {
         apkCacheTimes.get(hash) ?? 0,
       );
 
-      if (now.difference(lastAccessed) > Duration(days: 7)) {
+      if (now.difference(lastAccessed) > apkCacheDuration) {
         // print('[cache] delete $hash');
         final apkFile = File('${apkCacheDir.path}$hash.apk');
 
-        apkFile.delete();
+        await apkFile.delete();
 
-        apkCacheTimes.delete(hash);
+        await apkCacheTimes.delete(hash);
       }
     }
   } catch (e, st) {
-    print(e);
-    print(st);
+    logger
+      ..e(e)
+      ..d(st);
   }
 }
 
 final httpClient = http.Client();
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key key}) : super(key: key);
+
   ThemeData _buildThemeData(String theme) {
-    var _accentColor = Color(0xff1ed660);
+    const _accentColor = Color(0xff1ed660);
     //Color(0xff57b560);
 
-    var brightness =
+    final brightness =
         ['light', 'sepia'].contains(theme) ? Brightness.light : Brightness.dark;
 
     var themeData = ThemeData(
@@ -151,23 +158,23 @@ class MyApp extends StatelessWidget {
         toggleableActiveColor: _accentColor,
         highlightColor: _accentColor,
         buttonColor: _accentColor,
-        floatingActionButtonTheme: FloatingActionButtonThemeData(
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
           backgroundColor: _accentColor,
         ),
-        buttonTheme: ButtonThemeData(
+        buttonTheme: const ButtonThemeData(
           textTheme: ButtonTextTheme.primary,
           buttonColor: _accentColor,
         ),
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           button: TextStyle(color: _accentColor),
         ),
-        inputDecorationTheme: InputDecorationTheme(
+        inputDecorationTheme: const InputDecorationTheme(
           focusColor: _accentColor,
           fillColor: _accentColor,
         ));
 
     if (theme == 'sepia') {
-      Color backgroundColor = Color(0xffF7ECD5);
+      const backgroundColor = Color(0xffF7ECD5);
       themeData = themeData.copyWith(
         primaryColor: backgroundColor,
         backgroundColor: backgroundColor,
@@ -176,7 +183,7 @@ class MyApp extends StatelessWidget {
         canvasColor: backgroundColor,
       );
     } else if (theme == 'black') {
-      Color backgroundColor = Colors.black;
+      const backgroundColor = Colors.black;
       themeData = themeData.copyWith(
         primaryColor: backgroundColor,
         backgroundColor: backgroundColor,
@@ -194,12 +201,12 @@ class MyApp extends StatelessWidget {
     //final str = PrefService.getString('theme');
 
     return AppTheme(
-      data: (theme) => _buildThemeData(theme),
+      data: _buildThemeData,
       themedWidgetBuilder: (context, theme) {
         return MaterialApp(
           title: 'SkyDroid',
           theme: theme,
-          home: MyHomePage(),
+          home: const MyHomePage(),
           debugShowCheckedModeBanner: false,
           localizationsDelegates: Translations.localizationsDelegates,
           supportedLocales: Translations.supportedLocales,
@@ -210,6 +217,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key key}) : super(key: key);
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -221,7 +230,7 @@ Stream<bool> getStream(String name) {
   return metadataStreams[name].stream;
 }
 
-addToStream(String name) {
+void addToStream(String name) {
   metadataStreams.putIfAbsent(name, () => StreamController.broadcast());
   metadataStreams[name].add(true);
 }
@@ -234,7 +243,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   StreamSubscription _sub;
 
-  processLink(String link) async {
+  Future<void> processLink(String link) async {
     final uri = Uri.parse(link);
 
     if (uri.pathSegments.isEmpty) return;
@@ -335,34 +344,35 @@ class _MyHomePageState extends State<MyHomePage> {
   bool _loading = true;
 
   Future updateAllCollections() async {
-    print('updateAllCollections');
+    logger.i('updateAllCollections');
 
-    List<Future> collectionFutures = [];
-    List<Future> futures = [];
+    final collectionFutures = <Future>[];
+    final futures = <Future>[];
 
-    for (var name in collectionNames.values) {
+    for (final name in collectionNames.values) {
       collectionFutures.add(() async {
         try {
           final n = name['name'];
           //print('Update $n');
 
-          var res = await checkName(n, type: 'collection');
+          final res = await checkName(n, type: 'collection');
 
           //print(res);
 
-          final Collection collection = collections.get(name['name']);
+          final collection = collections.get(name['name']);
 
           if (res['hash'] != collection?.srcHash) {
             //print('New collection Hash!!!');
-            collectionNames.put(n, res);
+            await collectionNames.put(n, res);
+
             await updateMetadata(res, 'collection');
-            final Collection collection = collections.get(name['name']);
+            final collection = collections.get(name['name']);
 
-            List<Future> localFutures = [];
+            final localFutures = <Future>[];
 
-            for (var app in collection.apps) {
+            for (final app in collection.apps) {
               if (!names.containsKey(app.name)) {
-                names.put(app.name, {
+                await names.put(app.name, {
                   'name': app.name,
                 });
 
@@ -1805,7 +1815,7 @@ Future<void> checkNameBatch(Map<String, Completer<List<String>>> batch) async {
       '$dnsUrl/multi-dns-query',
       body: json.encode({
         'type': 16,
-        'names': batch.keys.toList(),
+        'names': batch.keys.toList().map((m) => '_skydroid.$m').toList(),
       }),
     );
     if (res.statusCode == 200) {
@@ -1813,9 +1823,12 @@ Future<void> checkNameBatch(Map<String, Completer<List<String>>> batch) async {
 
       final Map names = data['names'];
 
-      for (var name in names.keys) {
-        batch[name]
-            .complete(names[name] == null ? null : names[name].cast<String>());
+      for (final String skydroidName in names.keys) {
+        final name = skydroidName.substring(10);
+
+        batch[name].complete(names[skydroidName] == null
+            ? null
+            : names[skydroidName].cast<String>());
       }
     } else {
       throw Exception(tr.errorHttpStatusCodeMultiDnsQuery(res.statusCode));

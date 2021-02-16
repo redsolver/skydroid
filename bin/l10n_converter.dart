@@ -5,19 +5,22 @@ import 'package:path/path.dart';
 import 'package:yaml/yaml.dart';
 
 void main(List<String> args) {
-  final assetsDirectory = 'assets';
+  const assetsDirectory = 'assets';
 
   for (final File file
       in Directory(join(assetsDirectory, 'translations')).listSync()) {
     final locale = file.path.split('/').last.split('.').first;
 
+    // ignore: avoid_print
     print('Converting locale $locale...');
 
     final map = <String, dynamic>{
       '@@locale': locale,
     };
 
-    final Map data = loadYaml(file.readAsStringSync());
+    final data =
+        (loadYaml(file.readAsStringSync()) as Map).cast<String, String>();
+
     for (final key in data.keys) {
       map[key] = data[key];
       final metaMap = <String, dynamic>{};
@@ -25,7 +28,6 @@ void main(List<String> args) {
       final matches = RegExp(r'(?<={)\w+(?=})').allMatches(data[key]);
 
       if (matches.isNotEmpty) {
-        
         metaMap['placeholders'] = {};
 
         for (final match in matches) {
@@ -35,8 +37,9 @@ void main(List<String> args) {
 
       map['@$key'] = metaMap;
     }
-    final outFile = File(join(assetsDirectory, 'l10n', 'app_$locale.arb'));
-    outFile.createSync(recursive: true);
-    outFile.writeAsStringSync(json.encode(map));
+
+    File(join(assetsDirectory, 'l10n', 'app_$locale.arb'))
+      ..createSync(recursive: true)
+      ..writeAsStringSync(json.encode(map));
   }
 }
