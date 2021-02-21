@@ -32,6 +32,10 @@ localized:
       • Fixed some bugs and added some optimizations
 
 builds:
+  - versionName: 0.5.1
+    versionCode: 51
+    sha256: 61befb9f1c686bddc05d80a7aa047ed51db9742c48aa4c3e577977849c8983af
+    apkLink: sia://AABlxC73HnG-847LIpenlXzSEhfOd27IgaAmTQpm5plzwg
   - versionName: 0.5.0
     versionCode: 50
     sha256: c2c7d61783256d32853df8decf640f96aef3ff9082bfd6cd2b337dc3453df9f0
@@ -85,8 +89,8 @@ builds:
     sha256: c62c2d73c0ead2fb1a287eecc6d637c318cb49b8c1543bbd2110d73b78ee7c6a
     apkLink: sia://AADzaC8YfqVlUAcSf8-1PdT9mLDb9KRLeV9Pi8y3l8G2KA
 
-currentVersionName: 0.5.0
-currentVersionCode: 50
+currentVersionName: 0.5.1
+currentVersionCode: 51
 
 added: 1597353106000
-lastUpdated: 1613469617679
+lastUpdated: 1613896831948
