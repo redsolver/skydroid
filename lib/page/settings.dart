@@ -162,7 +162,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     child: RaisedButton(
                       onPressed: () {
                         launch(
-                            'https://to.skydroid.app/moe.shizuku.privileged.api.bdroid');
+                            'https://to.skydroid.app/moe.shizuku.privileged.api.izzyondroid');
                       },
                       child: Text(tr.settingsPageShizukuInstallButton),
                     ),
