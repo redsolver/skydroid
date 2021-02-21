@@ -290,7 +290,7 @@
   "@appListPageSearchHint": {},
   "appListPageUpdateAllAppsButton": "Alle Apps aktualisieren",
   "@appListPageUpdateAllAppsButton": {},
-  "batchProcessingSheetProgressOne": "1 App wird verarbeitet...",
+  "batchProcessingSheetProgressOne": "1 App wird verarbeitet…",
   "@batchProcessingSheetProgressOne": {},
   "batchProcessingSheetProgressMore": "{count} Apps werden verarbeitet...",
   "@batchProcessingSheetProgressMore": {
