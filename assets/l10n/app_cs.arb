@@ -1,279 +1,279 @@
 {
-    "@@locale": "cs",
-    "removeNameDialogTitle": "Odstranit název?",
-    "@removeNameDialogTitle": {},
-    "removeNameDialogContent": "Skutečně chcete odstranit název \"{name}\" z Vaší kolekce aplikací? Tato akce neovlivní již nainstalované aplikace a název je možné znovu přidat pomocí kolekce.",
-    "@removeNameDialogContent": {
-        "placeholders": {
-            "name": {}
-        }
-    },
-    "removeNameDialogConfirm": "Odstranit",
-    "@removeNameDialogConfirm": {},
-    "dialogCancel": "Zrušit akci",
-    "@dialogCancel": {},
-    "navigationAppsPageTitle": "Apps",
-    "@navigationAppsPageTitle": {},
-    "navigationCollectionsPageTitle": "Kolekce",
-    "@navigationCollectionsPageTitle": {},
-    "navigationSettingsPageTitle": "Nastavení",
-    "@navigationSettingsPageTitle": {},
-    "filterDialogTitle": "Řadit podle kategorie",
-    "@filterDialogTitle": {},
-    "categoryConnectivity": "Připojení",
-    "@categoryConnectivity": {},
-    "categoryDevelopment": "Vývoj",
-    "@categoryDevelopment": {},
-    "categoryGames": "Hry",
-    "@categoryGames": {},
-    "categoryGraphics": "Grafika",
-    "@categoryGraphics": {},
-    "categoryInternet": "Internet",
-    "@categoryInternet": {},
-    "categoryMoney": "Peníze",
-    "@categoryMoney": {},
-    "categoryMultimedia": "Multimédia",
-    "@categoryMultimedia": {},
-    "categoryNavigation": "Navigace",
-    "@categoryNavigation": {},
-    "categoryPhoneAndSMS": "Telefon & SMS",
-    "@categoryPhoneAndSMS": {},
-    "categoryReading": "Četba",
-    "@categoryReading": {},
-    "categoryScienceAndEducation": "Věda & Vzdělání",
-    "@categoryScienceAndEducation": {},
-    "categorySecurity": "Bezpečnost",
-    "@categorySecurity": {},
-    "categorySportsAndHealth": "Sport & Zdraví",
-    "@categorySportsAndHealth": {},
-    "categorySystem": "Systém",
-    "@categorySystem": {},
-    "categoryTheming": "Motivy",
-    "@categoryTheming": {},
-    "categoryTime": "Čas",
-    "@categoryTime": {},
-    "categoryWriting": "Psaní",
-    "@categoryWriting": {},
-    "appListPageEmptyWarning": "Hmm, tady zatím nic není. Zkuste přidat název pomocí tlačítka \"Plus\" v pravém spodním rohu.",
-    "@appListPageEmptyWarning": {},
-    "appListLoadingMetadata": "Načítám metadata...",
-    "@appListLoadingMetadata": {},
-    "errorsSheetTitle": "Chyby",
-    "@errorsSheetTitle": {},
-    "errorsSheetOverflowCount": "...{count} dalších",
-    "@errorsSheetOverflowCount": {
-        "placeholders": {
-            "count": {}
-        }
-    },
-    "addDomainNameDialogTitle": "Přidat aplikaci, nebo kolekci",
-    "@addDomainNameDialogTitle": {},
-    "addDomainNameDialogInputLabel": "Název (domain)",
-    "@addDomainNameDialogInputLabel": {},
-    "addDomainNameDialogInputHint": "např. skydroid.app",
-    "@addDomainNameDialogInputHint": {},
-    "addDomainNameDialogConfirm": "Přidat",
-    "@addDomainNameDialogConfirm": {},
-    "addDomainNameLoadingDialogTitle": "Ověřuji název...",
-    "@addDomainNameLoadingDialogTitle": {},
-    "errorDialogTitle": "Někde se stala chyba",
-    "@errorDialogTitle": {},
-    "errorDialogCloseButton": "Ok",
-    "@errorDialogCloseButton": {},
-    "verifiedAppDialogTitle": "Ověřená aplikace",
-    "@verifiedAppDialogTitle": {},
-    "verifiedAppDialogContentTop": "Tato verze aplikace byla ověřena v následujících kolekcích:",
-    "@verifiedAppDialogContentTop": {},
-    "verifiedAppDialogContentBottom": "Kolekce lze použíz i ke značení verzí, které byly někým ověřené. To je důležitý faktor, který mohou uživatelé použít při rozhodování, jak moc lze dané verzi důvěřovat. Takové ověření může sestávat z kontroly metadat, testování, či scanování antivirovým programem.",
-    "@verifiedAppDialogContentBottom": {},
-    "verifiedAppDialogCloseButton": "Ok",
-    "@verifiedAppDialogCloseButton": {},
-    "verifiedAppBadgeLabel": "Ověřeno",
-    "@verifiedAppBadgeLabel": {},
-    "appPageWhatsNewTitle": "Co je nového?",
-    "@appPageWhatsNewTitle": {},
-    "appPageUpdatedTime": "Aktualizováno {time}",
-    "@appPageUpdatedTime": {
-        "placeholders": {
-            "time": {}
-        }
-    },
-    "appPageAddedTime": "Aplikace přidána: {time}",
-    "@appPageAddedTime": {
-        "placeholders": {
-            "time": {}
-        }
-    },
-    "appPageLinkDonate": "Přispět",
-    "@appPageLinkDonate": {},
-    "appPageLinkWebsite": "Webová stránka",
-    "@appPageLinkWebsite": {},
-    "appPageLinkSourceCode": "Zdrojový kód",
-    "@appPageLinkSourceCode": {},
-    "appPageLinkIssueTracker": "Problémy",
-    "@appPageLinkIssueTracker": {},
-    "appPageLinkTranslation": "Překlad",
-    "@appPageLinkTranslation": {},
-    "appPageLinkChangelog": "Changelog",
-    "@appPageLinkChangelog": {},
-    "appPageLinkLicense": "Licence: {license}",
-    "@appPageLinkLicense": {
-        "placeholders": {
-            "license": {}
-        }
-    },
-    "collectionListItemLoading": "Načítám...",
-    "@collectionListItemLoading": {},
-    "collectionListItemTitle": "{title} ({domainName}) • {appCount} aplikací",
-    "@collectionListItemTitle": {
-        "placeholders": {
-            "title": {},
-            "domainName": {},
-            "appCount": {}
-        }
-    },
-    "collectionRecommendationsCardTitle": "Nějaká doporučení do začátku",
-    "@collectionRecommendationsCardTitle": {},
-    "collectionLoadingDialogTitle": "Načítám kolekci...",
-    "@collectionLoadingDialogTitle": {},
-    "collectionLoadingDialogContent": "Tento proces může trvat až 30 vteřin, v závislosti na velikosti kolekce",
-    "@collectionLoadingDialogContent": {},
-    "removeCollectionDialogTitle": "Odebrat kolekci?",
-    "@removeCollectionDialogTitle": {},
-    "removeCollectionDialogContent": "Skutečně chcete odebrat kolekci \"{name}\"? Pokud chcete odebrat i aplikace přidané skrze tuto kolekci, vyberte \"Odebrat včetně aplikací\".",
-    "@removeCollectionDialogContent": {
-        "placeholders": {
-            "name": {}
-        }
-    },
-    "removeCollectionDialogConfirmWithApps": "Odebrat včetně aplikací",
-    "@removeCollectionDialogConfirmWithApps": {},
-    "removeCollectionDialogConfirm": "Odebrat",
-    "@removeCollectionDialogConfirm": {},
-    "downloadHashMismatchErrorDialogTitle": "Nesprávný hash",
-    "@downloadHashMismatchErrorDialogTitle": {},
-    "downloadHashMismatchErrorDialogContent": "Stažený soubor neodpovídá hashi uvedenému v metadatech.\n\nOčekávaný hash: {expectedHash}\nObdržený hash: {hash}\n\nKontaktujte prosím autora aplikace",
-    "@downloadHashMismatchErrorDialogContent": {
-        "placeholders": {
-            "expectedHash": {},
-            "hash": {}
-        }
-    },
-    "appPageInstallButton": "Instalovat (Verze {version})",
-    "@appPageInstallButton": {
-        "placeholders": {
-            "version": {}
-        }
-    },
-    "appPageRetryInstallButton": "Opakovat instalaci",
-    "@appPageRetryInstallButton": {},
-    "appPageInstallingApkProcess": "Instaluji APK file...",
-    "@appPageInstallingApkProcess": {},
-    "appPageUninstallButton": "Odinstalovat ({version})",
-    "@appPageUninstallButton": {
-        "placeholders": {
-            "version": {}
-        }
-    },
-    "appPageLaunchAppButton": "Spustit",
-    "@appPageLaunchAppButton": {},
-    "appPageUpdateButton": "Update ({version})",
-    "@appPageUpdateButton": {
-        "placeholders": {
-            "version": {}
-        }
-    },
-    "appPageInstallationDownloadStarting": "Zahajuji stahování...",
-    "@appPageInstallationDownloadStarting": {},
-    "appPageInstallationProgress": "{progress} % of {totalFileSize}",
-    "@appPageInstallationProgress": {
-        "placeholders": {
-            "progress": {},
-            "totalFileSize": {}
-        }
-    },
-    "appShareText": "{localizedName} - {localizedSummary} • Odkaz ke stažení: {link}",
-    "@appShareText": {
-        "placeholders": {
-            "localizedName": {},
-            "localizedSummary": {},
-            "link": {}
-        }
-    },
-    "errorMetadataHashMismatch": "Nesprávný hash v metadatech.",
-    "@errorMetadataHashMismatch": {},
-    "errorHttpStatusCode": "HTTP {statusCode} během stahování metadat",
-    "@errorHttpStatusCode": {
-        "placeholders": {
-            "statusCode": {}
-        }
-    },
-    "errorDnsRecordNotAvailable": "DNS záznam není dostupný",
-    "@errorDnsRecordNotAvailable": {},
-    "errorDomainNameHasNoRecord": "Tato doména nema na SkyDroidu žádný záznam",
-    "@errorDomainNameHasNoRecord": {},
-    "errorHttpStatusCodeMultiDnsQuery": "HTTP {statusCode} on Multi-DoH query",
-    "@errorHttpStatusCodeMultiDnsQuery": {
-        "placeholders": {
-            "statusCode": {}
-        }
-    },
-    "settingsPageAppThemeTitle": "Motiv aplikace",
-    "@settingsPageAppThemeTitle": {},
-    "settingsPageAppThemeOptionLight": "Světlý",
-    "@settingsPageAppThemeOptionLight": {},
-    "settingsPageAppThemeOptionSepia": "Sépie",
-    "@settingsPageAppThemeOptionSepia": {},
-    "settingsPageAppThemeOptionDark": "Tmavý",
-    "@settingsPageAppThemeOptionDark": {},
-    "settingsPageAppThemeOptionBlack": "Černý",
-    "@settingsPageAppThemeOptionBlack": {},
-    "settingsPageServicesTitle": "Služby",
-    "@settingsPageServicesTitle": {},
-    "settingsPageServicesMultiDoHServer": "Multi-DoH Server",
-    "@settingsPageServicesMultiDoHServer": {},
-    "settingsPageServicesSkynetPortal": "Skynet Portal",
-    "@settingsPageServicesSkynetPortal": {},
-    "settingsPageAboutTitle": "O aplikaci",
-    "@settingsPageAboutTitle": {},
-    "settingsPageAboutShowLicenses": "Ukázat licence",
-    "@settingsPageAboutShowLicenses": {},
-    "settingsPageAboutDebug": "Debug Info",
-    "@settingsPageAboutDebug": {},
-    "settingsPageAboutDebugDialogClose": "Ok",
-    "@settingsPageAboutDebugDialogClose": {},
-    "errorAppInvalidCurrentBuild": "Chybaa: Pro aktuální verzi není dostupný žádný build",
-    "@errorAppInvalidCurrentBuild": {},
-    "errorAppCompatibilitySdkVersionTooLow": "Tato aplikace není kompatibilní s Vaším zařízením (verze SDK je příliš nízká: {sdkVersion} < {minSdkVersion})",
-    "@errorAppCompatibilitySdkVersionTooLow": {
-        "placeholders": {
-            "sdkVersion": {},
-            "minSdkVersion": {}
-        }
-    },
-    "errorAppCompatibilityNoMatchingABI": "Tato aplikace není kompatibilní s Vaším zařízením (ABI neni podporováno: {deviceABIs} nelze nalézt v {supportedABIs})",
-    "@errorAppCompatibilityNoMatchingABI": {
-        "placeholders": {
-            "deviceABIs": {},
-            "supportedABIs": {}
-        }
-    },
-    "errorAppInstallationShizuku": "Instalace aplikace Shizuku se nezdařila",
-    "@errorAppInstallationShizuku": {},
-    "appPageInstallingShizukuProcess": "Instaluji aplikaci... (Shizuku)",
-    "@appPageInstallingShizukuProcess": {},
-    "settingsPageShizukuTitle": "Služba Shizuku",
-    "@settingsPageShizukuTitle": {},
-    "settingsPageShizukuDescription": "Shizuku je aplikace, která SkyDroidu umožňuje přístup k systémovým API bez nutnosti ROOT práv. To umožňuje jednoduchou instalaci a aktualizaci aplikací bez nutnosti uživatele neustále zasahovat.",
-    "@settingsPageShizukuDescription": {},
-    "settingsPageShizukuToggleSwitch": "Povolit Shizuku",
-    "@settingsPageShizukuToggleSwitch": {},
-    "settingsPageShizukuInstallButton": "Instalovat Shizuku",
-    "@settingsPageShizukuInstallButton": {},
-    "appPageInstallingShizukuErrorNotRunning": "Služba Shizuku není nyní spuštěna",
-    "@appPageInstallingShizukuErrorNotRunning": {},
-    "appPageInstallingShizukuErrorNotRunningButton": "Otevřít Shizuku",
-    "@appPageInstallingShizukuErrorNotRunningButton": {},
-    "appPageInstallingShizukuErrorPermissionNotGranted": "Povolení nebyla udělena (Jděte do nastavení SkyDroidu a znovu aktivujte Shizuku)",
-    "@appPageInstallingShizukuErrorPermissionNotGranted": {}
+  "@@locale": "cs",
+  "removeNameDialogTitle": "Odstranit název?",
+  "@removeNameDialogTitle": {},
+  "removeNameDialogContent": "Skutečně chcete odstranit název \"{name}\" z Vaší kolekce aplikací? Tato akce neovlivní již nainstalované aplikace a název je možné znovu přidat pomocí kolekce.",
+  "@removeNameDialogContent": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "removeNameDialogConfirm": "Odstranit",
+  "@removeNameDialogConfirm": {},
+  "dialogCancel": "Zrušit akci",
+  "@dialogCancel": {},
+  "navigationAppsPageTitle": "Apps",
+  "@navigationAppsPageTitle": {},
+  "navigationCollectionsPageTitle": "Kolekce",
+  "@navigationCollectionsPageTitle": {},
+  "navigationSettingsPageTitle": "Nastavení",
+  "@navigationSettingsPageTitle": {},
+  "filterDialogTitle": "Řadit podle kategorie",
+  "@filterDialogTitle": {},
+  "categoryConnectivity": "Připojení",
+  "@categoryConnectivity": {},
+  "categoryDevelopment": "Vývoj",
+  "@categoryDevelopment": {},
+  "categoryGames": "Hry",
+  "@categoryGames": {},
+  "categoryGraphics": "Grafika",
+  "@categoryGraphics": {},
+  "categoryInternet": "Internet",
+  "@categoryInternet": {},
+  "categoryMoney": "Peníze",
+  "@categoryMoney": {},
+  "categoryMultimedia": "Multimédia",
+  "@categoryMultimedia": {},
+  "categoryNavigation": "Navigace",
+  "@categoryNavigation": {},
+  "categoryPhoneAndSMS": "Telefon & SMS",
+  "@categoryPhoneAndSMS": {},
+  "categoryReading": "Četba",
+  "@categoryReading": {},
+  "categoryScienceAndEducation": "Věda & Vzdělání",
+  "@categoryScienceAndEducation": {},
+  "categorySecurity": "Bezpečnost",
+  "@categorySecurity": {},
+  "categorySportsAndHealth": "Sport & Zdraví",
+  "@categorySportsAndHealth": {},
+  "categorySystem": "Systém",
+  "@categorySystem": {},
+  "categoryTheming": "Motivy",
+  "@categoryTheming": {},
+  "categoryTime": "Čas",
+  "@categoryTime": {},
+  "categoryWriting": "Psaní",
+  "@categoryWriting": {},
+  "appListPageEmptyWarning": "Hmm, tady zatím nic není. Zkuste přidat název pomocí tlačítka \"Plus\" v pravém spodním rohu.",
+  "@appListPageEmptyWarning": {},
+  "appListLoadingMetadata": "Načítám metadata...",
+  "@appListLoadingMetadata": {},
+  "errorsSheetTitle": "Chyby",
+  "@errorsSheetTitle": {},
+  "errorsSheetOverflowCount": "...{count} dalších",
+  "@errorsSheetOverflowCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "addDomainNameDialogTitle": "Přidat aplikaci, nebo kolekci",
+  "@addDomainNameDialogTitle": {},
+  "addDomainNameDialogInputLabel": "Název (domain)",
+  "@addDomainNameDialogInputLabel": {},
+  "addDomainNameDialogInputHint": "např. skydroid.app",
+  "@addDomainNameDialogInputHint": {},
+  "addDomainNameDialogConfirm": "Přidat",
+  "@addDomainNameDialogConfirm": {},
+  "addDomainNameLoadingDialogTitle": "Ověřuji název...",
+  "@addDomainNameLoadingDialogTitle": {},
+  "errorDialogTitle": "Někde se stala chyba",
+  "@errorDialogTitle": {},
+  "errorDialogCloseButton": "Ok",
+  "@errorDialogCloseButton": {},
+  "verifiedAppDialogTitle": "Ověřená aplikace",
+  "@verifiedAppDialogTitle": {},
+  "verifiedAppDialogContentTop": "Tato verze aplikace byla ověřena v následujících kolekcích:",
+  "@verifiedAppDialogContentTop": {},
+  "verifiedAppDialogContentBottom": "Kolekce lze použíz i ke značení verzí, které byly někým ověřené. To je důležitý faktor, který mohou uživatelé použít při rozhodování, jak moc lze dané verzi důvěřovat. Takové ověření může sestávat z kontroly metadat, testování, či scanování antivirovým programem.",
+  "@verifiedAppDialogContentBottom": {},
+  "verifiedAppDialogCloseButton": "Ok",
+  "@verifiedAppDialogCloseButton": {},
+  "verifiedAppBadgeLabel": "Ověřeno",
+  "@verifiedAppBadgeLabel": {},
+  "appPageWhatsNewTitle": "Co je nového?",
+  "@appPageWhatsNewTitle": {},
+  "appPageUpdatedTime": "Aktualizováno {time}",
+  "@appPageUpdatedTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "appPageAddedTime": "Aplikace přidána: {time}",
+  "@appPageAddedTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "appPageLinkDonate": "Přispět",
+  "@appPageLinkDonate": {},
+  "appPageLinkWebsite": "Webová stránka",
+  "@appPageLinkWebsite": {},
+  "appPageLinkSourceCode": "Zdrojový kód",
+  "@appPageLinkSourceCode": {},
+  "appPageLinkIssueTracker": "Problémy",
+  "@appPageLinkIssueTracker": {},
+  "appPageLinkTranslation": "Překlad",
+  "@appPageLinkTranslation": {},
+  "appPageLinkChangelog": "Changelog",
+  "@appPageLinkChangelog": {},
+  "appPageLinkLicense": "Licence: {license}",
+  "@appPageLinkLicense": {
+    "placeholders": {
+      "license": {}
+    }
+  },
+  "collectionListItemLoading": "Načítám...",
+  "@collectionListItemLoading": {},
+  "collectionListItemTitle": "{title} ({domainName}) • {appCount} aplikací",
+  "@collectionListItemTitle": {
+    "placeholders": {
+      "title": {},
+      "domainName": {},
+      "appCount": {}
+    }
+  },
+  "collectionRecommendationsCardTitle": "Nějaká doporučení do začátku",
+  "@collectionRecommendationsCardTitle": {},
+  "collectionLoadingDialogTitle": "Načítám kolekci...",
+  "@collectionLoadingDialogTitle": {},
+  "collectionLoadingDialogContent": "Tento proces může trvat až 30 vteřin, v závislosti na velikosti kolekce",
+  "@collectionLoadingDialogContent": {},
+  "removeCollectionDialogTitle": "Odebrat kolekci?",
+  "@removeCollectionDialogTitle": {},
+  "removeCollectionDialogContent": "Skutečně chcete odebrat kolekci \"{name}\"? Pokud chcete odebrat i aplikace přidané skrze tuto kolekci, vyberte \"Odebrat včetně aplikací\".",
+  "@removeCollectionDialogContent": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "removeCollectionDialogConfirmWithApps": "Odebrat včetně aplikací",
+  "@removeCollectionDialogConfirmWithApps": {},
+  "removeCollectionDialogConfirm": "Odebrat",
+  "@removeCollectionDialogConfirm": {},
+  "downloadHashMismatchErrorDialogTitle": "Nesprávný hash",
+  "@downloadHashMismatchErrorDialogTitle": {},
+  "downloadHashMismatchErrorDialogContent": "Stažený soubor neodpovídá hashi uvedenému v metadatech.\n\nOčekávaný hash: {expectedHash}\nObdržený hash: {hash}\n\nKontaktujte prosím autora aplikace",
+  "@downloadHashMismatchErrorDialogContent": {
+    "placeholders": {
+      "expectedHash": {},
+      "hash": {}
+    }
+  },
+  "appPageInstallButton": "Instalovat (Verze {version})",
+  "@appPageInstallButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appPageRetryInstallButton": "Opakovat instalaci",
+  "@appPageRetryInstallButton": {},
+  "appPageInstallingApkProcess": "Instaluji APK file...",
+  "@appPageInstallingApkProcess": {},
+  "appPageUninstallButton": "Odinstalovat ({version})",
+  "@appPageUninstallButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appPageLaunchAppButton": "Spustit",
+  "@appPageLaunchAppButton": {},
+  "appPageUpdateButton": "Update ({version})",
+  "@appPageUpdateButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appPageInstallationDownloadStarting": "Zahajuji stahování...",
+  "@appPageInstallationDownloadStarting": {},
+  "appPageInstallationProgress": "{progress} % of {totalFileSize}",
+  "@appPageInstallationProgress": {
+    "placeholders": {
+      "progress": {},
+      "totalFileSize": {}
+    }
+  },
+  "appShareText": "{localizedName} - {localizedSummary} • Odkaz ke stažení: {link}",
+  "@appShareText": {
+    "placeholders": {
+      "localizedName": {},
+      "localizedSummary": {},
+      "link": {}
+    }
+  },
+  "errorMetadataHashMismatch": "Nesprávný hash v metadatech.",
+  "@errorMetadataHashMismatch": {},
+  "errorHttpStatusCode": "HTTP {statusCode} během stahování metadat",
+  "@errorHttpStatusCode": {
+    "placeholders": {
+      "statusCode": {}
+    }
+  },
+  "errorDnsRecordNotAvailable": "DNS záznam není dostupný",
+  "@errorDnsRecordNotAvailable": {},
+  "errorDomainNameHasNoRecord": "Tato doména nema na SkyDroidu žádný záznam",
+  "@errorDomainNameHasNoRecord": {},
+  "errorHttpStatusCodeMultiDnsQuery": "HTTP {statusCode} on Multi-DoH query",
+  "@errorHttpStatusCodeMultiDnsQuery": {
+    "placeholders": {
+      "statusCode": {}
+    }
+  },
+  "settingsPageAppThemeTitle": "Motiv aplikace",
+  "@settingsPageAppThemeTitle": {},
+  "settingsPageAppThemeOptionLight": "Světlý",
+  "@settingsPageAppThemeOptionLight": {},
+  "settingsPageAppThemeOptionSepia": "Sépie",
+  "@settingsPageAppThemeOptionSepia": {},
+  "settingsPageAppThemeOptionDark": "Tmavý",
+  "@settingsPageAppThemeOptionDark": {},
+  "settingsPageAppThemeOptionBlack": "Černý",
+  "@settingsPageAppThemeOptionBlack": {},
+  "settingsPageServicesTitle": "Služby",
+  "@settingsPageServicesTitle": {},
+  "settingsPageServicesMultiDoHServer": "Multi-DoH Server",
+  "@settingsPageServicesMultiDoHServer": {},
+  "settingsPageServicesSkynetPortal": "Skynet Portal",
+  "@settingsPageServicesSkynetPortal": {},
+  "settingsPageAboutTitle": "O aplikaci",
+  "@settingsPageAboutTitle": {},
+  "settingsPageAboutShowLicenses": "Ukázat licence",
+  "@settingsPageAboutShowLicenses": {},
+  "settingsPageAboutDebug": "Debug Info",
+  "@settingsPageAboutDebug": {},
+  "settingsPageAboutDebugDialogClose": "Ok",
+  "@settingsPageAboutDebugDialogClose": {},
+  "errorAppInvalidCurrentBuild": "Chybaa: Pro aktuální verzi není dostupný žádný build",
+  "@errorAppInvalidCurrentBuild": {},
+  "errorAppCompatibilitySdkVersionTooLow": "Tato aplikace není kompatibilní s Vaším zařízením (verze SDK je příliš nízká: {sdkVersion} < {minSdkVersion})",
+  "@errorAppCompatibilitySdkVersionTooLow": {
+    "placeholders": {
+      "sdkVersion": {},
+      "minSdkVersion": {}
+    }
+  },
+  "errorAppCompatibilityNoMatchingABI": "Tato aplikace není kompatibilní s Vaším zařízením (ABI neni podporováno: {deviceABIs} nelze nalézt v {supportedABIs})",
+  "@errorAppCompatibilityNoMatchingABI": {
+    "placeholders": {
+      "deviceABIs": {},
+      "supportedABIs": {}
+    }
+  },
+  "errorAppInstallationShizuku": "Instalace aplikace Shizuku se nezdařila",
+  "@errorAppInstallationShizuku": {},
+  "appPageInstallingShizukuProcess": "Instaluji aplikaci... (Shizuku)",
+  "@appPageInstallingShizukuProcess": {},
+  "settingsPageShizukuTitle": "Služba Shizuku",
+  "@settingsPageShizukuTitle": {},
+  "settingsPageShizukuDescription": "Shizuku je aplikace, která SkyDroidu umožňuje přístup k systémovým API bez nutnosti ROOT práv. To umožňuje jednoduchou instalaci a aktualizaci aplikací bez nutnosti uživatele neustále zasahovat.",
+  "@settingsPageShizukuDescription": {},
+  "settingsPageShizukuToggleSwitch": "Povolit Shizuku",
+  "@settingsPageShizukuToggleSwitch": {},
+  "settingsPageShizukuInstallButton": "Instalovat Shizuku",
+  "@settingsPageShizukuInstallButton": {},
+  "appPageInstallingShizukuErrorNotRunning": "Služba Shizuku není nyní spuštěna",
+  "@appPageInstallingShizukuErrorNotRunning": {},
+  "appPageInstallingShizukuErrorNotRunningButton": "Otevřít Shizuku",
+  "@appPageInstallingShizukuErrorNotRunningButton": {},
+  "appPageInstallingShizukuErrorPermissionNotGranted": "Povolení nebyla udělena (Jděte do nastavení SkyDroidu a znovu aktivujte Shizuku)",
+  "@appPageInstallingShizukuErrorPermissionNotGranted": {}
 }
