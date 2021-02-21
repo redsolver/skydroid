@@ -1,1 +1,179 @@
-{}
+{
+  "removeNameDialogConfirm": "Удалить",
+  "@removeNameDialogConfirm": {},
+  "navigationCollectionsPageTitle": "Коллекции",
+  "@navigationCollectionsPageTitle": {},
+  "navigationSettingsPageTitle": "Настройки",
+  "@navigationSettingsPageTitle": {},
+  "categoryGraphics": "Графика",
+  "@categoryGraphics": {},
+  "categoryInternet": "Интернет",
+  "@categoryInternet": {},
+  "categoryNavigation": "Навигация",
+  "@categoryNavigation": {},
+  "categoryPhoneAndSMS": "Звонки & SMS",
+  "@categoryPhoneAndSMS": {},
+  "categoryReading": "Чтение",
+  "@categoryReading": {},
+  "categoryScienceAndEducation": "Наука и образование",
+  "@categoryScienceAndEducation": {},
+  "categorySportsAndHealth": "Спорт & Здоровье",
+  "@categorySportsAndHealth": {},
+  "categoryTime": "Время",
+  "@categoryTime": {},
+  "categoryWriting": "Чтение",
+  "@categoryWriting": {},
+  "appListLoadingMetadata": "Загрузка метаданных…",
+  "@appListLoadingMetadata": {},
+  "errorsSheetTitle": "Ошибки",
+  "@errorsSheetTitle": {},
+  "errorsSheetOverflowCount": "...{count} больше",
+  "@errorsSheetOverflowCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "addDomainNameDialogTitle": "Добавить приложение или коллекцию",
+  "@addDomainNameDialogTitle": {},
+  "addDomainNameDialogInputLabel": "Имя (домен)",
+  "@addDomainNameDialogInputLabel": {},
+  "addDomainNameDialogConfirm": "Добавить",
+  "@addDomainNameDialogConfirm": {},
+  "addDomainNameLoadingDialogTitle": "Проверка имени…",
+  "@addDomainNameLoadingDialogTitle": {},
+  "categoryTheming": "Тема",
+  "@categoryTheming": {},
+  "addDomainNameDialogInputHint": "e.g. skydroid.app",
+  "@addDomainNameDialogInputHint": {},
+  "verifiedAppDialogCloseButton": "Ок",
+  "@verifiedAppDialogCloseButton": {},
+  "verifiedAppBadgeLabel": "Проверенный",
+  "@verifiedAppBadgeLabel": {},
+  "appPageWhatsNewTitle": "Что нового",
+  "@appPageWhatsNewTitle": {},
+  "appPageUpdatedTime": "Обновлено {time}",
+  "@appPageUpdatedTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "appPageAddedTime": "Добавлено приложение: {время}",
+  "@appPageAddedTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "appPageLinkDonate": "Задонатить",
+  "@appPageLinkDonate": {},
+  "appPageLinkWebsite": "Сайт",
+  "@appPageLinkWebsite": {},
+  "appPageLinkIssueTracker": "Отслеживание проблем",
+  "@appPageLinkIssueTracker": {},
+  "appPageLinkChangelog": "Changelog",
+  "@appPageLinkChangelog": {},
+  "collectionRecommendationsCardTitle": "Некоторые рекомендации для начала",
+  "@collectionRecommendationsCardTitle": {},
+  "removeCollectionDialogTitle": "Удалить коллекцию?",
+  "@removeCollectionDialogTitle": {},
+  "removeCollectionDialogConfirmWithApps": "Удалить с приложениями",
+  "@removeCollectionDialogConfirmWithApps": {},
+  "removeCollectionDialogConfirm": "Удалить",
+  "@removeCollectionDialogConfirm": {},
+  "downloadHashMismatchErrorDialogTitle": "Не сочетание хеша",
+  "@downloadHashMismatchErrorDialogTitle": {},
+  "appPageInstallButton": "Установить (версия {version})",
+  "@appPageInstallButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appPageRetryInstallButton": "Повторная установка",
+  "@appPageRetryInstallButton": {},
+  "appPageInstallingApkProcess": "Установка файла APK…",
+  "@appPageInstallingApkProcess": {},
+  "appPageUninstallButton": "Удалить ({version})",
+  "@appPageUninstallButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appPageLaunchAppButton": "Открыть",
+  "@appPageLaunchAppButton": {},
+  "dialogCancel": "Отменить",
+  "@dialogCancel": {},
+  "navigationAppsPageTitle": "Приложения",
+  "@navigationAppsPageTitle": {},
+  "filterDialogTitle": "Фильтр по категориям",
+  "@filterDialogTitle": {},
+  "categoryConnectivity": "Связь",
+  "@categoryConnectivity": {},
+  "categoryDevelopment": "Разработка",
+  "@categoryDevelopment": {},
+  "categoryGames": "Игры",
+  "@categoryGames": {},
+  "categoryMoney": "Деньги",
+  "@categoryMoney": {},
+  "categoryMultimedia": "Мультимедия",
+  "@categoryMultimedia": {},
+  "categorySecurity": "Безопасность",
+  "@categorySecurity": {},
+  "categorySystem": "Система",
+  "@categorySystem": {},
+  "appListPageEmptyWarning": "Здесь ничего нет. Попробуйте добавить имя с помощью кнопки \"Плюс\" в правом нижнем углу.",
+  "@appListPageEmptyWarning": {},
+  "errorDialogTitle": "Что-то пошло не так",
+  "@errorDialogTitle": {},
+  "errorDialogCloseButton": "Ок",
+  "@errorDialogCloseButton": {},
+  "verifiedAppDialogTitle": "Проверенное приложение",
+  "@verifiedAppDialogTitle": {},
+  "removeNameDialogTitle": "Удалить имя?",
+  "@removeNameDialogTitle": {},
+  "removeNameDialogContent": "Вы действительно хотите удалить \"{name}\" из списка приложений? Это действие не коснется ваших установленных приложений, и имя может быть добавлено снова через коллекцию.",
+  "@removeNameDialogContent": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "verifiedAppDialogContentTop": "Эта версия приложения была проверена следующими коллекциями:",
+  "@verifiedAppDialogContentTop": {},
+  "verifiedAppDialogContentBottom": "Коллекции могут помечать релизы как проверенные, чтобы предложить дополнительное доверие. Проверка выпуска может состоять из проверки метаданных, тестирования приложения или сканирования на наличие вредоносного ПО.",
+  "@verifiedAppDialogContentBottom": {},
+  "appPageLinkSourceCode": "Исходный код",
+  "@appPageLinkSourceCode": {},
+  "appPageLinkTranslation": "Перевод",
+  "@appPageLinkTranslation": {},
+  "appPageLinkLicense": "Лицензия: {license}",
+  "@appPageLinkLicense": {
+    "placeholders": {
+      "license": {}
+    }
+  },
+  "collectionListItemLoading": "Загрузка…",
+  "@collectionListItemLoading": {},
+  "collectionListItemTitle": "{title} ({domainName}) • {appCount} Приложения",
+  "@collectionListItemTitle": {
+    "placeholders": {
+      "title": {},
+      "domainName": {},
+      "appCount": {}
+    }
+  },
+  "collectionLoadingDialogTitle": "Загрузка коллекции…",
+  "@collectionLoadingDialogTitle": {},
+  "collectionLoadingDialogContent": "Это может занять до 30 секунд, в зависимости от размера коллекции",
+  "@collectionLoadingDialogContent": {},
+  "removeCollectionDialogContent": "Ты действительно хочешь убрать коллекцию \"{name}\"? Если вы также хотите удалить приложения, добавленные через эту коллекцию, выберите \"Удалить с помощью приложений\".",
+  "@removeCollectionDialogContent": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "downloadHashMismatchErrorDialogContent": "Загруженный файл не соответствует правильному хэшу в метаданных.\n\nОжидаемый хэш: {expectedHash}\nЕсть Хэш: {hash}\n\nПожалуйста, свяжитесь с автором приложения",
+  "@downloadHashMismatchErrorDialogContent": {
+    "placeholders": {
+      "expectedHash": {},
+      "hash": {}
+    }
+  }
+}
