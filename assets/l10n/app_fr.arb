@@ -56,11 +56,11 @@
   "@categoryWriting": {},
   "appListPageEmptyWarning": "Hmm rien à voir ici. Essayez d'ajouter un nom via le bouton \"Plus\" en bas à droite.",
   "@appListPageEmptyWarning": {},
-  "appListLoadingMetadata": "Chargement des metadonnées...",
+  "appListLoadingMetadata": "Chargement de métadonnées…",
   "@appListLoadingMetadata": {},
   "errorsSheetTitle": "Erreurs",
   "@errorsSheetTitle": {},
-  "errorsSheetOverflowCount": "...{count} de trop",
+  "errorsSheetOverflowCount": "...{count} plus",
   "@errorsSheetOverflowCount": {
     "placeholders": {
       "count": {}
@@ -74,7 +74,7 @@
   "@addDomainNameDialogInputHint": {},
   "addDomainNameDialogConfirm": "Ajouter",
   "@addDomainNameDialogConfirm": {},
-  "addDomainNameLoadingDialogTitle": "Vérification du nom de domaine...",
+  "addDomainNameLoadingDialogTitle": "Vérification du nom …",
   "@addDomainNameLoadingDialogTitle": {},
   "errorDialogTitle": "Un problème est survenu",
   "@errorDialogTitle": {},
@@ -122,7 +122,7 @@
       "license": {}
     }
   },
-  "collectionListItemLoading": "Chargement...",
+  "collectionListItemLoading": "Charger…",
   "@collectionListItemLoading": {},
   "collectionListItemTitle": "{title} ({domainName}) • {appCount} Apps",
   "@collectionListItemTitle": {
@@ -134,7 +134,7 @@
   },
   "collectionRecommendationsCardTitle": "Quelques recommandations pour bien démarrer",
   "@collectionRecommendationsCardTitle": {},
-  "collectionLoadingDialogTitle": "Chargement de la collection...",
+  "collectionLoadingDialogTitle": "Charger la collection…",
   "@collectionLoadingDialogTitle": {},
   "collectionLoadingDialogContent": "Ceci peux prendre jusqu'à 30 secondes en fonction de la taille de la collection",
   "@collectionLoadingDialogContent": {},
@@ -152,7 +152,7 @@
   "@removeCollectionDialogConfirm": {},
   "downloadHashMismatchErrorDialogTitle": "Hash Mismatch",
   "@downloadHashMismatchErrorDialogTitle": {},
-  "downloadHashMismatchErrorDialogContent": "Le fichier téléchargé ne correspond pas au bon hash dans les métadonnées.\n\nExpected Hash: {expectedHash}\nGot Hash: {hash}\n\nMerci de contacter l'auteur de l'application",
+  "downloadHashMismatchErrorDialogContent": "Le fichier téléchargé ne correspond pas au hachage correct dans les métadonnées.\n\nHachage attendu : {expectedHash}\nGot Hash : {hash}\n\nVeuillez contacter l'auteur de l'application",
   "@downloadHashMismatchErrorDialogContent": {
     "placeholders": {
       "expectedHash": {},
@@ -167,7 +167,7 @@
   },
   "appPageRetryInstallButton": "Réinstaller",
   "@appPageRetryInstallButton": {},
-  "appPageInstallingApkProcess": "Installation du fichier APK...",
+  "appPageInstallingApkProcess": "Installer le fichier APK…",
   "@appPageInstallingApkProcess": {},
   "appPageUninstallButton": "Désinstaller ({version})",
   "@appPageUninstallButton": {
@@ -183,7 +183,7 @@
       "version": {}
     }
   },
-  "appPageInstallationDownloadStarting": "Démarrage du téléchargement...",
+  "appPageInstallationDownloadStarting": "Début du téléchargement…",
   "@appPageInstallationDownloadStarting": {},
   "appPageInstallationProgress": "{progress} % of {totalFileSize}",
   "@appPageInstallationProgress": {
@@ -192,7 +192,7 @@
       "totalFileSize": {}
     }
   },
-  "appShareText": "{localizedName} - {localizedSummary} • Download: {link}",
+  "appShareText": "{localizedName} - {localizedSummary} • Télécharger : {link}",
   "@appShareText": {
     "placeholders": {
       "localizedName": {},
@@ -260,7 +260,7 @@
   },
   "errorAppInstallationShizuku": "L'installation de Shizuku a échouée",
   "@errorAppInstallationShizuku": {},
-  "appPageInstallingShizukuProcess": "Installallation de l'app... (Shizuku)",
+  "appPageInstallingShizukuProcess": "Installation d'app... (Shizuku)",
   "@appPageInstallingShizukuProcess": {},
   "settingsPageShizukuTitle": "Service Shizuku",
   "@settingsPageShizukuTitle": {},
@@ -286,13 +286,13 @@
   },
   "removeNamesDialogConfirm": "Tout supprimer",
   "@removeNamesDialogConfirm": {},
-  "appListPageSearchHint": "Rechercher une app...",
+  "appListPageSearchHint": "Rechercher des apps…",
   "@appListPageSearchHint": {},
   "appListPageUpdateAllAppsButton": "Mettre à jour toutes les apps",
   "@appListPageUpdateAllAppsButton": {},
-  "batchProcessingSheetProgressOne": "Traitement de 1 app...",
+  "batchProcessingSheetProgressOne": "Traitement d'une app…",
   "@batchProcessingSheetProgressOne": {},
-  "batchProcessingSheetProgressMore": "Traitement de {count} apps...",
+  "batchProcessingSheetProgressMore": "Traitement des {count} applications…",
   "@batchProcessingSheetProgressMore": {
     "placeholders": {
       "count": {}
@@ -417,5 +417,7 @@
   "saiStr_installer_rootless_error2_install_failed_multipackage_inconsistency": "Une des sessions d'installateur de paquets enfants ne correspond pas à la session parent en ce qui concerne les paramètres de pré-production ou d'annulation activés",
   "@saiStr_installer_rootless_error2_install_failed_multipackage_inconsistency": {},
   "saiStr_installer_rootless_error2_install_failed_wrong_installed_version": "La version requise d'un paquet déjà installé ne correspond pas à la version réelle du paquet installé",
-  "@saiStr_installer_rootless_error2_install_failed_wrong_installed_version": {}
+  "@saiStr_installer_rootless_error2_install_failed_wrong_installed_version": {},
+  "filterByCollectionCardTitle": "Filtre par collection",
+  "@filterByCollectionCardTitle": {}
 }
