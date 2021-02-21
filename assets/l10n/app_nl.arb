@@ -1,1 +1,261 @@
-{"@@locale":"nl","removeNameDialogTitle":"Naam verwijderen?","@removeNameDialogTitle":{},"removeNameDialogContent":"Weet jij zeker dat je de naam \"{name}\" wilt verwijderen van de app lijst? Deze actie heeft geen invloed op je geïnstalleerde apps en de naam kan weer toegevoegd worden via een collectie.","@removeNameDialogContent":{"placeholders":{"name":{}}},"removeNameDialogConfirm":"Verwijderen","@removeNameDialogConfirm":{},"dialogCancel":"Annuleren","@dialogCancel":{},"navigationAppsPageTitle":"Apps","@navigationAppsPageTitle":{},"navigationCollectionsPageTitle":"Verzamelingen","@navigationCollectionsPageTitle":{},"navigationSettingsPageTitle":"Instellingen","@navigationSettingsPageTitle":{},"filterDialogTitle":"Filter categorie","@filterDialogTitle":{},"categoryConnectivity":"Connectiviteit","@categoryConnectivity":{},"categoryDevelopment":"Development","@categoryDevelopment":{},"categoryGames":"Games","@categoryGames":{},"categoryGraphics":"Grafisch","@categoryGraphics":{},"categoryInternet":"Internet","@categoryInternet":{},"categoryMoney":"Geld","@categoryMoney":{},"categoryMultimedia":"Multimedia","@categoryMultimedia":{},"categoryNavigation":"Navigatie","@categoryNavigation":{},"categoryPhoneAndSMS":"Telefoon & SMS","@categoryPhoneAndSMS":{},"categoryReading":"Lezen","@categoryReading":{},"categoryScienceAndEducation":"Wetenschap & Educatie","@categoryScienceAndEducation":{},"categorySecurity":"Beveiliging","@categorySecurity":{},"categorySportsAndHealth":"Sport & Gezondheid","@categorySportsAndHealth":{},"categorySystem":"Systeem","@categorySystem":{},"categoryTheming":"Thema's","@categoryTheming":{},"categoryTime":"Tijd","@categoryTime":{},"categoryWriting":"Schrijven","@categoryWriting":{},"appListPageEmptyWarning":"Hmm er is hier niks. Probeer een naam toe te voegen via de \"Plus\"-knop rechts bovenin het scherm.","@appListPageEmptyWarning":{},"appListLoadingMetadata":"Metadata laden...","@appListLoadingMetadata":{},"errorsSheetTitle":"Foutmeldingen","@errorsSheetTitle":{},"errorsSheetOverflowCount":"...{count} meer","@errorsSheetOverflowCount":{"placeholders":{"count":{}}},"addDomainNameDialogTitle":"Voeg een app of collectie toe","@addDomainNameDialogTitle":{},"addDomainNameDialogInputLabel":"Naam (domain)","@addDomainNameDialogInputLabel":{},"addDomainNameDialogInputHint":"bijvoorbeeld skydroid.app","@addDomainNameDialogInputHint":{},"addDomainNameDialogConfirm":"Toevoegen","@addDomainNameDialogConfirm":{},"addDomainNameLoadingDialogTitle":"Naam controleren...","@addDomainNameLoadingDialogTitle":{},"errorDialogTitle":"Er ging iets mis","@errorDialogTitle":{},"errorDialogCloseButton":"Ok","@errorDialogCloseButton":{},"verifiedAppDialogTitle":"Geverifieerde app","@verifiedAppDialogTitle":{},"verifiedAppDialogContentTop":"Deze versie van de app was geverifieerd door de volgende collecties:","@verifiedAppDialogContentTop":{},"verifiedAppDialogContentBottom":"Collecties kunnen updates markeren als geverifieerd om extra vertrouwen te bieden. Het verifiëren van updates kan bestaan ​​uit het controleren van de metadata, het testen van de app of het scannen op malware.","@verifiedAppDialogContentBottom":{},"verifiedAppDialogCloseButton":"Ok","@verifiedAppDialogCloseButton":{},"verifiedAppBadgeLabel":"Geverifieerd","@verifiedAppBadgeLabel":{},"appPageWhatsNewTitle":"Wat is nieuw","@appPageWhatsNewTitle":{},"appPageUpdatedTime":"Geüpdatet {time}","@appPageUpdatedTime":{"placeholders":{"time":{}}},"appPageAddedTime":"App toegevoegd: {time}","@appPageAddedTime":{"placeholders":{"time":{}}},"appPageLinkDonate":"Doneer","@appPageLinkDonate":{},"appPageLinkWebsite":"Web Site","@appPageLinkWebsite":{},"appPageLinkSourceCode":"Broncode","@appPageLinkSourceCode":{},"appPageLinkIssueTracker":"Issue Tracker","@appPageLinkIssueTracker":{},"appPageLinkTranslation":"Vertaling","@appPageLinkTranslation":{},"appPageLinkChangelog":"Changelog","@appPageLinkChangelog":{},"appPageLinkLicense":"Licentie: {license}","@appPageLinkLicense":{"placeholders":{"license":{}}},"collectionListItemLoading":"Laden...","@collectionListItemLoading":{},"collectionListItemTitle":"{title} ({domainName}) • {appCount} Apps","@collectionListItemTitle":{"placeholders":{"title":{},"domainName":{},"appCount":{}}},"collectionRecommendationsCardTitle":"Een paar aanbevelingen om je op weg te helpen.","@collectionRecommendationsCardTitle":{},"collectionLoadingDialogTitle":"Collectie laden...","@collectionLoadingDialogTitle":{},"collectionLoadingDialogContent":"Dit kan tot 30 seconden duren, afhankelijk van de collectie grootte.","@collectionLoadingDialogContent":{},"removeCollectionDialogTitle":"Collectie verwijderen?","@removeCollectionDialogTitle":{},"removeCollectionDialogContent":"Weet je zeker dat je de collectie \"{name}\" wilt verwijderen? Als je ook de apps wilt verwijderen die toegevoegd zijn aan deze collectie, selecteer dan \"Verwijderen met Apps\".","@removeCollectionDialogContent":{"placeholders":{"name":{}}},"removeCollectionDialogConfirmWithApps":"Verwijderen met Apps","@removeCollectionDialogConfirmWithApps":{},"removeCollectionDialogConfirm":"Verwijderen","@removeCollectionDialogConfirm":{},"downloadHashMismatchErrorDialogTitle":"Hash Verkeerde combinatie","@downloadHashMismatchErrorDialogTitle":{},"downloadHashMismatchErrorDialogContent":"Het gedownloade bestand komt niet overeen met de juiste hash in de metadata.\n\nVerwachte Hash: {expectedHash}\nVerkregen Hash: {hash}\n\nNeem contact op met de app maker","@downloadHashMismatchErrorDialogContent":{"placeholders":{"expectedHash":{},"hash":{}}},"appPageInstallButton":"Installeren (Versie {version})","@appPageInstallButton":{"placeholders":{"version":{}}},"appPageRetryInstallButton":"Probeer opnieuw te installeren","@appPageRetryInstallButton":{},"appPageInstallingApkProcess":"Intalleren van APK bestand...","@appPageInstallingApkProcess":{},"appPageUninstallButton":"Deïnstalleren ({version})","@appPageUninstallButton":{"placeholders":{"version":{}}},"appPageLaunchAppButton":"Open","@appPageLaunchAppButton":{},"appPageUpdateButton":"Update ({version})","@appPageUpdateButton":{"placeholders":{"version":{}}},"appPageInstallationDownloadStarting":"Download starten...","@appPageInstallationDownloadStarting":{},"appPageInstallationProgress":"{progress} % van {totalFileSize}","@appPageInstallationProgress":{"placeholders":{"progress":{},"totalFileSize":{}}},"appShareText":"{localizedName} - {localizedSummary} • Download: {link}","@appShareText":{"placeholders":{"localizedName":{},"localizedSummary":{},"link":{}}},"errorMetadataHashMismatch":"Metadata Hash verkeerde combinatie.","@errorMetadataHashMismatch":{},"errorHttpStatusCode":"HTTP {statusCode} tijdens het laden van de metadata","@errorHttpStatusCode":{"placeholders":{"statusCode":{}}},"errorDnsRecordNotAvailable":"DNS Record niet beschikbaar","@errorDnsRecordNotAvailable":{},"errorDomainNameHasNoRecord":"Naam heeft geen skydroid record","@errorDomainNameHasNoRecord":{},"errorHttpStatusCodeMultiDnsQuery":"HTTP {statusCode} tijdens het laden van de metadata","@errorHttpStatusCodeMultiDnsQuery":{"placeholders":{"statusCode":{}}},"settingsPageAppThemeTitle":"App thema","@settingsPageAppThemeTitle":{},"settingsPageAppThemeOptionLight":"Licht","@settingsPageAppThemeOptionLight":{},"settingsPageAppThemeOptionSepia":"Sepia","@settingsPageAppThemeOptionSepia":{},"settingsPageAppThemeOptionDark":"Donker","@settingsPageAppThemeOptionDark":{},"settingsPageAppThemeOptionBlack":"Zwart","@settingsPageAppThemeOptionBlack":{},"settingsPageServicesTitle":"Services","@settingsPageServicesTitle":{},"settingsPageServicesMultiDoHServer":"Multi-DoH Server","@settingsPageServicesMultiDoHServer":{},"settingsPageServicesSkynetPortal":"Skynet Portal","@settingsPageServicesSkynetPortal":{},"settingsPageAboutTitle":"Over","@settingsPageAboutTitle":{},"settingsPageAboutShowLicenses":"Bekijk licenties","@settingsPageAboutShowLicenses":{},"settingsPageAboutDebug":"Debug Info","@settingsPageAboutDebug":{},"settingsPageAboutDebugDialogClose":"Ok","@settingsPageAboutDebugDialogClose":{},"errorAppInvalidCurrentBuild":"Error: Er is geen build gevonden voor de huidige versie","@errorAppInvalidCurrentBuild":{},"errorAppCompatibilitySdkVersionTooLow":"Deze app is niet compatible met je apparaat (sdkVersion te laag: {sdkVersion} < {minSdkVersion})","@errorAppCompatibilitySdkVersionTooLow":{"placeholders":{"sdkVersion":{},"minSdkVersion":{}}},"errorAppCompatibilityNoMatchingABI":"Deze app is niet compatible met je apparaat (ABI is niet ondersteund: {deviceABIs} niet in {supportedABIs})","@errorAppCompatibilityNoMatchingABI":{"placeholders":{"deviceABIs":{},"supportedABIs":{}}}}
+{
+    "@@locale": "nl",
+    "removeNameDialogTitle": "Naam verwijderen?",
+    "@removeNameDialogTitle": {},
+    "removeNameDialogContent": "Weet jij zeker dat je de naam \"{name}\" wilt verwijderen van de app lijst? Deze actie heeft geen invloed op je geïnstalleerde apps en de naam kan weer toegevoegd worden via een collectie.",
+    "@removeNameDialogContent": {
+        "placeholders": {
+            "name": {}
+        }
+    },
+    "removeNameDialogConfirm": "Verwijderen",
+    "@removeNameDialogConfirm": {},
+    "dialogCancel": "Annuleren",
+    "@dialogCancel": {},
+    "navigationAppsPageTitle": "Apps",
+    "@navigationAppsPageTitle": {},
+    "navigationCollectionsPageTitle": "Verzamelingen",
+    "@navigationCollectionsPageTitle": {},
+    "navigationSettingsPageTitle": "Instellingen",
+    "@navigationSettingsPageTitle": {},
+    "filterDialogTitle": "Filter categorie",
+    "@filterDialogTitle": {},
+    "categoryConnectivity": "Connectiviteit",
+    "@categoryConnectivity": {},
+    "categoryDevelopment": "Development",
+    "@categoryDevelopment": {},
+    "categoryGames": "Games",
+    "@categoryGames": {},
+    "categoryGraphics": "Grafisch",
+    "@categoryGraphics": {},
+    "categoryInternet": "Internet",
+    "@categoryInternet": {},
+    "categoryMoney": "Geld",
+    "@categoryMoney": {},
+    "categoryMultimedia": "Multimedia",
+    "@categoryMultimedia": {},
+    "categoryNavigation": "Navigatie",
+    "@categoryNavigation": {},
+    "categoryPhoneAndSMS": "Telefoon & SMS",
+    "@categoryPhoneAndSMS": {},
+    "categoryReading": "Lezen",
+    "@categoryReading": {},
+    "categoryScienceAndEducation": "Wetenschap & Educatie",
+    "@categoryScienceAndEducation": {},
+    "categorySecurity": "Beveiliging",
+    "@categorySecurity": {},
+    "categorySportsAndHealth": "Sport & Gezondheid",
+    "@categorySportsAndHealth": {},
+    "categorySystem": "Systeem",
+    "@categorySystem": {},
+    "categoryTheming": "Thema's",
+    "@categoryTheming": {},
+    "categoryTime": "Tijd",
+    "@categoryTime": {},
+    "categoryWriting": "Schrijven",
+    "@categoryWriting": {},
+    "appListPageEmptyWarning": "Hmm er is hier niks. Probeer een naam toe te voegen via de \"Plus\"-knop rechts bovenin het scherm.",
+    "@appListPageEmptyWarning": {},
+    "appListLoadingMetadata": "Metadata laden...",
+    "@appListLoadingMetadata": {},
+    "errorsSheetTitle": "Foutmeldingen",
+    "@errorsSheetTitle": {},
+    "errorsSheetOverflowCount": "...{count} meer",
+    "@errorsSheetOverflowCount": {
+        "placeholders": {
+            "count": {}
+        }
+    },
+    "addDomainNameDialogTitle": "Voeg een app of collectie toe",
+    "@addDomainNameDialogTitle": {},
+    "addDomainNameDialogInputLabel": "Naam (domain)",
+    "@addDomainNameDialogInputLabel": {},
+    "addDomainNameDialogInputHint": "bijvoorbeeld skydroid.app",
+    "@addDomainNameDialogInputHint": {},
+    "addDomainNameDialogConfirm": "Toevoegen",
+    "@addDomainNameDialogConfirm": {},
+    "addDomainNameLoadingDialogTitle": "Naam controleren...",
+    "@addDomainNameLoadingDialogTitle": {},
+    "errorDialogTitle": "Er ging iets mis",
+    "@errorDialogTitle": {},
+    "errorDialogCloseButton": "Ok",
+    "@errorDialogCloseButton": {},
+    "verifiedAppDialogTitle": "Geverifieerde app",
+    "@verifiedAppDialogTitle": {},
+    "verifiedAppDialogContentTop": "Deze versie van de app was geverifieerd door de volgende collecties:",
+    "@verifiedAppDialogContentTop": {},
+    "verifiedAppDialogContentBottom": "Collecties kunnen updates markeren als geverifieerd om extra vertrouwen te bieden. Het verifiëren van updates kan bestaan ​​uit het controleren van de metadata, het testen van de app of het scannen op malware.",
+    "@verifiedAppDialogContentBottom": {},
+    "verifiedAppDialogCloseButton": "Ok",
+    "@verifiedAppDialogCloseButton": {},
+    "verifiedAppBadgeLabel": "Geverifieerd",
+    "@verifiedAppBadgeLabel": {},
+    "appPageWhatsNewTitle": "Wat is nieuw",
+    "@appPageWhatsNewTitle": {},
+    "appPageUpdatedTime": "Geüpdatet {time}",
+    "@appPageUpdatedTime": {
+        "placeholders": {
+            "time": {}
+        }
+    },
+    "appPageAddedTime": "App toegevoegd: {time}",
+    "@appPageAddedTime": {
+        "placeholders": {
+            "time": {}
+        }
+    },
+    "appPageLinkDonate": "Doneer",
+    "@appPageLinkDonate": {},
+    "appPageLinkWebsite": "Web Site",
+    "@appPageLinkWebsite": {},
+    "appPageLinkSourceCode": "Broncode",
+    "@appPageLinkSourceCode": {},
+    "appPageLinkIssueTracker": "Issue Tracker",
+    "@appPageLinkIssueTracker": {},
+    "appPageLinkTranslation": "Vertaling",
+    "@appPageLinkTranslation": {},
+    "appPageLinkChangelog": "Changelog",
+    "@appPageLinkChangelog": {},
+    "appPageLinkLicense": "Licentie: {license}",
+    "@appPageLinkLicense": {
+        "placeholders": {
+            "license": {}
+        }
+    },
+    "collectionListItemLoading": "Laden...",
+    "@collectionListItemLoading": {},
+    "collectionListItemTitle": "{title} ({domainName}) • {appCount} Apps",
+    "@collectionListItemTitle": {
+        "placeholders": {
+            "title": {},
+            "domainName": {},
+            "appCount": {}
+        }
+    },
+    "collectionRecommendationsCardTitle": "Een paar aanbevelingen om je op weg te helpen.",
+    "@collectionRecommendationsCardTitle": {},
+    "collectionLoadingDialogTitle": "Collectie laden...",
+    "@collectionLoadingDialogTitle": {},
+    "collectionLoadingDialogContent": "Dit kan tot 30 seconden duren, afhankelijk van de collectie grootte.",
+    "@collectionLoadingDialogContent": {},
+    "removeCollectionDialogTitle": "Collectie verwijderen?",
+    "@removeCollectionDialogTitle": {},
+    "removeCollectionDialogContent": "Weet je zeker dat je de collectie \"{name}\" wilt verwijderen? Als je ook de apps wilt verwijderen die toegevoegd zijn aan deze collectie, selecteer dan \"Verwijderen met Apps\".",
+    "@removeCollectionDialogContent": {
+        "placeholders": {
+            "name": {}
+        }
+    },
+    "removeCollectionDialogConfirmWithApps": "Verwijderen met Apps",
+    "@removeCollectionDialogConfirmWithApps": {},
+    "removeCollectionDialogConfirm": "Verwijderen",
+    "@removeCollectionDialogConfirm": {},
+    "downloadHashMismatchErrorDialogTitle": "Hash Verkeerde combinatie",
+    "@downloadHashMismatchErrorDialogTitle": {},
+    "downloadHashMismatchErrorDialogContent": "Het gedownloade bestand komt niet overeen met de juiste hash in de metadata.\n\nVerwachte Hash: {expectedHash}\nVerkregen Hash: {hash}\n\nNeem contact op met de app maker",
+    "@downloadHashMismatchErrorDialogContent": {
+        "placeholders": {
+            "expectedHash": {},
+            "hash": {}
+        }
+    },
+    "appPageInstallButton": "Installeren (Versie {version})",
+    "@appPageInstallButton": {
+        "placeholders": {
+            "version": {}
+        }
+    },
+    "appPageRetryInstallButton": "Probeer opnieuw te installeren",
+    "@appPageRetryInstallButton": {},
+    "appPageInstallingApkProcess": "Intalleren van APK bestand...",
+    "@appPageInstallingApkProcess": {},
+    "appPageUninstallButton": "Deïnstalleren ({version})",
+    "@appPageUninstallButton": {
+        "placeholders": {
+            "version": {}
+        }
+    },
+    "appPageLaunchAppButton": "Open",
+    "@appPageLaunchAppButton": {},
+    "appPageUpdateButton": "Update ({version})",
+    "@appPageUpdateButton": {
+        "placeholders": {
+            "version": {}
+        }
+    },
+    "appPageInstallationDownloadStarting": "Download starten...",
+    "@appPageInstallationDownloadStarting": {},
+    "appPageInstallationProgress": "{progress} % van {totalFileSize}",
+    "@appPageInstallationProgress": {
+        "placeholders": {
+            "progress": {},
+            "totalFileSize": {}
+        }
+    },
+    "appShareText": "{localizedName} - {localizedSummary} • Download: {link}",
+    "@appShareText": {
+        "placeholders": {
+            "localizedName": {},
+            "localizedSummary": {},
+            "link": {}
+        }
+    },
+    "errorMetadataHashMismatch": "Metadata Hash verkeerde combinatie.",
+    "@errorMetadataHashMismatch": {},
+    "errorHttpStatusCode": "HTTP {statusCode} tijdens het laden van de metadata",
+    "@errorHttpStatusCode": {
+        "placeholders": {
+            "statusCode": {}
+        }
+    },
+    "errorDnsRecordNotAvailable": "DNS Record niet beschikbaar",
+    "@errorDnsRecordNotAvailable": {},
+    "errorDomainNameHasNoRecord": "Naam heeft geen skydroid record",
+    "@errorDomainNameHasNoRecord": {},
+    "errorHttpStatusCodeMultiDnsQuery": "HTTP {statusCode} tijdens het laden van de metadata",
+    "@errorHttpStatusCodeMultiDnsQuery": {
+        "placeholders": {
+            "statusCode": {}
+        }
+    },
+    "settingsPageAppThemeTitle": "App thema",
+    "@settingsPageAppThemeTitle": {},
+    "settingsPageAppThemeOptionLight": "Licht",
+    "@settingsPageAppThemeOptionLight": {},
+    "settingsPageAppThemeOptionSepia": "Sepia",
+    "@settingsPageAppThemeOptionSepia": {},
+    "settingsPageAppThemeOptionDark": "Donker",
+    "@settingsPageAppThemeOptionDark": {},
+    "settingsPageAppThemeOptionBlack": "Zwart",
+    "@settingsPageAppThemeOptionBlack": {},
+    "settingsPageServicesTitle": "Services",
+    "@settingsPageServicesTitle": {},
+    "settingsPageServicesMultiDoHServer": "Multi-DoH Server",
+    "@settingsPageServicesMultiDoHServer": {},
+    "settingsPageServicesSkynetPortal": "Skynet Portal",
+    "@settingsPageServicesSkynetPortal": {},
+    "settingsPageAboutTitle": "Over",
+    "@settingsPageAboutTitle": {},
+    "settingsPageAboutShowLicenses": "Bekijk licenties",
+    "@settingsPageAboutShowLicenses": {},
+    "settingsPageAboutDebug": "Debug Info",
+    "@settingsPageAboutDebug": {},
+    "settingsPageAboutDebugDialogClose": "Ok",
+    "@settingsPageAboutDebugDialogClose": {},
+    "errorAppInvalidCurrentBuild": "Error: Er is geen build gevonden voor de huidige versie",
+    "@errorAppInvalidCurrentBuild": {},
+    "errorAppCompatibilitySdkVersionTooLow": "Deze app is niet compatible met je apparaat (sdkVersion te laag: {sdkVersion} < {minSdkVersion})",
+    "@errorAppCompatibilitySdkVersionTooLow": {
+        "placeholders": {
+            "sdkVersion": {},
+            "minSdkVersion": {}
+        }
+    },
+    "errorAppCompatibilityNoMatchingABI": "Deze app is niet compatible met je apparaat (ABI is niet ondersteund: {deviceABIs} niet in {supportedABIs})",
+    "@errorAppCompatibilityNoMatchingABI": {
+        "placeholders": {
+            "deviceABIs": {},
+            "supportedABIs": {}
+        }
+    }
+}
