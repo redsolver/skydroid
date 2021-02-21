@@ -260,7 +260,7 @@
   },
   "errorAppInstallationShizuku": "App Installation fehlgeschlagen",
   "@errorAppInstallationShizuku": {},
-  "appPageInstallingShizukuProcess": "installiert App... (Shizuku)",
+  "appPageInstallingShizukuProcess": "App wird installiert... (Shizuku)",
   "@appPageInstallingShizukuProcess": {},
   "settingsPageShizukuTitle": "Shizuku Service",
   "@settingsPageShizukuTitle": {},
