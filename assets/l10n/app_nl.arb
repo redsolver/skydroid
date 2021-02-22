@@ -1,261 +1,423 @@
 {
-    "@@locale": "nl",
-    "removeNameDialogTitle": "Naam verwijderen?",
-    "@removeNameDialogTitle": {},
-    "removeNameDialogContent": "Weet jij zeker dat je de naam \"{name}\" wilt verwijderen van de app lijst? Deze actie heeft geen invloed op je geïnstalleerde apps en de naam kan weer toegevoegd worden via een collectie.",
-    "@removeNameDialogContent": {
-        "placeholders": {
-            "name": {}
-        }
-    },
-    "removeNameDialogConfirm": "Verwijderen",
-    "@removeNameDialogConfirm": {},
-    "dialogCancel": "Annuleren",
-    "@dialogCancel": {},
-    "navigationAppsPageTitle": "Apps",
-    "@navigationAppsPageTitle": {},
-    "navigationCollectionsPageTitle": "Verzamelingen",
-    "@navigationCollectionsPageTitle": {},
-    "navigationSettingsPageTitle": "Instellingen",
-    "@navigationSettingsPageTitle": {},
-    "filterDialogTitle": "Filter categorie",
-    "@filterDialogTitle": {},
-    "categoryConnectivity": "Connectiviteit",
-    "@categoryConnectivity": {},
-    "categoryDevelopment": "Development",
-    "@categoryDevelopment": {},
-    "categoryGames": "Games",
-    "@categoryGames": {},
-    "categoryGraphics": "Grafisch",
-    "@categoryGraphics": {},
-    "categoryInternet": "Internet",
-    "@categoryInternet": {},
-    "categoryMoney": "Geld",
-    "@categoryMoney": {},
-    "categoryMultimedia": "Multimedia",
-    "@categoryMultimedia": {},
-    "categoryNavigation": "Navigatie",
-    "@categoryNavigation": {},
-    "categoryPhoneAndSMS": "Telefoon & SMS",
-    "@categoryPhoneAndSMS": {},
-    "categoryReading": "Lezen",
-    "@categoryReading": {},
-    "categoryScienceAndEducation": "Wetenschap & Educatie",
-    "@categoryScienceAndEducation": {},
-    "categorySecurity": "Beveiliging",
-    "@categorySecurity": {},
-    "categorySportsAndHealth": "Sport & Gezondheid",
-    "@categorySportsAndHealth": {},
-    "categorySystem": "Systeem",
-    "@categorySystem": {},
-    "categoryTheming": "Thema's",
-    "@categoryTheming": {},
-    "categoryTime": "Tijd",
-    "@categoryTime": {},
-    "categoryWriting": "Schrijven",
-    "@categoryWriting": {},
-    "appListPageEmptyWarning": "Hmm er is hier niks. Probeer een naam toe te voegen via de \"Plus\"-knop rechts bovenin het scherm.",
-    "@appListPageEmptyWarning": {},
-    "appListLoadingMetadata": "Metadata laden...",
-    "@appListLoadingMetadata": {},
-    "errorsSheetTitle": "Foutmeldingen",
-    "@errorsSheetTitle": {},
-    "errorsSheetOverflowCount": "...{count} meer",
-    "@errorsSheetOverflowCount": {
-        "placeholders": {
-            "count": {}
-        }
-    },
-    "addDomainNameDialogTitle": "Voeg een app of collectie toe",
-    "@addDomainNameDialogTitle": {},
-    "addDomainNameDialogInputLabel": "Naam (domain)",
-    "@addDomainNameDialogInputLabel": {},
-    "addDomainNameDialogInputHint": "bijvoorbeeld skydroid.app",
-    "@addDomainNameDialogInputHint": {},
-    "addDomainNameDialogConfirm": "Toevoegen",
-    "@addDomainNameDialogConfirm": {},
-    "addDomainNameLoadingDialogTitle": "Naam controleren...",
-    "@addDomainNameLoadingDialogTitle": {},
-    "errorDialogTitle": "Er ging iets mis",
-    "@errorDialogTitle": {},
-    "errorDialogCloseButton": "Ok",
-    "@errorDialogCloseButton": {},
-    "verifiedAppDialogTitle": "Geverifieerde app",
-    "@verifiedAppDialogTitle": {},
-    "verifiedAppDialogContentTop": "Deze versie van de app was geverifieerd door de volgende collecties:",
-    "@verifiedAppDialogContentTop": {},
-    "verifiedAppDialogContentBottom": "Collecties kunnen updates markeren als geverifieerd om extra vertrouwen te bieden. Het verifiëren van updates kan bestaan ​​uit het controleren van de metadata, het testen van de app of het scannen op malware.",
-    "@verifiedAppDialogContentBottom": {},
-    "verifiedAppDialogCloseButton": "Ok",
-    "@verifiedAppDialogCloseButton": {},
-    "verifiedAppBadgeLabel": "Geverifieerd",
-    "@verifiedAppBadgeLabel": {},
-    "appPageWhatsNewTitle": "Wat is nieuw",
-    "@appPageWhatsNewTitle": {},
-    "appPageUpdatedTime": "Geüpdatet {time}",
-    "@appPageUpdatedTime": {
-        "placeholders": {
-            "time": {}
-        }
-    },
-    "appPageAddedTime": "App toegevoegd: {time}",
-    "@appPageAddedTime": {
-        "placeholders": {
-            "time": {}
-        }
-    },
-    "appPageLinkDonate": "Doneer",
-    "@appPageLinkDonate": {},
-    "appPageLinkWebsite": "Web Site",
-    "@appPageLinkWebsite": {},
-    "appPageLinkSourceCode": "Broncode",
-    "@appPageLinkSourceCode": {},
-    "appPageLinkIssueTracker": "Issue Tracker",
-    "@appPageLinkIssueTracker": {},
-    "appPageLinkTranslation": "Vertaling",
-    "@appPageLinkTranslation": {},
-    "appPageLinkChangelog": "Changelog",
-    "@appPageLinkChangelog": {},
-    "appPageLinkLicense": "Licentie: {license}",
-    "@appPageLinkLicense": {
-        "placeholders": {
-            "license": {}
-        }
-    },
-    "collectionListItemLoading": "Laden...",
-    "@collectionListItemLoading": {},
-    "collectionListItemTitle": "{title} ({domainName}) • {appCount} Apps",
-    "@collectionListItemTitle": {
-        "placeholders": {
-            "title": {},
-            "domainName": {},
-            "appCount": {}
-        }
-    },
-    "collectionRecommendationsCardTitle": "Een paar aanbevelingen om je op weg te helpen.",
-    "@collectionRecommendationsCardTitle": {},
-    "collectionLoadingDialogTitle": "Collectie laden...",
-    "@collectionLoadingDialogTitle": {},
-    "collectionLoadingDialogContent": "Dit kan tot 30 seconden duren, afhankelijk van de collectie grootte.",
-    "@collectionLoadingDialogContent": {},
-    "removeCollectionDialogTitle": "Collectie verwijderen?",
-    "@removeCollectionDialogTitle": {},
-    "removeCollectionDialogContent": "Weet je zeker dat je de collectie \"{name}\" wilt verwijderen? Als je ook de apps wilt verwijderen die toegevoegd zijn aan deze collectie, selecteer dan \"Verwijderen met Apps\".",
-    "@removeCollectionDialogContent": {
-        "placeholders": {
-            "name": {}
-        }
-    },
-    "removeCollectionDialogConfirmWithApps": "Verwijderen met Apps",
-    "@removeCollectionDialogConfirmWithApps": {},
-    "removeCollectionDialogConfirm": "Verwijderen",
-    "@removeCollectionDialogConfirm": {},
-    "downloadHashMismatchErrorDialogTitle": "Hash Verkeerde combinatie",
-    "@downloadHashMismatchErrorDialogTitle": {},
-    "downloadHashMismatchErrorDialogContent": "Het gedownloade bestand komt niet overeen met de juiste hash in de metadata.\n\nVerwachte Hash: {expectedHash}\nVerkregen Hash: {hash}\n\nNeem contact op met de app maker",
-    "@downloadHashMismatchErrorDialogContent": {
-        "placeholders": {
-            "expectedHash": {},
-            "hash": {}
-        }
-    },
-    "appPageInstallButton": "Installeren (Versie {version})",
-    "@appPageInstallButton": {
-        "placeholders": {
-            "version": {}
-        }
-    },
-    "appPageRetryInstallButton": "Probeer opnieuw te installeren",
-    "@appPageRetryInstallButton": {},
-    "appPageInstallingApkProcess": "Intalleren van APK bestand...",
-    "@appPageInstallingApkProcess": {},
-    "appPageUninstallButton": "Deïnstalleren ({version})",
-    "@appPageUninstallButton": {
-        "placeholders": {
-            "version": {}
-        }
-    },
-    "appPageLaunchAppButton": "Open",
-    "@appPageLaunchAppButton": {},
-    "appPageUpdateButton": "Update ({version})",
-    "@appPageUpdateButton": {
-        "placeholders": {
-            "version": {}
-        }
-    },
-    "appPageInstallationDownloadStarting": "Download starten...",
-    "@appPageInstallationDownloadStarting": {},
-    "appPageInstallationProgress": "{progress} % van {totalFileSize}",
-    "@appPageInstallationProgress": {
-        "placeholders": {
-            "progress": {},
-            "totalFileSize": {}
-        }
-    },
-    "appShareText": "{localizedName} - {localizedSummary} • Download: {link}",
-    "@appShareText": {
-        "placeholders": {
-            "localizedName": {},
-            "localizedSummary": {},
-            "link": {}
-        }
-    },
-    "errorMetadataHashMismatch": "Metadata Hash verkeerde combinatie.",
-    "@errorMetadataHashMismatch": {},
-    "errorHttpStatusCode": "HTTP {statusCode} tijdens het laden van de metadata",
-    "@errorHttpStatusCode": {
-        "placeholders": {
-            "statusCode": {}
-        }
-    },
-    "errorDnsRecordNotAvailable": "DNS Record niet beschikbaar",
-    "@errorDnsRecordNotAvailable": {},
-    "errorDomainNameHasNoRecord": "Naam heeft geen skydroid record",
-    "@errorDomainNameHasNoRecord": {},
-    "errorHttpStatusCodeMultiDnsQuery": "HTTP {statusCode} tijdens het laden van de metadata",
-    "@errorHttpStatusCodeMultiDnsQuery": {
-        "placeholders": {
-            "statusCode": {}
-        }
-    },
-    "settingsPageAppThemeTitle": "App thema",
-    "@settingsPageAppThemeTitle": {},
-    "settingsPageAppThemeOptionLight": "Licht",
-    "@settingsPageAppThemeOptionLight": {},
-    "settingsPageAppThemeOptionSepia": "Sepia",
-    "@settingsPageAppThemeOptionSepia": {},
-    "settingsPageAppThemeOptionDark": "Donker",
-    "@settingsPageAppThemeOptionDark": {},
-    "settingsPageAppThemeOptionBlack": "Zwart",
-    "@settingsPageAppThemeOptionBlack": {},
-    "settingsPageServicesTitle": "Services",
-    "@settingsPageServicesTitle": {},
-    "settingsPageServicesMultiDoHServer": "Multi-DoH Server",
-    "@settingsPageServicesMultiDoHServer": {},
-    "settingsPageServicesSkynetPortal": "Skynet Portal",
-    "@settingsPageServicesSkynetPortal": {},
-    "settingsPageAboutTitle": "Over",
-    "@settingsPageAboutTitle": {},
-    "settingsPageAboutShowLicenses": "Bekijk licenties",
-    "@settingsPageAboutShowLicenses": {},
-    "settingsPageAboutDebug": "Debug Info",
-    "@settingsPageAboutDebug": {},
-    "settingsPageAboutDebugDialogClose": "Ok",
-    "@settingsPageAboutDebugDialogClose": {},
-    "errorAppInvalidCurrentBuild": "Error: Er is geen build gevonden voor de huidige versie",
-    "@errorAppInvalidCurrentBuild": {},
-    "errorAppCompatibilitySdkVersionTooLow": "Deze app is niet compatible met je apparaat (sdkVersion te laag: {sdkVersion} < {minSdkVersion})",
-    "@errorAppCompatibilitySdkVersionTooLow": {
-        "placeholders": {
-            "sdkVersion": {},
-            "minSdkVersion": {}
-        }
-    },
-    "errorAppCompatibilityNoMatchingABI": "Deze app is niet compatible met je apparaat (ABI is niet ondersteund: {deviceABIs} niet in {supportedABIs})",
-    "@errorAppCompatibilityNoMatchingABI": {
-        "placeholders": {
-            "deviceABIs": {},
-            "supportedABIs": {}
-        }
+  "@@locale": "nl",
+  "removeNameDialogTitle": "Naam verwijderen?",
+  "@removeNameDialogTitle": {},
+  "removeNameDialogContent": "Weet jij zeker dat je de naam \"{name}\" wilt verwijderen van de app lijst? Deze actie heeft geen invloed op je geïnstalleerde apps en de naam kan weer toegevoegd worden via een collectie.",
+  "@removeNameDialogContent": {
+    "placeholders": {
+      "name": {}
     }
+  },
+  "removeNameDialogConfirm": "Verwijderen",
+  "@removeNameDialogConfirm": {},
+  "dialogCancel": "Annuleren",
+  "@dialogCancel": {},
+  "navigationAppsPageTitle": "Apps",
+  "@navigationAppsPageTitle": {},
+  "navigationCollectionsPageTitle": "Verzamelingen",
+  "@navigationCollectionsPageTitle": {},
+  "navigationSettingsPageTitle": "Instellingen",
+  "@navigationSettingsPageTitle": {},
+  "filterDialogTitle": "Filter categorie",
+  "@filterDialogTitle": {},
+  "categoryConnectivity": "Connectiviteit",
+  "@categoryConnectivity": {},
+  "categoryDevelopment": "Ontwikkeling",
+  "@categoryDevelopment": {},
+  "categoryGames": "Spelletjes",
+  "@categoryGames": {},
+  "categoryGraphics": "Grafisch",
+  "@categoryGraphics": {},
+  "categoryInternet": "Internet",
+  "@categoryInternet": {},
+  "categoryMoney": "Geld",
+  "@categoryMoney": {},
+  "categoryMultimedia": "Multimedia",
+  "@categoryMultimedia": {},
+  "categoryNavigation": "Navigatie",
+  "@categoryNavigation": {},
+  "categoryPhoneAndSMS": "Telefoon & SMS",
+  "@categoryPhoneAndSMS": {},
+  "categoryReading": "Lezen",
+  "@categoryReading": {},
+  "categoryScienceAndEducation": "Wetenschap & Educatie",
+  "@categoryScienceAndEducation": {},
+  "categorySecurity": "Beveiliging",
+  "@categorySecurity": {},
+  "categorySportsAndHealth": "Sport & Gezondheid",
+  "@categorySportsAndHealth": {},
+  "categorySystem": "Systeem",
+  "@categorySystem": {},
+  "categoryTheming": "Thema's",
+  "@categoryTheming": {},
+  "categoryTime": "Tijd",
+  "@categoryTime": {},
+  "categoryWriting": "Schrijven",
+  "@categoryWriting": {},
+  "appListPageEmptyWarning": "Hmm er is hier niks. Probeer een naam toe te voegen via de \"Plus\"-knop rechts bovenin het scherm.",
+  "@appListPageEmptyWarning": {},
+  "appListLoadingMetadata": "Metadata aan het laden…",
+  "@appListLoadingMetadata": {},
+  "errorsSheetTitle": "Foutmeldingen",
+  "@errorsSheetTitle": {},
+  "errorsSheetOverflowCount": "...{telling} meer",
+  "@errorsSheetOverflowCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "addDomainNameDialogTitle": "Voeg een app of collectie toe",
+  "@addDomainNameDialogTitle": {},
+  "addDomainNameDialogInputLabel": "Naam (domain)",
+  "@addDomainNameDialogInputLabel": {},
+  "addDomainNameDialogInputHint": "bijvoorbeeld skydroid.app",
+  "@addDomainNameDialogInputHint": {},
+  "addDomainNameDialogConfirm": "Toevoegen",
+  "@addDomainNameDialogConfirm": {},
+  "addDomainNameLoadingDialogTitle": "Naam checken…",
+  "@addDomainNameLoadingDialogTitle": {},
+  "errorDialogTitle": "Er ging iets mis",
+  "@errorDialogTitle": {},
+  "errorDialogCloseButton": "Ok",
+  "@errorDialogCloseButton": {},
+  "verifiedAppDialogTitle": "Geverifieerde app",
+  "@verifiedAppDialogTitle": {},
+  "verifiedAppDialogContentTop": "Deze versie van de app was geverifieerd door de volgende collecties:",
+  "@verifiedAppDialogContentTop": {},
+  "verifiedAppDialogContentBottom": "Collecties kunnen releases markeren als geverifieerd om extra vertrouwen te bieden. Het verifiëren van een release kan bestaan uit het controleren van de metadata, het testen van de app of het scannen op malware.",
+  "@verifiedAppDialogContentBottom": {},
+  "verifiedAppDialogCloseButton": "Ok",
+  "@verifiedAppDialogCloseButton": {},
+  "verifiedAppBadgeLabel": "Geverifieerd",
+  "@verifiedAppBadgeLabel": {},
+  "appPageWhatsNewTitle": "Wat is nieuw",
+  "@appPageWhatsNewTitle": {},
+  "appPageUpdatedTime": "Geüpdatet {time}",
+  "@appPageUpdatedTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "appPageAddedTime": "App toegevoegd: {time}",
+  "@appPageAddedTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "appPageLinkDonate": "Doneer",
+  "@appPageLinkDonate": {},
+  "appPageLinkWebsite": "Web Site",
+  "@appPageLinkWebsite": {},
+  "appPageLinkSourceCode": "Broncode",
+  "@appPageLinkSourceCode": {},
+  "appPageLinkIssueTracker": "Issue Tracker",
+  "@appPageLinkIssueTracker": {},
+  "appPageLinkTranslation": "Vertaling",
+  "@appPageLinkTranslation": {},
+  "appPageLinkChangelog": "Wijzigingen",
+  "@appPageLinkChangelog": {},
+  "appPageLinkLicense": "Licentie: {license}",
+  "@appPageLinkLicense": {
+    "placeholders": {
+      "license": {}
+    }
+  },
+  "collectionListItemLoading": "Lading…",
+  "@collectionListItemLoading": {},
+  "collectionListItemTitle": "{title} ({domeinnaam}) • {appCount} Apps",
+  "@collectionListItemTitle": {
+    "placeholders": {
+      "title": {},
+      "domainName": {},
+      "appCount": {}
+    }
+  },
+  "collectionRecommendationsCardTitle": "Enkele aanbevelingen om u op weg te helpen",
+  "@collectionRecommendationsCardTitle": {},
+  "collectionLoadingDialogTitle": "Collectie aan het laden…",
+  "@collectionLoadingDialogTitle": {},
+  "collectionLoadingDialogContent": "Dit kan tot 30 seconden duren, afhankelijk van de grootte van de collectie",
+  "@collectionLoadingDialogContent": {},
+  "removeCollectionDialogTitle": "Collectie verwijderen?",
+  "@removeCollectionDialogTitle": {},
+  "removeCollectionDialogContent": "Weet je zeker dat je de collectie \"{name}\" wilt verwijderen? Als je ook de apps wilt verwijderen die toegevoegd zijn aan deze collectie, selecteer dan \"Verwijderen met Apps\".",
+  "@removeCollectionDialogContent": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "removeCollectionDialogConfirmWithApps": "Verwijderen met Apps",
+  "@removeCollectionDialogConfirmWithApps": {},
+  "removeCollectionDialogConfirm": "Verwijderen",
+  "@removeCollectionDialogConfirm": {},
+  "downloadHashMismatchErrorDialogTitle": "Hash Verkeerde combinatie",
+  "@downloadHashMismatchErrorDialogTitle": {},
+  "downloadHashMismatchErrorDialogContent": "Het gedownloade bestand komt niet overeen met de juiste hash in de metadata.\n\nVerwachte Hash: {expectedHash}\nVerkregen Hash: {hash}\n\nNeem contact op met de app maker",
+  "@downloadHashMismatchErrorDialogContent": {
+    "placeholders": {
+      "expectedHash": {},
+      "hash": {}
+    }
+  },
+  "appPageInstallButton": "Installeren (Versie {version})",
+  "@appPageInstallButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appPageRetryInstallButton": "Probeer opnieuw te installeren",
+  "@appPageRetryInstallButton": {},
+  "appPageInstallingApkProcess": "APK-bestand installeren…",
+  "@appPageInstallingApkProcess": {},
+  "appPageUninstallButton": "Deïnstalleren ({version})",
+  "@appPageUninstallButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appPageLaunchAppButton": "Open",
+  "@appPageLaunchAppButton": {},
+  "appPageUpdateButton": "Update ({version})",
+  "@appPageUpdateButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appPageInstallationDownloadStarting": "Beginnen met downloaden…",
+  "@appPageInstallationDownloadStarting": {},
+  "appPageInstallationProgress": "{progress} % van {totalFileSize}",
+  "@appPageInstallationProgress": {
+    "placeholders": {
+      "progress": {},
+      "totalFileSize": {}
+    }
+  },
+  "appShareText": "{localizedName} - {localizedSummary} • Download: {link}",
+  "@appShareText": {
+    "placeholders": {
+      "localizedName": {},
+      "localizedSummary": {},
+      "link": {}
+    }
+  },
+  "errorMetadataHashMismatch": "Metadata Hash verkeerde combinatie.",
+  "@errorMetadataHashMismatch": {},
+  "errorHttpStatusCode": "HTTP {statusCode} tijdens het laden van de metadata",
+  "@errorHttpStatusCode": {
+    "placeholders": {
+      "statusCode": {}
+    }
+  },
+  "errorDnsRecordNotAvailable": "DNS Record niet beschikbaar",
+  "@errorDnsRecordNotAvailable": {},
+  "errorDomainNameHasNoRecord": "Naam heeft geen skydroid record",
+  "@errorDomainNameHasNoRecord": {},
+  "errorHttpStatusCodeMultiDnsQuery": "HTTP {statusCode} tijdens het laden van de metadata",
+  "@errorHttpStatusCodeMultiDnsQuery": {
+    "placeholders": {
+      "statusCode": {}
+    }
+  },
+  "settingsPageAppThemeTitle": "App thema",
+  "@settingsPageAppThemeTitle": {},
+  "settingsPageAppThemeOptionLight": "Licht",
+  "@settingsPageAppThemeOptionLight": {},
+  "settingsPageAppThemeOptionSepia": "Sepia",
+  "@settingsPageAppThemeOptionSepia": {},
+  "settingsPageAppThemeOptionDark": "Donker",
+  "@settingsPageAppThemeOptionDark": {},
+  "settingsPageAppThemeOptionBlack": "Zwart",
+  "@settingsPageAppThemeOptionBlack": {},
+  "settingsPageServicesTitle": "Diensten",
+  "@settingsPageServicesTitle": {},
+  "settingsPageServicesMultiDoHServer": "Multi-DoH-Server",
+  "@settingsPageServicesMultiDoHServer": {},
+  "settingsPageServicesSkynetPortal": "Skynet-Portaal",
+  "@settingsPageServicesSkynetPortal": {},
+  "settingsPageAboutTitle": "Over",
+  "@settingsPageAboutTitle": {},
+  "settingsPageAboutShowLicenses": "Bekijk licenties",
+  "@settingsPageAboutShowLicenses": {},
+  "settingsPageAboutDebug": "Debug Info",
+  "@settingsPageAboutDebug": {},
+  "settingsPageAboutDebugDialogClose": "Ok",
+  "@settingsPageAboutDebugDialogClose": {},
+  "errorAppInvalidCurrentBuild": "Error: Er is geen build gevonden voor de huidige versie",
+  "@errorAppInvalidCurrentBuild": {},
+  "errorAppCompatibilitySdkVersionTooLow": "Deze app is niet compatible met je apparaat (sdkVersion te laag: {sdkVersion} < {minSdkVersion})",
+  "@errorAppCompatibilitySdkVersionTooLow": {
+    "placeholders": {
+      "sdkVersion": {},
+      "minSdkVersion": {}
+    }
+  },
+  "errorAppCompatibilityNoMatchingABI": "Deze app is niet compatible met je apparaat (ABI is niet ondersteund: {deviceABIs} niet in {supportedABIs})",
+  "@errorAppCompatibilityNoMatchingABI": {
+    "placeholders": {
+      "deviceABIs": {},
+      "supportedABIs": {}
+    }
+  },
+  "errorAppInstallationShizuku": "Shizuku App installatie mislukt",
+  "@errorAppInstallationShizuku": {},
+  "settingsPageShizukuTitle": "Shizuku Dienst",
+  "@settingsPageShizukuTitle": {},
+  "settingsPageShizukuToggleSwitch": "Shizuku inschakelen",
+  "@settingsPageShizukuToggleSwitch": {},
+  "settingsPageShizukuInstallButton": "Installeer Shizuku",
+  "@settingsPageShizukuInstallButton": {},
+  "appPageInstallingShizukuErrorNotRunning": "Shizuku Service draait niet",
+  "@appPageInstallingShizukuErrorNotRunning": {},
+  "appPageInstallingShizukuErrorNotRunningButton": "Shizuku openen",
+  "@appPageInstallingShizukuErrorNotRunningButton": {},
+  "appPageInstallingShizukuErrorPermissionNotGranted": "Toestemming niet verleend (Ga naar de SkyDroid instellingen en schakel Shizuku ondersteuning weer in)",
+  "@appPageInstallingShizukuErrorPermissionNotGranted": {},
+  "removeNamesDialogTitle": "Geselecteerde namen verwijderen?",
+  "@removeNamesDialogTitle": {},
+  "removeNamesDialogConfirm": "Verwijder alle",
+  "@removeNamesDialogConfirm": {},
+  "appListPageSearchHint": "Zoeken naar apps…",
+  "@appListPageSearchHint": {},
+  "appListPageUpdateAllAppsButton": "Alle apps updaten",
+  "@appListPageUpdateAllAppsButton": {},
+  "batchProcessingSheetProgressMore": "Verwerken van {count} apps…",
+  "@batchProcessingSheetProgressMore": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "saiStr_installer_rootless_error2_install_failed_shared_user_incompatible": "App heeft een reeds bestaande gedeelde gebruiker opgevraagd, maar hun handtekeningen komen niet overeen",
+  "@saiStr_installer_rootless_error2_install_failed_shared_user_incompatible": {},
+  "saiStr_installer_rootless_error2_install_failed_missing_shared_library": "App heeft een gedeelde bibliotheek opgevraagd die niet op het apparaat is geïnstalleerd",
+  "@saiStr_installer_rootless_error2_install_failed_missing_shared_library": {},
+  "saiStr_installer_rootless_error2_install_failed_dexopt": "De installatie is mislukt tijdens het optimaliseren en valideren van package dex files, ofwel omdat er niet genoeg opslagruimte was, ofwel omdat de validatie mislukte",
+  "@saiStr_installer_rootless_error2_install_failed_dexopt": {},
+  "saiStr_installer_rootless_error2_install_failed_older_sdk": "Android-versie van het toestel is lager dan vereist door het pakket",
+  "@saiStr_installer_rootless_error2_install_failed_older_sdk": {},
+  "saiStr_installer_rootless_error2_install_failed_newer_sdk": "Android-versie van het toestel is hoger dan vereist door het pakket",
+  "@saiStr_installer_rootless_error2_install_failed_newer_sdk": {},
+  "saiStr_installer_rootless_error2_install_failed_duplicate_package": "Pakket met dezelfde naam is al geïnstalleerd",
+  "@saiStr_installer_rootless_error2_install_failed_duplicate_package": {},
+  "saiStr_installer_rootless_error2_install_failed_insufficient_storage": "Apparaat heeft niet genoeg ruimte om de app te installeren",
+  "@saiStr_installer_rootless_error2_install_failed_insufficient_storage": {},
+  "saiStr_installer_rootless_error2_install_failed_invalid_uri": "De doorgegeven URI is ongeldig",
+  "@saiStr_installer_rootless_error2_install_failed_invalid_uri": {},
+  "saiStr_installer_rootless_error2_install_failed_invalid_apk": "APK bestand is niet geldig",
+  "@saiStr_installer_rootless_error2_install_failed_invalid_apk": {},
+  "saiStr_installer_rootless_error2_install_failed_already_exists": "Dit pakket is al geïnstalleerd",
+  "@saiStr_installer_rootless_error2_install_failed_already_exists": {},
+  "saiStr_installer_rootless_error2_unknown": "Onbekende fout",
+  "@saiStr_installer_rootless_error2_unknown": {},
+  "filterByCollectionCardTitle": "Filter op collectie",
+  "@filterByCollectionCardTitle": {},
+  "batchProcessingSheetRemoveAllNamesButton": "Verwijder alle geselecteerde namen",
+  "@batchProcessingSheetRemoveAllNamesButton": {},
+  "batchProcessingSheetSelectedOne": "1 app geselecteerd",
+  "@batchProcessingSheetSelectedOne": {},
+  "batchProcessingSheetUninstallAllButton": "Verwijder",
+  "@batchProcessingSheetUninstallAllButton": {},
+  "batchProcessingSheetInstallOrUpdateAllButton": "Installeren/bijwerken",
+  "@batchProcessingSheetInstallOrUpdateAllButton": {},
+  "batchProcessingSheetUnselectAllButton": "Alles deselecteren",
+  "@batchProcessingSheetUnselectAllButton": {},
+  "batchProcessingSheetSelectAllButton": "Selecteer alle",
+  "@batchProcessingSheetSelectAllButton": {},
+  "batchProcessingSheetSelectedMore": "{count} apps geselecteerd",
+  "@batchProcessingSheetSelectedMore": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "saiStr_installer_rootless_error2_install_parse_failed_bad_package_name": "APK heeft slechte of ontbrekende pakketnaam",
+  "@saiStr_installer_rootless_error2_install_parse_failed_bad_package_name": {},
+  "saiStr_installer_rootless_error2_install_failed_missing_feature": "Pakket vereist een functie die niet door dit toestel wordt ondersteund",
+  "@saiStr_installer_rootless_error2_install_failed_missing_feature": {},
+  "saiStr_installer_rootless_error2_install_failed_container_error": "Het koppelpunt van de beveiligde container kon niet worden geopend op externe media",
+  "@saiStr_installer_rootless_error2_install_failed_container_error": {},
+  "saiStr_installer_rootless_error2_install_failed_invalid_install_location": "Pakket kon niet worden geïnstalleerd op de opgegeven locatie",
+  "@saiStr_installer_rootless_error2_install_failed_invalid_install_location": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_certificate_encoding": "Codering certificaat mislukt",
+  "@saiStr_installer_rootless_error2_install_parse_failed_certificate_encoding": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_inconsistent_certificates": "Inconsistente certificaten gevonden op de bestanden in de APK",
+  "@saiStr_installer_rootless_error2_install_parse_failed_inconsistent_certificates": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_no_certificates": "APK bestand bevat geen certificaten",
+  "@saiStr_installer_rootless_error2_install_parse_failed_no_certificates": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_unexpected_exception": "APK parser kwam een onverwachte uitzondering tegen",
+  "@saiStr_installer_rootless_error2_install_parse_failed_unexpected_exception": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_bad_manifest": "Kan APK manifest niet ophalen",
+  "@saiStr_installer_rootless_error2_install_parse_failed_bad_manifest": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_not_apk": "Het geleverde bestand is geen APK bestand",
+  "@saiStr_installer_rootless_error2_install_parse_failed_not_apk": {},
+  "saiStr_installer_rootless_error2_install_failed_missing_split": "Het pakket vereist splitsingen, maar die werden niet geleverd",
+  "@saiStr_installer_rootless_error2_install_failed_missing_split": {},
+  "saiStr_installer_rootless_error2_install_failed_permission_model_downgrade": "Nieuwe versie van het pakket ondersteunt geen runtime permissies maar de huidige geïnstalleerde versie wel",
+  "@saiStr_installer_rootless_error2_install_failed_permission_model_downgrade": {},
+  "saiStr_installer_rootless_error2_install_failed_version_downgrade": "Een nieuwere versie van dit pakket is al geïnstalleerd",
+  "@saiStr_installer_rootless_error2_install_failed_version_downgrade": {},
+  "saiStr_installer_rootless_error2_install_failed_uid_changed": "Het pakket heeft een andere UID gekregen dan het eerder had",
+  "@saiStr_installer_rootless_error2_install_failed_uid_changed": {},
+  "saiStr_installer_rootless_error2_install_failed_package_changed": "Installatiepad van pakket onverwacht gewijzigd",
+  "@saiStr_installer_rootless_error2_install_failed_package_changed": {},
+  "saiStr_installer_rootless_error2_install_failed_verification_failure": "Pakket is niet geverifieerd",
+  "@saiStr_installer_rootless_error2_install_failed_verification_failure": {},
+  "saiStr_installer_rootless_error2_install_failed_verification_timeout": "Pakket verificatie time-out",
+  "@saiStr_installer_rootless_error2_install_failed_verification_timeout": {},
+  "saiStr_installer_rootless_error2_install_failed_wrong_installed_version": "Vereiste versie van een reeds geïnstalleerd pakket komt niet overeen met de werkelijke versie van het geïnstalleerde pakket",
+  "@saiStr_installer_rootless_error2_install_failed_wrong_installed_version": {},
+  "saiStr_installer_rootless_error2_install_failed_multipackage_inconsistency": "Een van de sessies van het installatieprogramma van het kindpakket komt niet overeen met de oudersessie wat betreft de parameters voor staged of rollback",
+  "@saiStr_installer_rootless_error2_install_failed_multipackage_inconsistency": {},
+  "saiStr_installer_rootless_error2_install_failed_other_staged_session_in_progress": "Er is al een pakketinstallatie sessie gepleegd voor deze pakketnaam",
+  "@saiStr_installer_rootless_error2_install_failed_other_staged_session_in_progress": {},
+  "saiStr_installer_rootless_error2_install_failed_bad_signature": "Er is een probleem met de APK handtekening",
+  "@saiStr_installer_rootless_error2_install_failed_bad_signature": {},
+  "saiStr_installer_rootless_error2_install_failed_bad_dex_metadata": "Dex metadata bestand is ongeldig of er is geen overeenkomend APK bestand voor een dex metadata bestand",
+  "@saiStr_installer_rootless_error2_install_failed_bad_dex_metadata": {},
+  "saiStr_installer_rootless_error2_install_failed_instant_app_invalid": "Niet-ondersteunde werking met een instant app",
+  "@saiStr_installer_rootless_error2_install_failed_instant_app_invalid": {},
+  "saiStr_installer_rootless_error2_install_failed_aborted": "De installatie werd geannuleerd door de gebruiker of afgebroken",
+  "@saiStr_installer_rootless_error2_install_failed_aborted": {},
+  "saiStr_installer_rootless_error2_install_failed_no_matching_abis": "Pakket bevat geen native code die compatibel is met de CPU van dit toestel",
+  "@saiStr_installer_rootless_error2_install_failed_no_matching_abis": {},
+  "saiStr_installer_rootless_error2_install_failed_duplicate_permission": "Pakket probeert een permissie te definiëren die al gedefinieerd is door een ander geïnstalleerd pakket",
+  "@saiStr_installer_rootless_error2_install_failed_duplicate_permission": {},
+  "saiStr_installer_rootless_error2_install_failed_user_restricted": "Deze gebruiker mag geen apps installeren",
+  "@saiStr_installer_rootless_error2_install_failed_user_restricted": {},
+  "saiStr_installer_rootless_error2_install_failed_internal_error": "Installatie mislukt vanwege systeemproblemen",
+  "@saiStr_installer_rootless_error2_install_failed_internal_error": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_manifest_empty": "APK manifest is leeg",
+  "@saiStr_installer_rootless_error2_install_parse_failed_manifest_empty": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_manifest_malformed": "APK manifest is misvormd",
+  "@saiStr_installer_rootless_error2_install_parse_failed_manifest_malformed": {},
+  "batchProcessingSheetProgressOne": "Verwerking 1 app…",
+  "@batchProcessingSheetProgressOne": {},
+  "appPageInstallingShizukuProcess": "app installeren... (Shizuku)",
+  "@appPageInstallingShizukuProcess": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_bad_shared_user_id": "APK heeft slechte gedeelde gebruikers id",
+  "@saiStr_installer_rootless_error2_install_parse_failed_bad_shared_user_id": {},
+  "settingsPageShizukuDescription": "Shizuku is een app die SkyDroid toegang kan geven tot systeem-API's ZONDER ROOT. Dit maakt het installeren en updaten van apps zonder interactie van de gebruiker.",
+  "@settingsPageShizukuDescription": {},
+  "removeNamesDialogContent": "Wil je echt {count} namen uit je app lijst verwijderen? Deze actie raakt je geïnstalleerde apps niet en de namen kunnen opnieuw worden toegevoegd via een collectie.",
+  "@removeNamesDialogContent": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "saiStr_installer_rootless_error2_install_failed_no_shared_user": "Gedeelde gebruiker gevraagd door pakket bestaat niet",
+  "@saiStr_installer_rootless_error2_install_failed_no_shared_user": {},
+  "saiStr_installer_rootless_error2_install_failed_update_incompatible": "Handtekening van app komt niet overeen met de handtekening van een reeds geïnstalleerde app met dezelfde pakketnaam",
+  "@saiStr_installer_rootless_error2_install_failed_update_incompatible": {},
+  "saiStr_installer_rootless_error2_install_failed_replace_couldnt_delete": "Het systeem was niet in staat om de vorige versie van dit pakket te verwijderen",
+  "@saiStr_installer_rootless_error2_install_failed_replace_couldnt_delete": {},
+  "saiStr_installer_rootless_error2_install_failed_conflicting_provider": "Pakket bevat een inhoudsaanbieder met dezelfde autoriteit als een aanbieder die al in het systeem is geïnstalleerd",
+  "@saiStr_installer_rootless_error2_install_failed_conflicting_provider": {},
+  "saiStr_installer_rootless_error2_install_failed_cpu_abi_incompatible": "Pakket bevat geen native code die compatibel is met de CPU van dit toestel",
+  "@saiStr_installer_rootless_error2_install_failed_cpu_abi_incompatible": {},
+  "saiStr_installer_rootless_error2_install_failed_media_unavailable": "Pakket kon niet worden geïnstalleerd op de opgegeven locatie omdat het medium niet beschikbaar is",
+  "@saiStr_installer_rootless_error2_install_failed_media_unavailable": {},
+  "saiStr_installer_rootless_error2_install_failed_sandbox_version_downgrade": "Nieuwe versie van het pakket vereist een lagere zandbakversie dan de huidige geïnstalleerde versie van dit pakket",
+  "@saiStr_installer_rootless_error2_install_failed_sandbox_version_downgrade": {},
+  "batchProcessingSheetShizukuWarning": "Activeer Shizuku Service in de Instellingen om batch-acties te gebruiken",
+  "@batchProcessingSheetShizukuWarning": {},
+  "saiStr_installer_rootless_error2_install_failed_test_only": "Geïnstalleerd pakket is alleen test en INSTALLEER_TOESTAAN_TEST vlag werd niet geleverd",
+  "@saiStr_installer_rootless_error2_install_failed_test_only": {}
 }
