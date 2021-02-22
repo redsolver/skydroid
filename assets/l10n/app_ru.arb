@@ -175,5 +175,164 @@
       "expectedHash": {},
       "hash": {}
     }
-  }
+  },
+  "appPageInstallationDownloadStarting": "Начинается загрузка…",
+  "@appPageInstallationDownloadStarting": {},
+  "appPageInstallationProgress": "{progress} % из {totalFileSize}",
+  "@appPageInstallationProgress": {
+    "placeholders": {
+      "progress": {},
+      "totalFileSize": {}
+    }
+  },
+  "errorMetadataHashMismatch": "Несоответствие хэша метаданных.",
+  "@errorMetadataHashMismatch": {},
+  "errorHttpStatusCode": "HTTP {statusCode} при загрузке метаданных",
+  "@errorHttpStatusCode": {
+    "placeholders": {
+      "statusCode": {}
+    }
+  },
+  "errorDnsRecordNotAvailable": "Запись DNS недоступна",
+  "@errorDnsRecordNotAvailable": {},
+  "errorDomainNameHasNoRecord": "Имя не имеет записи в Skydroid",
+  "@errorDomainNameHasNoRecord": {},
+  "errorHttpStatusCodeMultiDnsQuery": "HTTP {statusCode} в запросе Multi-DoH",
+  "@errorHttpStatusCodeMultiDnsQuery": {
+    "placeholders": {
+      "statusCode": {}
+    }
+  },
+  "settingsPageAppThemeTitle": "Тема приложения",
+  "@settingsPageAppThemeTitle": {},
+  "settingsPageAppThemeOptionLight": "Светлая",
+  "@settingsPageAppThemeOptionLight": {},
+  "settingsPageAppThemeOptionSepia": "Сепия",
+  "@settingsPageAppThemeOptionSepia": {},
+  "settingsPageServicesTitle": "Службы",
+  "@settingsPageServicesTitle": {},
+  "settingsPageServicesMultiDoHServer": "Сервер Multi-DoH",
+  "@settingsPageServicesMultiDoHServer": {},
+  "settingsPageServicesSkynetPortal": "Skynet Portal",
+  "@settingsPageServicesSkynetPortal": {},
+  "settingsPageAboutShowLicenses": "Показать лицензии",
+  "@settingsPageAboutShowLicenses": {},
+  "settingsPageAboutDebug": "Отладочная информация",
+  "@settingsPageAboutDebug": {},
+  "settingsPageAboutDebugDialogClose": "Ок",
+  "@settingsPageAboutDebugDialogClose": {},
+  "errorAppCompatibilityNoMatchingABI": "Это приложение несовместимо с вашим устройством (ABI не поддерживается: {deviceABIs} нет в {supportedABIs})",
+  "@errorAppCompatibilityNoMatchingABI": {
+    "placeholders": {
+      "deviceABIs": {},
+      "supportedABIs": {}
+    }
+  },
+  "errorAppInstallationShizuku": "Не удалось установить приложение Shizuku",
+  "@errorAppInstallationShizuku": {},
+  "appPageInstallingShizukuProcess": "Установка приложения… (Shizuku)",
+  "@appPageInstallingShizukuProcess": {},
+  "settingsPageShizukuTitle": "Служба Shizuku",
+  "@settingsPageShizukuTitle": {},
+  "settingsPageShizukuToggleSwitch": "Включить Shizuku",
+  "@settingsPageShizukuToggleSwitch": {},
+  "settingsPageShizukuInstallButton": "Установить Shizuku",
+  "@settingsPageShizukuInstallButton": {},
+  "appPageInstallingShizukuErrorNotRunning": "Служба Shizuku не работает",
+  "@appPageInstallingShizukuErrorNotRunning": {},
+  "appPageInstallingShizukuErrorNotRunningButton": "Открыть Shizuku",
+  "@appPageInstallingShizukuErrorNotRunningButton": {},
+  "removeNamesDialogTitle": "Удалить выбранные имена?",
+  "@removeNamesDialogTitle": {},
+  "removeNamesDialogConfirm": "Удалить все",
+  "@removeNamesDialogConfirm": {},
+  "appListPageSearchHint": "Искать приложения…",
+  "@appListPageSearchHint": {},
+  "batchProcessingSheetProgressOne": "Обработка 1 приложения…",
+  "@batchProcessingSheetProgressOne": {},
+  "batchProcessingSheetSelectedOne": "Выбрано 1 приложение",
+  "@batchProcessingSheetSelectedOne": {},
+  "batchProcessingSheetSelectedMore": "Выбрано {count} приложений",
+  "@batchProcessingSheetSelectedMore": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "saiStr_installer_rootless_error2_install_failed_already_exists": "Этот пакет уже установлен",
+  "@saiStr_installer_rootless_error2_install_failed_already_exists": {},
+  "saiStr_installer_rootless_error2_install_failed_invalid_apk": "APK-файл недействителен",
+  "@saiStr_installer_rootless_error2_install_failed_invalid_apk": {},
+  "saiStr_installer_rootless_error2_install_failed_duplicate_package": "Пакет с таким именем уже установлен",
+  "@saiStr_installer_rootless_error2_install_failed_duplicate_package": {},
+  "saiStr_installer_rootless_error2_install_failed_no_shared_user": "Запрошенный пользователем пакет, не существует",
+  "@saiStr_installer_rootless_error2_install_failed_no_shared_user": {},
+  "appPageUpdateButton": "Обновить ({version})",
+  "@appPageUpdateButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appShareText": "{localizedName} - {localizedSummary} • Скачать: {link}",
+  "@appShareText": {
+    "placeholders": {
+      "localizedName": {},
+      "localizedSummary": {},
+      "link": {}
+    }
+  },
+  "settingsPageAppThemeOptionDark": "Тёмная",
+  "@settingsPageAppThemeOptionDark": {},
+  "settingsPageAppThemeOptionBlack": "Чёрная",
+  "@settingsPageAppThemeOptionBlack": {},
+  "settingsPageAboutTitle": "О приложении",
+  "@settingsPageAboutTitle": {},
+  "errorAppInvalidCurrentBuild": "Ошибка: Сборка для текущей версии не найдена",
+  "@errorAppInvalidCurrentBuild": {},
+  "errorAppCompatibilitySdkVersionTooLow": "Это приложение несовместимо с вашим устройством (Версия SDK слишком низкая: {sdkVersion} < {minSdkVersion})",
+  "@errorAppCompatibilitySdkVersionTooLow": {
+    "placeholders": {
+      "sdkVersion": {},
+      "minSdkVersion": {}
+    }
+  },
+  "settingsPageShizukuDescription": "Shizuku - это приложение, которое может предоставить SkyDroid доступ к системным API БЕЗ ROOT. Это позволяет устанавливать и обновлять приложения без вмешательства пользователя.",
+  "@settingsPageShizukuDescription": {},
+  "appPageInstallingShizukuErrorPermissionNotGranted": "Разрешение не предоставлено (перейдите в настройки SkyDroid и повторно включите поддержку Shizuku)",
+  "@appPageInstallingShizukuErrorPermissionNotGranted": {},
+  "removeNamesDialogContent": "Вы действительно хотите удалить {count} имён из списка приложений? Это действие не касается ваших установленных приложений, и имена могут быть снова добавлены через коллекцию.",
+  "@removeNamesDialogContent": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "appListPageUpdateAllAppsButton": "Обновить все приложения",
+  "@appListPageUpdateAllAppsButton": {},
+  "batchProcessingSheetProgressMore": "Обработка {count} приложений…",
+  "@batchProcessingSheetProgressMore": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "batchProcessingSheetSelectAllButton": "Выбрать все",
+  "@batchProcessingSheetSelectAllButton": {},
+  "batchProcessingSheetUnselectAllButton": "Снять все",
+  "@batchProcessingSheetUnselectAllButton": {},
+  "batchProcessingSheetShizukuWarning": "Включите службу Shizuku в настройках, чтобы использовать пакетные действия",
+  "@batchProcessingSheetShizukuWarning": {},
+  "batchProcessingSheetInstallOrUpdateAllButton": "Установить/Обновить",
+  "@batchProcessingSheetInstallOrUpdateAllButton": {},
+  "batchProcessingSheetUninstallAllButton": "Удалить",
+  "@batchProcessingSheetUninstallAllButton": {},
+  "batchProcessingSheetRemoveAllNamesButton": "Удалить все выбранные имена",
+  "@batchProcessingSheetRemoveAllNamesButton": {},
+  "filterByCollectionCardTitle": "Фильтр по коллекции",
+  "@filterByCollectionCardTitle": {},
+  "saiStr_installer_rootless_error2_unknown": "Неизвестная ошибка",
+  "@saiStr_installer_rootless_error2_unknown": {},
+  "saiStr_installer_rootless_error2_install_failed_invalid_uri": "Переданный URI недействителен",
+  "@saiStr_installer_rootless_error2_install_failed_invalid_uri": {},
+  "saiStr_installer_rootless_error2_install_failed_insufficient_storage": "На устройстве недостаточно места для установки приложения",
+  "@saiStr_installer_rootless_error2_install_failed_insufficient_storage": {},
+  "saiStr_installer_rootless_error2_install_failed_update_incompatible": "Подпись приложения не соответствует подписи уже установленного приложения с тем же именем пакета",
+  "@saiStr_installer_rootless_error2_install_failed_update_incompatible": {}
 }
