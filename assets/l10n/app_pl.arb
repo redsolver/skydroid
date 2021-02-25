@@ -1,1 +1,18 @@
-{}
+{
+  "removeNameDialogConfirm": "Usuń",
+  "@removeNameDialogConfirm": {},
+  "dialogCancel": "Anuluj",
+  "@dialogCancel": {},
+  "navigationCollectionsPageTitle": "Kolekcje",
+  "@navigationCollectionsPageTitle": {},
+  "navigationSettingsPageTitle": "Ustawienia",
+  "@navigationSettingsPageTitle": {},
+  "removeNameDialogTitle": "Usunąć nazwisko?",
+  "@removeNameDialogTitle": {},
+  "removeNameDialogContent": "Czy naprawdę chcesz usunąć nazwę \"{nazwa}\" z listy aplikacji? Ta akcja nie dotyka zainstalowanych aplikacji, a nazwa może zostać ponownie dodana za pośrednictwem kolekcji.",
+  "@removeNameDialogContent": {
+    "placeholders": {
+      "name": {}
+    }
+  }
+}
