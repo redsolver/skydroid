@@ -1,1 +1,12 @@
-{}
+{
+  "removeNameDialogTitle": "නම ඉවත් කරන්නද?",
+  "@removeNameDialogTitle": {},
+  "dialogCancel": "අවලංගු",
+  "@dialogCancel": {},
+  "navigationAppsPageTitle": "යෙදුම්",
+  "@navigationAppsPageTitle": {},
+  "navigationSettingsPageTitle": "සැකසුම්",
+  "@navigationSettingsPageTitle": {},
+  "categoryGames": "ක්‍රීඩා",
+  "@categoryGames": {}
+}
