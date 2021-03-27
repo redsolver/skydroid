@@ -114,7 +114,7 @@
   "@appPageLinkIssueTracker": {},
   "appPageLinkTranslation": "Traduction",
   "@appPageLinkTranslation": {},
-  "appPageLinkChangelog": "Changelog",
+  "appPageLinkChangelog": "Historique des modifications",
   "@appPageLinkChangelog": {},
   "appPageLinkLicense": "License : {license}",
   "@appPageLinkLicense": {
@@ -124,7 +124,7 @@
   },
   "collectionListItemLoading": "Charger…",
   "@collectionListItemLoading": {},
-  "collectionListItemTitle": "{title} ({domainName}) • {appCount} Apps",
+  "collectionListItemTitle": "{titre} ({nom du domaine}) - {nombre d'applications} Apps",
   "@collectionListItemTitle": {
     "placeholders": {
       "title": {},
