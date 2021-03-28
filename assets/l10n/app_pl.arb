@@ -97,7 +97,7 @@
   "@appPageRetryInstallButton": {},
   "appPageInstallingApkProcess": "Instalacja pliku APK…",
   "@appPageInstallingApkProcess": {},
-  "appPageUninstallButton": "",
+  "appPageUninstallButton": "Avinstaller ({version})",
   "@appPageUninstallButton": {
     "placeholders": {
       "version": {}
@@ -125,7 +125,7 @@
   "@saiStr_installer_rootless_error2_install_failed_media_unavailable": {},
   "saiStr_installer_rootless_error2_install_failed_invalid_install_location": "Pakiet nie może być zainstalowany w podanej lokalizacji",
   "@saiStr_installer_rootless_error2_install_failed_invalid_install_location": {},
-  "saiStr_installer_rootless_error2_install_failed_permission_model_downgrade": "Nowa wersja pakietu nie obsługuje uprawnień runtime, ale aktualnie zainstalowana wersja tak",
+  "saiStr_installer_rootless_error2_install_failed_permission_model_downgrade": "Nowa wersja pakietu nie obsługuje uprawnień wykonawczych, ale zainstalowana wersja",
   "@saiStr_installer_rootless_error2_install_failed_permission_model_downgrade": {},
   "saiStr_installer_rootless_error2_install_failed_missing_split": "Pakiet wymaga podziałów, ale nie zostały one dostarczone",
   "@saiStr_installer_rootless_error2_install_failed_missing_split": {},
@@ -159,17 +159,17 @@
   "@saiStr_installer_rootless_error2_install_failed_aborted": {},
   "saiStr_installer_rootless_error2_install_failed_no_matching_abis": "Pakiet nie zawiera natywnego kodu, który jest kompatybilny z procesorem tego urządzenia",
   "@saiStr_installer_rootless_error2_install_failed_no_matching_abis": {},
-  "saiStr_installer_rootless_error2_install_parse_failed_inconsistent_certificates": "Niespójne certyfikaty znalezione na plikach w APK",
+  "saiStr_installer_rootless_error2_install_parse_failed_inconsistent_certificates": "Niespójne certyfikaty Znalezione w plikach APK",
   "@saiStr_installer_rootless_error2_install_parse_failed_inconsistent_certificates": {},
   "saiStr_installer_rootless_error2_install_failed_bad_dex_metadata": "Plik metadanych dex jest niepoprawny lub nie ma pasującego pliku APK dla pliku metadanych dex",
   "@saiStr_installer_rootless_error2_install_failed_bad_dex_metadata": {},
-  "saiStr_installer_rootless_error2_install_parse_failed_bad_shared_user_id": "APK ma zły współdzielony identyfikator użytkownika",
+  "saiStr_installer_rootless_error2_install_parse_failed_bad_shared_user_id": "APK ma zły wspólny identyfikator użytkownika",
   "@saiStr_installer_rootless_error2_install_parse_failed_bad_shared_user_id": {},
   "verifiedAppDialogContentBottom": "Kolekcje mogą oznaczać wydania jako zweryfikowane, aby zaoferować dodatkowe zaufanie. Weryfikacja wydania może polegać na sprawdzeniu metadanych, przetestowaniu aplikacji lub przeskanowaniu pod kątem złośliwego oprogramowania.",
   "@verifiedAppDialogContentBottom": {},
   "saiStr_installer_rootless_error2_install_parse_failed_not_apk": "Dostarczony plik nie jest plikiem APK",
   "@saiStr_installer_rootless_error2_install_parse_failed_not_apk": {},
-  "saiStr_installer_rootless_error2_install_failed_sandbox_version_downgrade": "Nowa wersja pakietu wymaga niższej wersji piaskownicy niż aktualnie zainstalowana wersja tego pakietu",
+  "saiStr_installer_rootless_error2_install_failed_sandbox_version_downgrade": "Nowa wersja pakietu wymaga niższej wersji piaskownicy niż zainstalowany pakiet",
   "@saiStr_installer_rootless_error2_install_failed_sandbox_version_downgrade": {},
   "saiStr_installer_rootless_error2_install_failed_verification_timeout": "Weryfikacja pakietów zakończyła się przed czasem",
   "@saiStr_installer_rootless_error2_install_failed_verification_timeout": {},
@@ -188,5 +188,21 @@
     "placeholders": {
       "name": {}
     }
-  }
+  },
+  "saiStr_installer_rootless_error2_install_failed_replace_couldnt_delete": "System nie był w stanie usunąć poprzedniej wersji tego pakietu",
+  "@saiStr_installer_rootless_error2_install_failed_replace_couldnt_delete": {},
+  "saiStr_installer_rootless_error2_install_failed_missing_shared_library": "Aplikacja zażądała biblioteki współdzielonej, która nie jest zainstalowana na urządzeniu",
+  "@saiStr_installer_rootless_error2_install_failed_missing_shared_library": {},
+  "saiStr_installer_rootless_error2_install_failed_shared_user_incompatible": "Aplikacja zażądała już istniejącego użytkownika współdzielonego, ale ich sygnatury nie pasują do siebie",
+  "@saiStr_installer_rootless_error2_install_failed_shared_user_incompatible": {},
+  "saiStr_installer_rootless_error2_install_failed_update_incompatible": "Podpis aplikacji nie pasuje do podpisu już zainstalowanej aplikacji o tej samej nazwie pakietu",
+  "@saiStr_installer_rootless_error2_install_failed_update_incompatible": {},
+  "saiStr_installer_rootless_error2_install_failed_no_shared_user": "Użytkownik współdzielony żądany przez pakiet nie istnieje",
+  "@saiStr_installer_rootless_error2_install_failed_no_shared_user": {},
+  "saiStr_installer_rootless_error2_install_failed_duplicate_package": "Pakiet o tej samej nazwie jest już zainstalowany",
+  "@saiStr_installer_rootless_error2_install_failed_duplicate_package": {},
+  "saiStr_installer_rootless_error2_install_failed_insufficient_storage": "Urządzenie nie ma wystarczająco dużo miejsca, aby zainstalować aplikację",
+  "@saiStr_installer_rootless_error2_install_failed_insufficient_storage": {},
+  "saiStr_installer_rootless_error2_install_failed_invalid_uri": "Podany URI nie jest ważny",
+  "@saiStr_installer_rootless_error2_install_failed_invalid_uri": {}
 }
