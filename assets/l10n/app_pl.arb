@@ -204,5 +204,21 @@
   "saiStr_installer_rootless_error2_install_failed_insufficient_storage": "Urządzenie nie ma wystarczająco dużo miejsca, aby zainstalować aplikację",
   "@saiStr_installer_rootless_error2_install_failed_insufficient_storage": {},
   "saiStr_installer_rootless_error2_install_failed_invalid_uri": "Podany URI nie jest ważny",
-  "@saiStr_installer_rootless_error2_install_failed_invalid_uri": {}
+  "@saiStr_installer_rootless_error2_install_failed_invalid_uri": {},
+  "collectionListItemTitle": "{title} • {domainName}) * {appCount} Aplikacje",
+  "@collectionListItemTitle": {
+    "placeholders": {
+      "title": {},
+      "domainName": {},
+      "appCount": {}
+    }
+  },
+  "collectionListItemLoading": "Ładowanie…",
+  "@collectionListItemLoading": {},
+  "collectionLoadingDialogTitle": "Ładowanie kolekcji…",
+  "@collectionLoadingDialogTitle": {},
+  "collectionRecommendationsCardTitle": "Kilka zaleceń na początek",
+  "@collectionRecommendationsCardTitle": {},
+  "appPageInstallationDownloadStarting": "Rozpoczęcie pobierania…",
+  "@appPageInstallationDownloadStarting": {}
 }
