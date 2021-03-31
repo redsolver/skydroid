@@ -210,7 +210,7 @@
       "statusCode": {}
     }
   },
-  "settingsPageAppThemeOptionSepia": "Sepia",
+  "settingsPageAppThemeOptionSepia": "sepia",
   "@settingsPageAppThemeOptionSepia": {},
   "errorDomainNameHasNoRecord": "Navnet har ingen SkyDroid oppføring",
   "@errorDomainNameHasNoRecord": {},
@@ -292,7 +292,7 @@
   "@saiStr_installer_rootless_error2_install_failed_verification_timeout": {},
   "saiStr_installer_rootless_error2_install_failed_newer_sdk": "Enheten Android-versjonen er høyere enn nødvendig ved pakken",
   "@saiStr_installer_rootless_error2_install_failed_newer_sdk": {},
-  "saiStr_installer_rootless_error2_install_failed_test_only": "Installert pakke er kun for testformål, og INSTALL_ALLOW_TEST-flagget ble ikke angitt",
+  "saiStr_installer_rootless_error2_install_failed_test_only": "Installerte pakken er test-og INSTALL_ALLOW_TEST flagget ikke var levert",
   "@saiStr_installer_rootless_error2_install_failed_test_only": {},
   "saiStr_installer_rootless_error2_install_failed_cpu_abi_incompatible": "Pakken ikke inneholder native-kode som er kompatible med denne enheten CPU",
   "@saiStr_installer_rootless_error2_install_failed_cpu_abi_incompatible": {},
