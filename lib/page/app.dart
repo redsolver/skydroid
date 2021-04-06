@@ -387,7 +387,8 @@ class _AppPageState extends State<AppPage> {
                     },
                   ),
                 ),
-              if (app.lastUpdated != null)
+              if (app.lastUpdated != null &&
+                  (app.localizedDescription ?? '').trim().isNotEmpty)
                 Align(
                   alignment: Alignment.centerRight,
                   child: Padding(

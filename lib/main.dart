@@ -44,8 +44,17 @@ Future<void> main() async {
     'skynetPortal': 'https://siasky.net',
   });
 
+/*   try {
+    if (Platform.isAndroid) { */
   locale = await DeviceLocale.getCurrentLocale();
   preferredLocales = await DeviceLocale.getPreferredLocales();
+/*     } else {
+      throw 'unsupported platform';
+    }
+  } catch (e) {
+    locale = const Locale.fromSubtags(countryCode: 'US', languageCode: 'en');
+    preferredLocales = [locale];
+  } */
 
   languagePreferences = [
     locale.toLanguageTag(),
@@ -84,9 +93,12 @@ Future<void> main() async {
   unawaited(cleanCache());
 
   workTroughReqs();
+
+  // if (Platform.isAndroid) {
   final deviceInfo = DeviceInfoPlugin();
 
   unawaited(deviceInfo.androidInfo.then((value) => androidInfo = value));
+  // }
 
   runApp(
     const MyApp(),
@@ -205,7 +217,9 @@ class MyApp extends StatelessWidget {
       themedWidgetBuilder: (context, theme) {
         return MaterialApp(
           title: 'SkyDroid',
+          // TODO themeMode: ThemeMode.system,
           theme: theme,
+          darkTheme: theme,
           home: const MyHomePage(),
           debugShowCheckedModeBanner: false,
           localizationsDelegates: Translations.localizationsDelegates,
@@ -323,6 +337,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     searchFieldFocusNode = FocusNode();
 
+    // TODO if (Platform.isAndroid)
     initUniLinks();
 
     updateAllCollections();
