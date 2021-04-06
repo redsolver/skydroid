@@ -1,6 +1,8 @@
-<svg width="512" height="512">
-      <path d="M32 32 l192 0 a192,192 0 0 1 -192,192 l0 -192 z" fill="#57b560" />
-      <path d="M32 288 l192 0 l0 192  a192,192 0 0 1 -192,-192 l0 -192 z" fill="#57b560" />
-      <path d="M288 288 l192 0 l0 192 l-192 0 l0 -192 z" fill="#57b560" />
-      <path d="M288 32 a192,192 0 0 1 192,192 l-192 0 l0 -192 z" fill="#57b560" />
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+      <path fill="#1ed660" d="M32,32h192c0,106-86,192-192,192V32z" />
+      <path fill="#1ed660" d="M32,288c0,106,86,192,192,192V288H32z" />
+      <path fill="#1ed660" d="M288,288h192v192H288V288z" />
+      <path fill="#1ed660" d="M288,32c106,0,192,86,192,192H288V32z" />
 </svg>
