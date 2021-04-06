@@ -5,13 +5,14 @@ license: GPL-3.0-only
 authorName: redsolver
 authorEmail: info@redsolver.net
 sourceCode: https://github.com/redsolver/skydroid
+webSite: https://skydroid.app
 issueTracker: https://github.com/redsolver/skydroid/issues
 changelog: https://github.com/redsolver/skydroid/blob/HEAD/CHANGELOG.md
 
 name: SkyDroid
 packageName: app.skydroid
 
-icon: sia://GAC-HsF3DNURhBDri-05xh1tth56K2TSTIx6gx-3HRU59Q
+icon: sia://EAAs1qVATliYr04Iahv1ROc7OJW1zXxd0lY5wNfXgOfzmg
 
 localized:
   en-US:
@@ -21,17 +22,16 @@ localized:
       Sia Skynet is used as hosting infrastructure for App Metadata, APKs, screenshots and other media content.
     summary: A decentralized domain-based App Store for Android.
     whatsNew: |-
-      • Translated in English, German, French, Dutch and Czech
-      • Shizuku Service Support for easier app installation
-      • Added batch selection and processing actions
-      • Added deeplink support for collections
-      • Added automatic cache cleanup
-      • Improved error messages
-      • Split-APK support for up to 3x smaller download sizes
-      • Changed accent color
-      • Fixed some bugs and added some optimizations
+      • Updated translations
+      • Changed app icon
+      • Updated recommended collections
+      • Small bug fixes and optimizations
 
 builds:
+  - versionName: 0.5.2
+    versionCode: 52
+    sha256: 696af6220c3956661a7950d450931ff77d2c854fb4c95065bed28fe8f804c0d2
+    apkLink: sia://AAAi3-epI0OPXrDJ49bWbO9XO108RJ0ruhtkO3UmzIuI1g
   - versionName: 0.5.1
     versionCode: 51
     sha256: 61befb9f1c686bddc05d80a7aa047ed51db9742c48aa4c3e577977849c8983af
@@ -89,8 +89,8 @@ builds:
     sha256: c62c2d73c0ead2fb1a287eecc6d637c318cb49b8c1543bbd2110d73b78ee7c6a
     apkLink: sia://AADzaC8YfqVlUAcSf8-1PdT9mLDb9KRLeV9Pi8y3l8G2KA
 
-currentVersionName: 0.5.1
-currentVersionCode: 51
+currentVersionName: 0.5.2
+currentVersionCode: 52
 
 added: 1597353106000
-lastUpdated: 1613896831948
+lastUpdated: 1617735429122
