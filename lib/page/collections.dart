@@ -16,12 +16,23 @@ class CollectionsPage extends StatefulWidget {
 }
 
 class _CollectionsPageState extends State<CollectionsPage> {
-  var reccs = [
-    CollectionRecommendation(
+  final _initialRecommendations = [
+/*     CollectionRecommendation(
       name: 'redsolver',
       title: 'red\'s collection',
       description:
           'This collection contains every app available via SkyDroid that I\'m aware of. Some apps are verified.',
+    ), */
+    CollectionRecommendation(
+      name: 'aaa.redsolver',
+      title: 'Awesome Android Apps',
+      description:
+          'This Triple-A collection contains some awesome apps I found.',
+    ),
+    CollectionRecommendation(
+      name: 'mondstern.skydroid',
+      title: "Mondstern's favorite apps",
+      description: 'https://mastodon.technology/@mondstern',
     ),
     CollectionRecommendation(
       name: 'fdroid-app',
@@ -33,7 +44,7 @@ class _CollectionsPageState extends State<CollectionsPage> {
 
   @override
   Widget build(BuildContext context) {
-    final recommendations = reccs
+    final recommendations = _initialRecommendations
         .where((element) => !collectionNames.containsKey(element.name))
         .toList();
 
