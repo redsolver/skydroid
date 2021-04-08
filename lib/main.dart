@@ -224,6 +224,17 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           localizationsDelegates: Translations.localizationsDelegates,
           supportedLocales: Translations.supportedLocales,
+          localeListResolutionCallback: (locales, supportedLocales) {
+            for (final wantedLocale in locales) {
+              for (final supportedLocale in supportedLocales) {
+                if (wantedLocale.languageCode == supportedLocale.languageCode) {
+                  return supportedLocale;
+                }
+              }
+            }
+            return supportedLocales
+                .firstWhere((element) => element.languageCode == 'en');
+          },
         );
       },
     );
