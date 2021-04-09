@@ -1,1 +1,136 @@
-{}
+{
+  "removeNameDialogConfirm": "Rimuovi",
+  "@removeNameDialogConfirm": {},
+  "dialogCancel": "Cancella",
+  "@dialogCancel": {},
+  "navigationAppsPageTitle": "Apps",
+  "@navigationAppsPageTitle": {},
+  "navigationSettingsPageTitle": "Impostazioni",
+  "@navigationSettingsPageTitle": {},
+  "filterDialogTitle": "Filtra per categoria",
+  "@filterDialogTitle": {},
+  "categoryConnectivity": "Connettività",
+  "@categoryConnectivity": {},
+  "categoryDevelopment": "Sviluppo",
+  "@categoryDevelopment": {},
+  "categoryGames": "Giochi",
+  "@categoryGames": {},
+  "categoryGraphics": "Grafica",
+  "@categoryGraphics": {},
+  "categoryInternet": "Internet",
+  "@categoryInternet": {},
+  "categoryMoney": "Soldi",
+  "@categoryMoney": {},
+  "categoryMultimedia": "Multimedialità",
+  "@categoryMultimedia": {},
+  "categoryNavigation": "Navigazione",
+  "@categoryNavigation": {},
+  "categoryPhoneAndSMS": "Telefono e messaggi",
+  "@categoryPhoneAndSMS": {},
+  "categoryReading": "Lettura",
+  "@categoryReading": {},
+  "categoryScienceAndEducation": "Scienza e Educazione",
+  "@categoryScienceAndEducation": {},
+  "categorySecurity": "Sicurezza",
+  "@categorySecurity": {},
+  "categorySportsAndHealth": "Sport e salute",
+  "@categorySportsAndHealth": {},
+  "categorySystem": "Sistema",
+  "@categorySystem": {},
+  "categoryTheming": "Personalizzazione",
+  "@categoryTheming": {},
+  "categoryTime": "Tempo",
+  "@categoryTime": {},
+  "categoryWriting": "Scrittura",
+  "@categoryWriting": {},
+  "removeNameDialogTitle": "Rimuovi l'applicazione ?",
+  "@removeNameDialogTitle": {},
+  "navigationCollectionsPageTitle": "Collections",
+  "@navigationCollectionsPageTitle": {},
+  "appListPageEmptyWarning": "Hmm non ho trovato niente. Prova ad aggiungere il nome con il tasto \"Più\" in basso a destra.",
+  "@appListPageEmptyWarning": {},
+  "appListLoadingMetadata": "Caricamento dei metadati…",
+  "@appListLoadingMetadata": {},
+  "errorsSheetTitle": "Errori",
+  "@errorsSheetTitle": {},
+  "errorsSheetOverflowCount": "…{count} aggiunti",
+  "@errorsSheetOverflowCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "addDomainNameDialogTitle": "Aggiungi una app o una collection",
+  "@addDomainNameDialogTitle": {},
+  "addDomainNameDialogInputLabel": "Nome ( dominio )",
+  "@addDomainNameDialogInputLabel": {},
+  "addDomainNameDialogInputHint": "per esempio skydroid.app",
+  "@addDomainNameDialogInputHint": {},
+  "addDomainNameDialogConfirm": "Aggiungi",
+  "@addDomainNameDialogConfirm": {},
+  "errorDialogTitle": "Qualcosa è andato storto",
+  "@errorDialogTitle": {},
+  "errorDialogCloseButton": "OK",
+  "@errorDialogCloseButton": {},
+  "verifiedAppDialogTitle": "Applicazione verificata",
+  "@verifiedAppDialogTitle": {},
+  "addDomainNameLoadingDialogTitle": "Controllo del nome…",
+  "@addDomainNameLoadingDialogTitle": {},
+  "verifiedAppDialogContentTop": "Questa versione dell'applicazione è stata verificata da queste collections:",
+  "@verifiedAppDialogContentTop": {},
+  "verifiedAppBadgeLabel": "Verificato",
+  "@verifiedAppBadgeLabel": {},
+  "appPageWhatsNewTitle": "Novità",
+  "@appPageWhatsNewTitle": {},
+  "appPageUpdatedTime": "Aggiornato {time}",
+  "@appPageUpdatedTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "verifiedAppDialogCloseButton": "OK",
+  "@verifiedAppDialogCloseButton": {},
+  "appPageLinkDonate": "Dona",
+  "@appPageLinkDonate": {},
+  "appPageLinkWebsite": "Sito web",
+  "@appPageLinkWebsite": {},
+  "appPageLinkSourceCode": "Codice Sorgente",
+  "@appPageLinkSourceCode": {},
+  "appPageLinkTranslation": "Traduzione",
+  "@appPageLinkTranslation": {},
+  "appPageLinkChangelog": "Elenco modifiche",
+  "@appPageLinkChangelog": {},
+  "appPageLinkLicense": "Licenza: {license}",
+  "@appPageLinkLicense": {
+    "placeholders": {
+      "license": {}
+    }
+  },
+  "collectionListItemLoading": "Caricamento…",
+  "@collectionListItemLoading": {},
+  "collectionListItemTitle": "{title} ({domainName}) • {appCount} Applicazioni",
+  "@collectionListItemTitle": {
+    "placeholders": {
+      "title": {},
+      "domainName": {},
+      "appCount": {}
+    }
+  },
+  "collectionRecommendationsCardTitle": "Alcuni raccomandazioni prima di cominciare",
+  "@collectionRecommendationsCardTitle": {},
+  "collectionLoadingDialogTitle": "Caricamento della collection…",
+  "@collectionLoadingDialogTitle": {},
+  "appPageAddedTime": "App aggiunta: {time}",
+  "@appPageAddedTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "removeNameDialogContent": "Vuoi veramente rimuovere l'applicazione \"{name}\" dal tuo dispositivio? Le altre app non verranno rimosse e potrai reinstallare successivamente quella rimossa tramite le collection.",
+  "@removeNameDialogContent": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "verifiedAppDialogContentBottom": "Le collections possono verificare le applicazioni per garantirne la sicurezza. La verifica può essere sui metadati, testando la app o facendo una scansione contro i malware.",
+  "@verifiedAppDialogContentBottom": {}
+}
