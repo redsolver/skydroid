@@ -132,5 +132,129 @@
     }
   },
   "verifiedAppDialogContentBottom": "Le collections possono verificare le applicazioni per garantirne la sicurezza. La verifica può essere sui metadati, testando la app o facendo una scansione contro i malware.",
-  "@verifiedAppDialogContentBottom": {}
+  "@verifiedAppDialogContentBottom": {},
+  "collectionLoadingDialogContent": "Questa operazione può richiedere fino a 30 secondi, in base alle dimensioni della collection",
+  "@collectionLoadingDialogContent": {},
+  "removeCollectionDialogTitle": "Rimuovi la collection?",
+  "@removeCollectionDialogTitle": {},
+  "removeCollectionDialogContent": "Vuoi davvero rimuovere la collection \"{name}\"? Se vuoi rimuovere anche le app relative a questa collection, selezione \"Rimuovi con Apps\".",
+  "@removeCollectionDialogContent": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "removeCollectionDialogConfirmWithApps": "Rimuovi con Apps",
+  "@removeCollectionDialogConfirmWithApps": {},
+  "removeCollectionDialogConfirm": "Rimuovi",
+  "@removeCollectionDialogConfirm": {},
+  "downloadHashMismatchErrorDialogTitle": "Hash diverso",
+  "@downloadHashMismatchErrorDialogTitle": {},
+  "downloadHashMismatchErrorDialogContent": "Il file scaricato non corrisponde al valore dell'hash presente nei metadati.\n\nHash atteso:{expectedHash}\nHash ricevuto:{hash}\n\nContattate lo sviluppatore",
+  "@downloadHashMismatchErrorDialogContent": {
+    "placeholders": {
+      "expectedHash": {},
+      "hash": {}
+    }
+  },
+  "appPageInstallButton": "Installa (Versione{version})",
+  "@appPageInstallButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appPageRetryInstallButton": "Rilancia l'installazione",
+  "@appPageRetryInstallButton": {},
+  "appPageInstallingApkProcess": "Installazione file APK…",
+  "@appPageInstallingApkProcess": {},
+  "appPageUninstallButton": "Disinstalla({version})",
+  "@appPageUninstallButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appPageLaunchAppButton": "Apri",
+  "@appPageLaunchAppButton": {},
+  "appPageUpdateButton": "Aggiorna({version})",
+  "@appPageUpdateButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appPageInstallationDownloadStarting": "Inizio download…",
+  "@appPageInstallationDownloadStarting": {},
+  "appPageInstallationProgress": "{progress} % di {totalFileSize}",
+  "@appPageInstallationProgress": {
+    "placeholders": {
+      "progress": {},
+      "totalFileSize": {}
+    }
+  },
+  "appShareText": "{localizedName} - {localizedSummary} • Download: {link}",
+  "@appShareText": {
+    "placeholders": {
+      "localizedName": {},
+      "localizedSummary": {},
+      "link": {}
+    }
+  },
+  "errorMetadataHashMismatch": "Hash dei metadati diverso.",
+  "@errorMetadataHashMismatch": {},
+  "errorHttpStatusCode": "HTTP {statusCode} durante il caricamento dei metadati",
+  "@errorHttpStatusCode": {
+    "placeholders": {
+      "statusCode": {}
+    }
+  },
+  "errorDnsRecordNotAvailable": "Voce non presente nel DNS",
+  "@errorDnsRecordNotAvailable": {},
+  "errorDomainNameHasNoRecord": "Il nome non è presente su SkyDroid",
+  "@errorDomainNameHasNoRecord": {},
+  "errorHttpStatusCodeMultiDnsQuery": "HTTP {statusCode} della richiesta Multi-DoH",
+  "@errorHttpStatusCodeMultiDnsQuery": {
+    "placeholders": {
+      "statusCode": {}
+    }
+  },
+  "settingsPageAppThemeTitle": "Tema dell'App",
+  "@settingsPageAppThemeTitle": {},
+  "settingsPageAppThemeOptionLight": "Chiaro",
+  "@settingsPageAppThemeOptionLight": {},
+  "settingsPageAppThemeOptionSepia": "Seppia",
+  "@settingsPageAppThemeOptionSepia": {},
+  "settingsPageAppThemeOptionDark": "Scuro",
+  "@settingsPageAppThemeOptionDark": {},
+  "settingsPageAppThemeOptionBlack": "Nero",
+  "@settingsPageAppThemeOptionBlack": {},
+  "settingsPageServicesTitle": "Servizi",
+  "@settingsPageServicesTitle": {},
+  "settingsPageServicesMultiDoHServer": "Server Multi-DoH",
+  "@settingsPageServicesMultiDoHServer": {},
+  "settingsPageServicesSkynetPortal": "Portale SkyNet",
+  "@settingsPageServicesSkynetPortal": {},
+  "settingsPageAboutTitle": "Informazioni",
+  "@settingsPageAboutTitle": {},
+  "settingsPageAboutShowLicenses": "Mostra le licenze",
+  "@settingsPageAboutShowLicenses": {},
+  "settingsPageAboutDebugDialogClose": "OK",
+  "@settingsPageAboutDebugDialogClose": {},
+  "errorAppInvalidCurrentBuild": "Errore: nessuna build trovata per la versione attuale",
+  "@errorAppInvalidCurrentBuild": {},
+  "errorAppCompatibilityNoMatchingABI": "Questa app non è compatibile col tuo dispositivo (ABI non supportato: {deviceABIs} non presente in {supportedABIs})",
+  "@errorAppCompatibilityNoMatchingABI": {
+    "placeholders": {
+      "deviceABIs": {},
+      "supportedABIs": {}
+    }
+  },
+  "errorAppInstallationShizuku": "Installazione di Shizuku App fallita",
+  "@errorAppInstallationShizuku": {},
+  "settingsPageAboutDebug": "Informazioni di Debug",
+  "@settingsPageAboutDebug": {},
+  "errorAppCompatibilitySdkVersionTooLow": "Questa app non è compatibile col tuo dispositivo (sdkVersion troppo vecchio: {sdkVersion} < {minSdkVersion})",
+  "@errorAppCompatibilitySdkVersionTooLow": {
+    "placeholders": {
+      "sdkVersion": {},
+      "minSdkVersion": {}
+    }
+  }
 }
