@@ -1502,7 +1502,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Icon(Icons.add),
               onPressed: () async {
                 final ctrl = TextEditingController();
-                String result = await showDialog(
+                final result = await showDialog<String>(
                   context: context,
                   builder: (context) => AlertDialog(
                     title: Text(tr.addDomainNameDialogTitle),
@@ -1542,7 +1542,24 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
 
                 if ((result ?? '').isNotEmpty) {
-                  await addName(result);
+                  final name = result;
+                  if (!names.containsKey(name)) {
+                    await addName(name);
+                  }
+
+                  final App app = apps.get(name);
+                  if (app != null) {
+                    await Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => AppPage(
+                          name,
+                          app,
+                        ),
+                      ),
+                    );
+                  }
+                  addToStream(name);
+                  if (mounted) setState(() {});
                 }
               },
             ),
