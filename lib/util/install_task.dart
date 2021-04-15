@@ -196,8 +196,6 @@ class InstallTask {
 
     _cancelDownload = false;
 
-    print(request.url);
-
     final http.StreamedResponse response = await http.Client().send(request);
 
     state = InstallState.downloading;
@@ -205,6 +203,28 @@ class InstallTask {
     setState();
 
     if (_cancelDownload) return false;
+
+    // TODO #6
+/*     if (response.statusCode != 200) {
+      onErrorMessage.add(tr.downloadHashMismatchErrorDialogTitle);
+      onError.add(
+        (context) => AlertDialog(
+          title: Text(tr.downloadHashMismatchErrorDialogTitle),
+          content:
+              Text(tr.downloadHashMismatchErrorDialogContent(apkSha256, hash)),
+          actions: [
+            FlatButton(
+              onPressed: Navigator.of(context).pop,
+              child: Text(
+                tr.errorDialogCloseButton,
+                style: dialogActionTextStyle(context),
+              ),
+            ),
+          ],
+        ),
+      );
+      return false;
+    } */
 
     final contentLength = response.contentLength;
 
@@ -263,12 +283,9 @@ class InstallTask {
           completer.complete(false);
           return;
         }
-        print(hash.toString()); // Check!
         // notifyListeners();
 
         await tmpApk.rename(apk.path);
-
-        print('done');
 
         downloadedApk = apk;
 
