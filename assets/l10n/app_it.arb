@@ -256,5 +256,71 @@
       "sdkVersion": {},
       "minSdkVersion": {}
     }
-  }
+  },
+  "batchProcessingSheetUninstallAllButton": "Disinstalla",
+  "@batchProcessingSheetUninstallAllButton": {},
+  "batchProcessingSheetRemoveAllNamesButton": "Rimuovi tutte le app selezionate",
+  "@batchProcessingSheetRemoveAllNamesButton": {},
+  "appPageInstallingShizukuProcess": "Installazione app... (Shikuzu)",
+  "@appPageInstallingShizukuProcess": {},
+  "settingsPageShizukuTitle": "Servizi Shikuzu",
+  "@settingsPageShizukuTitle": {},
+  "settingsPageShizukuDescription": "Shikuzu permette a Skydroid l'accesso alle API di sistema senza ROOT. Questo permette l'installazione e l'aggiornamento delle app in modo automatico.",
+  "@settingsPageShizukuDescription": {},
+  "settingsPageShizukuToggleSwitch": "Abilita Shikuzu",
+  "@settingsPageShizukuToggleSwitch": {},
+  "settingsPageShizukuInstallButton": "Installa Shikuzu",
+  "@settingsPageShizukuInstallButton": {},
+  "appPageInstallingShizukuErrorNotRunning": "I servizi di Shikuzu non sono attivi",
+  "@appPageInstallingShizukuErrorNotRunning": {},
+  "appPageInstallingShizukuErrorNotRunningButton": "Apri Shikuzu",
+  "@appPageInstallingShizukuErrorNotRunningButton": {},
+  "removeNamesDialogTitle": "Rimuovi le app selezionate?",
+  "@removeNamesDialogTitle": {},
+  "removeNamesDialogContent": "Sei sicuro di voler rimuovere {count} apps dalla tua lista di applicazioni? Questa procedure non cancellerà le tue app già installate e potrei aggiungerle nuovamente alla lista.",
+  "@removeNamesDialogContent": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "removeNamesDialogConfirm": "Rimuovi tutto",
+  "@removeNamesDialogConfirm": {},
+  "appListPageSearchHint": "Cerca applicazioni…",
+  "@appListPageSearchHint": {},
+  "appListPageUpdateAllAppsButton": "Aggiorna tutte le apps",
+  "@appListPageUpdateAllAppsButton": {},
+  "batchProcessingSheetSelectedOne": "1 app selezionata",
+  "@batchProcessingSheetSelectedOne": {},
+  "batchProcessingSheetSelectedMore": "{count} applicazioni selezionate",
+  "@batchProcessingSheetSelectedMore": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "batchProcessingSheetSelectAllButton": "Seleziona tutto",
+  "@batchProcessingSheetSelectAllButton": {},
+  "batchProcessingSheetUnselectAllButton": "Deseleziona tutto",
+  "@batchProcessingSheetUnselectAllButton": {},
+  "batchProcessingSheetShizukuWarning": "Abilita Shikuzu nei settings per usare le azioni automatizzate",
+  "@batchProcessingSheetShizukuWarning": {},
+  "appPageInstallingShizukuErrorPermissionNotGranted": "Permessi non concessi ( nei settings di SkyDroid riabilitare il supporto a Shizuku )",
+  "@appPageInstallingShizukuErrorPermissionNotGranted": {},
+  "batchProcessingSheetInstallOrUpdateAllButton": "Installa/Aggiorna",
+  "@batchProcessingSheetInstallOrUpdateAllButton": {},
+  "filterByCollectionCardTitle": "Filtra per collection",
+  "@filterByCollectionCardTitle": {},
+  "saiStr_installer_rootless_error2_unknown": "Errore sconosciuto",
+  "@saiStr_installer_rootless_error2_unknown": {},
+  "saiStr_installer_rootless_error2_install_failed_already_exists": "Questo package è già installato",
+  "@saiStr_installer_rootless_error2_install_failed_already_exists": {},
+  "saiStr_installer_rootless_error2_install_failed_invalid_apk": "Il file APK non è valido",
+  "@saiStr_installer_rootless_error2_install_failed_invalid_apk": {},
+  "saiStr_installer_rootless_error2_install_failed_invalid_uri": "La URI non è corretta",
+  "@saiStr_installer_rootless_error2_install_failed_invalid_uri": {},
+  "saiStr_installer_rootless_error2_install_failed_duplicate_package": "Un package con lo stesso nome è già installato",
+  "@saiStr_installer_rootless_error2_install_failed_duplicate_package": {},
+  "saiStr_installer_rootless_error2_install_failed_bad_signature": "Errore con la firma digitale dell'APK",
+  "@saiStr_installer_rootless_error2_install_failed_bad_signature": {},
+  "saiStr_installer_rootless_error2_install_failed_insufficient_storage": "Il dispositivo non ha spazio sufficiente per l'installazione della app",
+  "@saiStr_installer_rootless_error2_install_failed_insufficient_storage": {}
 }
