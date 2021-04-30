@@ -322,5 +322,27 @@
   "saiStr_installer_rootless_error2_install_failed_bad_signature": "Errore con la firma digitale dell'APK",
   "@saiStr_installer_rootless_error2_install_failed_bad_signature": {},
   "saiStr_installer_rootless_error2_install_failed_insufficient_storage": "Il dispositivo non ha spazio sufficiente per l'installazione della app",
-  "@saiStr_installer_rootless_error2_install_failed_insufficient_storage": {}
+  "@saiStr_installer_rootless_error2_install_failed_insufficient_storage": {},
+  "saiStr_installer_rootless_error2_install_failed_update_incompatible": "La firma della app è diversa da quella dell'app precedentemente installata",
+  "@saiStr_installer_rootless_error2_install_failed_update_incompatible": {},
+  "saiStr_installer_rootless_error2_install_failed_dexopt": "L'installazione non è andata a buon fine durante l'elaborazione dei files dex, possibili cause: mancanza di storage o validazione fallita",
+  "@saiStr_installer_rootless_error2_install_failed_dexopt": {},
+  "batchProcessingSheetProgressOne": "Elaborazione 1 app…",
+  "@batchProcessingSheetProgressOne": {},
+  "batchProcessingSheetProgressMore": "Elaborazione {count} apps…",
+  "@batchProcessingSheetProgressMore": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "saiStr_installer_rootless_error2_install_failed_shared_user_incompatible": "La app ha richiesto un utente condiviso già esistente, ma le loro firme non sono uguali",
+  "@saiStr_installer_rootless_error2_install_failed_shared_user_incompatible": {},
+  "saiStr_installer_rootless_error2_install_failed_missing_shared_library": "La app ha richiesto una libreria condivisa non installata sul dispositivo",
+  "@saiStr_installer_rootless_error2_install_failed_missing_shared_library": {},
+  "saiStr_installer_rootless_error2_install_failed_replace_couldnt_delete": "Non è stato possibile rimuovere la versione precedente del pacchetto",
+  "@saiStr_installer_rootless_error2_install_failed_replace_couldnt_delete": {},
+  "saiStr_installer_rootless_error2_install_failed_older_sdk": "La versione Android del dispositivo non supporta il package",
+  "@saiStr_installer_rootless_error2_install_failed_older_sdk": {},
+  "saiStr_installer_rootless_error2_install_failed_newer_sdk": "La versione di Android del dispositivo è troppo recente per eseguire il package",
+  "@saiStr_installer_rootless_error2_install_failed_newer_sdk": {}
 }
