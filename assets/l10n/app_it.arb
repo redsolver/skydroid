@@ -1,0 +1,348 @@
+{
+  "removeNameDialogConfirm": "Rimuovi",
+  "@removeNameDialogConfirm": {},
+  "dialogCancel": "Cancella",
+  "@dialogCancel": {},
+  "navigationAppsPageTitle": "Apps",
+  "@navigationAppsPageTitle": {},
+  "navigationSettingsPageTitle": "Impostazioni",
+  "@navigationSettingsPageTitle": {},
+  "filterDialogTitle": "Filtra per categoria",
+  "@filterDialogTitle": {},
+  "categoryConnectivity": "Connettività",
+  "@categoryConnectivity": {},
+  "categoryDevelopment": "Sviluppo",
+  "@categoryDevelopment": {},
+  "categoryGames": "Giochi",
+  "@categoryGames": {},
+  "categoryGraphics": "Grafica",
+  "@categoryGraphics": {},
+  "categoryInternet": "Internet",
+  "@categoryInternet": {},
+  "categoryMoney": "Soldi",
+  "@categoryMoney": {},
+  "categoryMultimedia": "Multimedialità",
+  "@categoryMultimedia": {},
+  "categoryNavigation": "Navigazione",
+  "@categoryNavigation": {},
+  "categoryPhoneAndSMS": "Telefono e messaggi",
+  "@categoryPhoneAndSMS": {},
+  "categoryReading": "Lettura",
+  "@categoryReading": {},
+  "categoryScienceAndEducation": "Scienza e Educazione",
+  "@categoryScienceAndEducation": {},
+  "categorySecurity": "Sicurezza",
+  "@categorySecurity": {},
+  "categorySportsAndHealth": "Sport e salute",
+  "@categorySportsAndHealth": {},
+  "categorySystem": "Sistema",
+  "@categorySystem": {},
+  "categoryTheming": "Personalizzazione",
+  "@categoryTheming": {},
+  "categoryTime": "Tempo",
+  "@categoryTime": {},
+  "categoryWriting": "Scrittura",
+  "@categoryWriting": {},
+  "removeNameDialogTitle": "Rimuovi l'applicazione ?",
+  "@removeNameDialogTitle": {},
+  "navigationCollectionsPageTitle": "Collezioni",
+  "@navigationCollectionsPageTitle": {},
+  "appListPageEmptyWarning": "Hmm non ho trovato niente. Prova ad aggiungere il nome con il tasto \"Più\" in basso a destra.",
+  "@appListPageEmptyWarning": {},
+  "appListLoadingMetadata": "Caricamento dei metadati…",
+  "@appListLoadingMetadata": {},
+  "errorsSheetTitle": "Errori",
+  "@errorsSheetTitle": {},
+  "errorsSheetOverflowCount": "…{count} aggiunti",
+  "@errorsSheetOverflowCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "addDomainNameDialogTitle": "Aggiungi una app o una collection",
+  "@addDomainNameDialogTitle": {},
+  "addDomainNameDialogInputLabel": "Nome ( dominio )",
+  "@addDomainNameDialogInputLabel": {},
+  "addDomainNameDialogInputHint": "per esempio skydroid.app",
+  "@addDomainNameDialogInputHint": {},
+  "addDomainNameDialogConfirm": "Aggiungi",
+  "@addDomainNameDialogConfirm": {},
+  "errorDialogTitle": "Qualcosa è andato storto",
+  "@errorDialogTitle": {},
+  "errorDialogCloseButton": "OK",
+  "@errorDialogCloseButton": {},
+  "verifiedAppDialogTitle": "Applicazione verificata",
+  "@verifiedAppDialogTitle": {},
+  "addDomainNameLoadingDialogTitle": "Controllo del nome…",
+  "@addDomainNameLoadingDialogTitle": {},
+  "verifiedAppDialogContentTop": "Questa versione dell'applicazione è stata verificata da queste collections:",
+  "@verifiedAppDialogContentTop": {},
+  "verifiedAppBadgeLabel": "Verificato",
+  "@verifiedAppBadgeLabel": {},
+  "appPageWhatsNewTitle": "Novità",
+  "@appPageWhatsNewTitle": {},
+  "appPageUpdatedTime": "Aggiornato {time}",
+  "@appPageUpdatedTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "verifiedAppDialogCloseButton": "OK",
+  "@verifiedAppDialogCloseButton": {},
+  "appPageLinkDonate": "Dona",
+  "@appPageLinkDonate": {},
+  "appPageLinkWebsite": "Sito web",
+  "@appPageLinkWebsite": {},
+  "appPageLinkSourceCode": "Codice Sorgente",
+  "@appPageLinkSourceCode": {},
+  "appPageLinkTranslation": "Traduzione",
+  "@appPageLinkTranslation": {},
+  "appPageLinkChangelog": "Elenco modifiche",
+  "@appPageLinkChangelog": {},
+  "appPageLinkLicense": "Licenza: {license}",
+  "@appPageLinkLicense": {
+    "placeholders": {
+      "license": {}
+    }
+  },
+  "collectionListItemLoading": "Caricamento…",
+  "@collectionListItemLoading": {},
+  "collectionListItemTitle": "{title} ({domainName}) • {appCount} Applicazioni",
+  "@collectionListItemTitle": {
+    "placeholders": {
+      "title": {},
+      "domainName": {},
+      "appCount": {}
+    }
+  },
+  "collectionRecommendationsCardTitle": "Alcuni raccomandazioni prima di cominciare",
+  "@collectionRecommendationsCardTitle": {},
+  "collectionLoadingDialogTitle": "Caricamento della collection…",
+  "@collectionLoadingDialogTitle": {},
+  "appPageAddedTime": "App aggiunta: {time}",
+  "@appPageAddedTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "removeNameDialogContent": "Vuoi veramente rimuovere l'applicazione \"{name}\" dal tuo dispositivio? Le altre app non verranno rimosse e potrai reinstallare successivamente quella rimossa tramite le collection.",
+  "@removeNameDialogContent": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "verifiedAppDialogContentBottom": "Le collections possono verificare le applicazioni per garantirne la sicurezza. La verifica può essere sui metadati, testando la app o facendo una scansione contro i malware.",
+  "@verifiedAppDialogContentBottom": {},
+  "collectionLoadingDialogContent": "Questa operazione può richiedere fino a 30 secondi, in base alle dimensioni della collection",
+  "@collectionLoadingDialogContent": {},
+  "removeCollectionDialogTitle": "Rimuovi la collection?",
+  "@removeCollectionDialogTitle": {},
+  "removeCollectionDialogContent": "Vuoi davvero rimuovere la collection \"{name}\"? Se vuoi rimuovere anche le app relative a questa collection, selezione \"Rimuovi con Apps\".",
+  "@removeCollectionDialogContent": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "removeCollectionDialogConfirmWithApps": "Rimuovi con Apps",
+  "@removeCollectionDialogConfirmWithApps": {},
+  "removeCollectionDialogConfirm": "Rimuovi",
+  "@removeCollectionDialogConfirm": {},
+  "downloadHashMismatchErrorDialogTitle": "Hash diverso",
+  "@downloadHashMismatchErrorDialogTitle": {},
+  "downloadHashMismatchErrorDialogContent": "Il file scaricato non corrisponde al valore dell'hash presente nei metadati.\n\nHash atteso:{expectedHash}\nHash ricevuto:{hash}\n\nContattate lo sviluppatore",
+  "@downloadHashMismatchErrorDialogContent": {
+    "placeholders": {
+      "expectedHash": {},
+      "hash": {}
+    }
+  },
+  "appPageInstallButton": "Installa (Versione{version})",
+  "@appPageInstallButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appPageRetryInstallButton": "Rilancia l'installazione",
+  "@appPageRetryInstallButton": {},
+  "appPageInstallingApkProcess": "Installazione file APK…",
+  "@appPageInstallingApkProcess": {},
+  "appPageUninstallButton": "Disinstalla({version})",
+  "@appPageUninstallButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appPageLaunchAppButton": "Apri",
+  "@appPageLaunchAppButton": {},
+  "appPageUpdateButton": "Aggiorna({version})",
+  "@appPageUpdateButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appPageInstallationDownloadStarting": "Inizio download…",
+  "@appPageInstallationDownloadStarting": {},
+  "appPageInstallationProgress": "{progress} % di {totalFileSize}",
+  "@appPageInstallationProgress": {
+    "placeholders": {
+      "progress": {},
+      "totalFileSize": {}
+    }
+  },
+  "appShareText": "{localizedName} - {localizedSummary} • Download: {link}",
+  "@appShareText": {
+    "placeholders": {
+      "localizedName": {},
+      "localizedSummary": {},
+      "link": {}
+    }
+  },
+  "errorMetadataHashMismatch": "Hash dei metadati diverso.",
+  "@errorMetadataHashMismatch": {},
+  "errorHttpStatusCode": "HTTP {statusCode} durante il caricamento dei metadati",
+  "@errorHttpStatusCode": {
+    "placeholders": {
+      "statusCode": {}
+    }
+  },
+  "errorDnsRecordNotAvailable": "Voce non presente nel DNS",
+  "@errorDnsRecordNotAvailable": {},
+  "errorDomainNameHasNoRecord": "Il nome non è presente su SkyDroid",
+  "@errorDomainNameHasNoRecord": {},
+  "errorHttpStatusCodeMultiDnsQuery": "HTTP {statusCode} della richiesta Multi-DoH",
+  "@errorHttpStatusCodeMultiDnsQuery": {
+    "placeholders": {
+      "statusCode": {}
+    }
+  },
+  "settingsPageAppThemeTitle": "Tema dell'App",
+  "@settingsPageAppThemeTitle": {},
+  "settingsPageAppThemeOptionLight": "Chiaro",
+  "@settingsPageAppThemeOptionLight": {},
+  "settingsPageAppThemeOptionSepia": "Seppia",
+  "@settingsPageAppThemeOptionSepia": {},
+  "settingsPageAppThemeOptionDark": "Scuro",
+  "@settingsPageAppThemeOptionDark": {},
+  "settingsPageAppThemeOptionBlack": "Nero",
+  "@settingsPageAppThemeOptionBlack": {},
+  "settingsPageServicesTitle": "Servizi",
+  "@settingsPageServicesTitle": {},
+  "settingsPageServicesMultiDoHServer": "Server Multi-DoH",
+  "@settingsPageServicesMultiDoHServer": {},
+  "settingsPageServicesSkynetPortal": "Portale SkyNet",
+  "@settingsPageServicesSkynetPortal": {},
+  "settingsPageAboutTitle": "Informazioni",
+  "@settingsPageAboutTitle": {},
+  "settingsPageAboutShowLicenses": "Mostra le licenze",
+  "@settingsPageAboutShowLicenses": {},
+  "settingsPageAboutDebugDialogClose": "OK",
+  "@settingsPageAboutDebugDialogClose": {},
+  "errorAppInvalidCurrentBuild": "Errore: nessuna build trovata per la versione attuale",
+  "@errorAppInvalidCurrentBuild": {},
+  "errorAppCompatibilityNoMatchingABI": "Questa app non è compatibile col tuo dispositivo (ABI non supportato: {deviceABIs} non presente in {supportedABIs})",
+  "@errorAppCompatibilityNoMatchingABI": {
+    "placeholders": {
+      "deviceABIs": {},
+      "supportedABIs": {}
+    }
+  },
+  "errorAppInstallationShizuku": "Installazione di Shizuku App fallita",
+  "@errorAppInstallationShizuku": {},
+  "settingsPageAboutDebug": "Informazioni di Debug",
+  "@settingsPageAboutDebug": {},
+  "errorAppCompatibilitySdkVersionTooLow": "Questa app non è compatibile col tuo dispositivo (sdkVersion troppo vecchio: {sdkVersion} < {minSdkVersion})",
+  "@errorAppCompatibilitySdkVersionTooLow": {
+    "placeholders": {
+      "sdkVersion": {},
+      "minSdkVersion": {}
+    }
+  },
+  "batchProcessingSheetUninstallAllButton": "Disinstalla",
+  "@batchProcessingSheetUninstallAllButton": {},
+  "batchProcessingSheetRemoveAllNamesButton": "Rimuovi tutte le app selezionate",
+  "@batchProcessingSheetRemoveAllNamesButton": {},
+  "appPageInstallingShizukuProcess": "Installazione app... (Shikuzu)",
+  "@appPageInstallingShizukuProcess": {},
+  "settingsPageShizukuTitle": "Servizi Shikuzu",
+  "@settingsPageShizukuTitle": {},
+  "settingsPageShizukuDescription": "Shikuzu permette a Skydroid l'accesso alle API di sistema senza ROOT. Questo permette l'installazione e l'aggiornamento delle app in modo automatico.",
+  "@settingsPageShizukuDescription": {},
+  "settingsPageShizukuToggleSwitch": "Abilita Shikuzu",
+  "@settingsPageShizukuToggleSwitch": {},
+  "settingsPageShizukuInstallButton": "Installa Shikuzu",
+  "@settingsPageShizukuInstallButton": {},
+  "appPageInstallingShizukuErrorNotRunning": "I servizi di Shikuzu non sono attivi",
+  "@appPageInstallingShizukuErrorNotRunning": {},
+  "appPageInstallingShizukuErrorNotRunningButton": "Apri Shikuzu",
+  "@appPageInstallingShizukuErrorNotRunningButton": {},
+  "removeNamesDialogTitle": "Rimuovi le app selezionate?",
+  "@removeNamesDialogTitle": {},
+  "removeNamesDialogContent": "Sei sicuro di voler rimuovere {count} apps dalla tua lista di applicazioni? Questa procedure non cancellerà le tue app già installate e potrei aggiungerle nuovamente alla lista.",
+  "@removeNamesDialogContent": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "removeNamesDialogConfirm": "Rimuovi tutto",
+  "@removeNamesDialogConfirm": {},
+  "appListPageSearchHint": "Cerca applicazioni…",
+  "@appListPageSearchHint": {},
+  "appListPageUpdateAllAppsButton": "Aggiorna tutte le apps",
+  "@appListPageUpdateAllAppsButton": {},
+  "batchProcessingSheetSelectedOne": "1 app selezionata",
+  "@batchProcessingSheetSelectedOne": {},
+  "batchProcessingSheetSelectedMore": "{count} applicazioni selezionate",
+  "@batchProcessingSheetSelectedMore": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "batchProcessingSheetSelectAllButton": "Seleziona tutto",
+  "@batchProcessingSheetSelectAllButton": {},
+  "batchProcessingSheetUnselectAllButton": "Deseleziona tutto",
+  "@batchProcessingSheetUnselectAllButton": {},
+  "batchProcessingSheetShizukuWarning": "Abilita Shikuzu nei settings per usare le azioni automatizzate",
+  "@batchProcessingSheetShizukuWarning": {},
+  "appPageInstallingShizukuErrorPermissionNotGranted": "Permessi non concessi ( nei settings di SkyDroid riabilitare il supporto a Shizuku )",
+  "@appPageInstallingShizukuErrorPermissionNotGranted": {},
+  "batchProcessingSheetInstallOrUpdateAllButton": "Installa/Aggiorna",
+  "@batchProcessingSheetInstallOrUpdateAllButton": {},
+  "filterByCollectionCardTitle": "Filtra per collection",
+  "@filterByCollectionCardTitle": {},
+  "saiStr_installer_rootless_error2_unknown": "Errore sconosciuto",
+  "@saiStr_installer_rootless_error2_unknown": {},
+  "saiStr_installer_rootless_error2_install_failed_already_exists": "Questo package è già installato",
+  "@saiStr_installer_rootless_error2_install_failed_already_exists": {},
+  "saiStr_installer_rootless_error2_install_failed_invalid_apk": "Il file APK non è valido",
+  "@saiStr_installer_rootless_error2_install_failed_invalid_apk": {},
+  "saiStr_installer_rootless_error2_install_failed_invalid_uri": "La URI non è corretta",
+  "@saiStr_installer_rootless_error2_install_failed_invalid_uri": {},
+  "saiStr_installer_rootless_error2_install_failed_duplicate_package": "Un package con lo stesso nome è già installato",
+  "@saiStr_installer_rootless_error2_install_failed_duplicate_package": {},
+  "saiStr_installer_rootless_error2_install_failed_bad_signature": "Errore con la firma digitale dell'APK",
+  "@saiStr_installer_rootless_error2_install_failed_bad_signature": {},
+  "saiStr_installer_rootless_error2_install_failed_insufficient_storage": "Il dispositivo non ha spazio sufficiente per l'installazione della app",
+  "@saiStr_installer_rootless_error2_install_failed_insufficient_storage": {},
+  "saiStr_installer_rootless_error2_install_failed_update_incompatible": "La firma della app è diversa da quella dell'app precedentemente installata",
+  "@saiStr_installer_rootless_error2_install_failed_update_incompatible": {},
+  "saiStr_installer_rootless_error2_install_failed_dexopt": "L'installazione non è andata a buon fine durante l'elaborazione dei files dex, possibili cause: mancanza di storage o validazione fallita",
+  "@saiStr_installer_rootless_error2_install_failed_dexopt": {},
+  "batchProcessingSheetProgressOne": "Elaborazione 1 app…",
+  "@batchProcessingSheetProgressOne": {},
+  "batchProcessingSheetProgressMore": "Elaborazione {count} apps…",
+  "@batchProcessingSheetProgressMore": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "saiStr_installer_rootless_error2_install_failed_shared_user_incompatible": "La app ha richiesto un utente condiviso già esistente, ma le loro firme non sono uguali",
+  "@saiStr_installer_rootless_error2_install_failed_shared_user_incompatible": {},
+  "saiStr_installer_rootless_error2_install_failed_missing_shared_library": "La app ha richiesto una libreria condivisa non installata sul dispositivo",
+  "@saiStr_installer_rootless_error2_install_failed_missing_shared_library": {},
+  "saiStr_installer_rootless_error2_install_failed_replace_couldnt_delete": "Non è stato possibile rimuovere la versione precedente del pacchetto",
+  "@saiStr_installer_rootless_error2_install_failed_replace_couldnt_delete": {},
+  "saiStr_installer_rootless_error2_install_failed_older_sdk": "La versione Android del dispositivo non supporta il package",
+  "@saiStr_installer_rootless_error2_install_failed_older_sdk": {},
+  "saiStr_installer_rootless_error2_install_failed_newer_sdk": "La versione di Android del dispositivo è troppo recente per eseguire il package",
+  "@saiStr_installer_rootless_error2_install_failed_newer_sdk": {}
+}

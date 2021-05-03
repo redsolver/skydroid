@@ -220,5 +220,126 @@
   "collectionRecommendationsCardTitle": "Kilka zaleceń na początek",
   "@collectionRecommendationsCardTitle": {},
   "appPageInstallationDownloadStarting": "Rozpoczęcie pobierania…",
-  "@appPageInstallationDownloadStarting": {}
+  "@appPageInstallationDownloadStarting": {},
+  "categoryInternet": "Internetu",
+  "@categoryInternet": {},
+  "categoryMultimedia": "Multimedialna",
+  "@categoryMultimedia": {},
+  "categoryPhoneAndSMS": "Telefon i SMS",
+  "@categoryPhoneAndSMS": {},
+  "categorySecurity": "Bezpieczeństwo",
+  "@categorySecurity": {},
+  "categorySportsAndHealth": "Sport i zdrowie",
+  "@categorySportsAndHealth": {},
+  "categorySystem": "Instalacja",
+  "@categorySystem": {},
+  "categoryTheming": "Programowanie",
+  "@categoryTheming": {},
+  "categoryTime": "Czas",
+  "@categoryTime": {},
+  "appPageLinkDonate": "Darowizna",
+  "@appPageLinkDonate": {},
+  "appPageLinkWebsite": "Strona",
+  "@appPageLinkWebsite": {},
+  "appPageLinkSourceCode": "Kod źródłowy",
+  "@appPageLinkSourceCode": {},
+  "appPageLinkIssueTracker": "Śledzenie problemów",
+  "@appPageLinkIssueTracker": {},
+  "appPageLinkTranslation": "Tłumaczenie",
+  "@appPageLinkTranslation": {},
+  "appPageLinkChangelog": "Changeloga",
+  "@appPageLinkChangelog": {},
+  "appPageLinkLicense": "Licencja: {license}",
+  "@appPageLinkLicense": {
+    "placeholders": {
+      "license": {}
+    }
+  },
+  "downloadHashMismatchErrorDialogContent": "Pobrany plik nie odpowiada poprawnemu hashowi w metadanych.\n\nExpected Hash: {expectedHash}\nGot Hash: {hash}\n\nProsimy o kontakt z autorem aplikacji",
+  "@downloadHashMismatchErrorDialogContent": {
+    "placeholders": {
+      "expectedHash": {},
+      "hash": {}
+    }
+  },
+  "appPageInstallButton": "Install (Version {version})",
+  "@appPageInstallButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appPageLaunchAppButton": "Otwórz",
+  "@appPageLaunchAppButton": {},
+  "appPageUpdateButton": "Aktualizacja ({version})",
+  "@appPageUpdateButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "errorDomainNameHasNoRecord": "Nazwa nie ma zapisu SkyDroid",
+  "@errorDomainNameHasNoRecord": {},
+  "errorHttpStatusCodeMultiDnsQuery": "HTTP {statusCode} przy zapytaniu Multi-DoH",
+  "@errorHttpStatusCodeMultiDnsQuery": {
+    "placeholders": {
+      "statusCode": {}
+    }
+  },
+  "settingsPageAppThemeTitle": "Aplikacja Temat",
+  "@settingsPageAppThemeTitle": {},
+  "settingsPageAppThemeOptionLight": "Światło",
+  "@settingsPageAppThemeOptionLight": {},
+  "settingsPageAppThemeOptionDark": "Ciemna",
+  "@settingsPageAppThemeOptionDark": {},
+  "errorAppInvalidCurrentBuild": "Błąd: Nie znaleziono kompilacji dla bieżącej wersji",
+  "@errorAppInvalidCurrentBuild": {},
+  "settingsPageAboutDebugDialogClose": "OK",
+  "@settingsPageAboutDebugDialogClose": {},
+  "settingsPageAboutShowLicenses": "Pokaż licencje",
+  "@settingsPageAboutShowLicenses": {},
+  "settingsPageAboutTitle": "O",
+  "@settingsPageAboutTitle": {},
+  "settingsPageAppThemeOptionBlack": "Czarny",
+  "@settingsPageAppThemeOptionBlack": {},
+  "removeNamesDialogConfirm": "Usuń wszystko",
+  "@removeNamesDialogConfirm": {},
+  "removeNamesDialogContent": "Czy naprawdę chcesz usunąć {count} nazw z listy aplikacji? Ta akcja nie dotyka zainstalowanych aplikacji, a nazwy mogą być ponownie dodane za pomocą kolekcji.",
+  "@removeNamesDialogContent": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "removeNamesDialogTitle": "Usunąć wybrane nazwy?",
+  "@removeNamesDialogTitle": {},
+  "appPageInstallingShizukuErrorPermissionNotGranted": "Permission not granted (Przejdź do ustawień SkyDroid i ponownie włączyć wsparcie Shizuku)",
+  "@appPageInstallingShizukuErrorPermissionNotGranted": {},
+  "saiStr_installer_rootless_error2_install_failed_invalid_apk": "Plik APK nie jest ważny",
+  "@saiStr_installer_rootless_error2_install_failed_invalid_apk": {},
+  "saiStr_installer_rootless_error2_install_failed_already_exists": "Ten pakiet jest już zainstalowany",
+  "@saiStr_installer_rootless_error2_install_failed_already_exists": {},
+  "saiStr_installer_rootless_error2_unknown": "Nieznany błąd",
+  "@saiStr_installer_rootless_error2_unknown": {},
+  "filterByCollectionCardTitle": "Filtrowanie według kolekcji",
+  "@filterByCollectionCardTitle": {},
+  "batchProcessingSheetRemoveAllNamesButton": "Usuń wszystkie wybrane nazwy",
+  "@batchProcessingSheetRemoveAllNamesButton": {},
+  "batchProcessingSheetUninstallAllButton": "Odinstaluj",
+  "@batchProcessingSheetUninstallAllButton": {},
+  "batchProcessingSheetInstallOrUpdateAllButton": "Instaluj/aktualizuj",
+  "@batchProcessingSheetInstallOrUpdateAllButton": {},
+  "batchProcessingSheetUnselectAllButton": "Odznacz wszystkie",
+  "@batchProcessingSheetUnselectAllButton": {},
+  "batchProcessingSheetSelectAllButton": "Wybierz wszystko",
+  "@batchProcessingSheetSelectAllButton": {},
+  "batchProcessingSheetSelectedOne": "1 wybrana aplikacja",
+  "@batchProcessingSheetSelectedOne": {},
+  "batchProcessingSheetProgressOne": "Przetwarzanie 1 aplikacji…",
+  "@batchProcessingSheetProgressOne": {},
+  "appListPageUpdateAllAppsButton": "Aktualizuj wszystkie aplikacje",
+  "@appListPageUpdateAllAppsButton": {},
+  "appListPageSearchHint": "Szukaj aplikacji…",
+  "@appListPageSearchHint": {},
+  "batchProcessingSheetShizukuWarning": "Włącz usługę Shizuku w ustawieniach, aby używać akcji wsadowych",
+  "@batchProcessingSheetShizukuWarning": {},
+  "settingsPageServicesTitle": "Serwisy",
+  "@settingsPageServicesTitle": {}
 }
