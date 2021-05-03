@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.4
+
+- Added new languages and updated translations (Thanks to all contributors!)
+- Added new URI scheme to make app links more reliable
+- Small improvements and bugfixes
+
 ## 0.5.3
 
 Important bug fix: Wrong language used instead of English on unsupported locales

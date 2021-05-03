@@ -269,13 +269,34 @@ class _MyHomePageState extends State<MyHomePage> {
   StreamSubscription _sub;
 
   Future<void> processLink(String link) async {
+    // print('processLink $link');
     final uri = Uri.parse(link);
 
-    if (uri.pathSegments.isEmpty) return;
+    bool isCollection = false;
+    String name;
+    if (uri.scheme == 'skydroid-app') {
+      name = uri.host;
+      isCollection = false;
+    } else if (uri.scheme == 'skydroid-collection') {
+      name = uri.host;
+      isCollection = true;
+    } else {
+      if (uri.pathSegments.isEmpty) return;
+      name = uri.pathSegments.first;
 
-    final name = uri.pathSegments.first;
+      if (uri.host == 'to.skydroid.app') {
+        isCollection = false;
+      } else if (uri.host == 'collection.skydroid.app') {
+        isCollection = true;
+      }
+    }
+    if (name == null) {
+      return;
+    }
 
-    if (uri.host == 'to.skydroid.app') {
+    // if (uri.pathSegments.isEmpty && uri.scheme) return;
+
+    if (!isCollection) {
       if (!names.containsKey(name)) {
         await addName(name);
       }
@@ -294,7 +315,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
       addToStream(name);
       setState(() {});
-    } else if (uri.host == 'collection.skydroid.app') {
+    } else if (isCollection) {
       while (Navigator.of(context).canPop()) Navigator.of(context).pop();
       setState(() {
         currentPage = 1;

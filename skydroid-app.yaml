@@ -22,12 +22,15 @@ localized:
       Sia Skynet is used as hosting infrastructure for App Metadata, APKs, screenshots and other media content.
     summary: A decentralized domain-based App Store for Android.
     whatsNew: |-
-      • Updated translations
-      • Changed app icon
-      • Updated recommended collections
-      • Small bug fixes and optimizations
+      • Added new languages and updated translations (Thanks to all contributors!)
+      • Added new URI scheme to make app links more reliable
+      • Small improvements and bugfixes
 
 builds:
+  - versionName: 0.5.4
+    versionCode: 54
+    sha256: 282ba6b4b68a061a16efd896e76d2ef7330bc2e8793cc082ddd2b2ae4cbbfd5b
+    apkLink: sia://AAB8LG7cx_JxFC1YkTheCzQCwppl03P3MCI069XiehgrwA
   - versionName: 0.5.3
     versionCode: 53
     sha256: 016923b6247f9be6c9baf93541333a77677f5ff0b36220763fe93ceef60a0250
@@ -93,8 +96,8 @@ builds:
     sha256: c62c2d73c0ead2fb1a287eecc6d637c318cb49b8c1543bbd2110d73b78ee7c6a
     apkLink: sia://AADzaC8YfqVlUAcSf8-1PdT9mLDb9KRLeV9Pi8y3l8G2KA
 
-currentVersionName: 0.5.3
-currentVersionCode: 53
+currentVersionName: 0.5.4
+currentVersionCode: 54
 
 added: 1597353106000
-lastUpdated: 1617919168014
+lastUpdated: 1620051888583

@@ -3,7 +3,7 @@ description: A decentralized domain-based App Store for Android.
 
 publish_to: "none"
 
-version: 0.5.3+53
+version: 0.5.4+54
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
