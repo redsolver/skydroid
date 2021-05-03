@@ -345,7 +345,7 @@
   "@saiStr_installer_rootless_error2_install_failed_older_sdk": {},
   "saiStr_installer_rootless_error2_install_failed_newer_sdk": "La versione di Android del dispositivo è troppo recente per eseguire il package",
   "@saiStr_installer_rootless_error2_install_failed_newer_sdk": {},
-  "appPageLinkIssueTracker": "Issue Tracker",
+  "appPageLinkIssueTracker": "Inseguitore di problemi",
   "@appPageLinkIssueTracker": {},
   "saiStr_installer_rootless_error2_install_failed_no_shared_user": "L'utente condiviso richiesto dal package non esiste",
   "@saiStr_installer_rootless_error2_install_failed_no_shared_user": {},
