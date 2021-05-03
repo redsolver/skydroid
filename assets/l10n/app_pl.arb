@@ -341,5 +341,82 @@
   "batchProcessingSheetShizukuWarning": "Włącz usługę Shizuku w ustawieniach, aby używać akcji wsadowych",
   "@batchProcessingSheetShizukuWarning": {},
   "settingsPageServicesTitle": "Serwisy",
-  "@settingsPageServicesTitle": {}
+  "@settingsPageServicesTitle": {},
+  "errorMetadataHashMismatch": "Metadata Hash niezgodność.",
+  "@errorMetadataHashMismatch": {},
+  "errorHttpStatusCode": "HTTP {statusCode} podczas ładowania metadanych",
+  "@errorHttpStatusCode": {
+    "placeholders": {
+      "statusCode": {}
+    }
+  },
+  "errorDnsRecordNotAvailable": "Rekord DNS nie jest dostępny",
+  "@errorDnsRecordNotAvailable": {},
+  "settingsPageAppThemeOptionSepia": "Sępica",
+  "@settingsPageAppThemeOptionSepia": {},
+  "settingsPageServicesMultiDoHServer": "Serwer Multi-DoH",
+  "@settingsPageServicesMultiDoHServer": {},
+  "settingsPageServicesSkynetPortal": "Portal Skynet",
+  "@settingsPageServicesSkynetPortal": {},
+  "settingsPageAboutDebug": "Informacje o debugu",
+  "@settingsPageAboutDebug": {},
+  "errorAppCompatibilityNoMatchingABI": "Ta aplikacja nie jest kompatybilna z Twoim urządzeniem (nieobsługiwany ABI: {deviceABIs} nie w {supportedABIs})",
+  "@errorAppCompatibilityNoMatchingABI": {
+    "placeholders": {
+      "deviceABIs": {},
+      "supportedABIs": {}
+    }
+  },
+  "errorAppCompatibilitySdkVersionTooLow": "Ta aplikacja nie jest kompatybilna z Twoim urządzeniem (zbyt niska wersja sdkVersion: {sdkVersion} < {minSdkVersion})",
+  "@errorAppCompatibilitySdkVersionTooLow": {
+    "placeholders": {
+      "sdkVersion": {},
+      "minSdkVersion": {}
+    }
+  },
+  "appShareText": "{localizedName} - {localizedSummary} - Pobierz: {link}",
+  "@appShareText": {
+    "placeholders": {
+      "localizedName": {},
+      "localizedSummary": {},
+      "link": {}
+    }
+  },
+  "appPageInstallationProgress": "{progress} % z {totalFileSize}",
+  "@appPageInstallationProgress": {
+    "placeholders": {
+      "progress": {},
+      "totalFileSize": {}
+    }
+  },
+  "appPageInstallingShizukuErrorNotRunningButton": "Otwórz Shizuku",
+  "@appPageInstallingShizukuErrorNotRunningButton": {},
+  "appPageInstallingShizukuErrorNotRunning": "Usługa Shizuku nie działa",
+  "@appPageInstallingShizukuErrorNotRunning": {},
+  "settingsPageShizukuInstallButton": "Zainstaluj Shizuku",
+  "@settingsPageShizukuInstallButton": {},
+  "settingsPageShizukuToggleSwitch": "Włącz Shizuku",
+  "@settingsPageShizukuToggleSwitch": {},
+  "errorAppInstallationShizuku": "Instalacja aplikacji Shizuku nie powiodła się",
+  "@errorAppInstallationShizuku": {},
+  "appPageInstallingShizukuProcess": "Instalacja aplikacji... (Shizuku)",
+  "@appPageInstallingShizukuProcess": {},
+  "settingsPageShizukuTitle": "Serwis Shizuku",
+  "@settingsPageShizukuTitle": {},
+  "settingsPageShizukuDescription": "Shizuku to aplikacja, która może dać SkyDroid dostęp do interfejsów API systemu BEZ ROOT. Umożliwia to instalowanie i aktualizowanie aplikacji bez interakcji z użytkownikiem.",
+  "@settingsPageShizukuDescription": {},
+  "batchProcessingSheetSelectedMore": "{count} wybrane aplikacje",
+  "@batchProcessingSheetSelectedMore": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "batchProcessingSheetProgressMore": "Przetwarzanie {count} aplikacji…",
+  "@batchProcessingSheetProgressMore": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "saiStr_installer_rootless_error2_install_failed_test_only": "Zainstalowany pakiet jest tylko testowy i nie podano flagi INSTALL_ALLOW_TEST",
+  "@saiStr_installer_rootless_error2_install_failed_test_only": {}
 }
