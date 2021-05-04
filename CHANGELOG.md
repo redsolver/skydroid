@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.5
+
+- Added support for different versionCodes for different ABIs for the same versionName (This fixes the bug that some apps can't be installed)
+
 ## 0.5.4
 
 - Added new languages and updated translations (Thanks to all contributors!)

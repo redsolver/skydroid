@@ -599,8 +599,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // print(preparedKeys);
 
-    preparedKeys.sort(
-        (a, b) => -apps.get(a).lastUpdated.compareTo(apps.get(b).lastUpdated));
+    if (collectionFilter != null) {
+      preparedKeys.removeWhere((key) => !apps.containsKey(key));
+    }
+
+    preparedKeys.sort((a, b) => -(apps.get(a)?.lastUpdated ?? 0)
+        .compareTo(apps.get(b)?.lastUpdated ?? 0));
 
     List<String> updateKeys = [];
     //List<String> installedKeys = [];
