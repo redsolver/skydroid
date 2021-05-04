@@ -137,6 +137,19 @@ class App {
   @HiveField(13)
   int currentVersionCode;
 
+  Build getCurrentBuild() {
+    return builds.firstWhere(
+      (element) => /* element.versionName == currentVersionName ||  */
+          element.versionCode == currentVersionCode,
+      orElse: () => null,
+    );
+  }
+
+  int get currentVersionCodeForDeviceArchitecture {
+    final currentBuild = getCurrentBuild();
+    return currentBuild.versionCodeForDeviceArchitecture ?? currentVersionCode;
+  }
+
   @HiveField(14)
   int added;
   @HiveField(15)
@@ -188,6 +201,20 @@ class Build {
   @HiveField(11)
   Map<String, ABISpecificBuild> abis;
 
+  int get versionCodeForDeviceArchitecture {
+    if (abis != null) {
+      for (final abi in androidInfo.supportedAbis) {
+        if (abis.containsKey(abi)) {
+          final vCode = abis[abi].versionCode;
+          if (vCode != null) {
+            return vCode;
+          }
+        }
+      }
+    }
+    return versionCode;
+  }
+
   // TODO Show some more of this info on the app page
 
   @HiveField(5)
@@ -223,6 +250,11 @@ class ABISpecificBuild {
   String apkLink;
   @HiveField(2)
   String sha256;
+
+  @HiveField(3)
+  String versionName;
+  @HiveField(4)
+  int versionCode;
 
   ABISpecificBuild();
 

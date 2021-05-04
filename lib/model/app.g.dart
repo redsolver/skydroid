@@ -196,17 +196,23 @@ class ABISpecificBuildAdapter extends TypeAdapter<ABISpecificBuild> {
     };
     return ABISpecificBuild()
       ..apkLink = fields[1] as String
-      ..sha256 = fields[2] as String;
+      ..sha256 = fields[2] as String
+      ..versionName = fields[3] as String
+      ..versionCode = fields[4] as int;
   }
 
   @override
   void write(BinaryWriter writer, ABISpecificBuild obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(4)
       ..writeByte(1)
       ..write(obj.apkLink)
       ..writeByte(2)
-      ..write(obj.sha256);
+      ..write(obj.sha256)
+      ..writeByte(3)
+      ..write(obj.versionName)
+      ..writeByte(4)
+      ..write(obj.versionCode);
   }
 
   @override
@@ -334,11 +340,15 @@ Map<String, dynamic> _$BuildToJson(Build instance) => <String, dynamic>{
 ABISpecificBuild _$ABISpecificBuildFromJson(Map json) {
   return ABISpecificBuild()
     ..apkLink = json['apkLink'] as String
-    ..sha256 = json['sha256'] as String;
+    ..sha256 = json['sha256'] as String
+    ..versionName = json['versionName'] as String
+    ..versionCode = json['versionCode'] as int;
 }
 
 Map<String, dynamic> _$ABISpecificBuildToJson(ABISpecificBuild instance) =>
     <String, dynamic>{
       'apkLink': instance.apkLink,
       'sha256': instance.sha256,
+      'versionName': instance.versionName,
+      'versionCode': instance.versionCode,
     };

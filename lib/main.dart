@@ -97,7 +97,10 @@ Future<void> main() async {
   // if (Platform.isAndroid) {
   final deviceInfo = DeviceInfoPlugin();
 
-  unawaited(deviceInfo.androidInfo.then((value) => androidInfo = value));
+  /* unawaited( */
+
+  androidInfo = await deviceInfo.androidInfo;
+
   // }
 
   runApp(
@@ -636,7 +639,8 @@ class _MyHomePageState extends State<MyHomePage> {
       }
 
       if (localVersionCodes.containsKey(a.packageName)) {
-        if (a.currentVersionCode > localVersionCodes.get(a.packageName)) {
+        if (a.currentVersionCodeForDeviceArchitecture >
+            localVersionCodes.get(a.packageName)) {
           updateKeys.add(key);
           continue;
         } else {
@@ -1203,7 +1207,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                                                                   if (snap.data
                                                                           .versionCode <
-                                                                      app.currentVersionCode) {
+                                                                      app.currentVersionCodeForDeviceArchitecture) {
                                                                     return Container(
                                                                       color: Colors
                                                                           .orange,
@@ -1585,6 +1589,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         currentIndex: currentPage,
         selectedItemColor: Theme.of(context).accentColor,
         onTap: (index) {
@@ -1648,7 +1653,7 @@ class _MyHomePageState extends State<MyHomePage> {
       await task.init();
 
       if ((task?.installedApplication?.versionCode ?? 0) >=
-          app.currentVersionCode) {
+          app.currentVersionCodeForDeviceArchitecture) {
         print('skip $name');
         task.dispose();
         continue;

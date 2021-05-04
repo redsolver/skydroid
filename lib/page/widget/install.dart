@@ -183,7 +183,7 @@ class _InstallWidgetState extends State<InstallWidget>
                             width: 8,
                           ),
                           task.installedApplication.versionCode >=
-                                  app.currentVersionCode
+                                  app.currentVersionCodeForDeviceArchitecture
                               ? Expanded(
                                   child: RaisedButton(
                                     color: Theme.of(context).accentColor,

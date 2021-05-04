@@ -61,10 +61,7 @@ class InstallTask {
   }
 
   Future<void> init() async {
-    currentBuild = app.builds.firstWhere(
-      (element) => element.versionCode == app.currentVersionCode,
-      orElse: () => null,
-    );
+    currentBuild = app.getCurrentBuild();
 
     final deviceInfo = DeviceInfoPlugin();
     final androidInfo = await deviceInfo.androidInfo;
@@ -305,7 +302,7 @@ class InstallTask {
   Future<void> install(/* File apk, int versionCode */) async {
     if (downloadedApk == null) throw 'APK not downloaded';
 
-    final versionCode = currentBuild.versionCode;
+    final versionCode = currentBuild.versionCodeForDeviceArchitecture;
 
     if (isShizukuEnabled) {
       void showShizukuErrorDialog(Widget content, String text) {
@@ -359,7 +356,6 @@ class InstallTask {
 /*       setState(() {
         progress = 1;
         state = InstallState.none;
-        expectedVersionCode = versionCode;
       }); */
 
       final result = await platform.invokeMethod(
