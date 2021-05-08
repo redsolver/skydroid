@@ -419,5 +419,7 @@
   "saiStr_installer_rootless_error2_install_failed_wrong_installed_version": "La version requise d'un paquet déjà installé ne correspond pas à la version réelle du paquet installé",
   "@saiStr_installer_rootless_error2_install_failed_wrong_installed_version": {},
   "filterByCollectionCardTitle": "Filtre par collection",
-  "@filterByCollectionCardTitle": {}
+  "@filterByCollectionCardTitle": {},
+  "navigationDiscoverPageTitle": "Découvrez",
+  "@navigationDiscoverPageTitle": {}
 }
