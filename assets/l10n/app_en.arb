@@ -419,5 +419,7 @@
   "saiStr_installer_rootless_error2_install_failed_multipackage_inconsistency": "One of the child package installer sessions does not match the parent session in respect to staged or rollback enabled parameters",
   "@saiStr_installer_rootless_error2_install_failed_multipackage_inconsistency": {},
   "saiStr_installer_rootless_error2_install_failed_wrong_installed_version": "Required version of an already installed package doesn't match the actual version of the installed package",
-  "@saiStr_installer_rootless_error2_install_failed_wrong_installed_version": {}
+  "@saiStr_installer_rootless_error2_install_failed_wrong_installed_version": {},
+  "navigationDiscoverPageTitle": "Discover",
+  "@navigationDiscoverPageTitle": {}
 }
