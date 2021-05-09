@@ -2,7 +2,7 @@
   "@@locale": "fr",
   "removeNameDialogTitle": "Supprimer le nom ?",
   "@removeNameDialogTitle": {},
-  "removeNameDialogContent": "Souhaitez-vous vraiment supprimer le nom {name} de votre liste d'applications ? Cette action n'affecte pas vos applications installées et le nom peut étre ajouté à nouveau via une collection.",
+  "removeNameDialogContent": "Souhaitez-vous vraiment supprimer le nom « {name} » de votre liste d'applications ? Cette action n'affecte pas vos applications installées et le nom peut être ajouté à nouveau via une collection.",
   "@removeNameDialogContent": {
     "placeholders": {
       "name": {}
@@ -12,7 +12,7 @@
   "@removeNameDialogConfirm": {},
   "dialogCancel": "Annuler",
   "@dialogCancel": {},
-  "navigationAppsPageTitle": "Apps",
+  "navigationAppsPageTitle": "Applis",
   "@navigationAppsPageTitle": {},
   "navigationCollectionsPageTitle": "Collection",
   "@navigationCollectionsPageTitle": {},
@@ -54,7 +54,7 @@
   "@categoryTime": {},
   "categoryWriting": "Ecriture",
   "@categoryWriting": {},
-  "appListPageEmptyWarning": "Hmm rien à voir ici. Essayez d'ajouter un nom via le bouton \"Plus\" en bas à droite.",
+  "appListPageEmptyWarning": "Hmm rien à voir ici. Essayez d'ajouter un nom via le bouton « Plus » en bas à droite.",
   "@appListPageEmptyWarning": {},
   "appListLoadingMetadata": "Chargement de métadonnées…",
   "@appListLoadingMetadata": {},
@@ -124,7 +124,7 @@
   },
   "collectionListItemLoading": "Charger…",
   "@collectionListItemLoading": {},
-  "collectionListItemTitle": "{titre} ({nom du domaine}) - {nombre d'applications} Apps",
+  "collectionListItemTitle": "{title} ({domaineName}) - {appCount} applis",
   "@collectionListItemTitle": {
     "placeholders": {
       "title": {},
@@ -140,13 +140,13 @@
   "@collectionLoadingDialogContent": {},
   "removeCollectionDialogTitle": "Supprimer la collection ?",
   "@removeCollectionDialogTitle": {},
-  "removeCollectionDialogContent": "Voulez-vous vraiment supprimer la collection \"{name}\" ? Si vous souhaitez également supprimer les applications ajoutées via cette collection, selectionnez \"Supprimer toutes les apps\".",
+  "removeCollectionDialogContent": "Voulez-vous vraiment supprimer la collection « {name} » ? Si vous souhaitez également supprimer les applications ajoutées via cette collection, sélectionnez « Supprimer toutes les applis ».",
   "@removeCollectionDialogContent": {
     "placeholders": {
       "name": {}
     }
   },
-  "removeCollectionDialogConfirmWithApps": "Supprimer toutes les apps",
+  "removeCollectionDialogConfirmWithApps": "Supprimer toutes les applis",
   "@removeCollectionDialogConfirmWithApps": {},
   "removeCollectionDialogConfirm": "Supprimer",
   "@removeCollectionDialogConfirm": {},
@@ -185,7 +185,7 @@
   },
   "appPageInstallationDownloadStarting": "Début du téléchargement…",
   "@appPageInstallationDownloadStarting": {},
-  "appPageInstallationProgress": "{progress} % of {totalFileSize}",
+  "appPageInstallationProgress": "{progress} % sur {totalFileSize}",
   "@appPageInstallationProgress": {
     "placeholders": {
       "progress": {},
@@ -260,7 +260,7 @@
   },
   "errorAppInstallationShizuku": "L'installation de Shizuku a échouée",
   "@errorAppInstallationShizuku": {},
-  "appPageInstallingShizukuProcess": "Installation d'app... (Shizuku)",
+  "appPageInstallingShizukuProcess": "Installation de l'appli… (Shizuku)",
   "@appPageInstallingShizukuProcess": {},
   "settingsPageShizukuTitle": "Service Shizuku",
   "@settingsPageShizukuTitle": {},
@@ -286,11 +286,11 @@
   },
   "removeNamesDialogConfirm": "Tout supprimer",
   "@removeNamesDialogConfirm": {},
-  "appListPageSearchHint": "Rechercher des apps…",
+  "appListPageSearchHint": "Rechercher des applis…",
   "@appListPageSearchHint": {},
-  "appListPageUpdateAllAppsButton": "Mettre à jour toutes les apps",
+  "appListPageUpdateAllAppsButton": "Mettre à jour toutes les applis",
   "@appListPageUpdateAllAppsButton": {},
-  "batchProcessingSheetProgressOne": "Traitement d'une app…",
+  "batchProcessingSheetProgressOne": "Traitement d'une appli…",
   "@batchProcessingSheetProgressOne": {},
   "batchProcessingSheetProgressMore": "Traitement des {count} applications…",
   "@batchProcessingSheetProgressMore": {
@@ -300,7 +300,7 @@
   },
   "batchProcessingSheetSelectedOne": "1 app sélectionné",
   "@batchProcessingSheetSelectedOne": {},
-  "batchProcessingSheetSelectedMore": "{count} apps sélectionnées",
+  "batchProcessingSheetSelectedMore": "{count} applis sélectionnées",
   "@batchProcessingSheetSelectedMore": {
     "placeholders": {
       "count": {}
@@ -324,9 +324,9 @@
   "@saiStr_installer_rootless_error2_install_failed_already_exists": {},
   "saiStr_installer_rootless_error2_install_failed_invalid_apk": "Fichier APK non valide",
   "@saiStr_installer_rootless_error2_install_failed_invalid_apk": {},
-  "saiStr_installer_rootless_error2_install_failed_invalid_uri": "L' URI passée est invalide",
+  "saiStr_installer_rootless_error2_install_failed_invalid_uri": "L'URI passée est invalide",
   "@saiStr_installer_rootless_error2_install_failed_invalid_uri": {},
-  "saiStr_installer_rootless_error2_install_failed_insufficient_storage": "L' appareil n'a pas assez d'espace pour installer l'application",
+  "saiStr_installer_rootless_error2_install_failed_insufficient_storage": "L'appareil n'a pas assez d'espace pour installer l'application",
   "@saiStr_installer_rootless_error2_install_failed_insufficient_storage": {},
   "saiStr_installer_rootless_error2_install_failed_duplicate_package": "Un paquet portant le même nom est déjà installé",
   "@saiStr_installer_rootless_error2_install_failed_duplicate_package": {},
