@@ -182,14 +182,14 @@
   },
   "appPageInstallationDownloadStarting": "Inizio download…",
   "@appPageInstallationDownloadStarting": {},
-  "appPageInstallationProgress": "{progress} % di {totalFileSize}",
+  "appPageInstallationProgress": "{progress}% di {totalFileSize}",
   "@appPageInstallationProgress": {
     "placeholders": {
       "progress": {},
       "totalFileSize": {}
     }
   },
-  "appShareText": "{localizedName} - {localizedSummary} • Download: {link}",
+  "appShareText": "{localizedName} - {localizedSummary} • Scarica: {link}",
   "@appShareText": {
     "placeholders": {
       "localizedName": {},
@@ -215,7 +215,7 @@
       "statusCode": {}
     }
   },
-  "settingsPageAppThemeTitle": "Tema dell'App",
+  "settingsPageAppThemeTitle": "Tema dell'app",
   "@settingsPageAppThemeTitle": {},
   "settingsPageAppThemeOptionLight": "Chiaro",
   "@settingsPageAppThemeOptionLight": {},
@@ -248,7 +248,7 @@
   },
   "errorAppInstallationShizuku": "Installazione di Shizuku App fallita",
   "@errorAppInstallationShizuku": {},
-  "settingsPageAboutDebug": "Informazioni di Debug",
+  "settingsPageAboutDebug": "Informazioni di debug",
   "@settingsPageAboutDebug": {},
   "errorAppCompatibilitySdkVersionTooLow": "Questa app non è compatibile col tuo dispositivo (sdkVersion troppo vecchio: {sdkVersion} < {minSdkVersion})",
   "@errorAppCompatibilitySdkVersionTooLow": {
@@ -416,5 +416,7 @@
   "saiStr_installer_rootless_error2_install_failed_no_matching_abis": "Il package non contiene codice nativo compatibile con la CPU di questo dispositivo",
   "@saiStr_installer_rootless_error2_install_failed_no_matching_abis": {},
   "saiStr_installer_rootless_error2_install_failed_wrong_installed_version": "La versione richiesta di un package già installato non corrisponde alla versione attuale del package",
-  "@saiStr_installer_rootless_error2_install_failed_wrong_installed_version": {}
+  "@saiStr_installer_rootless_error2_install_failed_wrong_installed_version": {},
+  "navigationDiscoverPageTitle": "Scopri",
+  "@navigationDiscoverPageTitle": {}
 }
