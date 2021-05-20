@@ -418,5 +418,7 @@
   "saiStr_installer_rootless_error2_install_failed_verification_timeout": "Время проверки пакета истекло",
   "@saiStr_installer_rootless_error2_install_failed_verification_timeout": {},
   "saiStr_installer_rootless_error2_install_failed_test_only": "Установленный пакет предназначен только для тестирования и установить_позволять_тест флаг не был поставлен",
-  "@saiStr_installer_rootless_error2_install_failed_test_only": {}
+  "@saiStr_installer_rootless_error2_install_failed_test_only": {},
+  "navigationDiscoverPageTitle": "Откройте для себя",
+  "@navigationDiscoverPageTitle": {}
 }
