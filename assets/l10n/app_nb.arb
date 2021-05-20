@@ -418,5 +418,7 @@
   "saiStr_installer_rootless_error2_install_failed_sandbox_version_downgrade": "Den nye versjonen av pakken krever en lavere sandkasse versjon enn den installerte pakken",
   "@saiStr_installer_rootless_error2_install_failed_sandbox_version_downgrade": {},
   "saiStr_installer_rootless_error2_install_failed_bad_dex_metadata": "DEX-metadatafilen er ugyldig, eller så finnes det ingen samsvarende APK-fil for en Dex-metadatafil",
-  "@saiStr_installer_rootless_error2_install_failed_bad_dex_metadata": {}
+  "@saiStr_installer_rootless_error2_install_failed_bad_dex_metadata": {},
+  "navigationDiscoverPageTitle": "Oppdage",
+  "@navigationDiscoverPageTitle": {}
 }
