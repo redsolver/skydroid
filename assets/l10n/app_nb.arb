@@ -23,7 +23,7 @@
   "@categoryInternet": {},
   "categoryMoney": "Penger",
   "@categoryMoney": {},
-  "categoryMultimedia": "Multimedia",
+  "categoryMultimedia": "multimedia",
   "@categoryMultimedia": {},
   "categoryNavigation": "Navigasjon",
   "@categoryNavigation": {},
@@ -210,7 +210,7 @@
       "statusCode": {}
     }
   },
-  "settingsPageAppThemeOptionSepia": "Sepia",
+  "settingsPageAppThemeOptionSepia": "sepia",
   "@settingsPageAppThemeOptionSepia": {},
   "errorDomainNameHasNoRecord": "Navnet har ingen SkyDroid-oppføring",
   "@errorDomainNameHasNoRecord": {},
@@ -413,7 +413,7 @@
   "@saiStr_installer_rootless_error2_install_failed_multipackage_inconsistency": {},
   "saiStr_installer_rootless_error2_install_failed_wrong_installed_version": "Nødvendig versjon av en allerede installert pakke samsvarer ikke med den faktiske versjonen av den installerte pakken",
   "@saiStr_installer_rootless_error2_install_failed_wrong_installed_version": {},
-  "saiStr_installer_rootless_error2_install_failed_dexopt": "Installasjonen mislyktes under optimalisering og pakking av DEX-filer, enten fordi det ikke er nok lagringsplass eller fordi bekreftelse mislyktes.",
+  "saiStr_installer_rootless_error2_install_failed_dexopt": "Installasjonen mislyktes under optimalisering og pakking av DEX-filer, enten fordi det ikke er nok lagringsplass eller fordi bekreftelse mislyktes",
   "@saiStr_installer_rootless_error2_install_failed_dexopt": {},
   "saiStr_installer_rootless_error2_install_failed_sandbox_version_downgrade": "Den nye versjonen av pakken krever en lavere sandkasseversjon enn den installerte pakken",
   "@saiStr_installer_rootless_error2_install_failed_sandbox_version_downgrade": {},
