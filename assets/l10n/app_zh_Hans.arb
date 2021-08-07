@@ -40,5 +40,19 @@
   "navigationCollectionsPageTitle": "收藏集",
   "@navigationCollectionsPageTitle": {},
   "appListPageEmptyWarning": "唔……什么也没有。试试点击右下角“+”号按钮添加名称。",
-  "@appListPageEmptyWarning": {}
+  "@appListPageEmptyWarning": {},
+  "removeNameDialogTitle": "删除名字？",
+  "@removeNameDialogTitle": {},
+  "categoryConnectivity": "连接性",
+  "@categoryConnectivity": {},
+  "categoryGraphics": "图形",
+  "@categoryGraphics": {},
+  "navigationDiscoverPageTitle": "发现",
+  "@navigationDiscoverPageTitle": {},
+  "removeNameDialogContent": "你真的想从你的应用程序列表中删除\"{name}\"这个名字吗？这个动作并不触及你所安装的应用程序，而且这个名字可以通过一个集合再次被添加。",
+  "@removeNameDialogContent": {
+    "placeholders": {
+      "name": {}
+    }
+  }
 }
