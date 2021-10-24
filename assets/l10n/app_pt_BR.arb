@@ -1,1 +1,422 @@
-{}
+{
+  "removeNameDialogTitle": "Remover o nome?",
+  "@removeNameDialogTitle": {},
+  "removeNameDialogContent": "Você realmente quer remover o nome \"{name}\" da sua lista de apps? Esta ação não afeta seus apps instalados e o nome pode ser adicionado novamente via coleção.",
+  "@removeNameDialogContent": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "removeNameDialogConfirm": "Remover",
+  "@removeNameDialogConfirm": {},
+  "dialogCancel": "Cancelar",
+  "@dialogCancel": {},
+  "navigationAppsPageTitle": "Apps",
+  "@navigationAppsPageTitle": {},
+  "navigationCollectionsPageTitle": "Coleções",
+  "@navigationCollectionsPageTitle": {},
+  "navigationSettingsPageTitle": "Configurações",
+  "@navigationSettingsPageTitle": {},
+  "filterDialogTitle": "Filtrar por categoria",
+  "@filterDialogTitle": {},
+  "categoryConnectivity": "Conexão",
+  "@categoryConnectivity": {},
+  "categoryDevelopment": "Desenvolvimento",
+  "@categoryDevelopment": {},
+  "categoryGames": "Jogos",
+  "@categoryGames": {},
+  "categoryGraphics": "Gráfica",
+  "@categoryGraphics": {},
+  "categoryInternet": "Internet",
+  "@categoryInternet": {},
+  "categoryMoney": "Dinheiro",
+  "@categoryMoney": {},
+  "categoryNavigation": "Navegação",
+  "@categoryNavigation": {},
+  "categoryPhoneAndSMS": "Celular & SMS",
+  "@categoryPhoneAndSMS": {},
+  "categoryReading": "Leitura",
+  "@categoryReading": {},
+  "categoryScienceAndEducation": "Ciência e educação",
+  "@categoryScienceAndEducation": {},
+  "categorySecurity": "Segurança",
+  "@categorySecurity": {},
+  "categorySportsAndHealth": "Esporte e saúde",
+  "@categorySportsAndHealth": {},
+  "categorySystem": "Sistema",
+  "@categorySystem": {},
+  "categoryTheming": "Temas",
+  "@categoryTheming": {},
+  "categoryTime": "Tempo",
+  "@categoryTime": {},
+  "categoryWriting": "Redação",
+  "@categoryWriting": {},
+  "appListLoadingMetadata": "Carregando metadados…",
+  "@appListLoadingMetadata": {},
+  "errorsSheetTitle": "Erros",
+  "@errorsSheetTitle": {},
+  "errorsSheetOverflowCount": "…{count} mais",
+  "@errorsSheetOverflowCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "addDomainNameDialogTitle": "Adicionar app ou coleção",
+  "@addDomainNameDialogTitle": {},
+  "addDomainNameDialogInputLabel": "Nome (domínio)",
+  "@addDomainNameDialogInputLabel": {},
+  "addDomainNameDialogInputHint": "exemplo skydroid.app",
+  "@addDomainNameDialogInputHint": {},
+  "addDomainNameDialogConfirm": "Adicionar",
+  "@addDomainNameDialogConfirm": {},
+  "addDomainNameLoadingDialogTitle": "Verificando o nome…",
+  "@addDomainNameLoadingDialogTitle": {},
+  "errorDialogTitle": "Algo deu errado",
+  "@errorDialogTitle": {},
+  "errorDialogCloseButton": "OK",
+  "@errorDialogCloseButton": {},
+  "verifiedAppDialogTitle": "App verificado",
+  "@verifiedAppDialogTitle": {},
+  "verifiedAppDialogContentTop": "Esta versão do app foi verificada pelas seguintes coleções:",
+  "@verifiedAppDialogContentTop": {},
+  "verifiedAppDialogContentBottom": "As coleções podem marcar lançamentos como verificados para oferecer mais confiança. Verificação de uma versão consiste em verificação de metadados, teste de app ou detecção de malware.",
+  "@verifiedAppDialogContentBottom": {},
+  "verifiedAppDialogCloseButton": "OK",
+  "@verifiedAppDialogCloseButton": {},
+  "verifiedAppBadgeLabel": "Verificado",
+  "@verifiedAppBadgeLabel": {},
+  "appPageWhatsNewTitle": "Novidades",
+  "@appPageWhatsNewTitle": {},
+  "appPageUpdatedTime": "Atualizado {time}",
+  "@appPageUpdatedTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "appPageAddedTime": "App adicionado: {time}",
+  "@appPageAddedTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "appPageLinkDonate": "Doar",
+  "@appPageLinkDonate": {},
+  "appPageLinkWebsite": "Site",
+  "@appPageLinkWebsite": {},
+  "appPageLinkSourceCode": "Código fonte",
+  "@appPageLinkSourceCode": {},
+  "appPageLinkIssueTracker": "Rastreador de falhas",
+  "@appPageLinkIssueTracker": {},
+  "appPageLinkTranslation": "Tradução",
+  "@appPageLinkTranslation": {},
+  "appPageLinkChangelog": "Histórico de mudanças",
+  "@appPageLinkChangelog": {},
+  "appPageLinkLicense": "Licença: {license}",
+  "@appPageLinkLicense": {
+    "placeholders": {
+      "license": {}
+    }
+  },
+  "collectionListItemLoading": "Carregando…",
+  "@collectionListItemLoading": {},
+  "collectionListItemTitle": "{title} ({domainName}) • {appCount} Apps",
+  "@collectionListItemTitle": {
+    "placeholders": {
+      "title": {},
+      "domainName": {},
+      "appCount": {}
+    }
+  },
+  "collectionRecommendationsCardTitle": "Algumas recomendações para começar",
+  "@collectionRecommendationsCardTitle": {},
+  "collectionLoadingDialogTitle": "Carregando coleção…",
+  "@collectionLoadingDialogTitle": {},
+  "collectionLoadingDialogContent": "Isto pode levar até 30 segundos, dependendo do tamanho da coleção",
+  "@collectionLoadingDialogContent": {},
+  "removeCollectionDialogTitle": "Remover a coleção?",
+  "@removeCollectionDialogTitle": {},
+  "removeCollectionDialogConfirmWithApps": "Remover com apps",
+  "@removeCollectionDialogConfirmWithApps": {},
+  "removeCollectionDialogConfirm": "Remover",
+  "@removeCollectionDialogConfirm": {},
+  "downloadHashMismatchErrorDialogTitle": "Hash não corresponde",
+  "@downloadHashMismatchErrorDialogTitle": {},
+  "appPageInstallButton": "Instalar (Versão {version})",
+  "@appPageInstallButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appPageRetryInstallButton": "Tente instalar de novo",
+  "@appPageRetryInstallButton": {},
+  "appPageInstallingApkProcess": "Instalando arquivo APK…",
+  "@appPageInstallingApkProcess": {},
+  "appPageUninstallButton": "Desinstalar ({version})",
+  "@appPageUninstallButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appPageLaunchAppButton": "Abrir",
+  "@appPageLaunchAppButton": {},
+  "appPageUpdateButton": "Atualizar ({version})",
+  "@appPageUpdateButton": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "appPageInstallationDownloadStarting": "Começando a baixar…",
+  "@appPageInstallationDownloadStarting": {},
+  "appPageInstallationProgress": "{progress} % de {totalFileSize}",
+  "@appPageInstallationProgress": {
+    "placeholders": {
+      "progress": {},
+      "totalFileSize": {}
+    }
+  },
+  "appShareText": "{localizedName} - {localizedSummary} • Download: {link}",
+  "@appShareText": {
+    "placeholders": {
+      "localizedName": {},
+      "localizedSummary": {},
+      "link": {}
+    }
+  },
+  "errorMetadataHashMismatch": "Metadados do Hash não correspondem.",
+  "@errorMetadataHashMismatch": {},
+  "errorDnsRecordNotAvailable": "Registro do DNS não disponível",
+  "@errorDnsRecordNotAvailable": {},
+  "errorDomainNameHasNoRecord": "O nome não tem registro do SkyDroid",
+  "@errorDomainNameHasNoRecord": {},
+  "settingsPageAppThemeTitle": "Tema do app",
+  "@settingsPageAppThemeTitle": {},
+  "settingsPageAppThemeOptionLight": "Claro",
+  "@settingsPageAppThemeOptionLight": {},
+  "settingsPageAppThemeOptionSepia": "Sépia",
+  "@settingsPageAppThemeOptionSepia": {},
+  "settingsPageAppThemeOptionDark": "Escuro",
+  "@settingsPageAppThemeOptionDark": {},
+  "settingsPageAppThemeOptionBlack": "Preto",
+  "@settingsPageAppThemeOptionBlack": {},
+  "settingsPageServicesTitle": "Serviços",
+  "@settingsPageServicesTitle": {},
+  "settingsPageServicesMultiDoHServer": "Servidor Multi-DoH",
+  "@settingsPageServicesMultiDoHServer": {},
+  "settingsPageServicesSkynetPortal": "Portal Skynet",
+  "@settingsPageServicesSkynetPortal": {},
+  "settingsPageAboutTitle": "Sobre",
+  "@settingsPageAboutTitle": {},
+  "settingsPageAboutShowLicenses": "Mostrar licenças",
+  "@settingsPageAboutShowLicenses": {},
+  "settingsPageAboutDebug": "Detalhes sobre depuração",
+  "@settingsPageAboutDebug": {},
+  "settingsPageAboutDebugDialogClose": "OK",
+  "@settingsPageAboutDebugDialogClose": {},
+  "errorAppCompatibilityNoMatchingABI": "Este app não é compatível com seu dispositivo (ABI não suportado: {deviceABIs} não em {supportedABIs})",
+  "@errorAppCompatibilityNoMatchingABI": {
+    "placeholders": {
+      "deviceABIs": {},
+      "supportedABIs": {}
+    }
+  },
+  "errorAppInstallationShizuku": "Instalação do Shizuku App falhou",
+  "@errorAppInstallationShizuku": {},
+  "appPageInstallingShizukuProcess": "Instalando o app… (Shizuku)",
+  "@appPageInstallingShizukuProcess": {},
+  "settingsPageShizukuTitle": "Serviço do Shizuku",
+  "@settingsPageShizukuTitle": {},
+  "settingsPageShizukuToggleSwitch": "Ativar Shizuku",
+  "@settingsPageShizukuToggleSwitch": {},
+  "settingsPageShizukuInstallButton": "Instalar Shizuku",
+  "@settingsPageShizukuInstallButton": {},
+  "appPageInstallingShizukuErrorNotRunning": "O serviço do Shizuku não está executado",
+  "@appPageInstallingShizukuErrorNotRunning": {},
+  "appPageInstallingShizukuErrorNotRunningButton": "Abrir Shizuku",
+  "@appPageInstallingShizukuErrorNotRunningButton": {},
+  "appPageInstallingShizukuErrorPermissionNotGranted": "A permissão não concedida (vá as configurações do SkyDroid e active suporte para o Shizuku)",
+  "@appPageInstallingShizukuErrorPermissionNotGranted": {},
+  "removeNamesDialogTitle": "Remover nomes selecionados?",
+  "@removeNamesDialogTitle": {},
+  "removeNamesDialogContent": "Você realmente quer remover {count} nomes da sua lista de apps? Esta ação não afetará seus apps instalados e os nomes poderiam ser adicionados novamente via coleção.",
+  "@removeNamesDialogContent": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "removeNamesDialogConfirm": "Remover tudo",
+  "@removeNamesDialogConfirm": {},
+  "appListPageSearchHint": "Busca de apps…",
+  "@appListPageSearchHint": {},
+  "appListPageUpdateAllAppsButton": "Atualizar todos os apps",
+  "@appListPageUpdateAllAppsButton": {},
+  "batchProcessingSheetProgressOne": "Processando 1 app…",
+  "@batchProcessingSheetProgressOne": {},
+  "batchProcessingSheetProgressMore": "Processando {count} apps…",
+  "@batchProcessingSheetProgressMore": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "batchProcessingSheetSelectedOne": "1 app selecionado",
+  "@batchProcessingSheetSelectedOne": {},
+  "batchProcessingSheetSelectedMore": "{count} apps selecionados",
+  "@batchProcessingSheetSelectedMore": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "batchProcessingSheetSelectAllButton": "Selecionar tudo",
+  "@batchProcessingSheetSelectAllButton": {},
+  "batchProcessingSheetUnselectAllButton": "Desmarcar tudo",
+  "@batchProcessingSheetUnselectAllButton": {},
+  "batchProcessingSheetShizukuWarning": "Ativar serviço do Shizuku em configurações para usar operações múltiplas",
+  "@batchProcessingSheetShizukuWarning": {},
+  "batchProcessingSheetInstallOrUpdateAllButton": "Instalar/atualizar",
+  "@batchProcessingSheetInstallOrUpdateAllButton": {},
+  "batchProcessingSheetUninstallAllButton": "Desinstalar",
+  "@batchProcessingSheetUninstallAllButton": {},
+  "batchProcessingSheetRemoveAllNamesButton": "Remover todos os nomes selecionados",
+  "@batchProcessingSheetRemoveAllNamesButton": {},
+  "filterByCollectionCardTitle": "Filtrar por coleção",
+  "@filterByCollectionCardTitle": {},
+  "saiStr_installer_rootless_error2_unknown": "Erro desconhecido",
+  "@saiStr_installer_rootless_error2_unknown": {},
+  "saiStr_installer_rootless_error2_install_failed_already_exists": "Este pacote já está instalado",
+  "@saiStr_installer_rootless_error2_install_failed_already_exists": {},
+  "saiStr_installer_rootless_error2_install_failed_insufficient_storage": "O dispositivo não tem espaço suficiente para instalar o app",
+  "@saiStr_installer_rootless_error2_install_failed_insufficient_storage": {},
+  "saiStr_installer_rootless_error2_install_failed_duplicate_package": "O pacote com o mesmo nome já está instalado",
+  "@saiStr_installer_rootless_error2_install_failed_duplicate_package": {},
+  "saiStr_installer_rootless_error2_install_failed_no_shared_user": "O usuário que compartilha o pacote não existe",
+  "@saiStr_installer_rootless_error2_install_failed_no_shared_user": {},
+  "saiStr_installer_rootless_error2_install_failed_shared_user_incompatible": "O app solicitou um usuário já existente, mas suas assinaturas não correspondem",
+  "@saiStr_installer_rootless_error2_install_failed_shared_user_incompatible": {},
+  "saiStr_installer_rootless_error2_install_failed_missing_shared_library": "O app solicitou uma biblioteca que não está instalada no dispositivo",
+  "@saiStr_installer_rootless_error2_install_failed_missing_shared_library": {},
+  "saiStr_installer_rootless_error2_install_failed_replace_couldnt_delete": "O sistema não conseguiu remover a versão anterior deste pacote",
+  "@saiStr_installer_rootless_error2_install_failed_replace_couldnt_delete": {},
+  "saiStr_installer_rootless_error2_install_failed_older_sdk": "A versão do Android é mais antiga do que a exigida pelo pacote",
+  "@saiStr_installer_rootless_error2_install_failed_older_sdk": {},
+  "saiStr_installer_rootless_error2_install_failed_conflicting_provider": "O pacote contém um fornecedor de conteúdo com a mesma autoridade que já instalado no sistema",
+  "@saiStr_installer_rootless_error2_install_failed_conflicting_provider": {},
+  "saiStr_installer_rootless_error2_install_failed_newer_sdk": "A versão do Android é mais nova que a exigida pelo pacote",
+  "@saiStr_installer_rootless_error2_install_failed_newer_sdk": {},
+  "saiStr_installer_rootless_error2_install_failed_test_only": "O pacote instalado é apenas para teste e a referência ao INSTALL_ALLOW_TEST não foi fornecida",
+  "@saiStr_installer_rootless_error2_install_failed_test_only": {},
+  "saiStr_installer_rootless_error2_install_failed_missing_feature": "O pacote requer uma característica que não é suportada por este dispositivo",
+  "@saiStr_installer_rootless_error2_install_failed_missing_feature": {},
+  "saiStr_installer_rootless_error2_install_failed_container_error": "Não foi possível acessar o ponto seguro de montagem do container em mídia externa",
+  "@saiStr_installer_rootless_error2_install_failed_container_error": {},
+  "saiStr_installer_rootless_error2_install_failed_invalid_install_location": "O pacote não podia ser instalado no local especificado",
+  "@saiStr_installer_rootless_error2_install_failed_invalid_install_location": {},
+  "saiStr_installer_rootless_error2_install_failed_verification_timeout": "O tempo para verificação do pacote foi excedido",
+  "@saiStr_installer_rootless_error2_install_failed_verification_timeout": {},
+  "saiStr_installer_rootless_error2_install_failed_verification_failure": "Falha ao verificar o pacote",
+  "@saiStr_installer_rootless_error2_install_failed_verification_failure": {},
+  "saiStr_installer_rootless_error2_install_failed_package_changed": "O caminho de instalação para o pacote mudou inesperadamente",
+  "@saiStr_installer_rootless_error2_install_failed_package_changed": {},
+  "saiStr_installer_rootless_error2_install_failed_uid_changed": "O pacote recebeu uma UID diferente da anterior",
+  "@saiStr_installer_rootless_error2_install_failed_uid_changed": {},
+  "saiStr_installer_rootless_error2_install_failed_version_downgrade": "Uma versão mais recente deste pacote já está instalada",
+  "@saiStr_installer_rootless_error2_install_failed_version_downgrade": {},
+  "saiStr_installer_rootless_error2_install_failed_permission_model_downgrade": "A nova versão do pacote não suporta permissões ao tempo de execução, mas a versão instalada sim",
+  "@saiStr_installer_rootless_error2_install_failed_permission_model_downgrade": {},
+  "saiStr_installer_rootless_error2_install_failed_sandbox_version_downgrade": "A nova versão do pacote requer uma versão do Sandbox mais baixa do que a instalada",
+  "@saiStr_installer_rootless_error2_install_failed_sandbox_version_downgrade": {},
+  "saiStr_installer_rootless_error2_install_failed_missing_split": "O pacote requer separação, mas isto não foi fornecido",
+  "@saiStr_installer_rootless_error2_install_failed_missing_split": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_not_apk": "O arquivo fornecido não é um arquivo APK",
+  "@saiStr_installer_rootless_error2_install_parse_failed_not_apk": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_bad_manifest": "Não foi possível obter detalhes sobre APK",
+  "@saiStr_installer_rootless_error2_install_parse_failed_bad_manifest": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_unexpected_exception": "Analisador do APK encontrou uma exceção inesperada",
+  "@saiStr_installer_rootless_error2_install_parse_failed_unexpected_exception": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_no_certificates": "O arquivo APK não contém nenhum certificado",
+  "@saiStr_installer_rootless_error2_install_parse_failed_no_certificates": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_inconsistent_certificates": "Certificados incompatíveis encontrados nos arquivos APK",
+  "@saiStr_installer_rootless_error2_install_parse_failed_inconsistent_certificates": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_certificate_encoding": "A codificação do certificado falhou",
+  "@saiStr_installer_rootless_error2_install_parse_failed_certificate_encoding": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_bad_package_name": "O APK tem o nome incorreto ou indisponível",
+  "@saiStr_installer_rootless_error2_install_parse_failed_bad_package_name": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_bad_shared_user_id": "O APK tem a id de usuário remoto incorreta",
+  "@saiStr_installer_rootless_error2_install_parse_failed_bad_shared_user_id": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_manifest_empty": "O manifesto do APK está vazio",
+  "@saiStr_installer_rootless_error2_install_parse_failed_manifest_empty": {},
+  "saiStr_installer_rootless_error2_install_failed_internal_error": "A instalação falhou por causa de problemas no sistema",
+  "@saiStr_installer_rootless_error2_install_failed_internal_error": {},
+  "saiStr_installer_rootless_error2_install_failed_duplicate_permission": "O pacote está tentando definir uma permissão que já está definida por outro pacote instalado",
+  "@saiStr_installer_rootless_error2_install_failed_duplicate_permission": {},
+  "saiStr_installer_rootless_error2_install_failed_aborted": "A instalação foi cancelada ou abortada pelo usuário",
+  "@saiStr_installer_rootless_error2_install_failed_aborted": {},
+  "saiStr_installer_rootless_error2_install_failed_instant_app_invalid": "A operação do app instantâneo não suportada",
+  "@saiStr_installer_rootless_error2_install_failed_instant_app_invalid": {},
+  "saiStr_installer_rootless_error2_install_failed_bad_signature": "Há algum problema com a assinatura do APK",
+  "@saiStr_installer_rootless_error2_install_failed_bad_signature": {},
+  "saiStr_installer_rootless_error2_install_failed_other_staged_session_in_progress": "Já há uma sessão do instalador de pacotes sendo autorizada para este nome de pacote",
+  "@saiStr_installer_rootless_error2_install_failed_other_staged_session_in_progress": {},
+  "saiStr_installer_rootless_error2_install_failed_multipackage_inconsistency": "Uma das sub-sessões do instalador de pacotes não corresponde à sessão principal em relação ao rollback gradual de parâmetros ativados",
+  "@saiStr_installer_rootless_error2_install_failed_multipackage_inconsistency": {},
+  "saiStr_installer_rootless_error2_install_failed_wrong_installed_version": "A versão requerida de um pacote já instalado não corresponde à versão atual do pacote instalado",
+  "@saiStr_installer_rootless_error2_install_failed_wrong_installed_version": {},
+  "navigationDiscoverPageTitle": "Encontrar",
+  "@navigationDiscoverPageTitle": {},
+  "categoryMultimedia": "Multimídia",
+  "@categoryMultimedia": {},
+  "removeCollectionDialogContent": "Você realmente quer remover a coleção \"{name}\"? Se você também deseja remover outros apps adicionados via esta coleção, selecione \"Remover com apps\".",
+  "@removeCollectionDialogContent": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "downloadHashMismatchErrorDialogContent": "O arquivo baixado não corresponde ao Hash de metadados original.\n\nHash esperado: {expectedHash}\nHash obtido: {hash}\n\nFavor entrar em contato com o autor do app",
+  "@downloadHashMismatchErrorDialogContent": {
+    "placeholders": {
+      "expectedHash": {},
+      "hash": {}
+    }
+  },
+  "saiStr_installer_rootless_error2_install_failed_invalid_uri": "O URI informado não é válido",
+  "@saiStr_installer_rootless_error2_install_failed_invalid_uri": {},
+  "appListPageEmptyWarning": "Opa, nada aqui. Tente adicionar um nome através do botão \"Mais\" no canto inferior direito.",
+  "@appListPageEmptyWarning": {},
+  "errorHttpStatusCode": "HTTP {statusCode} durante carregamento dos metadados",
+  "@errorHttpStatusCode": {
+    "placeholders": {
+      "statusCode": {}
+    }
+  },
+  "saiStr_installer_rootless_error2_install_failed_update_incompatible": "A assinatura não corresponde à assinatura do app já existente com o mesmo nome de pacote",
+  "@saiStr_installer_rootless_error2_install_failed_update_incompatible": {},
+  "errorHttpStatusCodeMultiDnsQuery": "HTTP {statusCode} na consulta Multi-DoH",
+  "@errorHttpStatusCodeMultiDnsQuery": {
+    "placeholders": {
+      "statusCode": {}
+    }
+  },
+  "saiStr_installer_rootless_error2_install_failed_dexopt": "A instalação falhou durante a otimização e validação dos arquivos dex, ou porque não houve espaço suficiente ou porque a validação falhou",
+  "@saiStr_installer_rootless_error2_install_failed_dexopt": {},
+  "errorAppInvalidCurrentBuild": "Erro: Nenhuma compilação encontrada para a versão atual",
+  "@errorAppInvalidCurrentBuild": {},
+  "saiStr_installer_rootless_error2_install_failed_cpu_abi_incompatible": "O pacote não contém código nativo que seja compatível com o processador deste dispositivo",
+  "@saiStr_installer_rootless_error2_install_failed_cpu_abi_incompatible": {},
+  "errorAppCompatibilitySdkVersionTooLow": "Este app não é compatível com seu dispositivo (VersãoSdk muito baixa: {sdkVersion} < {minSdkVersion})",
+  "@errorAppCompatibilitySdkVersionTooLow": {
+    "placeholders": {
+      "sdkVersion": {},
+      "minSdkVersion": {}
+    }
+  },
+  "saiStr_installer_rootless_error2_install_failed_media_unavailable": "O pacote não podia ser instalado no local especificado porque a mídia não está disponível",
+  "@saiStr_installer_rootless_error2_install_failed_media_unavailable": {},
+  "settingsPageShizukuDescription": "O Shizuku é um app que pode dar ao SkyDroid acesso ao APIs do Sistema SEM ROOT. Isto permite instalar e atualizar apps sem interação do usuário.",
+  "@settingsPageShizukuDescription": {},
+  "saiStr_installer_rootless_error2_install_parse_failed_manifest_malformed": "O manifesto do APK está malformado",
+  "@saiStr_installer_rootless_error2_install_parse_failed_manifest_malformed": {},
+  "saiStr_installer_rootless_error2_install_failed_invalid_apk": "O arquivo APK não é válido",
+  "@saiStr_installer_rootless_error2_install_failed_invalid_apk": {},
+  "saiStr_installer_rootless_error2_install_failed_user_restricted": "Este usuário está impedido de instalar apps",
+  "@saiStr_installer_rootless_error2_install_failed_user_restricted": {},
+  "saiStr_installer_rootless_error2_install_failed_no_matching_abis": "O pacote não contém código nativo que seja compatível com o processador deste dispositivo",
+  "@saiStr_installer_rootless_error2_install_failed_no_matching_abis": {}
+}
