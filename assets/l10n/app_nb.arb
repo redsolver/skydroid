@@ -143,13 +143,13 @@
   "@collectionLoadingDialogTitle": {},
   "removeCollectionDialogConfirmWithApps": "Fjern også dens programmer",
   "@removeCollectionDialogConfirmWithApps": {},
-  "appPageInstallButton": "Installer (versjon {versjon})",
+  "appPageInstallButton": "Installer (versjon {version})",
   "@appPageInstallButton": {
     "placeholders": {
       "version": {}
     }
   },
-  "appPageUninstallButton": "Avinstaller ({versjon})",
+  "appPageUninstallButton": "Avinstaller ({version})",
   "@appPageUninstallButton": {
     "placeholders": {
       "version": {}
@@ -184,7 +184,7 @@
       "hash": {}
     }
   },
-  "appPageUpdateButton": "Oppdatering ({versjon})",
+  "appPageUpdateButton": "Oppgrader til ({version})",
   "@appPageUpdateButton": {
     "placeholders": {
       "version": {}
