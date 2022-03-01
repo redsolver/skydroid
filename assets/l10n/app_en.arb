@@ -200,6 +200,10 @@
       "link": {}
     }
   },
+  "discoverPageEmptyText": "Highlights on the Discover page are loaded from the collections you follow. You do not follow any collection which supports the Discover feature yet, so this page is empty.",
+  "@discoverPageEmptyText": {},
+  "discoverPageEmptyButton": "Browse collections",
+  "@discoverPageEmptyButton": {},
   "errorMetadataHashMismatch": "Metadata Hash mismatch.",
   "@errorMetadataHashMismatch": {},
   "errorHttpStatusCode": "HTTP {statusCode} while loading metadata",
@@ -244,6 +248,13 @@
   "@settingsPageAboutDebugDialogClose": {},
   "errorAppInvalidCurrentBuild": "Error: No build found for the current version",
   "@errorAppInvalidCurrentBuild": {},
+  "errorAppCompatibilityDifferentPlatform": "This app is incompatible with your platform (supported platform: {platform}, your platform: {currentPlatform})",
+  "@errorAppCompatibilityDifferentPlatform": {
+    "placeholders": {
+      "platform": {},
+      "currentPlatform": {}
+    }
+  },
   "errorAppCompatibilitySdkVersionTooLow": "This app is not compatible with your device (sdkVersion too low: {sdkVersion} < {minSdkVersion})",
   "@errorAppCompatibilitySdkVersionTooLow": {
     "placeholders": {
