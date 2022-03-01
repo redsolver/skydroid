@@ -192,7 +192,7 @@
       "totalFileSize": {}
     }
   },
-  "appShareText": "{localizedName} - {localizedSummary} • Download: {link}",
+  "appShareText": "{localizedName} - {localizedSummary} • Herunterladen: {link}",
   "@appShareText": {
     "placeholders": {
       "localizedName": {},
@@ -218,7 +218,7 @@
       "statusCode": {}
     }
   },
-  "settingsPageAppThemeTitle": "App Thema",
+  "settingsPageAppThemeTitle": "Anwendungsdesign",
   "@settingsPageAppThemeTitle": {},
   "settingsPageAppThemeOptionLight": "Hell",
   "@settingsPageAppThemeOptionLight": {},
@@ -260,7 +260,7 @@
   },
   "errorAppInstallationShizuku": "App Installation fehlgeschlagen",
   "@errorAppInstallationShizuku": {},
-  "appPageInstallingShizukuProcess": "App wird installiert... (Shizuku)",
+  "appPageInstallingShizukuProcess": "Anwendung wird installiert … (Shizuku)",
   "@appPageInstallingShizukuProcess": {},
   "settingsPageShizukuTitle": "Shizuku Service",
   "@settingsPageShizukuTitle": {},
@@ -419,5 +419,7 @@
   "saiStr_installer_rootless_error2_install_failed_multipackage_inconsistency": "Eine der untergeordneten Paketinstaller-Sitzungen stimmt nicht mit der übergeordneten Sitzung überein, wenn es um abgestufte oder Rollback-aktivierte Parameter geht",
   "@saiStr_installer_rootless_error2_install_failed_multipackage_inconsistency": {},
   "saiStr_installer_rootless_error2_install_failed_wrong_installed_version": "Die benötigte Version eines bereits installierten Pakets entspricht nicht der aktuellen Version des installierten Pakets",
-  "@saiStr_installer_rootless_error2_install_failed_wrong_installed_version": {}
+  "@saiStr_installer_rootless_error2_install_failed_wrong_installed_version": {},
+  "navigationDiscoverPageTitle": "Entdecken",
+  "@navigationDiscoverPageTitle": {}
 }

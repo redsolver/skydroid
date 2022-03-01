@@ -343,5 +343,58 @@
   "saiStr_installer_rootless_error2_install_failed_no_matching_abis": "Pakaĵo ne enhavas denaskan kodon kongruan kun CPU de ĉi tiu aparato",
   "@saiStr_installer_rootless_error2_install_failed_no_matching_abis": {},
   "saiStr_installer_rootless_error2_install_failed_duplicate_permission": "Pako provas difini permeson jam difinitan de alia instalita pako",
-  "@saiStr_installer_rootless_error2_install_failed_duplicate_permission": {}
+  "@saiStr_installer_rootless_error2_install_failed_duplicate_permission": {},
+  "navigationDiscoverPageTitle": "Malkovri",
+  "@navigationDiscoverPageTitle": {},
+  "appPageLinkLicense": "Permesilo: {permesilo}",
+  "@appPageLinkLicense": {
+    "placeholders": {
+      "license": {}
+    }
+  },
+  "downloadHashMismatchErrorDialogTitle": "Hash Misparigo",
+  "@downloadHashMismatchErrorDialogTitle": {},
+  "removeCollectionDialogContent": "Ĉu vi vere volas forigi la kolekto \"{nomo}\"? Se vi ankaŭ volas forigi apps aldonita tra#? i tiu kolekto, elektu \"Forigi kun Apps\".",
+  "@removeCollectionDialogContent": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "errorMetadataHashMismatch": "Metadatumoj Hash misparigo.",
+  "@errorMetadataHashMismatch": {},
+  "errorHttpStatusCodeMultiDnsQuery": "HTTP {statusCode} sur Multi-DoH query",
+  "@errorHttpStatusCodeMultiDnsQuery": {
+    "placeholders": {
+      "statusCode": {}
+    }
+  },
+  "errorDomainNameHasNoRecord": "La nomo havas neniun SkyDroid rekordo",
+  "@errorDomainNameHasNoRecord": {},
+  "batchProcessingSheetProgressMore": "Pretigo {count} apps…",
+  "@batchProcessingSheetProgressMore": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "addDomainNameDialogInputLabel": "Nomo (domajno)",
+  "@addDomainNameDialogInputLabel": {},
+  "appPageUpdatedTime": "Ĝisdatigita {time}",
+  "@appPageUpdatedTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "appPageAddedTime": "App aldonita: {time}",
+  "@appPageAddedTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "downloadHashMismatchErrorDialogContent": "La elŝutita dosiero ne respondas al la ĝusta hash en la metadata.\n\nAtendita Hash: {expectedHash}\nGot Hash: {hash}\n\nBonvolu kontaktas la app aŭtoro",
+  "@downloadHashMismatchErrorDialogContent": {
+    "placeholders": {
+      "expectedHash": {},
+      "hash": {}
+    }
+  }
 }

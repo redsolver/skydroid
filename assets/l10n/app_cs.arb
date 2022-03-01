@@ -419,5 +419,7 @@
   "saiStr_installer_rootless_error2_install_failed_already_exists": "Tento balíček je již nainstalován",
   "@saiStr_installer_rootless_error2_install_failed_already_exists": {},
   "saiStr_installer_rootless_error2_install_failed_update_incompatible": "Podpis aplikace neodpovídá podpisu již nainstalované aplikace se stejným názvem balíčku",
-  "@saiStr_installer_rootless_error2_install_failed_update_incompatible": {}
+  "@saiStr_installer_rootless_error2_install_failed_update_incompatible": {},
+  "navigationDiscoverPageTitle": "Objevte",
+  "@navigationDiscoverPageTitle": {}
 }

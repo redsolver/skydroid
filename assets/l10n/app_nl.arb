@@ -419,5 +419,7 @@
   "batchProcessingSheetShizukuWarning": "Activeer Shizuku Service in de Instellingen om batch-acties te gebruiken",
   "@batchProcessingSheetShizukuWarning": {},
   "saiStr_installer_rootless_error2_install_failed_test_only": "Geïnstalleerd pakket is alleen test en INSTALLEER_TOESTAAN_TEST vlag werd niet geleverd",
-  "@saiStr_installer_rootless_error2_install_failed_test_only": {}
+  "@saiStr_installer_rootless_error2_install_failed_test_only": {},
+  "navigationDiscoverPageTitle": "Ontdek",
+  "@navigationDiscoverPageTitle": {}
 }
